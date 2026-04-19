@@ -1,0 +1,139 @@
+.section{
+  background: #ffffff;
+}
+
+.inner{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 68px 20px;
+}
+
+.head{
+  display: grid;
+  justify-items: start;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.kicker{
+  font-size: 10px;
+  letter-spacing: .16em;
+  font-weight: 800;
+  color: rgba(14,165,164,.9);
+}
+
+.title{
+  margin: 0;
+  font-size: clamp(28px, 3.8vw, 44px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  font-weight: 950;
+  color: #0f172a;
+}
+
+.browseLink{
+  margin-top: 2px;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(14,165,164,.95);
+}
+
+.browseLink:hover{
+  text-decoration: underline;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.card{
+  text-decoration: none;
+  color: inherit;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(2,6,23,.08);
+  background: #fff;
+  box-shadow: 0 18px 44px rgba(2,6,23,.06);
+  display: grid;
+}
+
+.cardMedia{
+  position: relative;
+  background: rgba(2,6,23,.04);
+}
+
+.cardImg{
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.playBtn{
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: rgba(14,165,164,.92);
+  box-shadow: 0 14px 30px rgba(14,165,164,.25);
+}
+
+.playBtn::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 0;
+  height: 0;
+  border-left: 12px solid white;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  transform: translateX(2px);
+}
+
+.cardBody{
+  padding: 12px 14px 14px;
+}
+
+.cardEyebrow{
+  font-size: 9px;
+  letter-spacing: .14em;
+  font-weight: 800;
+  color: rgba(14,165,164,.9);
+}
+
+.cardTitle{
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  color: rgba(15,23,42,.92);
+  line-height: 1.35;
+}
+
+.card:hover{
+  border-color: rgba(14,165,164,.25);
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: no-preference){
+  .card{
+    transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+  }
+}
+
+@media (min-width: 860px){
+  .grid{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+  .cardBody{
+    padding: 12px 12px 14px;
+  }
+}
+

@@ -1,0 +1,4 @@
+export { default as Home } from "./home/Home"
+export { default as About } from "./about/About"
+export { default as Career } from "./careers/Career"
+export { default as Parent } from "./parent/Parent"

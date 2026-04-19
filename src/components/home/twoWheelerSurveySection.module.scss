@@ -1,0 +1,135 @@
+.section{
+  background: #0e978f;
+  color: #ffffff;
+}
+
+.inner{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 70px 20px 62px;
+}
+
+.kicker{
+  font-size: 11px;
+  color: rgba(255,255,255,.7);
+  font-weight: 500;
+}
+
+.quoteMark{
+  margin-top: 24px;
+  font-size: 28px;
+  line-height: 1;
+  color: rgba(255,255,255,.75);
+  font-weight: 900;
+}
+
+.quote{
+  margin: 14px 0 0;
+  font-size: clamp(22px, 3.1vw, 34px);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  font-weight: 800;
+  max-width: 44ch;
+}
+
+.metaRow{
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.author{
+  font-size: 11px;
+  color: rgba(255,255,255,.72);
+  font-weight: 500;
+}
+
+.sep{
+  margin: 0 6px;
+}
+
+.cta{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,.9);
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.cta:hover{
+  text-decoration: underline;
+}
+
+.ctaDot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.85);
+  display: inline-block;
+}
+
+.bottomRow{
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.avatars{
+  display: flex;
+  gap: 6px;
+}
+
+.avatar{
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.18);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 800;
+  color: rgba(255,255,255,.9);
+}
+
+.pager{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot,
+.dotActive{
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.35);
+}
+
+.dotActive{
+  width: 18px;
+  background: rgba(255,255,255,.95);
+}
+
+@media (min-width: 860px){
+  .inner{
+    padding: 82px 20px 72px;
+  }
+  .metaRow{
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .bottomRow{
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 34px;
+  }
+}
+

@@ -35,6 +35,10 @@ const Navbar = () => {
           <a href="/careers" className={styles.link}>
             Careers
           </a>
+
+          <a href="/contact" className={styles.link}>
+            Contact
+          </a>
         </nav>
 
         <div className={styles.actions}>

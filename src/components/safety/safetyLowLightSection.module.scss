@@ -1,0 +1,36 @@
+.section {
+  background: linear-gradient(135deg, #0c4a4a 0%, #0b0f1a 100%);
+  padding: 80px 0;
+}
+
+.inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 64px;
+}
+
+.title {
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 800;
+  line-height: 1.4;
+  color: #ffffff;
+  margin: 0 0 20px;
+  letter-spacing: -0.01em;
+}
+
+.source {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .inner {
+    padding: 0 24px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+}

@@ -1,0 +1,181 @@
+.section {
+  overflow: hidden;
+}
+
+.vertical {
+  padding: 100px 0;
+}
+
+.light {
+  background: #ffffff;
+}
+
+.dark {
+  background: #0b0f1a;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.textSide {
+  max-width: 560px;
+}
+
+.number {
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+
+.light .number {
+  color: rgba(15, 23, 42, 0.08);
+}
+
+.dark .number {
+  color: rgba(255, 255, 255, 0.06);
+}
+
+.kicker {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.light .kicker {
+  color: #0ea5a4;
+}
+
+.dark .kicker {
+  color: #0ea5a4;
+}
+
+.title {
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 20px;
+}
+
+.light .title {
+  color: #0f172a;
+}
+
+.dark .title {
+  color: #ffffff;
+}
+
+.desc {
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0 0 28px;
+}
+
+.light .desc {
+  color: rgba(15, 23, 42, 0.6);
+}
+
+.dark .desc {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.features {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.featureItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  min-width: 120px;
+}
+
+.light .featureItem {
+  background: #f8fafc;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.dark .featureItem {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.featureLabel {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.light .featureLabel {
+  color: #0f172a;
+}
+
+.dark .featureLabel {
+  color: #ffffff;
+}
+
+.featureDesc {
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.light .featureDesc {
+  color: rgba(15, 23, 42, 0.5);
+}
+
+.dark .featureDesc {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.learnBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 999px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.light .learnBtn {
+  color: #0f172a;
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  background: #ffffff;
+}
+
+.dark .learnBtn {
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: transparent;
+}
+
+.learnBtn:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+    padding: 0 24px;
+  }
+
+  .vertical {
+    padding: 60px 0;
+  }
+}

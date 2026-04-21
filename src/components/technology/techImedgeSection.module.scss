@@ -1,0 +1,85 @@
+.section {
+  background: #ffffff;
+  border-top: 1px solid rgba(15, 23, 42, 0.07);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 96px 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.kicker {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: #0ea5a4;
+  text-transform: uppercase;
+}
+
+.heading {
+  font-size: clamp(28px, 3.2vw, 42px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: #0f172a;
+  margin: 0;
+}
+
+.heading sup {
+  font-size: 0.45em;
+  vertical-align: super;
+  letter-spacing: 0;
+}
+
+.body {
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(15, 23, 42, 0.65);
+  margin: 0;
+}
+
+.body strong {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.mediaBlock {
+  background: #f1f5f9;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.hardwareImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+@media (max-width: 960px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 64px 24px;
+  }
+
+  .mediaBlock {
+    padding: 20px;
+  }
+}

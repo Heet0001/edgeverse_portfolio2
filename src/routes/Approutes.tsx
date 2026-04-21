@@ -1,5 +1,5 @@
-import { Routes, Route ,BrowserRouter} from "react-router-dom"
-import { Home, About, Career, Parent } from "../pages"
+import { Routes, Route, BrowserRouter } from "react-router-dom"
+import { Home, About, Career, Parent, Contact } from "../pages"
 
 const Approutes = () => {
   return (
@@ -10,6 +10,7 @@ const Approutes = () => {
         <Route index element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/careers" element={<Career />} />
+        <Route path="/contact" element={<Contact />} />
       </Route>
     </Routes>
   </BrowserRouter>

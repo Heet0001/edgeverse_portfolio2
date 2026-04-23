@@ -2,24 +2,24 @@ import styles from './safetyPerceptionSection.module.scss'
 
 const steps = [
   {
-    icon: '📷',
+    number: '01',
     title: 'Capture',
-    desc: 'Our multi-camera system — front, rear, and wide-angle — captures a comprehensive view of the rider\'s surroundings in real-time, covering every critical blind spot.',
+    desc: '150° FoV HDR camera + RADAR + IMU continuously stream environmental data at up to 30 FPS — capturing every vehicle, pedestrian, and obstacle in real-time.',
   },
   {
-    icon: '🧠',
+    number: '02',
     title: 'Perceive',
-    desc: 'Perceiva™ runs real-time AI models with low-latency sensor fusion, object detection, lane analysis, and trajectory prediction — all processed on-device.',
+    desc: 'Perceiva™ CNN stack classifies vehicles, pedestrians, lanes, and hazards using our proprietary India Perception Model — trained on millions of Indian road scenarios.',
   },
   {
-    icon: '⚡',
-    title: 'Decide',
-    desc: 'Our patented collision prediction algorithm evaluates threat levels in real-time — factoring in object speed, trajectory, distance, and rider behavior to make split-second safety decisions.',
+    number: '03',
+    title: 'Predict',
+    desc: 'Multi-zone collision prediction evaluates threat trajectory, closing speed, and time-to-impact. Continuous risk scoring across forward, rear, and blind-spot zones.',
   },
   {
-    icon: '🔔',
+    number: '04',
     title: 'Alert',
-    desc: 'Multimodal alerts — haptic vibration, LED indicators, and audio warnings — instantly notify the rider of detected threats, enabling proactive collision avoidance.',
+    desc: 'Haptic, visual, or audio alerts delivered to the rider in under 1 second — with automatic video freeze and cloud backup for accident evidence.',
   },
 ]
 
@@ -27,19 +27,10 @@ const SafetyPerceptionSection = () => {
   return (
     <section className={styles.section} aria-label="From perception to protection">
       <div className={styles.inner}>
-        <div className={styles.header}>
-          <div className={styles.kicker}>HOW IT WORKS</div>
-          <h2 className={styles.title}>From perception to protection.</h2>
-          <p className={styles.subtitle}>
-            Our AI-powered safety pipeline processes every frame in under 33ms — from raw sensor capture to
-            life-saving alert delivery. Here's how Perceiva™ protects riders in real-time.
-          </p>
-        </div>
-
         <div className={styles.steps}>
           {steps.map((step, i) => (
             <div key={i} className={styles.step}>
-              <div className={styles.stepIcon}>{step.icon}</div>
+              <div className={styles.stepNumber}>{step.number}</div>
               <div className={styles.stepContent}>
                 <h3 className={styles.stepTitle}>{step.title}</h3>
                 <p className={styles.stepDesc}>{step.desc}</p>

@@ -3,8 +3,6 @@ import TechFullStackSection from '../../components/technology/TechFullStackSecti
 import TechStatsSection from '../../components/technology/TechStatsSection'
 import TechImedgeSection from '../../components/technology/TechImedgeSection'
 import TechPerceivaSection from '../../components/technology/TechPerceivaSection'
-import TechVerticalsSection from '../../components/technology/TechVerticalsSection'
-import TechFeaturesSection from '../../components/technology/TechFeaturesSection'
 import TechOverviewSection from '../../components/technology/TechOverviewSection'
 import TechCtaSection from '../../components/technology/TechCtaSection'
 
@@ -16,8 +14,6 @@ const Technology = () => {
       <TechStatsSection />
       <TechImedgeSection />
       <TechPerceivaSection />
-      <TechVerticalsSection />
-      <TechFeaturesSection />
       <TechOverviewSection />
       <TechCtaSection />
     </main>

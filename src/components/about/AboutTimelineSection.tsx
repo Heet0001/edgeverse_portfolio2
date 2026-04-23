@@ -2,24 +2,24 @@ import styles from './aboutTimelineSection.module.scss'
 
 const milestones = [
   {
-    icon: '💡',
-    title: 'Conceived',
-    desc: 'The idea for an edge AI rider safety platform was born — addressing the critical gap in two-wheeler protection on Indian roads.',
+    year: '2023',
+    title: 'Founded',
+    desc: 'Edgeverse founded in Bengaluru with a mission to bring ARAS technology to India’s 220M+ two-wheeler riders.',
   },
   {
-    icon: '🔬',
-    title: 'R&D and prototyping',
-    desc: 'Deep R&D into computer vision, sensor fusion, and embedded AI — building the foundation for Perceiva™ on resource-constrained edge devices.',
+    year: '2024',
+    title: 'Platform Development',
+    desc: 'Imedge hardware prototype completed. Perceiva software stack in development. First India Perception Model trained.',
   },
   {
-    icon: '🛣️',
+    year: '2025',
     title: 'Road testing',
-    desc: 'Live road testing across Bengaluru — validating real-time collision detection, blind-spot monitoring, and alert responsiveness.',
+    desc: 'First on-road testing and validation across Bengaluru’s complex road conditions. OEM conversations initiated.',
   },
   {
-    icon: '🚀',
-    title: 'Manufacturing',
-    desc: 'Scaling from prototype to production-ready hardware — Imedge® units assembled and quality-tested for OEM integration.',
+    year: '2026',
+    title: 'Market Entry',
+    desc: 'Product deployment with OEM partners. Expansion into surveillance and industrial automation verticals.',
   },
 ]
 
@@ -28,13 +28,14 @@ const AboutTimelineSection = () => {
     <section className={styles.section} aria-label="From idea to product">
       <div className={styles.inner}>
         <div className={styles.header}>
+          <div className={styles.kicker}>OUR JOURNEY</div>
           <h2 className={styles.title}>From idea to product.</h2>
         </div>
 
         <div className={styles.grid}>
           {milestones.map((m, i) => (
             <div key={i} className={styles.card}>
-              <div className={styles.cardIcon}>{m.icon}</div>
+              <div className={styles.year}>{m.year}</div>
               <h3 className={styles.cardTitle}>{m.title}</h3>
               <p className={styles.cardDesc}>{m.desc}</p>
             </div>

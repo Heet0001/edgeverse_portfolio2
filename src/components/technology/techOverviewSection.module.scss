@@ -1,6 +1,6 @@
 .section {
   background: #ffffff;
-  padding: 100px 0;
+  padding: 82px 0 70px;
   border-top: 1px solid rgba(15, 23, 42, 0.08);
 }
 
@@ -11,7 +11,7 @@
 }
 
 .header {
-  margin-bottom: 64px;
+  margin-bottom: 28px;
 }
 
 .kicker {
@@ -38,31 +38,36 @@
   margin: 0;
 }
 
-.grid {
+.table {
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
 }
 
-.column {
-  display: flex;
-  flex-direction: column;
+.row:last-child {
+  border-bottom: 0;
 }
 
-.specItem {
-  padding: 24px 0;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+.cell {
+  padding: 16px 18px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  border-right: 1px solid rgba(15, 23, 42, 0.1);
 }
 
-.specItem:first-child {
-  padding-top: 0;
+.cell:last-child {
+  border-right: 0;
 }
 
 .specLabel {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.1em;
   color: #0ea5a4;
@@ -70,7 +75,7 @@
 }
 
 .specValue {
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 600;
   color: #0f172a;
   line-height: 1.5;
@@ -81,16 +86,16 @@
     padding: 0 24px;
   }
   
-  .grid {
+  .row {
     grid-template-columns: 1fr;
-    gap: 0;
   }
 
-  .column:first-child .specItem:last-child {
-    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  .cell {
+    border-right: 0;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.1);
   }
-  
-  .column:last-child .specItem:first-child {
-    padding-top: 24px;
+
+  .cell:last-child {
+    border-bottom: 0;
   }
 }

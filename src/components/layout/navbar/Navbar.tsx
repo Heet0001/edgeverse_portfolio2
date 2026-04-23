@@ -36,9 +36,6 @@ const Navbar = () => {
             Careers
           </a>
 
-          <a href="/contact" className={styles.link}>
-            Contact
-          </a>
         </nav>
 
         <div className={styles.actions}>

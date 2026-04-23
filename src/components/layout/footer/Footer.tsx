@@ -50,7 +50,7 @@ const Footer = () => {
               { label: "About Us", href: "/about" },
               { label: "Leadership", href: "/about" },
               { label: "Careers", href: "/careers" },
-              { label: "Contact", href: "/about" },
+              { label: "Contact", href: "/contact" },
             ]}
           />
           <LinkCol

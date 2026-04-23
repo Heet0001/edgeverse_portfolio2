@@ -4,7 +4,6 @@ const ContactHeroSection = () => {
   return (
     <section className={styles.section} aria-label="Contact hero">
       <div className={styles.inner}>
-        <div className={styles.kicker}>CONTACT</div>
         <h1 className={styles.heading}>Get in touch.</h1>
         <p className={styles.subtitle}>
           Whether you're an OEM, fleet operator, or technology partner

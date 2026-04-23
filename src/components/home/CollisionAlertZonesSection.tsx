@@ -44,9 +44,9 @@ const CollisionAlertZonesSection = () => {
             <li className={styles.item}>
               <span className={styles.icon} aria-hidden="true" />
               <div>
-                <div className={styles.itemTitle}>Video Recording</div>
+                <div className={styles.itemTitle}>Video Recording &amp; Freeze</div>
                 <div className={styles.itemText}>
-                  Accident freeze capability with cloud backup
+                  Accident evidence with automatic cloud backup
                 </div>
               </div>
             </li>

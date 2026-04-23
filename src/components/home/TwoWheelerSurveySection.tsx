@@ -13,20 +13,17 @@ const TwoWheelerSurveySection = () => {
         </div>
 
         <h2 className={styles.quote}>
-          An alert for cars in your blind spot would be
+          Alerts in Low-Light scenarios are extremely
           <br />
-          very helpful.
+          critical. This technology could save thousands
+          <br />
+          of lives on Indian highways every year.
         </h2>
 
         <div className={styles.metaRow}>
           <div className={styles.author}>
-            Vivek C <span className={styles.sep} aria-hidden="true">—</span> Avid Rider
+            Pranay C Nath <span className={styles.sep} aria-hidden="true">—</span> Avid Rider
           </div>
-
-          <a className={styles.cta} href="/safety">
-            <span className={styles.ctaDot} aria-hidden="true" />
-            Learn how ARAS protects riders
-          </a>
         </div>
 
         <div className={styles.bottomRow}>

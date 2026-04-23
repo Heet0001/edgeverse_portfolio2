@@ -1,77 +1,85 @@
 .section{
-  background: radial-gradient(900px 420px at 10% 20%, rgba(14,165,164,.18), transparent 55%),
-    radial-gradient(900px 420px at 85% 30%, rgba(14,165,233,.14), transparent 55%),
-    #0b1220;
-  color: #fff;
+  background: #ffffff;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .inner{
   max-width: 1120px;
   margin: 0 auto;
-  padding: 38px 20px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 28px;
-  align-items: center;
+  padding: 0 20px;
 }
 
-.kicker{
-  font-size: 10px;
-  letter-spacing: .16em;
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+.step:last-child {
+  border-bottom: 0;
+}
+
+.badge {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: #0ea5a4;
+  color: #ffffff;
+  font-size: 18px;
   font-weight: 800;
-  color: rgba(255,255,255,.7);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.title{
-  margin: 10px 0 0;
-  font-size: 28px;
-  font-weight: 950;
-  letter-spacing: -0.02em;
-}
-
-.text{
-  margin: 10px 0 0;
-  max-width: 62ch;
-  color: rgba(255,255,255,.72);
-  font-size: 12px;
-  line-height: 1.7;
-}
-
-.stats{
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
-}
-
-.stat{
-  text-align: left;
-}
-
-.value{
-  font-size: 34px;
-  font-weight: 950;
+.stepTitle {
+  margin: 0;
+  font-size: 38px;
+  line-height: 1.1;
+  color: #0f172a;
+  font-weight: 900;
   letter-spacing: -0.03em;
 }
 
-.label{
-  margin-top: 6px;
-  font-size: 11px;
-  line-height: 1.45;
-  color: rgba(255,255,255,.62);
-  max-width: 26ch;
+.stepDescription {
+  margin: 10px 0 0;
+  color: rgba(15, 23, 42, 0.7);
+  font-size: 19px;
+  line-height: 1.55;
+  max-width: 940px;
 }
 
-@media (min-width: 900px){
+@media (max-width: 900px){
   .inner{
-    grid-template-columns: 1.2fr .8fr;
-    gap: 40px;
-    padding: 34px 20px;
+    padding: 0 16px;
   }
 
-  .stats{
-    grid-template-columns: repeat(3, minmax(0,1fr));
-    gap: 36px;
-    justify-items: start;
+  .step {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 14px;
+    padding: 22px 0;
+  }
+
+  .badge {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+  }
+
+  .stepTitle {
+    font-size: 26px;
+  }
+
+  .stepDescription {
+    font-size: 14px;
   }
 }
-

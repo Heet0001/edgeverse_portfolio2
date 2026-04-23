@@ -1,6 +1,8 @@
 .section {
-  background: #0b0f1a;
-  padding: 100px 0;
+  background: #ffffff;
+  padding: 0;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .inner {
@@ -9,77 +11,102 @@
   padding: 0 64px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
+  gap: 0;
+  align-items: stretch;
 }
 
 .textSide {
-  max-width: 480px;
+  max-width: 500px;
+  padding: 64px 44px 54px 0;
 }
 
 .kicker {
-  font-size: 11px;
+  font-size: 9px;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.16em;
   color: #0ea5a4;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .title {
-  font-size: clamp(32px, 4vw, 48px);
+  font-size: clamp(38px, 3.8vw, 52px);
   font-weight: 900;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: #ffffff;
-  margin: 0 0 20px;
+  color: #0f172a;
+  margin: 0 0 16px;
 }
 
 .desc {
-  font-size: 14px;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.55);
-  margin: 0 0 36px;
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(15, 23, 42, 0.65);
+  margin: 0 0 24px;
+  max-width: 42ch;
 }
 
 .features {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .feature {
   display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 12px 18px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  align-items: flex-start;
+  gap: 10px;
+  padding: 0;
 }
 
 .featureIcon {
-  font-size: 18px;
+  width: 14px;
+  height: 14px;
+  margin-top: 2px;
+  border-radius: 3px;
+  background: rgba(14, 165, 164, 0.12);
+  border: 1px solid rgba(14, 165, 164, 0.28);
   flex-shrink: 0;
+  position: relative;
+}
+
+.featureIcon::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 7px;
+  height: 7px;
+  background: #0ea5a4;
+  border-radius: 2px;
 }
 
 .featureLabel {
-  font-size: 14px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 11px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.featureSub {
+  margin-top: 2px;
+  font-size: 10px;
+  line-height: 1.35;
+  color: rgba(15, 23, 42, 0.55);
 }
 
 .imageSide {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #050709;
+  padding: 0;
 }
 
 .image {
   width: 100%;
-  max-width: 520px;
+  max-width: none;
   height: auto;
-  border-radius: 16px;
+  border-radius: 0;
   object-fit: cover;
 }
 
@@ -89,7 +116,11 @@
     padding: 0 24px;
   }
 
-  .section {
-    padding: 60px 0;
+  .textSide {
+    padding: 34px 0 28px;
+  }
+
+  .imageSide {
+    margin: 0 -24px;
   }
 }

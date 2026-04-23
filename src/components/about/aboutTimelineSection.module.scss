@@ -1,5 +1,5 @@
 .section {
-  background: #f8fafc;
+  background: #f4f6f8;
   padding: 100px 0;
 }
 
@@ -10,12 +10,21 @@
 }
 
 .header {
-  text-align: center;
+  text-align: left;
   margin-bottom: 56px;
 }
 
+.kicker {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #0ea5a4;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
 .title {
-  font-size: clamp(32px, 4vw, 48px);
+  font-size: clamp(34px, 4vw, 52px);
   font-weight: 900;
   line-height: 1.1;
   letter-spacing: -0.03em;
@@ -31,33 +40,31 @@
 
 .card {
   background: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(15, 23, 42, 0.05);
   border-radius: 16px;
   padding: 32px 24px;
-  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
-}
-
-.cardIcon {
-  font-size: 28px;
+.year {
+  font-size: 38px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: rgba(14, 165, 164, 0.2);
   margin-bottom: 16px;
 }
 
 .cardTitle {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 800;
   color: #0f172a;
   margin: 0 0 10px;
 }
 
 .cardDesc {
-  font-size: 13px;
-  line-height: 1.7;
-  color: rgba(15, 23, 42, 0.55);
+  font-size: 12px;
+  line-height: 1.6;
+  color: rgba(15, 23, 42, 0.6);
   margin: 0;
 }
 

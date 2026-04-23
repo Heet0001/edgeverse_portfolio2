@@ -106,7 +106,7 @@ const ContactFormSection = () => {
         {/* Right: Contact info */}
         <div className={styles.infoSide}>
           <div className={styles.infoCard}>
-            <div className={styles.infoIcon}>✉️</div>
+            <div className={`${styles.infoIcon} ${styles.emailIcon}`} aria-hidden="true" />
             <div className={styles.infoContent}>
               <h3 className={styles.infoTitle}>Email</h3>
               <a href="mailto:contact@edgeverse.ai" className={styles.infoLink}>
@@ -116,7 +116,7 @@ const ContactFormSection = () => {
           </div>
 
           <div className={styles.infoCard}>
-            <div className={styles.infoIcon}>📞</div>
+            <div className={`${styles.infoIcon} ${styles.phoneIcon}`} aria-hidden="true" />
             <div className={styles.infoContent}>
               <h3 className={styles.infoTitle}>Phone</h3>
               <a href="tel:+919845257858" className={styles.infoLink}>
@@ -126,7 +126,7 @@ const ContactFormSection = () => {
           </div>
 
           <div className={styles.infoCard}>
-            <div className={styles.infoIcon}>📍</div>
+            <div className={`${styles.infoIcon} ${styles.locationIcon}`} aria-hidden="true" />
             <div className={styles.infoContent}>
               <h3 className={styles.infoTitle}>Office</h3>
               <address className={styles.infoAddress}>
@@ -138,6 +138,14 @@ const ContactFormSection = () => {
           </div>
 
           <div className={styles.mapWrapper}>
+            <a
+              className={styles.mapLink}
+              href="https://maps.google.com/?q=G01,+520,+8th+Cross,+BEML+Layout,+Thubarahalli,+Bengaluru"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open in Maps
+            </a>
             <iframe
               title="EdgeVerse Office Location"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0!2d77.72!3d12.96!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU3JzM2LjAiTiA3N8KwNDMnMTIuMCJF!5e0!3m2!1sen!2sin!4v1"

@@ -47,6 +47,14 @@
   margin-bottom: 12px;
 }
 
+.footer_logo img{
+  display: block;
+  width: min(520px, 90vw);
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
 .primaryBtn{
   text-decoration: none;
   border-radius: 999px;

@@ -1,5 +1,6 @@
 import styles from "./footer.module.css"
 import footerMark from "../../../assets/images/EdgeVersefooter.png"
+import footerlogo from "../../../assets/images/EdgeVersefooter.png"
 
 const LinkCol = ({
   title,
@@ -83,6 +84,10 @@ const Footer = () => {
             Thubarahalli, Bengaluru, Karnataka 560066
           </address>
         </div>
+      </div>
+
+      <div className={styles.footer_logo}>
+        <img src={footerlogo} alt="footer"/>
       </div>
 
       <div className={styles.bottom}>

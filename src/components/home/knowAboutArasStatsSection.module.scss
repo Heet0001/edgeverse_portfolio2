@@ -1,85 +1,107 @@
 .section{
-  background: #ffffff;
-  border-top: 1px solid rgba(15, 23, 42, 0.08);
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  background: radial-gradient(1200px 280px at 20% 10%, rgba(14, 165, 164, 0.15), transparent 60%),
+    linear-gradient(180deg, #0b1220 0%, #0a1427 100%);
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
 }
 
 .inner{
   max-width: 1120px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 34px 20px;
 }
 
-.list {
-  display: flex;
-  flex-direction: column;
-}
-
-.step {
+.grid{
   display: grid;
-  grid-template-columns: 56px minmax(0, 1fr);
-  gap: 20px;
-  align-items: start;
-  padding: 30px 0;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
-}
-
-.step:last-child {
-  border-bottom: 0;
-}
-
-.badge {
-  width: 42px;
-  height: 42px;
-  border-radius: 999px;
-  background: #0ea5a4;
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: 800;
-  display: inline-flex;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 44px;
   align-items: center;
-  justify-content: center;
 }
 
-.stepTitle {
+.kicker{
+  margin: 0 0 10px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: rgba(45, 212, 191, 0.95);
+}
+
+.title{
   margin: 0;
-  font-size: 38px;
+  font-size: 34px;
   line-height: 1.1;
-  color: #0f172a;
   font-weight: 900;
   letter-spacing: -0.03em;
+  color: rgba(248, 250, 252, 1);
 }
 
-.stepDescription {
+.description{
   margin: 10px 0 0;
-  color: rgba(15, 23, 42, 0.7);
-  font-size: 19px;
-  line-height: 1.55;
-  max-width: 940px;
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(148, 163, 184, 0.95);
+  max-width: 560px;
+}
+
+.description strong{
+  font-weight: 800;
+  color: rgba(226, 232, 240, 1);
+}
+
+.stats{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  justify-items: end;
+  text-align: right;
+}
+
+.statValue{
+  font-size: 34px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: rgba(248, 250, 252, 1);
+}
+
+.statLabel{
+  margin-top: 8px;
+  font-size: 10px;
+  line-height: 1.3;
+  color: rgba(148, 163, 184, 0.85);
+  max-width: 150px;
 }
 
 @media (max-width: 900px){
   .inner{
-    padding: 0 16px;
+    padding: 28px 16px;
   }
 
-  .step {
-    grid-template-columns: 48px minmax(0, 1fr);
+  .grid{
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .stats{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-items: start;
+    text-align: left;
+    gap: 18px;
+  }
+
+  .title{
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 520px){
+  .stats{
+    grid-template-columns: 1fr;
     gap: 14px;
-    padding: 22px 0;
   }
 
-  .badge {
-    width: 34px;
-    height: 34px;
-    font-size: 14px;
-  }
-
-  .stepTitle {
-    font-size: 26px;
-  }
-
-  .stepDescription {
-    font-size: 14px;
+  .statLabel{
+    max-width: none;
   }
 }

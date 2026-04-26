@@ -27,7 +27,7 @@
 
 .h1{
   margin: 0;
-  font-size: clamp(30px, 4.2vw, 52px);
+  font-size: clamp(30px, 4.2vw, 66px);
   line-height: 1.08;
   letter-spacing: -0.02em;
   font-weight: 900;
@@ -53,7 +53,7 @@
 
 .heroBlurb{
   margin: 2px 0 0;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.6;
   color: rgba(15,23,42,.72);
 }
@@ -188,7 +188,7 @@
 
 .whoTitle{
   margin: 14px 0 0;
-  font-size: clamp(26px, 3.6vw, 44px);
+  font-size: clamp(26px, 3.6vw, 60px);
   line-height: 1.1;
   letter-spacing: -0.02em;
   font-weight: 900;
@@ -201,7 +201,7 @@
 .whoText{
   margin: 0;
   color: rgba(15,23,42,.68);
-  font-size: 12px;
+  font-size: 18px;
   line-height: 1.7;
 }
 

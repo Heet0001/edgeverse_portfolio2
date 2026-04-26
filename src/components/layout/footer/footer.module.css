@@ -42,6 +42,11 @@
   gap: 14px;
 }
 
+.footer_logo{
+  text-align: center;
+  margin-bottom: 12px;
+}
+
 .primaryBtn{
   text-decoration: none;
   border-radius: 999px;
@@ -126,8 +131,9 @@
   text-decoration: none;
   color: rgba(255,255,255,.72);
   font-weight: 500;
-  font-size: 11px;
+  font-size: 14px;
   padding: 4px 0;
+  margin-top:8px;
 }
 .colLink:hover{ color: white; }
 

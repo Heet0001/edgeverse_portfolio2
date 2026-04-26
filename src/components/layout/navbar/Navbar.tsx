@@ -43,9 +43,7 @@ const Navbar = () => {
             Schedule a Call
           </a>
 
-          <button className={styles.iconBtn} type="button" aria-label="Toggle theme">
-            <span className={styles.moonIcon} aria-hidden="true" />
-          </button>
+          
         </div>
       </div>
     </header>

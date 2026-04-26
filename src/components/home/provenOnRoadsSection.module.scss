@@ -55,7 +55,7 @@
   margin: 12px 0 0;
   color: rgba(15,23,42,.66);
   line-height: 1.65;
-  font-size: 12px;
+  font-size: 16px;
   max-width: 62ch;
 }
 
@@ -64,8 +64,11 @@
   padding-left: 18px;
   color: rgba(15,23,42,.62);
   line-height: 1.7;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
 .primaryBtn{

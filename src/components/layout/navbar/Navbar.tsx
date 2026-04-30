@@ -1,10 +1,19 @@
 import styles from "./navbar.module.css"
 import logo from "../../../assets/images/EdgeVerselogo.png"
-import { useId, useState } from "react"
+import { useEffect, useId, useState } from "react"
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false)
   const mobileMenuId = useId()
+
+  useEffect(() => {
+    if (!mobileOpen) return
+    const prev = document.body.style.overflow
+    document.body.style.overflow = "hidden"
+    return () => {
+      document.body.style.overflow = prev
+    }
+  }, [mobileOpen])
 
   return (
     <header className={styles.navbar}>
@@ -61,38 +70,63 @@ const Navbar = () => {
       </div>
 
       <div
-        id={mobileMenuId}
-        className={`${styles.mobileMenu} ${mobileOpen ? styles.mobileMenuOpen : ""}`}
+        className={`${styles.mobileOverlay} ${mobileOpen ? styles.mobileOverlayOpen : ""}`}
         aria-hidden={!mobileOpen}
+        onClick={() => setMobileOpen(false)}
       >
-        <nav className={styles.mobileLinks} aria-label="Mobile primary">
-          <a href="/" className={styles.mobileLink} onClick={() => setMobileOpen(false)}>
-            Home
-          </a>
-          <a
-            href="/technology"
-            className={styles.mobileLink}
-            onClick={() => setMobileOpen(false)}
-          >
-            Technology
-          </a>
-          <a
-            href="/industries"
-            className={styles.mobileLink}
-            onClick={() => setMobileOpen(false)}
-          >
-            Industries
-          </a>
-          <a href="/safety" className={styles.mobileLink} onClick={() => setMobileOpen(false)}>
-            Safety
-          </a>
-          <a href="/about" className={styles.mobileLink} onClick={() => setMobileOpen(false)}>
-            About
-          </a>
-          <a href="/careers" className={styles.mobileLink} onClick={() => setMobileOpen(false)}>
-            Careers
-          </a>
-        </nav>
+        <div className={styles.mobileBackdrop} aria-hidden="true" />
+        <div
+          id={mobileMenuId}
+          className={`${styles.mobileMenu} ${mobileOpen ? styles.mobileMenuOpen : ""}`}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobile menu"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className={styles.mobileHeader}>
+            <span className={styles.mobileTitle}>Menu</span>
+            <button
+              type="button"
+              className={styles.closeBtn}
+              aria-label="Close menu"
+              onClick={() => setMobileOpen(false)}
+            >
+              <span className={styles.closeIcon} aria-hidden="true" />
+            </button>
+          </div>
+          <nav className={styles.mobileLinks} aria-label="Mobile primary">
+            <a href="/" className={styles.mobileLink} onClick={() => setMobileOpen(false)}>
+              Home
+            </a>
+            <a
+              href="/technology"
+              className={styles.mobileLink}
+              onClick={() => setMobileOpen(false)}
+            >
+              Technology
+            </a>
+            <a
+              href="/industries"
+              className={styles.mobileLink}
+              onClick={() => setMobileOpen(false)}
+            >
+              Industries
+            </a>
+            <a href="/safety" className={styles.mobileLink} onClick={() => setMobileOpen(false)}>
+              Safety
+            </a>
+            <a href="/about" className={styles.mobileLink} onClick={() => setMobileOpen(false)}>
+              About
+            </a>
+            <a
+              href="/careers"
+              className={styles.mobileLink}
+              onClick={() => setMobileOpen(false)}
+            >
+              Careers
+            </a>
+          </nav>
+        </div>
       </div>
     </header>
   )

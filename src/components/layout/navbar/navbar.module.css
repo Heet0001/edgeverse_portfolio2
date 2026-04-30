@@ -75,6 +75,10 @@
 }
 
 .scheduleBtn{
+  display: none;
+}
+
+.scheduleBtn{
   text-decoration: none;
   border-radius: 999px;
   padding: 10px 16px;
@@ -92,6 +96,70 @@
 .scheduleBtn:hover{
   background: rgba(255, 255, 255, 1);
   border-color: rgba(20, 184, 166, 0.85);
+}
+
+.hamburgerBtn{
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  width: 44px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.hamburgerBtn:hover{
+  background: rgba(255, 255, 255, 1);
+}
+
+.hamburgerIcon{
+  width: 18px;
+  height: 2px;
+  position: relative;
+  display: inline-block;
+  background: rgba(15, 23, 42, 0.78);
+  border-radius: 999px;
+}
+.hamburgerIcon::before,
+.hamburgerIcon::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(15, 23, 42, 0.78);
+  border-radius: 999px;
+}
+.hamburgerIcon::before{ top: -5px; }
+.hamburgerIcon::after{ top: 5px; }
+
+.mobileMenu{
+  display: none;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+}
+.mobileMenuOpen{
+  display: block;
+}
+.mobileLinks{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px 16px;
+  display: grid;
+  gap: 4px;
+}
+.mobileLink{
+  text-decoration: none;
+  color: rgba(15, 23, 42, 0.86);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 10px;
+  border-radius: 12px;
+}
+.mobileLink:hover{
+  background: rgba(15, 23, 42, 0.06);
 }
 
 .iconBtn{
@@ -119,5 +187,8 @@
 
 @media (min-width: 860px){
   .links{ display: flex; }
+  .scheduleBtn{ display: inline-flex; }
+  .hamburgerBtn{ display: none; }
+  .mobileMenuOpen{ display: none; }
 }
 

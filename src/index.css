@@ -1,10 +1,20 @@
 html, body{
   height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after{
+  box-sizing: border-box;
 }
 
 body{
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+img, video, canvas, svg{
+  max-width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6{

@@ -1,5 +1,5 @@
 import styles from './home.module.scss'
-import heroImg from '../../assets/images/hero.png'
+import heroVideo from '../../assets/videos/ObCaM_Final-DEMO-Front-412.mp4'
 import ArasTechnologySection from '../../components/home/ArasTechnologySection'
 import CollisionAlertZonesSection from '../../components/home/CollisionAlertZonesSection'
 import KnowAboutArasStatsSection from '../../components/home/KnowAboutArasStatsSection'
@@ -46,11 +46,14 @@ const Home = () => {
           </div>
 
           <div className={styles.heroMediaFrame}>
-            <img
-              className={styles.heroImg}
-              src={heroImg}
-              alt="Road scene with AI overlays"
-              loading="eager"
+            <video
+              className={styles.heroVideo}
+              src={heroVideo}
+              autoPlay
+              muted
+              loop
+              playsInline
+              aria-label="Road scene with AI overlays"
             />
           </div>
 

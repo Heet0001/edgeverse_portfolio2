@@ -77,7 +77,11 @@
 
 @media (max-width: 768px) {
   .inner {
-    padding: 100px 24px 60px;
+    // padding: 0px 24px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
   }
 
   .bgHardware {

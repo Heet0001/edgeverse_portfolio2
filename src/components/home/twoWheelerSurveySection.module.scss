@@ -133,3 +133,35 @@
   }
 }
 
+@media (max-width: 859px) {
+  .inner {
+    text-align: center;
+  }
+
+  .quote {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: clamp(28px, 3.8vw, 46px);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    font-weight: 900;
+    max-width: 44ch;
+  }
+
+  .metaRow {
+    align-items: center;
+  }
+
+  .bottomRow {
+    align-items: center;
+  }
+
+  .avatars {
+    justify-content: center;
+  }
+
+  .pager {
+    justify-content: center;
+  }
+}
+

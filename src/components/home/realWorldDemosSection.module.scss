@@ -137,3 +137,17 @@
   }
 }
 
+@media (max-width: 900px) {
+  .head {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .title {
+    font-size: clamp(28px, 3.8vw, 46px);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    font-weight: 900;
+  }
+}
+

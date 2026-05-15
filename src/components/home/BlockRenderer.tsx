@@ -58,7 +58,7 @@ const alignToFlex = (a?: Align): CSSProperties => {
 
 const HeadingTag = ({ level, ...rest }: { level: number } & JSX.IntrinsicElements['h2']) => {
   const safe = Math.min(6, Math.max(1, level || 2))
-  const Tag = `h${safe}` as keyof JSX.IntrinsicElements
+  const Tag = `h${safe}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   return <Tag {...rest} />
 }
 
@@ -215,15 +215,15 @@ function ColumnsRender({ block }: { block: ColumnsBlock }) {
     ratio === '1:1:1'
       ? '1fr 1fr 1fr'
       : ratio
-          .split(':')
-          .map((n) => `${n}fr`)
-          .join(' ')
+        .split(':')
+        .map((n) => `${n}fr`)
+        .join(' ')
   const align =
     block.verticalAlign === 'center'
       ? 'center'
       : block.verticalAlign === 'bottom'
-      ? 'end'
-      : 'start'
+        ? 'end'
+        : 'start'
   const cols = (block.columns || []).slice(0, colCount)
   while (cols.length < colCount) cols.push([])
   return (
@@ -273,8 +273,8 @@ function ButtonRender({ block }: { block: ButtonBlock }) {
     variant === 'outline'
       ? `${styles.button} ${styles.btnOutline}`
       : variant === 'ghost'
-      ? `${styles.button} ${styles.btnGhost}`
-      : `${styles.button} ${styles.btnPrimary}`
+        ? `${styles.button} ${styles.btnGhost}`
+        : `${styles.button} ${styles.btnPrimary}`
   const overrideStyle: CSSProperties = {}
   if (block.background) {
     overrideStyle.background = block.background

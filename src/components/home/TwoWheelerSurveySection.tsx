@@ -1,28 +1,37 @@
 import styles from './twoWheelerSurveySection.module.scss'
+import { useHomeContent } from '../../api/useHomeContent'
 
 const initials = ['PC', 'VC', 'AP', 'AK'] as const
 
+const FALLBACK = {
+  kicker: 'Two-Wheeler Safety Survey',
+  quote:
+    'Alerts in Low-Light scenarios are extremely critical. This technology could save thousands of lives on Indian highways every year.',
+  author: 'Pranay C Nath',
+  authorRole: 'Avid Rider',
+}
+
 const TwoWheelerSurveySection = () => {
+  const { home } = useHomeContent()
+  const kicker = home?.surveyKicker?.trim() || FALLBACK.kicker
+  const quote = home?.surveyQuote?.trim() || FALLBACK.quote
+  const author = home?.surveyAuthor?.trim() || FALLBACK.author
+  const authorRole = home?.surveyAuthorRole?.trim() || FALLBACK.authorRole
+
   return (
     <section className={styles.section} aria-label="Two-wheeler safety survey">
       <div className={styles.inner}>
-        <div className={styles.kicker}>Two-Wheeler Safety Survey</div>
+        <div className={styles.kicker}>{kicker}</div>
 
         <div className={styles.quoteMark} aria-hidden="true">
           “
         </div>
 
-        <h2 className={styles.quote}>
-          Alerts in Low-Light scenarios are extremely
-          <br />
-          critical. This technology could save thousands
-          <br />
-          of lives on Indian highways every year.
-        </h2>
+        <h2 className={styles.quote}>{quote}</h2>
 
         <div className={styles.metaRow}>
           <div className={styles.author}>
-            Pranay C Nath <span className={styles.sep} aria-hidden="true">—</span> Avid Rider
+            {author} <span className={styles.sep} aria-hidden="true">—</span> {authorRole}
           </div>
         </div>
 
@@ -47,4 +56,3 @@ const TwoWheelerSurveySection = () => {
 }
 
 export default TwoWheelerSurveySection
-

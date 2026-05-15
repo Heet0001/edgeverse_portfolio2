@@ -1,5 +1,9 @@
 import { useState } from 'react'
 import styles from './contactFormSection.module.scss'
+import { submitContactMessage } from '../../api/messages'
+import { extractError } from '../../api/client'
+
+type Status = { kind: 'idle' } | { kind: 'submitting' } | { kind: 'success' } | { kind: 'error'; message: string }
 
 const ContactFormSection = () => {
   const [form, setForm] = useState({
@@ -9,16 +13,31 @@ const ContactFormSection = () => {
     interestArea: '',
     message: '',
   })
+  const [status, setStatus] = useState<Status>({ kind: 'idle' })
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Form submission logic
-    console.log('Form submitted:', form)
+    setStatus({ kind: 'submitting' })
+    try {
+      await submitContactMessage({
+        fullName: form.fullName.trim(),
+        workEmail: form.workEmail.trim(),
+        company: form.company.trim(),
+        interestArea: form.interestArea,
+        message: form.message.trim(),
+      })
+      setStatus({ kind: 'success' })
+      setForm({ fullName: '', workEmail: '', company: '', interestArea: '', message: '' })
+    } catch (err) {
+      setStatus({ kind: 'error', message: extractError(err, 'Could not send message. Please try again.') })
+    }
   }
+
+  const submitting = status.kind === 'submitting'
 
   return (
     <section className={styles.section} aria-label="Contact form">
@@ -97,8 +116,42 @@ const ContactFormSection = () => {
               />
             </div>
 
-            <button type="submit" className={styles.submitBtn}>
-              Send Message <span aria-hidden="true">→</span>
+            {status.kind === 'success' ? (
+              <div
+                role="status"
+                style={{
+                  background: 'rgba(14,165,164,.08)',
+                  border: '1px solid rgba(14,165,164,.35)',
+                  color: '#0c8e8d',
+                  padding: '12px 16px',
+                  borderRadius: 10,
+                  fontSize: 14,
+                  fontWeight: 600,
+                }}
+              >
+                Thanks! Your message has been sent — we'll be in touch shortly.
+              </div>
+            ) : null}
+
+            {status.kind === 'error' ? (
+              <div
+                role="alert"
+                style={{
+                  background: 'rgba(220,38,38,.06)',
+                  border: '1px solid rgba(220,38,38,.35)',
+                  color: '#b91c1c',
+                  padding: '12px 16px',
+                  borderRadius: 10,
+                  fontSize: 14,
+                  fontWeight: 600,
+                }}
+              >
+                {status.message}
+              </div>
+            ) : null}
+
+            <button type="submit" className={styles.submitBtn} disabled={submitting}>
+              {submitting ? 'Sending…' : 'Send Message'} <span aria-hidden="true">→</span>
             </button>
           </form>
         </div>

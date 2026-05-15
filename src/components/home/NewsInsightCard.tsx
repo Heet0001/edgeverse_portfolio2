@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styles from './newsInsightsSection.module.scss'
 
 export type NewsInsightCardProps = {
@@ -13,10 +14,10 @@ const NewsInsightCard = ({
   title,
   imageSrc,
   imageAlt,
-  href = '/news',
+  href = '/blog',
 }: NewsInsightCardProps) => {
   return (
-    <a className={styles.card} href={href}>
+    <Link className={styles.card} to={href}>
       <div className={styles.cardMedia}>
         <img className={styles.cardImg} src={imageSrc} alt={imageAlt} loading="lazy" />
       </div>
@@ -27,9 +28,8 @@ const NewsInsightCard = ({
           Read Blog <span aria-hidden="true">→</span>
         </div>
       </div>
-    </a>
+    </Link>
   )
 }
 
 export default NewsInsightCard
-

@@ -1,10 +1,12 @@
 import styles from "./navbar.module.css"
 import logo from "../../../assets/images/EdgeVerselogo.png"
-import { useEffect, useId, useState } from "react"
+import { useEffect, useId, useRef, useState } from "react"
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [companyOpen, setCompanyOpen] = useState(false)
   const mobileMenuId = useId()
+  const companyBtnRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
     if (!mobileOpen) return
@@ -14,6 +16,16 @@ const Navbar = () => {
       document.body.style.overflow = prev
     }
   }, [mobileOpen])
+
+  useEffect(() => {
+    if (!companyOpen) return
+    const onDoc = (e: MouseEvent) => {
+      const el = companyBtnRef.current
+      if (el && !el.contains(e.target as Node)) setCompanyOpen(false)
+    }
+    document.addEventListener("mousedown", onDoc)
+    return () => document.removeEventListener("mousedown", onDoc)
+  }, [companyOpen])
 
   return (
     <header className={styles.navbar}>
@@ -27,32 +39,63 @@ const Navbar = () => {
             Home
           </a>
 
-          <a href="/technology" className={styles.link} aria-haspopup="menu">
-            <span className={styles.linkLabel}>Technology</span>
-            <span className={styles.caret} aria-hidden="true" />
+          <a href="/technology" className={styles.link}>
+            Technology
           </a>
 
-          <a href="/industries" className={styles.link} aria-haspopup="menu">
-            <span className={styles.linkLabel}>Industries</span>
-            <span className={styles.caret} aria-hidden="true" />
+          <a href="/industries" className={styles.link}>
+            Industries
           </a>
 
           <a href="/safety" className={styles.link}>
             Safety
           </a>
 
-          <a href="/about" className={styles.link}>
-            About
-          </a>
-
-          <a href="/careers" className={styles.link}>
-            Careers
-          </a>
-
+          <div className={`${styles.dropdown} ${companyOpen ? styles.dropdownOpen : ""}`}>
+            <button
+              type="button"
+              ref={companyBtnRef}
+              className={`${styles.link} ${styles.dropdownTrigger}`}
+              aria-expanded={companyOpen}
+              aria-haspopup="menu"
+              id="nav-company-trigger"
+              onClick={() => setCompanyOpen((v) => !v)}
+            >
+              <span className={styles.linkLabel}>Company</span>
+              <span className={styles.caret} aria-hidden="true" />
+            </button>
+            <ul className={styles.dropdownMenu} role="menu" aria-labelledby="nav-company-trigger">
+              <li role="none">
+                <a href="/about" className={styles.dropdownItem} role="menuitem">
+                  About
+                </a>
+              </li>
+              <li role="none">
+                <a href="/leadership" className={styles.dropdownItem} role="menuitem">
+                  Leadership
+                </a>
+              </li>
+              <li role="none">
+                <a href="/investors" className={styles.dropdownItem} role="menuitem">
+                  Investors
+                </a>
+              </li>
+              <li role="none">
+                <a href="/blog" className={styles.dropdownItem} role="menuitem">
+                  Blog
+                </a>
+              </li>
+              <li role="none">
+                <a href="/careers" className={styles.dropdownItem} role="menuitem">
+                  Careers
+                </a>
+              </li>
+            </ul>
+          </div>
         </nav>
 
         <div className={styles.actions}>
-          <a className={styles.scheduleBtn} href="/schedule">
+          <a className={styles.scheduleBtn} href="/contact">
             Schedule a Call
           </a>
 
@@ -115,14 +158,20 @@ const Navbar = () => {
             <a href="/safety" className={styles.mobileLink} onClick={() => setMobileOpen(false)}>
               Safety
             </a>
-            <a href="/about" className={styles.mobileLink} onClick={() => setMobileOpen(false)}>
+            <div className={styles.mobileGroupLabel}>Company</div>
+            <a href="/about" className={styles.mobileLinkSub} onClick={() => setMobileOpen(false)}>
               About
             </a>
-            <a
-              href="/careers"
-              className={styles.mobileLink}
-              onClick={() => setMobileOpen(false)}
-            >
+            <a href="/leadership" className={styles.mobileLinkSub} onClick={() => setMobileOpen(false)}>
+              Leadership
+            </a>
+            <a href="/investors" className={styles.mobileLinkSub} onClick={() => setMobileOpen(false)}>
+              Investors
+            </a>
+            <a href="/blog" className={styles.mobileLinkSub} onClick={() => setMobileOpen(false)}>
+              Blog
+            </a>
+            <a href="/careers" className={styles.mobileLinkSub} onClick={() => setMobileOpen(false)}>
               Careers
             </a>
           </nav>

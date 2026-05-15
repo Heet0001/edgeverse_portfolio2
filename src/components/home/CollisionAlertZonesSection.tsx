@@ -1,7 +1,14 @@
 import styles from './collisionAlertZonesSection.module.scss'
 import collisionImg from '../../assets/images/collision.png'
+import { useHomeContent } from '../../api/useHomeContent'
+import { resolveMediaUrl } from '../../api/resolveMediaUrl'
 
 const CollisionAlertZonesSection = () => {
+  const { home } = useHomeContent()
+  const resolved = resolveMediaUrl(home?.collisionImage)
+  const imgSrc = resolved || collisionImg
+  const imgAlt = home?.collisionImageAlt || 'Collision alert zones visualization'
+
   return (
     <section className={styles.section} aria-label="Core capability">
       <div className={styles.inner}>
@@ -54,7 +61,7 @@ const CollisionAlertZonesSection = () => {
         </div>
 
         <div className={styles.right}>
-          <img className={styles.image} src={collisionImg} alt="Collision alert zones visualization" loading="lazy" />
+          <img className={styles.image} src={imgSrc} alt={imgAlt} loading="lazy" />
         </div>
       </div>
     </section>

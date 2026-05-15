@@ -16,7 +16,7 @@ const LifeSavingCtaSection = () => {
         </div>
 
         <div className={styles.right}>
-          <a className={styles.btn} href="/schedule">
+          <a className={styles.btn} href="/contact">
             <span>Schedule a Call</span>
             <span className={styles.btnIcon} aria-hidden="true" />
           </a>

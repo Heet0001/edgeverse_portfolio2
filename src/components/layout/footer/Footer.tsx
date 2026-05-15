@@ -59,7 +59,9 @@ const Footer = () => {
             links={[
               { label: "Documentation", href: "/" },
               { label: "Case Studies", href: "/" },
-              { label: "Blog", href: "/news" },
+              { label: "Blog", href: "/blog" },
+              { label: "Terms of Service", href: "/terms-of-service" },
+              { label: "Privacy Policy", href: "/privacy-policy" },
             ]}
           />
         </div>
@@ -96,7 +98,10 @@ const Footer = () => {
           <a className={styles.bottomLink} href="/">
             Press and Media
           </a>
-          <a className={styles.bottomLink} href="/">
+          <a className={styles.bottomLink} href="/terms-of-service">
+            Terms of Service
+          </a>
+          <a className={styles.bottomLink} href="/privacy-policy">
             Privacy Policy
           </a>
         </span>

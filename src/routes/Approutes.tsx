@@ -1,5 +1,21 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom"
-import { Home, About, Career, Parent, Technology, Industries, Safety, Contact } from "../pages"
+import {
+  Home,
+  About,
+  Career,
+  CareerApply,
+  Parent,
+  Technology,
+  Industries,
+  Safety,
+  Contact,
+  Blog,
+  BlogDetail,
+  Leadership,
+  Investors,
+  TermsOfService,
+  PrivacyPolicy,
+} from "../pages"
 
 const Approutes = () => {
   return (
@@ -9,10 +25,17 @@ const Approutes = () => {
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/careers" element={<Career />} />
+          <Route path="/careers/:slug/apply" element={<CareerApply />} />
           <Route path="/technology" element={<Technology />} />
           <Route path="/industries" element={<Industries />} />
           <Route path="/safety" element={<Safety />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogDetail />} />
+          <Route path="/leadership" element={<Leadership />} />
+          <Route path="/investors" element={<Investors />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Route>
       </Routes>
     </BrowserRouter>

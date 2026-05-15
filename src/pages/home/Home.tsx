@@ -8,6 +8,7 @@ import ProvenOnRoadsSection from '../../components/home/ProvenOnRoadsSection'
 import TwoWheelerSurveySection from '../../components/home/TwoWheelerSurveySection'
 import NewsInsightsSection from '../../components/home/NewsInsightsSection'
 import LifeSavingCtaSection from '../../components/home/LifeSavingCtaSection'
+import CustomSections from '../../components/home/CustomSections'
 
 const Home = () => {
   return (
@@ -33,7 +34,7 @@ const Home = () => {
               </p>
 
               <div className={styles.heroCtas}>
-                <a className={styles.heroPrimaryBtn} href="/schedule">
+                <a className={styles.heroPrimaryBtn} href="/contact">
                   Schedule a Call
                 </a>
 
@@ -104,6 +105,7 @@ const Home = () => {
       <KnowAboutArasStatsSection />
       <RealWorldDemosSection />
       <ProvenOnRoadsSection />
+      <CustomSections />
       <TwoWheelerSurveySection />
       <NewsInsightsSection />
       <LifeSavingCtaSection />

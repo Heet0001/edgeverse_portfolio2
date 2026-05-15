@@ -1,4 +1,5 @@
 import TechHeroSection from '../../components/technology/TechHeroSection'
+import TechManagedHighlightsSection from '../../components/technology/TechManagedHighlightsSection'
 import TechFullStackSection from '../../components/technology/TechFullStackSection'
 import TechStatsSection from '../../components/technology/TechStatsSection'
 import TechImedgeSection from '../../components/technology/TechImedgeSection'
@@ -10,6 +11,7 @@ const Technology = () => {
   return (
     <main>
       <TechHeroSection />
+      <TechManagedHighlightsSection />
       <TechFullStackSection />
       <TechStatsSection />
       <TechImedgeSection />

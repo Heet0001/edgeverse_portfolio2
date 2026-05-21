@@ -4,7 +4,7 @@ const TermsOfService = () => {
   return (
     <main>
       {/* ── Hero ─────────────────────────────── */}
-      <section className={styles.hero} aria-label="Terms of Service hero">
+      <section id="page-hero" className={styles.hero} aria-label="Terms of Service hero">
         <div className={styles.heroBg} aria-hidden="true" />
         <div className={styles.heroInner}>
           <div className={styles.kicker}>LEGAL</div>

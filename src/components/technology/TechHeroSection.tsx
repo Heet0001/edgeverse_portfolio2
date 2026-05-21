@@ -1,24 +1,23 @@
 import styles from './techHeroSection.module.scss'
-import imedgeHardware from '../../assets/images/imedge_hardware.png'
+import { TECH_HERO_IMAGE } from './technologyData'
 
 const TechHeroSection = () => {
   return (
-    <section className={styles.section} aria-label="Technology hero">
-      <div className={styles.bgComposite} aria-hidden="true">
-        <img src={imedgeHardware} alt="" className={styles.bgHardware} />
-        <div className={styles.bgOverlay} />
-      </div>
+    <section id="page-hero" className={styles.section} aria-label="Technology hero">
+      <img className={styles.bgImage} src={TECH_HERO_IMAGE} alt="" aria-hidden="true" />
+      <div className={styles.overlay} aria-hidden="true" />
 
       <div className={styles.inner}>
-        <div className={styles.kicker}>TECHNOLOGY</div>
+        <div className={styles.badge}>Technology</div>
         <h1 className={styles.heading}>
-          Edge AI ×<br />
-          Perception.
+          Pioneering edge AI for
+          <br />
+          perception.
         </h1>
         <p className={styles.subtitle}>
-          A vertically integrated hardware-software ecosystem —<br />
-          delivering real-time AI perception on-device for mobility,<br />
-          security, and industrial automation.
+          A vertically integrated hardware + software + AI platform
+          <br />
+          purpose-built for India&apos;s most challenging road conditions.
         </p>
       </div>
     </section>

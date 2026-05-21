@@ -50,7 +50,7 @@ const Blog = () => {
 
   return (
     <main className={styles.page}>
-      <section className={styles.hero} aria-label="Blog hero">
+      <section id="page-hero" className={styles.hero} aria-label="Blog hero">
         <div className={styles.heroBg} aria-hidden="true" />
         <div className={styles.heroInner}>
           <div className={styles.kicker}>EDGEVERSE BLOG</div>

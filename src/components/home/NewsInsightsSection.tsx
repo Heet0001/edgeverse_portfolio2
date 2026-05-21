@@ -1,99 +1,153 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './newsInsightsSection.module.scss'
-import news from '../../assets/images/news.png'
-import news1 from '../../assets/images/news1.png'
-import news2 from '../../assets/images/news2.png'
-import news3 from '../../assets/images/news3.png'
-import NewsInsightCard from './NewsInsightCard'
+import newsFeature1 from '../../assets/images/news-feature-1.png'
+import newsFeature2 from '../../assets/images/news-feature-2.png'
+import newsSmall1 from '../../assets/images/news-small-1.png'
+import newsSmall2 from '../../assets/images/news-small-2.png'
+import newsSmall3 from '../../assets/images/news-small-3.png'
 import { getPublicBlogs } from '../../api/blogs'
 import type { Blog } from '../../types/models'
 
-const FALLBACK_ITEMS = [
-  {
-    id: 'insight-1',
-    category: 'SAFETY',
-    title: 'Two-Wheeler Safety: Why India Needs ARAS Now',
-    imageSrc: news,
-    imageAlt: 'Traffic safety in Indian city',
-    href: '/blog',
-  },
-  {
-    id: 'insight-2',
-    category: 'TECHNOLOGY',
-    title: 'How Perceiva™ Detects Blind Spots in Under 1 Second',
-    imageSrc: news1,
-    imageAlt: 'Camera module close-up',
-    href: '/blog',
-  },
-  {
-    id: 'insight-3',
-    category: 'NEWS',
-    title: 'EdgeVerse Partners with OEMs to Bring ARAS to Market',
-    imageSrc: news2,
-    imageAlt: 'Team working in a lab',
-    href: '/blog',
-  },
-  {
-    id: 'insight-4',
-    category: 'PRODUCT',
-    title: 'Mobile App for Ride Configurability Video Playback',
-    imageSrc: news3,
-    imageAlt: 'Collision alert visualization',
-    href: '/blog',
-  },
-] as const
+type NewsItem = {
+  id: string
+  title: string
+  imageSrc?: string
+  imageAlt: string
+  href: string
+  variant: 'featured' | 'solid' | 'standard'
+}
 
-const PLACEHOLDERS = [news, news1, news2, news3]
+const FALLBACK_ITEMS: NewsItem[] = [
+  {
+    id: 'news-1',
+    title: 'EdgeVerse raises pre-seed $2.5M to bring AI to any vehicle across the globe.',
+    imageSrc: newsFeature1,
+    imageAlt: 'Motorcycle with perception HUD overlay',
+    href: '/blog',
+    variant: 'featured',
+  },
+  {
+    id: 'news-2',
+    title: 'How EdgeVerse is using edge AI to make Indian roads safer for everyone.',
+    imageSrc: newsFeature2,
+    imageAlt: 'Busy Indian street with AI vehicle detection',
+    href: '/blog',
+    variant: 'featured',
+  },
+  {
+    id: 'news-3',
+    title: 'The Deep-tech startup building a first-of-its-kind AI for Indian roads.',
+    imageSrc: newsSmall1,
+    imageAlt: 'Highway with connected vehicle network overlay',
+    href: '/blog',
+    variant: 'solid',
+  },
+  {
+    id: 'news-4',
+    title: 'EdgeVerse scales to any road, for any vehicle, for any environment.',
+    imageSrc: newsSmall2,
+    imageAlt: 'Motorcycle HUD in urban night traffic',
+    href: '/blog',
+    variant: 'standard',
+  },
+  {
+    id: 'news-5',
+    title: "EdgeVerse's road safety revolution: From Indian cities to the rest of the world.",
+    imageSrc: newsSmall3,
+    imageAlt: 'Pedestrian safety detection at a city crosswalk',
+    href: '/blog',
+    variant: 'standard',
+  },
+]
+
+const PLACEHOLDERS = [newsFeature1, newsFeature2, newsSmall1, newsSmall2, newsSmall3]
+
+function toNewsItems(blogs: Blog[]): NewsItem[] {
+  return blogs.slice(0, 5).map((b, idx) => ({
+    id: b._id,
+    title: b.title,
+    imageSrc: b.coverImage || PLACEHOLDERS[idx % PLACEHOLDERS.length],
+    imageAlt: b.title,
+    href: `/blog/${b.slug}`,
+    variant: idx < 2 ? 'featured' : idx === 2 ? 'solid' : 'standard',
+  }))
+}
 
 const NewsInsightsSection = () => {
-  const [blogs, setBlogs] = useState<Blog[] | null>(null)
+  const [items, setItems] = useState<NewsItem[]>(FALLBACK_ITEMS)
 
   useEffect(() => {
     let alive = true
-    void getPublicBlogs(4).then((items) => {
-      if (alive) setBlogs(items)
+    void getPublicBlogs(5).then((blogs) => {
+      if (alive && blogs.length > 0) {
+        setItems(toNewsItems(blogs))
+      }
     })
     return () => {
       alive = false
     }
   }, [])
 
-  const items =
-    blogs && blogs.length > 0
-      ? blogs.slice(0, 4).map((b, idx) => ({
-          id: b._id,
-          category: (b.tags && b.tags[0] ? b.tags[0] : 'BLOG').toUpperCase(),
-          title: b.title,
-          imageSrc: b.coverImage || PLACEHOLDERS[idx % PLACEHOLDERS.length],
-          imageAlt: b.title,
-          href: `/blog/${b.slug}`,
-        }))
-      : FALLBACK_ITEMS
+  const featured = items.filter((item) => item.variant === 'featured')
+  const compact = items.filter((item) => item.variant !== 'featured')
 
   return (
-    <section className={styles.section} aria-label="News and insights">
+    <section className={styles.section} aria-label="In the news">
       <div className={styles.inner}>
-        <div className={styles.head}>
-          <div className={styles.kicker}>LATEST FROM EDGEVERSE</div>
-          <div className={styles.headRow}>
-            <h2 className={styles.title}>News &amp; Insights</h2>
-            <Link className={styles.viewAll} to="/blog">
-              View all <span aria-hidden="true">→</span>
+        <h2 className={styles.title}>In the news</h2>
+
+        <div className={styles.featuredGrid}>
+          {featured.map((item) => (
+            <Link key={item.id} className={styles.featuredCard} to={item.href}>
+              <div className={styles.featuredMedia}>
+                {item.imageSrc && (
+                  <img
+                    className={styles.featuredImg}
+                    src={item.imageSrc}
+                    alt={item.imageAlt}
+                    loading="lazy"
+                  />
+                )}
+                <div className={styles.featuredOverlay} aria-hidden="true" />
+              </div>
+              <div className={styles.featuredBody}>
+                <p className={styles.featuredTitle}>{item.title}</p>
+                <span className={styles.readMore}>
+                  Read more <span aria-hidden="true">→</span>
+                </span>
+              </div>
             </Link>
-          </div>
+          ))}
         </div>
 
-        <div className={styles.grid}>
-          {items.map((item) => (
-            <NewsInsightCard
+        <div className={styles.compactGrid}>
+          {compact.map((item) => (
+            <Link
               key={item.id}
-              category={item.category}
-              title={item.title}
-              imageSrc={item.imageSrc}
-              imageAlt={item.imageAlt}
-              href={item.href}
-            />
+              className={`${styles.compactCard} ${
+                item.variant === 'solid' ? styles.compactCardSolid : ''
+              }`}
+              to={item.href}
+            >
+              {item.variant !== 'solid' && item.imageSrc && (
+                <div className={styles.compactMedia}>
+                  <img
+                    className={styles.compactImg}
+                    src={item.imageSrc}
+                    alt={item.imageAlt}
+                    loading="lazy"
+                  />
+                  <div className={styles.compactOverlay} aria-hidden="true" />
+                </div>
+              )}
+              <div className={styles.compactBody}>
+                <p className={styles.compactTitle}>{item.title}</p>
+                <span className={styles.readMore}>
+                  Read more <span aria-hidden="true">→</span>
+                </span>
+              </div>
+            </Link>
           ))}
         </div>
       </div>

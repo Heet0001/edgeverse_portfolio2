@@ -29,45 +29,45 @@ const Footer = () => {
       <div className={styles.inner}>
         <div className={styles.cols} aria-label="Footer links">
           <LinkCol
-            title="PLATFORM"
+            title="TECHNOLOGY"
             links={[
-              { label: "Technology", href: "/technology" },
-              { label: "Imedge® Hardware", href: "/technology" },
-              { label: "Perceiva™ Software", href: "/technology" },
+              { label: "Perceiva™", href: "/technology" },
+              { label: "IMedge® Hardware", href: "/technology" },
+              { label: "India Perception Model", href: "/technology" },
               { label: "Safety Features", href: "/safety" },
             ]}
           />
           <LinkCol
-            title="INDUSTRIES"
+            title="SOLUTIONS"
             links={[
-              { label: "Safe Mobility", href: "/industries" },
-              { label: "Smart Surveillance", href: "/industries" },
-              { label: "Industrial Automation", href: "/industries" },
+              { label: "Two-wheeler OEMs", href: "/industries" },
+              { label: "Tier-1 Suppliers", href: "/industries" },
+              { label: "Fleet & Mobility", href: "/industries" },
+              { label: "Aftermarket", href: "/industries" },
+            ]}
+          />
+          <LinkCol
+            title="CAREERS"
+            links={[
+              { label: "Open Roles", href: "/careers" },
+              { label: "Life at EdgeVerse", href: "/careers" },
+              { label: "Apply Now", href: "/careers" },
             ]}
           />
           <LinkCol
             title="COMPANY"
             links={[
               { label: "About Us", href: "/about" },
-              { label: "Leadership", href: "/about" },
-              { label: "Careers", href: "/careers" },
+              { label: "Leadership", href: "/leadership" },
+              { label: "Investors", href: "/investors" },
+              { label: "News", href: "/blog" },
               { label: "Contact", href: "/contact" },
-            ]}
-          />
-          <LinkCol
-            title="RESOURCES"
-            links={[
-              { label: "Documentation", href: "/" },
-              { label: "Case Studies", href: "/" },
-              { label: "Blog", href: "/blog" },
-              { label: "Terms of Service", href: "/terms-of-service" },
-              { label: "Privacy Policy", href: "/privacy-policy" },
             ]}
           />
         </div>
 
         <div className={styles.side}>
-          <a className={styles.primaryBtn} href="/careers">
+          <a className={styles.primaryBtn} href="/contact">
             Get Started
           </a>
 
@@ -89,13 +89,13 @@ const Footer = () => {
       </div>
 
       <div className={styles.footer_logo}>
-        <img src={footerlogo} alt="footer"/>
+        <img src={footerlogo} alt="EdgeVerse" />
       </div>
 
       <div className={styles.bottom}>
         <span>© {new Date().getFullYear()} — All rights reserved. EdgeVerse India Private Limited.</span>
         <span className={styles.bottomRight}>
-          <a className={styles.bottomLink} href="/">
+          <a className={styles.bottomLink} href="/blog">
             Press and Media
           </a>
           <a className={styles.bottomLink} href="/terms-of-service">

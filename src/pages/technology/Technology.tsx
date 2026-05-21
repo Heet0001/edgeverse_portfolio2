@@ -1,23 +1,33 @@
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import TechHeroSection from '../../components/technology/TechHeroSection'
-import TechManagedHighlightsSection from '../../components/technology/TechManagedHighlightsSection'
-import TechFullStackSection from '../../components/technology/TechFullStackSection'
-import TechStatsSection from '../../components/technology/TechStatsSection'
-import TechImedgeSection from '../../components/technology/TechImedgeSection'
-import TechPerceivaSection from '../../components/technology/TechPerceivaSection'
-import TechOverviewSection from '../../components/technology/TechOverviewSection'
-import TechCtaSection from '../../components/technology/TechCtaSection'
+import TechStackIntroSection from '../../components/technology/TechStackIntroSection'
+import TechApproachSection from '../../components/technology/TechApproachSection'
+import TechAdvantagesSection from '../../components/technology/TechAdvantagesSection'
+import TechFleetLearningSection from '../../components/technology/TechFleetLearningSection'
+import TechFleetAdvantagesSection from '../../components/technology/TechFleetAdvantagesSection'
+import TechCapabilityCardsSection from '../../components/technology/TechCapabilityCardsSection'
+import TechStackRowsSection from '../../components/technology/TechStackRowsSection'
 
 const Technology = () => {
+  const location = useLocation()
+
+  useEffect(() => {
+    if (!location.hash) return
+    const target = document.querySelector(location.hash)
+    target?.scrollIntoView({ behavior: 'smooth' })
+  }, [location])
+
   return (
     <main>
       <TechHeroSection />
-      <TechManagedHighlightsSection />
-      <TechFullStackSection />
-      <TechStatsSection />
-      <TechImedgeSection />
-      <TechPerceivaSection />
-      <TechOverviewSection />
-      <TechCtaSection />
+      <TechStackIntroSection />
+      <TechApproachSection />
+      <TechAdvantagesSection />
+      <TechFleetLearningSection />
+      <TechFleetAdvantagesSection />
+      <TechCapabilityCardsSection />
+      <TechStackRowsSection />
     </main>
   )
 }

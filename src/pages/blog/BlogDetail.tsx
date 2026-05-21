@@ -75,7 +75,7 @@ const BlogDetail = () => {
   return (
     <main className={styles.page}>
       <article className={styles.article}>
-        <header className={styles.header}>
+        <header id="page-hero" className={styles.header}>
           <div className={styles.headerInner}>
             <div className={styles.crumbs}>
               <Link to="/" className={styles.crumb}>Home</Link>

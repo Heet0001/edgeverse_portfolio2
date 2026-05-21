@@ -3,7 +3,7 @@ import heroImg from '../../assets/images/imedge_hardware.png'
 
 const AboutHeroSection = () => {
   return (
-    <section className={styles.section} aria-label="About hero">
+    <section id="page-hero" className={styles.section} aria-label="About hero">
       <div className={styles.bgComposite} aria-hidden="true">
         <img src={heroImg} alt="" className={styles.bgImage} />
         <div className={styles.bgOverlay} />

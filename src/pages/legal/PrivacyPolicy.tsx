@@ -4,7 +4,7 @@ const PrivacyPolicy = () => {
   return (
     <main>
       {/* ── Hero ─────────────────────────────── */}
-      <section className={styles.hero} aria-label="Privacy Policy hero">
+      <section id="page-hero" className={styles.hero} aria-label="Privacy Policy hero">
         <div className={styles.heroBg} aria-hidden="true" />
         <div className={styles.heroInner}>
           <div className={styles.kicker}>LEGAL</div>

@@ -3,7 +3,7 @@ import heroBg from '../../assets/images/hero.png'
 
 const SafetyHeroSection = () => {
   return (
-    <section className={styles.section} aria-label="Safety hero">
+    <section id="page-hero" className={styles.section} aria-label="Safety hero">
       <div className={styles.bgComposite} aria-hidden="true">
         <img src={heroBg} alt="" className={styles.bgImage} />
         <div className={styles.bgOverlay} />

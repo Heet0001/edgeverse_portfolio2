@@ -5,7 +5,7 @@ import detection2 from '../../assets/images/detection2.png'
 
 const TechPerceivaSection = () => {
   return (
-    <section className={styles.section} aria-label="Perceiva platform">
+    <section id="perceiva" className={styles.section} aria-label="Perceiva platform">
       <div className={styles.inner}>
         <div className={styles.mediaBlock}>
           <div className={styles.screenGrid}>

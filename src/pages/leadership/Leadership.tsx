@@ -40,7 +40,7 @@ const Leadership = () => {
   return (
     <main>
       {/* Hero Section */}
-      <section className={styles.hero}>
+      <section id="page-hero" className={styles.hero}>
         <div className={styles.heroInner}>
           <div className={styles.heroContent}>
             <div className={styles.kicker}>LEADERSHIP</div>

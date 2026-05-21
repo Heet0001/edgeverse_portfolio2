@@ -1,112 +1,46 @@
 import styles from './home.module.scss'
-import heroVideo from '../../assets/videos/ObCaM_Final-DEMO-Front-412.mp4'
-import ArasTechnologySection from '../../components/home/ArasTechnologySection'
-import CollisionAlertZonesSection from '../../components/home/CollisionAlertZonesSection'
-import KnowAboutArasStatsSection from '../../components/home/KnowAboutArasStatsSection'
-import RealWorldDemosSection from '../../components/home/RealWorldDemosSection'
-import ProvenOnRoadsSection from '../../components/home/ProvenOnRoadsSection'
-import TwoWheelerSurveySection from '../../components/home/TwoWheelerSurveySection'
+import heroImage from '../../assets/images/hero-intersection.png'
+import ScrollRevealIntro from '../../components/home/ScrollRevealIntro'
+import BuildWithCardsSection from '../../components/home/BuildWithCardsSection'
+import FeatureTabsSection from '../../components/home/FeatureTabsSection'
+import HomeInvestorsSection from '../../components/home/HomeInvestorsSection'
 import NewsInsightsSection from '../../components/home/NewsInsightsSection'
 import LifeSavingCtaSection from '../../components/home/LifeSavingCtaSection'
-import CustomSections from '../../components/home/CustomSections'
 
 const Home = () => {
   return (
     <main className={styles.page}>
-      <section className={styles.hero}>
-        <div className={styles.heroInner}>
-          <div className={styles.heroTop}>
-            <div className={styles.heroLeft}>
-              <h1 className={styles.h1}>
-                Empowering every
-                <br />
-                commute with{' '}
-                <span className={styles.accent}>Life-Saving Intelligence</span>
-              </h1>
-            </div>
+      <section id="page-hero" className={styles.hero}>
+        <img
+          className={styles.heroBg}
+          src={heroImage}
+          alt="Busy urban intersection with AI perception overlays"
+        />
+        <div className={styles.heroOverlay} aria-hidden="true" />
 
-            <div className={styles.heroRight}>
-              <p className={styles.heroBlurb}>
-                We enable OEMs and Cluster makers with Perceive&trade;—an
-                edge-native vertically integrated AI mobility stack. With patented
-                sensor fusion and India Perception Model, we turn critical
-                milliseconds into life-saving seconds.
-              </p>
-
-              <div className={styles.heroCtas}>
-                <a className={styles.heroPrimaryBtn} href="/contact">
-                  Schedule a Call
-                </a>
-
-                <a className={styles.heroPlayLink} href="/videos">
-                  <span className={styles.playIcon} aria-hidden="true" />
-                  <span>See it in action</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.heroMediaFrame}>
-            <video
-              className={styles.heroVideo}
-              src={heroVideo}
-              autoPlay
-              muted
-              loop
-              playsInline
-              aria-label="Road scene with AI overlays"
-            />
-          </div>
-
-          <div className={styles.heroFeatures} aria-label="Key capabilities">
-            <div className={styles.heroFeature}>Upto 70% Accident Avoidance</div>
-            <div className={styles.heroFeature}>30 FPS AI Inference</div>
-            <div className={styles.heroFeature}>Predictive Collision Alerts</div>
-            <div className={styles.heroFeature}>Front/Rear Camera + RADAR</div>
-          </div>
+        <div className={styles.heroContent}>
+          <h1 className={styles.heroTitle}>
+            <span className={styles.heroTitleLine}>Any Edge Device. Any Environment.</span>
+            <span className={styles.heroTitleLineAccent}>One Intelligence Layer.</span>
+          </h1>
+          <span className={styles.heroRule} aria-hidden="true" />
+          <a className={styles.heroCta} href="/technology">
+            <span>Discover more</span>
+            <span className={styles.heroCtaArrow} aria-hidden="true">
+              →
+            </span>
+          </a>
         </div>
       </section>
 
-      <section className={styles.who}>
-        <div className={styles.whoInner}>
-          <div className={styles.whoLeft}>
-            <div className={styles.whoKickerRow}>
-              <span className={styles.whoKickerLine} aria-hidden="true" />
-              <span className={styles.whoKicker}>WHO WE ARE</span>
-            </div>
+      <ScrollRevealIntro />
 
-            <h2 className={styles.whoTitle}>
-              Full Stack ARAS —
-              <br />
-              <span className={styles.accent}>Predict.</span>{' '}
-              <span className={styles.accent}>Alert.</span>
-              <br />
-              <span className={styles.accent}>Protect.</span>
-            </h2>
-          </div>
+      <div className={styles.introCardsSpacer}>
+        <BuildWithCardsSection />
+      </div>
 
-          <div className={styles.whoRight}>
-            <p className={styles.whoText}>
-              EdgeVerse is a vertically integrated edge AI company enabling OEMs and
-              Tier-1s with <strong>Perceiva&trade;</strong> — a full-stack Advanced Rider Assistance System.
-              Our patented sensor fusion and <strong>India Perception Model</strong> powers real-time collision
-              alerts, blind-spot detection, and intelligent ride recording.
-            </p>
-
-            <a className={styles.whoBtn} href="/technology">
-              Explore our technology <span aria-hidden="true">→</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <ArasTechnologySection />
-      <CollisionAlertZonesSection />
-      <KnowAboutArasStatsSection />
-      <RealWorldDemosSection />
-      <ProvenOnRoadsSection />
-      <CustomSections />
-      <TwoWheelerSurveySection />
+      <FeatureTabsSection />
+      <HomeInvestorsSection />
       <NewsInsightsSection />
       <LifeSavingCtaSection />
     </main>

@@ -2,7 +2,7 @@ import styles from './industriesHeroSection.module.scss'
 
 const IndustriesHeroSection = () => {
   return (
-    <section className={styles.section} aria-label="Industries hero">
+    <section id="page-hero" className={styles.section} aria-label="Industries hero">
       <div className={styles.inner}>
         <div className={styles.kicker}>INDUSTRY</div>
         <h1 className={styles.heading}>

@@ -228,7 +228,7 @@ const CareerApply = () => {
 
   return (
     <main className={styles.page}>
-      <section className={styles.hero} aria-label="Application hero">
+      <section id="page-hero" className={styles.hero} aria-label="Application hero">
         <div className={styles.heroBg} aria-hidden="true" />
         <div className={styles.heroInner}>
           <div className={styles.crumbs}>

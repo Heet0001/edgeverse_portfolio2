@@ -6,19 +6,20 @@ const LifeSavingCtaSection = () => {
       <div className={styles.inner}>
         <div className={styles.left}>
           <h2 className={styles.title}>
-            Life-saving intelligence for <span className={styles.accent}>every two-wheeler</span> on the road.
+            Let&apos;s make roads <span className={styles.accent}>safer together.</span>
           </h2>
           <p className={styles.text}>
-            Whether you're an OEM, Tier-1 supplier, cluster maker, or fleet operator — EdgeVerse's
-            full-stack ARAS integrates directly into your vehicles. Real-time collision alerts, blind-spot
-            detection, and predictive safety — all at the edge.
+            Whether you&apos;re an OEM, Tier-1 supplier, or mobility partner — EdgeVerse
+            perception intelligence integrates into any vehicle, anywhere in the world.
           </p>
         </div>
 
         <div className={styles.right}>
           <a className={styles.btn} href="/contact">
             <span>Schedule a Call</span>
-            <span className={styles.btnIcon} aria-hidden="true" />
+            <span className={styles.btnArrow} aria-hidden="true">
+              →
+            </span>
           </a>
         </div>
       </div>
@@ -27,4 +28,3 @@ const LifeSavingCtaSection = () => {
 }
 
 export default LifeSavingCtaSection
-

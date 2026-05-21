@@ -5,9 +5,11 @@ import styles from './parent.module.scss'
 const Parent = () => {
   return (
     <div className={styles.parent}>
-        <Navbar/>
+      <Navbar />
+      <div className={styles.content}>
         <Outlet />
-        <Footer/>
+      </div>
+      <Footer />
     </div>
   )
 }

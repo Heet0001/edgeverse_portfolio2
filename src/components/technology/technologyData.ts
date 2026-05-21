@@ -5,6 +5,8 @@ import detection2Img from '../../assets/images/detection2.png'
 import scenicRoadImg from '../../assets/images/scenic-road.png'
 import detection1Img from '../../assets/images/detection1.png'
 import heroImg from '../../assets/images/hero.png'
+import newsFeature1Img from '../../assets/images/news-feature-1.png'
+import newsFeature2Img from '../../assets/images/news-feature-2.png'
 
 export const TECH_HERO_IMAGE = imedgeHardware
 export const TECH_STACK_SIDE_IMAGE = imedgeHardware
@@ -145,4 +147,32 @@ export const TECH_CLOUD_PIPELINE = [
   'Cloud Upload',
   'Remote Inference',
   'Safety Output',
+] as const
+
+export const TECH_AI_INVESTMENT_IMAGES = {
+  left: buildCardImg,
+  right: detection2Img,
+} as const
+
+export const TECH_RESEARCH_CARDS = [
+  {
+    tag: 'Simulation',
+    title: 'Neural scenario generation',
+    description:
+      'Photorealistic synthetic data enables large-scale training and validation of perception models across rare and edge-case Indian road conditions.',
+    linkLabel: 'Explore simulation',
+    href: '/technology#simulation',
+    image: newsFeature1Img,
+    imageAlt: 'Simulated road scenario with AI perception overlays',
+  },
+  {
+    tag: 'Evaluation',
+    title: 'Rigorous model validation',
+    description:
+      'Comprehensive evaluation pipelines test perception models across thousands of recorded driving scenarios for safety-critical deployment readiness.',
+    linkLabel: 'Learn about validation',
+    href: '/technology#perceiva',
+    image: newsFeature2Img,
+    imageAlt: 'Urban traffic scene with AI detection overlays',
+  },
 ] as const

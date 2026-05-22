@@ -75,13 +75,13 @@ const Navbar = () => {
   }, [location.pathname])
 
   useEffect(() => {
-    if (!mobileOpen) return
+    if (!mobileOpen && !megaOpen) return
     const prev = document.body.style.overflow
     document.body.style.overflow = "hidden"
     return () => {
       document.body.style.overflow = prev
     }
-  }, [mobileOpen])
+  }, [mobileOpen, megaOpen])
 
   const clearCloseTimer = useCallback(() => {
     if (closeTimerRef.current) {

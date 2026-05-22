@@ -36,15 +36,14 @@
   line-height: 1.05;
   text-wrap: balance;
   text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.28em;
+  row-gap: 0.08em;
 }
 
 .word {
   display: inline-block;
-  margin-right: 0.28em;
-}
-
-.word:last-child {
-  margin-right: 0;
 }
 
 @media (max-width: 1024px) {

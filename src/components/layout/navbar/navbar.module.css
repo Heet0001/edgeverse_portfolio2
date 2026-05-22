@@ -240,7 +240,7 @@
 /* ───────────────────── MEGA MENU ───────────────────── */
 .megaWrap {
   position: relative;
-  z-index: 101;
+  z-index: 103;
   left: 0;
   right: 0;
   width: 100%;
@@ -256,9 +256,11 @@
     opacity 120ms ease-out,
     transform 120ms ease-out,
     visibility 0ms linear 120ms;
-  background: transparent;
-  border-bottom: none;
-  box-shadow: none;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(40px) saturate(1.4);
+  -webkit-backdrop-filter: blur(40px) saturate(1.4);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.08);
 }
 
 .megaPanelOpen {

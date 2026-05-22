@@ -1,6 +1,7 @@
 import styles from "./navbar.module.css"
 import type { NavMegaMenuConfig } from "./navConfig"
 import { NAV_QUICK_LINKS } from "./navConfig"
+import SocialLinks from "../SocialLinks"
 
 type NavMegaMenuProps = {
   menu: NavMegaMenuConfig
@@ -58,35 +59,7 @@ const NavMegaMenu = ({ menu, open, onContentMouseEnter, onContentMouseLeave }: N
               </a>
             ))}
           </nav>
-          <div className={styles.megaSocial} aria-label="Social media">
-            <a
-              href="https://www.linkedin.com"
-              className={styles.megaSocialIcon}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
-              in
-            </a>
-            <a
-              href="https://twitter.com"
-              className={styles.megaSocialIcon}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="X"
-            >
-              X
-            </a>
-            <a
-              href="https://www.youtube.com"
-              className={styles.megaSocialIcon}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="YouTube"
-            >
-              ▶
-            </a>
-          </div>
+          <SocialLinks variant="navbar" className={styles.megaSocial} />
         </aside>
       </div>
     </div>

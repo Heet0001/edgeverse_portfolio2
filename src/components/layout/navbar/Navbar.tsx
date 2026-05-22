@@ -1,6 +1,6 @@
 import styles from "./navbar.module.css"
 import logo from "../../../assets/images/EdgeVerselogo.png"
-import { useCallback, useEffect, useId, useRef, useState } from "react"
+import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from "react"
 import { createPortal } from "react-dom"
 import { useLocation } from "react-router-dom"
 import { NAV_MEGA_MENUS, type NavMegaMenuKey } from "./navConfig"
@@ -21,14 +21,14 @@ const Navbar = () => {
   const location = useLocation()
 
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [pastHero, setPastHero] = useState(true)
+  const [pastHero, setPastHero] = useState(() => isPastPageHero())
   const [activeMega, setActiveMega] = useState<NavMegaMenuKey | null>(null)
   const mobileMenuId = useId()
   const closeTimerRef = useRef<ReturnType<typeof window.setTimeout> | null>(null)
   const headerRef = useRef<HTMLElement>(null)
 
   const megaOpen = activeMega !== null
-  const isHeroTop = !pastHero && !megaOpen && !mobileOpen
+  const isHeroTop = !pastHero && !mobileOpen
 
   useEffect(() => {
     const hero = document.getElementById("page-hero")
@@ -68,10 +68,10 @@ const Navbar = () => {
     }
   }, [location.pathname])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setActiveMega(null)
     setMobileOpen(false)
-    requestAnimationFrame(() => setPastHero(isPastPageHero()))
+    setPastHero(isPastPageHero())
   }, [location.pathname])
 
   useEffect(() => {

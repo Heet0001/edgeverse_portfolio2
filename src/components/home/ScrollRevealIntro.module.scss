@@ -1,8 +1,10 @@
-/* Scroll runway: sticky headline + multicolor word reveal */
+/* 100vh sticky + 0.1vh delay + 0.1vh reveal — matches REVEAL in ScrollRevealIntro.tsx */
 .scrollSection {
+  --intro-gap-top: clamp(112px, 24vh, 208px);
+  --intro-gap-bottom: clamp(56px, 12vh, 104px);
   position: relative;
-  min-height: 95vh;
-  padding-top: clamp(48px, 7vh, 88px);
+  height: 120vh;
+  min-height: 120vh;
   background: #ffffff;
 }
 
@@ -11,11 +13,10 @@
   top: 0;
   z-index: 2;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: auto;
+  align-items: flex-start;
+  min-height: 100vh;
   box-sizing: border-box;
-  padding: calc(var(--nav-height, 72px) + clamp(32px, 4vh, 56px)) 0 clamp(24px, 3vh, 40px);
+  padding: calc(var(--nav-height, 80px) + var(--intro-gap-top)) 0 var(--intro-gap-bottom);
   background: #ffffff;
 }
 
@@ -24,56 +25,60 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 clamp(24px, 5vw, 72px);
-  will-change: transform;
-  text-align: center;
 }
 
 .introText {
-  margin: 0 auto;
-  font-size: clamp(24px, 2.8vw, 42px);
-  line-height: 1.22;
-  letter-spacing: -0.03em;
+  margin: 0;
+  max-width: 18ch;
+  font-size: clamp(28px, 3.2vw, 48px);
   font-weight: 500;
-  max-width: 28ch;
-  text-align: center;
+  letter-spacing: -0.05em;
+  line-height: 1.05;
+  text-wrap: balance;
+  text-align: left;
 }
 
 .word {
-  font-weight: 500;
-  transition: color 120ms ease-out;
+  display: inline-block;
+  margin-right: 0.28em;
 }
 
-.wordAccent {
-  font-weight: 700;
+.word:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 1024px) {
+  .introText {
+    font-size: clamp(24px, 4.6vw, 40px);
+    max-width: 16ch;
+  }
 }
 
 @media (max-width: 819px) {
   .scrollSection {
-    min-height: 100vh;
-    padding-top: clamp(36px, 5vh, 64px);
-  }
-
-  .sticky {
-    padding: calc(var(--nav-height, 72px) + clamp(24px, 3.5vh, 40px)) 0 clamp(20px, 2.5vh, 32px);
+    height: 120vh;
+    min-height: 120vh;
   }
 
   .introText {
-    font-size: clamp(20px, 5vw, 32px);
-    max-width: 22ch;
+    font-size: clamp(22px, 5.2vw, 34px);
+    max-width: 14ch;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .scrollSection {
-    min-height: auto;
+    height: auto;
+    min-height: 50vh;
     padding-bottom: clamp(32px, 5vh, 48px);
+  }
+
+  .sticky {
+    position: relative;
+    min-height: auto;
   }
 
   .word {
     transition: none;
-  }
-
-  .introInner {
-    transform: none !important;
   }
 }

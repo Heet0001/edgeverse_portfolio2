@@ -1,7 +1,9 @@
-.content {
-  padding-top: 0;
-}
-
 .parent {
   position: relative;
+  font-family: inherit;
+}
+
+.content {
+  padding-top: 0;
+  font-family: inherit;
 }

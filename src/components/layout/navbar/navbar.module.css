@@ -9,7 +9,7 @@
   left: 0;
   right: 0;
   z-index: 100;
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: var(--font-sans);
 }
 
 /* ───────────────────── TOP BAR ───────────────────── */
@@ -34,11 +34,11 @@
   box-shadow: none !important;
 }
 
-/* Scrolled / Solid: white glass bar */
+/* Scrolled / Solid: white glass bar — matches mega-menu screenBlur */
 .barSolid {
-  background-color: rgba(255, 255, 255, 0.25) !important;
-  backdrop-filter: blur(20px) saturate(1.4);
-  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  background-color: rgba(255, 255, 255, 0.22) !important;
+  backdrop-filter: blur(40px) saturate(1.4);
+  -webkit-backdrop-filter: blur(40px) saturate(1.4);
   border-bottom-color: rgba(15, 23, 42, 0.06) !important;
   box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
 }
@@ -60,9 +60,9 @@
   width: 100vw;
   height: 100vh;
   height: 100dvh;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(24px) saturate(1.4);
-  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(40px) saturate(1.4);
+  -webkit-backdrop-filter: blur(40px) saturate(1.4);
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
@@ -167,7 +167,7 @@
 
 /* Solid mode: dark text on white background (Wayve-style: soft dark, not pure black) */
 .linkSolid {
-  color: rgba(15, 15, 20, 0.82) !important;
+  color: rgba(15, 15, 20, 0.92) !important;
   font-weight: 500;
 }
 
@@ -291,7 +291,7 @@
   font-size: clamp(28px, 2.8vw, 40px);
   font-weight: 700;
   letter-spacing: -0.03em;
-  color: #0f172a;
+  color: #020617;
   line-height: 1.1;
 }
 
@@ -299,7 +299,7 @@
   margin: 14px 0 0;
   font-size: 15px;
   line-height: 1.55;
-  color: rgba(15, 23, 42, 0.5);
+  color: rgba(15, 23, 42, 0.68);
   max-width: 22ch;
 }
 
@@ -334,7 +334,7 @@
 
 .megaLinkBlock:hover .megaLinkTitle,
 .megaFeaturedText:hover .megaLinkTitle {
-  color: #0f172a;
+  color: #020617;
 }
 
 .megaLinkTitle {
@@ -342,7 +342,7 @@
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: rgba(15, 23, 42, 0.88);
+  color: rgba(15, 23, 42, 0.96);
   margin-bottom: 6px;
   transition: color 200ms ease;
 }
@@ -351,7 +351,7 @@
   display: block;
   font-size: 14px;
   line-height: 1.5;
-  color: rgba(15, 23, 42, 0.48);
+  color: rgba(15, 23, 42, 0.62);
   max-width: 34ch;
 }
 
@@ -399,43 +399,17 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(15, 23, 42, 0.38);
+  color: rgba(15, 23, 42, 0.55);
   transition: color 200ms ease;
 }
 
 .megaQuickLink:hover {
-  color: rgba(15, 23, 42, 0.8);
+  color: rgba(15, 23, 42, 0.92);
 }
 
 .megaSocial {
-  display: flex;
-  gap: 10px;
   margin-top: auto;
   padding-top: 24px;
-}
-
-.megaSocialIcon {
-  width: 34px;
-  height: 34px;
-  border-radius: 999px;
-  border: 1px solid rgba(15, 23, 42, 0.1);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  font-size: 11px;
-  font-weight: 700;
-  color: rgba(15, 23, 42, 0.6);
-  transition:
-    background 200ms ease,
-    border-color 200ms ease,
-    color 200ms ease;
-}
-
-.megaSocialIcon:hover {
-  background: rgba(15, 23, 42, 0.06);
-  border-color: rgba(15, 23, 42, 0.18);
-  color: rgba(15, 23, 42, 0.85);
 }
 
 /* ───────────────────── ACTIONS / HAMBURGER ───────────────────── */

@@ -1,12 +1,17 @@
 .section {
+  position: relative;
+  min-height: var(--page-hero-min-height);
   background: #0b0f1a;
-  padding: 112px 0 64px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
 }
 
 .inner {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 64px;
+  padding: 0 64px var(--page-hero-content-pad-bottom);
 }
 
 .heading {
@@ -27,12 +32,8 @@
 }
 
 @media (max-width: 768px) {
-  .section {
-    padding: 96px 0 44px;
-  }
-
   .inner {
-    padding: 0 24px;
+    padding: 0 24px var(--page-hero-content-pad-bottom);
   }
 
   .subtitle {

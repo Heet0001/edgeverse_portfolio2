@@ -1,4 +1,9 @@
 .hero {
+  position: relative;
+  min-height: var(--page-hero-min-height);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
   background:
     radial-gradient(
       1000px 520px at 15% 0%,
@@ -12,18 +17,18 @@
     ),
     linear-gradient(180deg, rgba(2, 6, 23, 0.92), rgba(2, 6, 23, 0.92));
   color: #ffffff;
-  overflow: hidden;
 }
 
 .heroInner {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 56px 64px 64px;
+  padding: 0 64px var(--page-hero-content-pad-bottom);
 }
 
 .heroContent {
   max-width: 64ch;
-  padding-top: 64px;
+  padding-top: 0;
 }
 
 .kicker {
@@ -201,7 +206,7 @@
 
 @media (max-width: 768px) {
   .heroInner {
-    padding: 40px 24px 48px;
+    padding: 0 24px var(--page-hero-content-pad-bottom);
   }
 
   .inner {

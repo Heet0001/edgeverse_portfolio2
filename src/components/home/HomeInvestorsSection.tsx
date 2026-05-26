@@ -1,3 +1,5 @@
+import { useRef } from 'react'
+import { useScrollReveal } from '../../hooks/useScrollReveal'
 import styles from './homeInvestorsSection.module.scss'
 
 const PARTNER_LOGOS = [
@@ -30,11 +32,15 @@ function LogoItem({ name, variant }: { name: string; variant: LogoVariant }) {
 const MARQUEE_LOGOS = [...PARTNER_LOGOS, ...PARTNER_LOGOS]
 
 const HomeInvestorsSection = () => {
+  const copyRef = useRef<HTMLDivElement>(null)
+
+  useScrollReveal(copyRef, { variant: 'fadeUp', y: 24 })
+
   return (
     <section className={styles.section} aria-label="Investors">
       <div className={styles.inner}>
         <div className={styles.top}>
-          <div className={styles.copy}>
+          <div ref={copyRef} className={styles.copy}>
             <h2 className={styles.title}>Investors</h2>
             <p className={styles.text}>
               EdgeVerse is backed by industry leaders and strategic partners who share our

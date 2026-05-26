@@ -1,8 +1,13 @@
+import { useRef } from 'react'
+import { useScrollReveal } from '../../hooks/useScrollReveal'
 import styles from './lifeSavingCtaSection.module.scss'
 
 const LifeSavingCtaSection = () => {
+  const sectionRef = useRef<HTMLElement>(null)
+  useScrollReveal(sectionRef, { variant: 'fadeUp', y: 20, start: 'top 90%' })
+
   return (
-    <section className={styles.section} aria-label="Schedule a call">
+    <section ref={sectionRef} className={styles.section} aria-label="Schedule a call">
       <div className={styles.inner}>
         <div className={styles.left}>
           <h2 className={styles.title}>

@@ -8,9 +8,4 @@ export default defineConfig({
     // Prevent invalid-hook-call from duplicate React copies in nested node_modules
     dedupe: ['react', 'react-dom', 'react-router', 'react-router-dom'],
   },
-  preview: {
-    host: true,
-    port: Number(process.env.PORT) || 4173,
-    strictPort: true,
-  },
 })

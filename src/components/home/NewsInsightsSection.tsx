@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useScrollReveal } from '../../hooks/useScrollReveal'
 import styles from './newsInsightsSection.module.scss'
 import newsFeature1 from '../../assets/images/news-feature-1.png'
 import newsFeature2 from '../../assets/images/news-feature-2.png'
@@ -76,6 +77,12 @@ function toNewsItems(blogs: Blog[]): NewsItem[] {
 
 const NewsInsightsSection = () => {
   const [items, setItems] = useState<NewsItem[]>(FALLBACK_ITEMS)
+  const sectionRef = useRef<HTMLElement>(null)
+  const titleRef = useRef<HTMLHeadingElement>(null)
+  const gridRef = useRef<HTMLDivElement>(null)
+
+  useScrollReveal(titleRef, { variant: 'fadeUp', y: 20 })
+  useScrollReveal(gridRef, { variant: 'stagger', stagger: 0.08, y: 24, start: 'top 88%' })
 
   useEffect(() => {
     let alive = true
@@ -93,62 +100,67 @@ const NewsInsightsSection = () => {
   const compact = items.filter((item) => item.variant !== 'featured')
 
   return (
-    <section className={styles.section} aria-label="In the news">
+    <section ref={sectionRef} className={styles.section} aria-label="In the news">
       <div className={styles.inner}>
-        <h2 className={styles.title}>In the news</h2>
+        <h2 ref={titleRef} className={styles.title}>
+          In the news
+        </h2>
 
-        <div className={styles.featuredGrid}>
-          {featured.map((item) => (
-            <Link key={item.id} className={styles.featuredCard} to={item.href}>
-              <div className={styles.featuredMedia}>
-                {item.imageSrc && (
-                  <img
-                    className={styles.featuredImg}
-                    src={item.imageSrc}
-                    alt={item.imageAlt}
-                    loading="lazy"
-                  />
-                )}
-                <div className={styles.featuredOverlay} aria-hidden="true" />
-              </div>
-              <div className={styles.featuredBody}>
-                <p className={styles.featuredTitle}>{item.title}</p>
-                <span className={styles.readMore}>
-                  Read more <span aria-hidden="true">→</span>
-                </span>
-              </div>
-            </Link>
-          ))}
-        </div>
-
-        <div className={styles.compactGrid}>
-          {compact.map((item) => (
-            <Link
-              key={item.id}
-              className={`${styles.compactCard} ${
-                item.variant === 'solid' ? styles.compactCardSolid : ''
-              }`}
-              to={item.href}
-            >
-              {item.variant !== 'solid' && item.imageSrc && (
-                <div className={styles.compactMedia}>
-                  <img
-                    className={styles.compactImg}
-                    src={item.imageSrc}
-                    alt={item.imageAlt}
-                    loading="lazy"
-                  />
-                  <div className={styles.compactOverlay} aria-hidden="true" />
+        <div ref={gridRef} className={styles.newsGrid}>
+          <div className={styles.featuredGrid}>
+            {featured.map((item) => (
+              <Link key={item.id} className={styles.featuredCard} to={item.href} data-reveal-item>
+                <div className={styles.featuredMedia}>
+                  {item.imageSrc && (
+                    <img
+                      className={styles.featuredImg}
+                      src={item.imageSrc}
+                      alt={item.imageAlt}
+                      loading="lazy"
+                    />
+                  )}
+                  <div className={styles.featuredOverlay} aria-hidden="true" />
                 </div>
-              )}
-              <div className={styles.compactBody}>
-                <p className={styles.compactTitle}>{item.title}</p>
-                <span className={styles.readMore}>
-                  Read more <span aria-hidden="true">→</span>
-                </span>
-              </div>
-            </Link>
-          ))}
+                <div className={styles.featuredBody}>
+                  <p className={styles.featuredTitle}>{item.title}</p>
+                  <span className={styles.readMore}>
+                    Read more <span aria-hidden="true">→</span>
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className={styles.compactGrid}>
+            {compact.map((item) => (
+              <Link
+                key={item.id}
+                className={`${styles.compactCard} ${
+                  item.variant === 'solid' ? styles.compactCardSolid : ''
+                }`}
+                to={item.href}
+                data-reveal-item
+              >
+                {item.variant !== 'solid' && item.imageSrc && (
+                  <div className={styles.compactMedia}>
+                    <img
+                      className={styles.compactImg}
+                      src={item.imageSrc}
+                      alt={item.imageAlt}
+                      loading="lazy"
+                    />
+                    <div className={styles.compactOverlay} aria-hidden="true" />
+                  </div>
+                )}
+                <div className={styles.compactBody}>
+                  <p className={styles.compactTitle}>{item.title}</p>
+                  <span className={styles.readMore}>
+                    Read more <span aria-hidden="true">→</span>
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </section>

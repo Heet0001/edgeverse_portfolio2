@@ -1,4 +1,4 @@
-import { Footer, Navbar } from '../../components'
+import { BackToTop, Footer, Navbar } from '../../components'
 import { Outlet } from 'react-router-dom'
 import styles from './parent.module.scss'
 
@@ -10,6 +10,7 @@ const Parent = () => {
         <Outlet />
       </div>
       <Footer />
+      <BackToTop />
     </div>
   )
 }

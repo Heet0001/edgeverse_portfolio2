@@ -6,10 +6,12 @@
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
+  min-height: var(--page-hero-min-height);
   background: #0b0f1a;
   color: #ffffff;
   overflow: hidden;
-  padding: 110px 0 72px;
+  display: flex;
+  align-items: flex-end;
 }
 
 .heroBg {
@@ -36,9 +38,10 @@
 .heroInner {
   position: relative;
   z-index: 2;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 64px;
+  padding: 0 64px var(--page-hero-content-pad-bottom);
   text-align: center;
 }
 
@@ -314,9 +317,6 @@
 }
 
 @media (max-width: 900px) {
-  .hero {
-    padding: 96px 0 64px;
-  }
   .heroInner,
   .bodyInner {
     padding-left: 24px;

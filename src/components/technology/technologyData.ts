@@ -12,6 +12,11 @@ export const TECH_HERO_IMAGE = imedgeHardware
 export const TECH_STACK_SIDE_IMAGE = imedgeHardware
 export const TECH_FLEET_IMAGE = heroImg
 
+export const TECH_PARTNER_INTRO = {
+  tagline: 'We are your Co-Development Partner',
+  lead: 'Partner with EdgeVerse to co-develop perception intelligence — from sensor integration through deployment and continuous learning.',
+}
+
 export const TECH_STACK_FEATURES = [
   {
     title: 'Optimized for Indian roads',
@@ -176,3 +181,84 @@ export const TECH_RESEARCH_CARDS = [
     imageAlt: 'Urban traffic scene with AI detection overlays',
   },
 ] as const
+
+export type TechStackLayer = {
+  id: string
+  title: string
+  description: string
+}
+
+export const TECH_STACK_LAYERS: TechStackLayer[] = [
+  {
+    id: 'sensing',
+    title: 'Sensing & Input',
+    description:
+      'The sensing layer is hardware agnostic and designed to support diverse sensor combinations based on application requirements. The platform integrates seamlessly with computer vision cameras, radar point clouds, IMU sensors, GPS modules, and hybrid sensor configurations. This flexibility allows customers to build multiple sensor hardware prototype quickly, customize perception performance, cost, and deployment complexity for their specific operational needs.',
+  },
+  {
+    id: 'perception',
+    title: 'Perceiva™ Perception Stack',
+    description:
+      'The Perceiva™ Perception Stack delivers high-performance edge intelligence optimized for low-power silicon. Built around standalone sensors or sensor fusion and an optimized inference engine, the stack processes camera, radar, IMU, and GPS inputs in real time to achieve accurate environmental understanding. With compact edge-optimized models and real-time inference capabilities, the platform enables scalable deployment across cost-sensitive and compute-constrained hardware environments.',
+  },
+  {
+    id: 'intelligence',
+    title: 'Perceiva™ Intelligence & Functionality',
+    description:
+      'The intelligence layer transforms raw sensor data into proactive real-time functionality tailored to deployment use cases. Features such as collision alerts, blind spot detection, industrial safe zones, incident capture, occupancy analytics, object tracking, and behavior prediction work together to deliver actionable intelligence directly on the device. This enables faster decisions, lower latency, improved safety, and continuous operational awareness even in disconnected environments.',
+  },
+  {
+    id: 'deployment',
+    title: 'Universal Deployment',
+    description:
+      'Perceiva™ is designed for universal deployment across edge devices and real-world environments. From two-wheelers and commercial fleets to robotics and autonomous mobile platforms, the platform enables a single intelligence stack to adapt seamlessly across industries and mobility formats. Edge-optimized perception models combined with flexible sensor compatibility allow rapid deployment without dependence on cloud infrastructure.',
+  },
+  {
+    id: 'learning',
+    title: 'Active Learning Feedback Loop',
+    description:
+      'The platform continuously improves through an active learning feedback loop that enables real-world deployment data to refine perception accuracy and operational intelligence over time. Our system autonomously mines edge cases from diverse dataset, allowing models to continuously evolve and improve safety through seamless OTA updates. Customer-specific edge data remains protected while enabling iterative model enhancement, helping systems adapt to evolving environments, edge cases, and deployment scenarios without compromising privacy or compliance.',
+  },
+  {
+    id: 'compliance',
+    title: 'Customer IP Vault & Compliance',
+    description:
+      'Perceiva™ is built with enterprise-grade data ownership and compliance principles at its core. Customer deployment data, edge intelligence models, and operational insights remain securely retained within a protected vault architecture aligned with DPDPA 2023 compliance requirements. This ensures organizations maintain full control over proprietary operational intelligence and sensitive edge data. A cloud-agnostic architecture that respects OEM autonomy; you deploy on your cloud of choice and retain 100% ownership of your proprietary datasets and custom-tuned model intelligence.',
+  },
+]
+
+export const TECH_PLATFORM_ADVANTAGES = [
+  {
+    title: 'Multi-Modal Fusion Engine',
+    description:
+      'Combines high-resolution Camera vision with all-weather Radar reliability integrated with IMU into a proprietary standalone sensor or sensor fusion layer, specifically tuned to handle the unique physics of 2-wheelers and the high-precision needs of industrial robotics.',
+  },
+  {
+    title: 'Open Active Learning Platform',
+    description:
+      'Utilizing the Perceiva™ Data Flow, our system autonomously mines edge cases from diverse dataset, allowing models to continuously evolve and improve safety through seamless OTA updates.',
+  },
+  {
+    title: 'Data Sovereignty & IP Ownership',
+    description:
+      'A cloud-agnostic architecture that respects OEM autonomy; you deploy on your cloud of choice and retain 100% ownership of your proprietary datasets and custom-tuned model intelligence.',
+  },
+  {
+    title: 'Ultra-Efficient Edge Inference',
+    description:
+      'Our edge optimized foundation model is engineered for high performance on standard silicon SoC, delivering 25+ FPS on Snapdragon-class hardware for millisecond-precise safety triggers without heavy power demands.',
+  },
+  {
+    title: 'Hardware-Agnostic Agility',
+    description:
+      'Our decoupled stack allows OEMs to evaluate multiple CPUs and sensor platforms simultaneously, avoiding proprietary lock-in. This separation of hardware and software accelerates time-to-market, reduces development costs, and provides a resilient handle on the supply chain by enabling flexible component sourcing.',
+  },
+] as const
+
+export const TECH_ARCHITECTURE_IMAGES = {
+  diagram: buildCardImg,
+  side: imedgeHardware,
+  fleet: heroImg,
+  perception: detection1Img,
+  deployment: scenicRoadImg,
+} as const

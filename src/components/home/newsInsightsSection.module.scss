@@ -9,11 +9,17 @@
 }
 
 .title {
-  margin: 0 0 clamp(24px, 3vw, 36px);
-  font-size: clamp(28px, 3.2vw, 42px);
+  margin: 0 0 clamp(20px, 2.8vw, 32px);
+  font-size: clamp(26px, 3vw, 38px);
   letter-spacing: -0.03em;
-  font-weight: 700;
-  color: #0f172a;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.newsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 1.6vw, 20px);
 }
 
 .featuredGrid {
@@ -27,11 +33,11 @@
   display: block;
   text-decoration: none;
   color: inherit;
-  border-radius: 20px;
+  border-radius: 16px;
   overflow: hidden;
-  min-height: clamp(280px, 32vw, 380px);
+  min-height: clamp(260px, 30vw, 360px);
   isolation: isolate;
-  transition: transform 200ms ease;
+  transition: transform 200ms var(--ease-out);
 }
 
 .featuredCard:hover {
@@ -102,11 +108,11 @@
   display: block;
   text-decoration: none;
   color: inherit;
-  border-radius: 20px;
+  border-radius: 16px;
   overflow: hidden;
-  min-height: clamp(220px, 24vw, 280px);
+  min-height: clamp(200px, 22vw, 260px);
   isolation: isolate;
-  transition: transform 200ms ease;
+  transition: transform 200ms var(--ease-out);
 }
 
 .compactCard:hover {
@@ -114,8 +120,8 @@
 }
 
 .compactCardSolid {
-  background: #0ea5a4;
-  min-height: clamp(180px, 20vw, 240px);
+  background: var(--color-accent);
+  min-height: clamp(160px, 18vw, 220px);
 }
 
 .compactCardSolid .compactBody {

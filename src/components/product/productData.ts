@@ -3,6 +3,8 @@ import roadSafetyImg from '../../assets/images/card-road-safety.png'
 import imedgeHardwareImg from '../../assets/images/imedge_hardware.png'
 import scenicRoadImg from '../../assets/images/scenic-road.png'
 import detectionImg from '../../assets/images/detection.png'
+import detection1Img from '../../assets/images/detection1.png'
+import detection2Img from '../../assets/images/detection2.png'
 import heroImg from '../../assets/images/hero.png'
 
 export const PRODUCT_SAFETY_CARDS = [
@@ -124,3 +126,83 @@ export const PRODUCT_DEPLOYMENTS = [
 
 export const PRODUCT_HERO_IMAGE = heroImg
 export const PRODUCT_CAPABILITIES_IMAGE = buildCardImg
+
+export type DemoStatus = 'available' | 'coming-soon'
+
+export type ProductDemo = {
+  id: string
+  title: string
+  status: DemoStatus
+  image: string
+  imageAlt: string
+  href?: string
+}
+
+export type ProductLine = {
+  id: string
+  name: string
+  tagline: string
+  description: string
+  status?: 'available' | 'upcoming'
+  demos: ProductDemo[]
+}
+
+export const PRODUCT_LINES: ProductLine[] = [
+  {
+    id: 'aras',
+    name: 'Perceiva™ ARAS',
+    tagline: 'Making Two Wheelers safer with AI',
+    description:
+      'Enabling Two-wheeler automakers to enable Level 0 & Level 1 ARAS at Scale',
+    status: 'available',
+    demos: [
+      {
+        id: 'on-road-aras',
+        title: 'All the on-road ARAS demos',
+        status: 'available',
+        image: detectionImg,
+        imageAlt: 'On-road ARAS perception demo with real-time detection overlays',
+        href: '/videos',
+      },
+      {
+        id: 'helmet-detection',
+        title: 'Helmet detection demo capture',
+        status: 'coming-soon',
+        image: roadSafetyImg,
+        imageAlt: 'Helmet detection demo — coming soon',
+      },
+    ],
+  },
+  {
+    id: 'dms',
+    name: 'Perceiva™ DMS',
+    tagline: 'Driver Monitoring with AI',
+    description: '',
+    status: 'available',
+    demos: [
+      {
+        id: 'driver-dms',
+        title: 'Demo with captured video for Driver',
+        status: 'available',
+        image: detection1Img,
+        imageAlt: 'Driver monitoring demo with captured video',
+        href: '/videos',
+      },
+      {
+        id: 'occupant-dms',
+        title: 'Demo with captured video for Occupant',
+        status: 'coming-soon',
+        image: detection2Img,
+        imageAlt: 'Occupant monitoring demo — coming soon',
+      },
+    ],
+  },
+  {
+    id: 'iauto',
+    name: 'Perceiva™ iAuto',
+    tagline: 'Factory automation with AI',
+    description: '',
+    status: 'upcoming',
+    demos: [],
+  },
+]

@@ -27,7 +27,7 @@ const LinkCol = ({
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
+    <footer id="site-footer" className={styles.footer}>
       <div className={styles.main}>
         <div className={styles.block}>
           <h6 className={styles.blockTitle}>Contact</h6>
@@ -53,38 +53,14 @@ const Footer = () => {
           ]}
         />
 
-        <div className={styles.block}>
-          <h6 className={styles.blockTitle}>SOLUTIONS</h6>
-          <ul className={styles.menu}>
-            {[
-              { label: "Two-wheeler OEMs", href: "/industries" },
-              { label: "Tier-1 Suppliers", href: "/industries" },
-              { label: "Fleet & Mobility", href: "/industries" },
-              { label: "Aftermarket", href: "/industries" },
-            ].map((l) => (
-              <li key={l.label} className={styles.menuItem}>
-                <a className={styles.menuLink} href={l.href}>
-                  {l.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          <h6 className={`${styles.blockTitle} ${styles.blockTitleSpaced}`}>CAREERS</h6>
-          <ul className={styles.menu}>
-            {[
-              { label: "Open Roles", href: "/careers" },
-              { label: "Life at EdgeVerse", href: "/careers" },
-              { label: "Apply Now", href: "/careers" },
-            ].map((l) => (
-              <li key={l.label} className={styles.menuItem}>
-                <a className={styles.menuLink} href={l.href}>
-                  {l.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <LinkCol
+          title="CAREERS"
+          links={[
+            { label: "Open Roles", href: "/careers" },
+            { label: "Life at EdgeVerse", href: "/careers" },
+            { label: "Apply Now", href: "/careers" },
+          ]}
+        />
 
         <LinkCol
           title="COMPANY"

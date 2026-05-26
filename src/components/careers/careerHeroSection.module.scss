@@ -1,59 +1,214 @@
 .section {
+
   position: relative;
-  min-height: 420px;
-  background: #0b0f1a;
+
+  min-height: var(--page-hero-min-height);
+
+  background: #ffffff;
+
   display: flex;
+
+  align-items: flex-end;
+
   overflow: hidden;
+
 }
+
+
 
 .inner {
+
   position: relative;
+
   z-index: 2;
-  max-width: 1200px;
+
   width: 100%;
+
+  max-width: 1440px;
+
+  min-height: var(--page-hero-min-height);
+
   margin: 0 auto;
-  padding: 140px 64px 80px;
+
+  padding: var(--nav-height) clamp(24px, 5vw, 72px) var(--page-hero-content-pad-bottom);
+
+  display: flex;
+
+  align-items: flex-end;
+
 }
+
+
+
+.content {
+
+  max-width: min(100%, 820px);
+
+  padding-bottom: clamp(8px, 2vh, 24px);
+
+}
+
+
 
 .kicker {
-  font-size: 11px;
+
+  font-size: clamp(13px, 1.1vw, 15px);
+
   font-weight: 700;
-  letter-spacing: 0.2em;
-  color: rgba(255, 255, 255, 0.5);
+
+  letter-spacing: 0.18em;
+
+  color: #0ea5a4;
+
   text-transform: uppercase;
-  margin-bottom: 20px;
+
+  margin-bottom: 24px;
+
 }
+
+
 
 .heading {
-  font-size: clamp(42px, 6vw, 72px);
+
+  font-size: clamp(44px, 6.2vw, 76px);
+
   font-weight: 900;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  color: #ffffff;
-  margin: 0 0 28px;
+
+  line-height: 1.02;
+
+  letter-spacing: -0.035em;
+
+  color: #101828;
+
+  margin: 0;
+
 }
 
-.subtitle {
-  font-size: 15px;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.55);
-  max-width: 480px;
-  margin: 0;
- 
+
+
+.headingLine {
+
+  display: block;
+
+  white-space: nowrap;
+
 }
+
+
+
+.accent {
+
+  color: #0ea5a4;
+
+}
+
+
+
+.waveWrap {
+
+  position: absolute;
+
+  top: clamp(48px, 10vh, 120px);
+
+  right: clamp(-20px, -2vw, 0px);
+
+  width: min(62vw, 760px);
+
+  height: min(68vh, 520px);
+
+  pointer-events: none;
+
+  mask-image: linear-gradient(
+
+    90deg,
+
+    transparent 0%,
+
+    rgba(0, 0, 0, 0.18) 16%,
+
+    rgba(0, 0, 0, 0.72) 34%,
+
+    #000 52%
+
+  );
+
+  -webkit-mask-image: linear-gradient(
+
+    90deg,
+
+    transparent 0%,
+
+    rgba(0, 0, 0, 0.18) 16%,
+
+    rgba(0, 0, 0, 0.72) 34%,
+
+    #000 52%
+
+  );
+
+}
+
+
+
+.waveSvg {
+
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+}
+
+
+
+@media (max-width: 900px) {
+
+  .waveWrap {
+
+    top: clamp(72px, 14vh, 140px);
+
+    width: min(78vw, 620px);
+
+    height: min(52vh, 380px);
+
+    opacity: 0.85;
+
+  }
+
+}
+
+
 
 @media (max-width: 768px) {
+
   .inner {
-    padding: 100px 24px 60px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+
+    padding-inline: 24px;
+
   }
 
-  .section{
-    text-align: center !important;
+
+
+  .headingLine {
+
+    white-space: normal;
+
   }
 
- 
+
+
+  .waveWrap {
+
+    width: 88vw;
+
+    height: 42vh;
+
+    right: -8vw;
+
+    opacity: 0.7;
+
+  }
+
 }
+

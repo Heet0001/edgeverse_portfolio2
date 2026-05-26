@@ -9,16 +9,12 @@ const AboutHeroSection = () => {
         <div className={styles.bgOverlay} />
       </div>
 
-      <div className={styles.inner}>
-        <div className={styles.kicker}>ABOUT US</div>
-        <h1 className={styles.heading}>
-          Building the future<br />of perception.
+      <div className={styles.heroContent}>
+        <h1 className={styles.heroTitle}>
+          <span className={styles.heroTitleLine}>Building the future</span>
+          <span className={styles.heroTitleLineAccent}>of perception.</span>
         </h1>
-        <p className={styles.subtitle}>
-          EdgeVerse is a vertically integrated edge AI company
-          building India's first Advanced Rider Assistance System (ARAS)
-          for two-wheelers — and perception platforms for industrial use.
-        </p>
+        <span className={styles.heroRule} aria-hidden="true" />
       </div>
     </section>
   )

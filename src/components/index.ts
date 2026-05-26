@@ -1,5 +1,6 @@
 export { default as Footer } from "./layout/footer/Footer"
 export { default as Navbar } from "./layout/navbar/Navbar"
+export { default as BackToTop } from "./layout/BackToTop"
 export { default as ArasTechnologySection } from "./home/ArasTechnologySection"
 export { default as CollisionAlertZonesSection } from "./home/CollisionAlertZonesSection"
 export { default as KnowAboutArasStatsSection } from "./home/KnowAboutArasStatsSection"

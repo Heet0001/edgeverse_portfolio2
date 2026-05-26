@@ -1,17 +1,16 @@
 .page {
   background: #ffffff;
-  color: #0f172a;
+  color: var(--color-text);
 }
 
 .introCardsSpacer {
   margin-top: 0;
-  padding-top: clamp(56px, 12vh, 104px);
+  padding-top: var(--section-pad-y);
 }
 
 .hero {
   position: relative;
-  min-height: 100vh;
-  min-height: 100svh;
+  min-height: var(--page-hero-min-height);
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -32,8 +31,8 @@
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(180deg, rgba(2, 6, 23, 0.35) 0%, rgba(2, 6, 23, 0.1) 40%, rgba(2, 6, 23, 0.72) 100%),
-    linear-gradient(90deg, rgba(2, 6, 23, 0.5) 0%, transparent 60%);
+    linear-gradient(180deg, rgba(2, 6, 23, 0.28) 0%, rgba(2, 6, 23, 0.06) 45%, rgba(2, 6, 23, 0.62) 100%),
+    linear-gradient(90deg, rgba(2, 6, 23, 0.38) 0%, transparent 55%);
 }
 
 .heroContent {
@@ -42,17 +41,17 @@
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 clamp(20px, 5vw, 72px) clamp(48px, 8vh, 96px);
+  padding: 0 var(--section-pad-x) var(--page-hero-content-pad-bottom);
 }
 
 .heroTitle {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.08em;
+  gap: 0.06em;
   font-family: var(--font-sans);
   font-weight: 400;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
   color: #ffffff;
 }
 
@@ -60,52 +59,52 @@
 .heroTitleLineAccent {
   display: block;
   white-space: nowrap;
-  line-height: 1.02;
+  line-height: 1.04;
   font-weight: 400;
 }
 
 .heroTitleLine {
-  font-size: clamp(22px, 3.3vw, 44px);
+  font-size: clamp(22px, 3.2vw, 42px);
 }
 
 .heroTitleLineAccent {
-  font-size: clamp(23px, 3.7vw, 51px);
+  font-size: clamp(23px, 3.6vw, 48px);
 }
 
 .heroRule {
   display: block;
-  width: clamp(48px, 6vw, 72px);
+  width: clamp(40px, 5vw, 56px);
   height: 1px;
-  margin-top: 24px;
-  background: rgba(255, 255, 255, 0.65);
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .heroCta {
-  margin-top: 28px;
+  margin-top: 24px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   text-decoration: none;
   border-radius: 999px;
-  padding: 12px 22px;
+  padding: 11px 20px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.01em;
-  color: #0f172a;
+  color: var(--color-text);
   background: #ffffff;
   border: none;
   white-space: nowrap;
-  transition: filter 180ms ease, transform 180ms ease;
+  transition: opacity 180ms var(--ease-out), transform 180ms var(--ease-out);
 }
 
 .heroCta:hover {
-  filter: brightness(0.96);
+  opacity: 0.92;
   transform: translateY(-1px);
 }
 
 .heroCtaArrow {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1;
 }
 

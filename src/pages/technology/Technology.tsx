@@ -1,6 +1,9 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import TechHeroSection from '../../components/technology/TechHeroSection'
+import TechPartnerIntroSection from '../../components/technology/TechPartnerIntroSection'
+import TechArchitectureStackSection from '../../components/technology/TechArchitectureStackSection'
+import TechPlatformAdvantagesSection from '../../components/technology/TechPlatformAdvantagesSection'
 import TechStackIntroSection from '../../components/technology/TechStackIntroSection'
 import TechApproachSection from '../../components/technology/TechApproachSection'
 import TechAdvantagesSection from '../../components/technology/TechAdvantagesSection'
@@ -21,6 +24,9 @@ const Technology = () => {
   return (
     <main>
       <TechHeroSection />
+      <TechPartnerIntroSection />
+      <TechArchitectureStackSection />
+      <TechPlatformAdvantagesSection />
       <TechStackIntroSection />
       <TechApproachSection />
       <TechAdvantagesSection />

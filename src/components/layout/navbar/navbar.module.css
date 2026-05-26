@@ -60,15 +60,15 @@
   width: 100vw;
   height: 100vh;
   height: 100dvh;
-  background: rgba(255, 255, 255, 0.22);
-  backdrop-filter: blur(40px) saturate(1.4);
-  -webkit-backdrop-filter: blur(40px) saturate(1.4);
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
   transition:
     opacity 120ms ease-out,
-    visibility 0ms linear 120ms;
+    visibility 0ms linear 120ms,
+    background-color 300ms ease,
+    backdrop-filter 300ms ease,
+    -webkit-backdrop-filter 300ms ease;
 }
 
 .screenBlurOpen {
@@ -77,6 +77,20 @@
   transition:
     opacity 160ms ease-out,
     visibility 0ms linear 0ms;
+}
+
+/* Hero: dark frosted overlay so mega menu text stays white over imagery */
+.screenBlurHero {
+  background: rgba(8, 12, 24, 0.52);
+  backdrop-filter: blur(48px) saturate(1.15);
+  -webkit-backdrop-filter: blur(48px) saturate(1.15);
+}
+
+/* Scrolled: light glass — pairs with dark mega menu text */
+.screenBlurSolid {
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(40px) saturate(1.4);
+  -webkit-backdrop-filter: blur(40px) saturate(1.4);
 }
 
 /* ───────────────────── INNER WRAPPER ───────────────────── */
@@ -240,7 +254,7 @@
 /* ───────────────────── MEGA MENU ───────────────────── */
 .megaWrap {
   position: relative;
-  z-index: 103;
+  z-index: 101;
   left: 0;
   right: 0;
   width: 100%;
@@ -256,11 +270,9 @@
     opacity 120ms ease-out,
     transform 120ms ease-out,
     visibility 0ms linear 120ms;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(40px) saturate(1.4);
-  -webkit-backdrop-filter: blur(40px) saturate(1.4);
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.08);
+  background: transparent;
+  border-bottom: none;
+  box-shadow: none;
 }
 
 .megaPanelOpen {
@@ -295,6 +307,7 @@
   letter-spacing: -0.03em;
   color: #020617;
   line-height: 1.1;
+  transition: color 300ms ease;
 }
 
 .megaTagline {
@@ -303,6 +316,7 @@
   line-height: 1.55;
   color: rgba(15, 23, 42, 0.68);
   max-width: 22ch;
+  transition: color 300ms ease;
 }
 
 .megaColLinks {
@@ -346,7 +360,7 @@
   letter-spacing: -0.02em;
   color: rgba(15, 23, 42, 0.96);
   margin-bottom: 6px;
-  transition: color 200ms ease;
+  transition: color 300ms ease;
 }
 
 .megaLinkDesc {
@@ -355,6 +369,7 @@
   line-height: 1.5;
   color: rgba(15, 23, 42, 0.62);
   max-width: 34ch;
+  transition: color 300ms ease;
 }
 
 .megaColFeatured {
@@ -402,7 +417,7 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: rgba(15, 23, 42, 0.55);
-  transition: color 200ms ease;
+  transition: color 300ms ease;
 }
 
 .megaQuickLink:hover {
@@ -412,6 +427,57 @@
 .megaSocial {
   margin-top: auto;
   padding-top: 24px;
+}
+
+/* Hero mega menu: white text over dark hero / frosted overlay (Wayve-style) */
+.navbar[data-nav-mode="hero"] .megaColIntro,
+.navbar[data-nav-mode="hero"] .megaColLinks {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.navbar[data-nav-mode="hero"] .megaHeading {
+  color: #ffffff;
+}
+
+.navbar[data-nav-mode="hero"] .megaTagline {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.navbar[data-nav-mode="hero"] .megaLinkTitle {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.navbar[data-nav-mode="hero"] .megaLinkDesc {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.navbar[data-nav-mode="hero"] .megaLinkBlock:hover,
+.navbar[data-nav-mode="hero"] .megaFeaturedText:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.navbar[data-nav-mode="hero"] .megaLinkBlock:hover .megaLinkTitle,
+.navbar[data-nav-mode="hero"] .megaFeaturedText:hover .megaLinkTitle {
+  color: #ffffff;
+}
+
+.navbar[data-nav-mode="hero"] .megaQuickLink {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.navbar[data-nav-mode="hero"] .megaQuickLink:hover {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.navbar[data-nav-mode="hero"] .megaSocial a {
+  border-color: rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.navbar[data-nav-mode="hero"] .megaSocial a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #ffffff;
 }
 
 /* ───────────────────── ACTIONS / HAMBURGER ───────────────────── */
@@ -682,6 +748,10 @@
     padding-bottom: 20px;
   }
 
+  .navbar[data-nav-mode="hero"] .megaColIntro {
+    border-bottom-color: rgba(255, 255, 255, 0.14);
+  }
+
   .megaColLinks {
     border-right: none;
     padding-right: 0;
@@ -694,6 +764,10 @@
     padding-left: 0;
     padding-top: 16px;
     border-top: 1px solid rgba(15, 23, 42, 0.07);
+  }
+
+  .navbar[data-nav-mode="hero"] .megaColAside {
+    border-top-color: rgba(255, 255, 255, 0.14);
   }
 
   .megaSocial {

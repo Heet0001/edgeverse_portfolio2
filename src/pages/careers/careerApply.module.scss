@@ -6,10 +6,12 @@
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
+  min-height: var(--page-hero-min-height);
   background: #0b0f1a;
   color: #ffffff;
   overflow: hidden;
-  padding: 110px 0 64px;
+  display: flex;
+  align-items: flex-end;
 }
 
 .heroBg {
@@ -36,9 +38,10 @@
 .heroInner {
   position: relative;
   z-index: 2;
+  width: 100%;
   max-width: 880px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 24px var(--page-hero-content-pad-bottom);
 }
 
 .crumbs {
@@ -468,9 +471,6 @@
   }
   .group {
     padding: 22px 18px;
-  }
-  .hero {
-    padding: 92px 0 48px;
   }
   .form {
     margin-top: -16px;

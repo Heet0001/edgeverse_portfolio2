@@ -17,11 +17,17 @@ function isPastPageHero(): boolean {
   return true
 }
 
+function isLightPageHero(): boolean {
+  const hero = document.getElementById("page-hero")
+  return hero?.dataset.heroTheme === "light"
+}
+
 const Navbar = () => {
   const location = useLocation()
 
   const [mobileOpen, setMobileOpen] = useState(false)
   const [pastHero, setPastHero] = useState(() => isPastPageHero())
+  const [lightHero, setLightHero] = useState(() => isLightPageHero())
   const [activeMega, setActiveMega] = useState<NavMegaMenuKey | null>(null)
   const mobileMenuId = useId()
   const closeTimerRef = useRef<ReturnType<typeof window.setTimeout> | null>(null)
@@ -29,6 +35,8 @@ const Navbar = () => {
 
   const megaOpen = activeMega !== null
   const isHeroTop = !pastHero && !mobileOpen
+  const useHeroNavStyle = isHeroTop && !lightHero
+  const useTransparentBar = isHeroTop && !megaOpen
 
   useEffect(() => {
     const hero = document.getElementById("page-hero")
@@ -37,6 +45,7 @@ const Navbar = () => {
     const sync = () => {
       raf = 0
       setPastHero(isPastPageHero())
+      setLightHero(isLightPageHero())
     }
 
     const onScroll = () => {
@@ -72,16 +81,17 @@ const Navbar = () => {
     setActiveMega(null)
     setMobileOpen(false)
     setPastHero(isPastPageHero())
+    setLightHero(isLightPageHero())
   }, [location.pathname])
 
   useEffect(() => {
-    if (!mobileOpen && !megaOpen) return
+    if (!mobileOpen) return
     const prev = document.body.style.overflow
     document.body.style.overflow = "hidden"
     return () => {
       document.body.style.overflow = prev
     }
-  }, [mobileOpen, megaOpen])
+  }, [mobileOpen])
 
   const clearCloseTimer = useCallback(() => {
     if (closeTimerRef.current) {
@@ -106,13 +116,15 @@ const Navbar = () => {
   const activeMenu = NAV_MEGA_MENUS.find((m) => m.key === activeMega)
 
   const linkClass = (active?: boolean) =>
-    [styles.link, isHeroTop ? styles.linkHero : styles.linkSolid, active && styles.linkActive]
+    [styles.link, useHeroNavStyle ? styles.linkHero : styles.linkSolid, active && styles.linkActive]
       .filter(Boolean)
       .join(" ")
 
   const screenBlur = createPortal(
     <div
-      className={`${styles.screenBlur} ${megaOpen ? styles.screenBlurOpen : ""}`}
+      className={`${styles.screenBlur} ${megaOpen ? styles.screenBlurOpen : ""} ${
+        useHeroNavStyle ? styles.screenBlurHero : styles.screenBlurSolid
+      }`}
       aria-hidden={!megaOpen}
     />,
     document.body,
@@ -124,18 +136,18 @@ const Navbar = () => {
       <header
         ref={headerRef}
         className={styles.navbar}
-        data-nav-mode={isHeroTop ? "hero" : "solid"}
+        data-nav-mode={useHeroNavStyle ? "hero" : "solid"}
         onMouseLeave={scheduleCloseMega}
       >
         <div
           className={`${styles.bar} ${
-            megaOpen ? styles.barMegaOpen : isHeroTop ? styles.barHero : styles.barSolid
+            megaOpen ? styles.barMegaOpen : useTransparentBar ? styles.barHero : styles.barSolid
           }`}
         >
           <div className={styles.inner}>
             <a className={styles.brand} href="/">
               <img
-                className={`${styles.logo} ${isHeroTop ? styles.logoHero : styles.logoSolid}`}
+                className={`${styles.logo} ${useHeroNavStyle ? styles.logoHero : styles.logoSolid}`}
                 src={logo}
                 alt="EdgeVerse"
               />
@@ -164,7 +176,7 @@ const Navbar = () => {
                   >
                     <span>{menu.label}</span>
                     <span
-                      className={`${styles.caret} ${isHeroTop ? styles.caretHero : styles.caretSolid}`}
+                      className={`${styles.caret} ${useHeroNavStyle ? styles.caretHero : styles.caretSolid}`}
                       aria-hidden="true"
                     />
                   </a>
@@ -178,7 +190,7 @@ const Navbar = () => {
             <div className={styles.actions}>
               <button
                 type="button"
-                className={`${styles.hamburgerBtn} ${isHeroTop ? styles.hamburgerHero : styles.hamburgerSolid}`}
+                className={`${styles.hamburgerBtn} ${useHeroNavStyle ? styles.hamburgerHero : styles.hamburgerSolid}`}
                 aria-label={mobileOpen ? "Close menu" : "Open menu"}
                 aria-expanded={mobileOpen}
                 aria-controls={mobileMenuId}

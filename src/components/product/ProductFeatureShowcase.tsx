@@ -1,3 +1,5 @@
+import { useRef } from 'react'
+import { useSplitScrollReveal } from '../../hooks/useSplitScrollReveal'
 import styles from './productFeatureShowcase.module.scss'
 import type { PRODUCT_SHOWCASES } from './productData'
 
@@ -8,10 +10,19 @@ type ProductFeatureShowcaseProps = {
 }
 
 const ProductFeatureShowcase = ({ item }: ProductFeatureShowcaseProps) => {
+  const sectionRef = useRef<HTMLElement>(null)
   const themeClass = item.theme === 'dark' ? styles.dark : styles.light
+  const mediaX = item.theme === 'dark' ? 36 : -36
+
+  useSplitScrollReveal(sectionRef, `.${styles.media}`, `.${styles.copy}`, { mediaX })
 
   return (
-    <section id={item.id} className={`${styles.section} ${themeClass}`} aria-label={item.kicker}>
+    <section
+      ref={sectionRef}
+      id={item.id}
+      className={`${styles.section} ${themeClass}`}
+      aria-label={item.kicker}
+    >
       <div className={styles.inner}>
         <div className={styles.media}>
           <img src={item.image} alt={item.imageAlt} className={styles.image} loading="lazy" />

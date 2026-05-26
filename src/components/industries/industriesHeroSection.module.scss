@@ -1,9 +1,9 @@
 .section {
   position: relative;
-  min-height: 420px;
+  min-height: var(--page-hero-min-height);
   background: #0b0f1a;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   overflow: hidden;
 }
 
@@ -13,7 +13,7 @@
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 120px 64px 80px;
+  padding: 0 64px var(--page-hero-content-pad-bottom);
   text-align: center;
 }
 
@@ -45,6 +45,6 @@
 
 @media (max-width: 768px) {
   .inner {
-    padding: 100px 24px 60px;
+    padding: 0 24px var(--page-hero-content-pad-bottom);
   }
 }

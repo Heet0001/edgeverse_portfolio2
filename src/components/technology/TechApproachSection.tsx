@@ -1,17 +1,43 @@
-import { useState } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
+import { gsap, registerGsapPlugins } from '../../utils/gsap'
+import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion'
+import { useScrollReveal } from '../../hooks/useScrollReveal'
 import styles from './techApproachSection.module.scss'
 import { TECH_CLOUD_PIPELINE, TECH_EDGE_PIPELINE } from './technologyData'
 
 const TechApproachSection = () => {
   const [mode, setMode] = useState<'edge' | 'cloud'>('edge')
+  const sectionRef = useRef<HTMLElement>(null)
+  const flowRef = useRef<HTMLDivElement>(null)
+  const reduceMotion = usePrefersReducedMotion()
   const steps = mode === 'edge' ? TECH_EDGE_PIPELINE : TECH_CLOUD_PIPELINE
   const footer =
     mode === 'edge'
       ? 'Single neural network · <100ms latency · Zero cloud dependency'
       : 'Network round-trip · Higher latency · Cloud connectivity required'
 
+  useScrollReveal(sectionRef, { variant: 'fadeUp', y: 24 })
+
+  useLayoutEffect(() => {
+    const flow = flowRef.current
+    if (!flow || reduceMotion) return
+
+    registerGsapPlugins()
+    const steps = flow.querySelectorAll(`.${styles.step}`)
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        steps,
+        { opacity: 0, y: 10 },
+        { opacity: 1, y: 0, duration: 0.4, stagger: 0.07, ease: 'power2.out' },
+      )
+    }, flow)
+
+    return () => ctx.revert()
+  }, [mode, reduceMotion])
+
   return (
-    <section className={styles.section} aria-label="EdgeVerse approach">
+    <section ref={sectionRef} className={styles.section} aria-label="EdgeVerse approach">
       <div className={styles.inner}>
         <p className={styles.kicker}>Pioneering the edge AI perception model</p>
         <h2 className={styles.title}>EdgeVerse&apos;s Approach</h2>
@@ -42,9 +68,9 @@ const TechApproachSection = () => {
         </div>
 
         <div className={styles.diagram}>
-          <div className={styles.flow}>
+          <div ref={flowRef} className={styles.flow}>
             {steps.map((step, index) => (
-              <div key={step} className={styles.flowItem}>
+              <div key={`${mode}-${step}`} className={styles.flowItem}>
                 <div
                   className={`${styles.step} ${
                     mode === 'edge' && index === 1 ? styles.stepHighlight : ''

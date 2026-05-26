@@ -1,9 +1,9 @@
 import detection from "../../../assets/images/detection.png"
-import collisionImg from "../../../assets/images/collision.png"
+// import collisionImg from "../../../assets/images/collision.png"
 import imedgeHardware from "../../../assets/images/imedge_hardware.png"
 import heroImg from "../../../assets/images/hero.png"
 
-export type NavMegaMenuKey = "technology" | "industries" | "safety" | "company"
+export type NavMegaMenuKey = "technology" | "industries" /* | "safety" */ | "company"
 
 export type NavMegaLink = {
   title: string
@@ -108,45 +108,45 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
       imageAlt: "EdgeVerse Imedge hardware stack",
     },
   },
-  {
-    key: "safety",
-    label: "Safety",
-    heading: "Safety",
-    tagline: "Designed for real-world unpredictability",
-    columns: [
-      [
-        {
-          title: "Collision alert zones",
-          description: "Front, rear, and blind-spot threat detection",
-          href: "/safety",
-        },
-        {
-          title: "Predictive alerts",
-          description: "Turn critical milliseconds into life-saving seconds",
-          href: "/safety",
-        },
-      ],
-      [
-        {
-          title: "Ride recording",
-          description: "Intelligent incident capture for fleet and rider safety",
-          href: "/safety",
-        },
-        {
-          title: "Safety framework",
-          description: "Validation and testing for production deployment",
-          href: "/safety",
-        },
-      ],
-    ],
-    featured: {
-      title: "Safety by design",
-      description: "Up to 70% accident avoidance with edge AI inference.",
-      href: "/safety",
-      image: collisionImg,
-      imageAlt: "Collision alert visualization",
-    },
-  },
+  // {
+  //   key: "safety",
+  //   label: "Safety",
+  //   heading: "Safety",
+  //   tagline: "Designed for real-world unpredictability",
+  //   columns: [
+  //     [
+  //       {
+  //         title: "Collision alert zones",
+  //         description: "Front, rear, and blind-spot threat detection",
+  //         href: "/safety",
+  //       },
+  //       {
+  //         title: "Predictive alerts",
+  //         description: "Turn critical milliseconds into life-saving seconds",
+  //         href: "/safety",
+  //       },
+  //     ],
+  //     [
+  //       {
+  //         title: "Ride recording",
+  //         description: "Intelligent incident capture for fleet and rider safety",
+  //         href: "/safety",
+  //       },
+  //       {
+  //         title: "Safety framework",
+  //         description: "Validation and testing for production deployment",
+  //         href: "/safety",
+  //       },
+  //     ],
+  //   ],
+  //   featured: {
+  //     title: "Safety by design",
+  //     description: "Up to 70% accident avoidance with edge AI inference.",
+  //     href: "/safety",
+  //     image: collisionImg,
+  //     imageAlt: "Collision alert visualization",
+  //   },
+  // },
   {
     key: "company",
     label: "Company",
@@ -191,6 +191,6 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
 export const NAV_QUICK_LINKS = [
   { label: "Product", href: "/product" },
   { label: "Technology", href: "/technology" },
-  { label: "Safety", href: "/safety" },
+  // { label: "Safety", href: "/safety" },
   { label: "Contact", href: "/contact" },
 ] as const

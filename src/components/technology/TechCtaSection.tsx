@@ -6,11 +6,11 @@ const TechCtaSection = () => {
       <div className={styles.inner}>
         <div className={styles.content}>
           <h2 className={styles.heading}>
-            Want to integrate our stack{' '}
-            <span className={styles.accent}>into your product?</span>
+            Ready to co-develop{' '}
+            <span className={styles.accent}>with Perceiva™?</span>
           </h2>
           <p className={styles.subtitle}>
-            We partner with OEMs and Tier-1s to co-develop custom perception solutions.
+            We are your co-development partner — from sensing to deployment, built for OEM scale.
           </p>
         </div>
         <div className={styles.action}>

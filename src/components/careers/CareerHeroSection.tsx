@@ -1,18 +1,25 @@
+import CareerWaveMesh from './CareerWaveMesh'
 import styles from './careerHeroSection.module.scss'
 
 const CareerHeroSection = () => {
   return (
-    <section id="page-hero" className={styles.section} aria-label="Careers hero">
+    <section
+      id="page-hero"
+      data-hero-theme="light"
+      className={styles.section}
+      aria-label="Careers hero"
+    >
+      <CareerWaveMesh className={styles.waveWrap} svgClassName={styles.waveSvg} />
       <div className={styles.inner}>
-        <div className={styles.kicker}>CAREERS</div>
-        <h1 className={styles.heading}>
-          Build technology<br />that saves lives.
-        </h1>
-        <p className={styles.subtitle}>
-          Join a team of engineers, researchers, and builders creating
-          India's first Advanced Rider Assistance System. We're solving
-          one of the most impactful problems in mobility safety.
-        </p>
+        <div className={styles.content}>
+          <div className={styles.kicker}>Careers</div>
+          <h1 className={styles.heading}>
+            <span className={styles.headingLine}>Build technology</span>
+            <span className={styles.headingLine}>
+              that saves lives<span className={styles.accent}>.</span>
+            </span>
+          </h1>
+        </div>
       </div>
     </section>
   )

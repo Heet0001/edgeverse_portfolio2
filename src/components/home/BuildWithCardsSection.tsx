@@ -1,3 +1,5 @@
+import { useRef } from 'react'
+import { useScrollReveal } from '../../hooks/useScrollReveal'
 import styles from './buildWithCardsSection.module.scss'
 import buildImg from '../../assets/images/card-build-with-edgeverse.png'
 import investorsImg from '../../assets/images/card-investors.png'
@@ -37,11 +39,14 @@ const CARDS = [
 ] as const
 
 const BuildWithCardsSection = () => {
+  const sectionRef = useRef<HTMLElement>(null)
+  useScrollReveal(sectionRef, { variant: 'stagger', stagger: 0.14, y: 32 })
+
   return (
-    <section className={styles.section} aria-label="Explore EdgeVerse">
+    <section ref={sectionRef} className={styles.section} aria-label="Explore EdgeVerse">
       <div className={styles.grid}>
         {CARDS.map((card) => (
-          <article key={card.id} className={styles.card} tabIndex={0}>
+          <article key={card.id} className={styles.card} data-reveal-item tabIndex={0}>
             <img
               className={styles.cardBg}
               src={card.image}

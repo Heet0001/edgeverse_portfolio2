@@ -1,6 +1,6 @@
 .section {
   background: #ffffff;
-  padding: 0 clamp(24px, 5vw, 72px) clamp(96px, 12vw, 160px);
+  padding: 0 var(--section-pad-x) var(--section-pad-y);
   margin-top: 0;
 }
 
@@ -10,15 +10,14 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(12px, 1.4vw, 20px);
-  justify-items: center;
+  gap: clamp(16px, 1.6vw, 24px);
 }
 
 .card {
   position: relative;
-  width: 85%;
+  width: 100%;
   aspect-ratio: 20 / 31;
-  border-radius: clamp(20px, 1.8vw, 28px);
+  border-radius: clamp(16px, 1.4vw, 22px);
   overflow: hidden;
   isolation: isolate;
   cursor: pointer;
@@ -35,37 +34,36 @@
   filter: blur(0);
   transform: scale(1);
   transition:
-    filter 500ms cubic-bezier(0.16, 1, 0.3, 1),
-    transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+    filter 480ms var(--ease-out),
+    transform 480ms var(--ease-out);
 }
 
 .card:hover .cardBg,
 .card:focus-within .cardBg {
-  filter: blur(10px);
-  transform: scale(1.06);
+  filter: blur(8px);
+  transform: scale(1.04);
 }
 
-/* Top gradient so copy stays readable (always visible) */
 .cardOverlay {
   position: absolute;
   inset: 0;
   z-index: 1;
   background: linear-gradient(
     180deg,
-    rgba(8, 12, 24, 0.68) 0%,
-    rgba(8, 12, 24, 0.30) 40%,
-    rgba(8, 12, 24, 0.06) 100%
+    rgba(8, 12, 24, 0.62) 0%,
+    rgba(8, 12, 24, 0.24) 42%,
+    rgba(8, 12, 24, 0.04) 100%
   );
-  transition: background 500ms ease;
+  transition: background 480ms ease;
 }
 
 .card:hover .cardOverlay,
 .card:focus-within .cardOverlay {
   background: linear-gradient(
     180deg,
-    rgba(8, 12, 24, 0.88) 0%,
-    rgba(8, 12, 24, 0.50) 45%,
-    rgba(8, 12, 24, 0.12) 100%
+    rgba(8, 12, 24, 0.82) 0%,
+    rgba(8, 12, 24, 0.42) 48%,
+    rgba(8, 12, 24, 0.1) 100%
   );
 }
 
@@ -75,73 +73,61 @@
   right: 0;
   top: 0;
   z-index: 2;
-  padding: clamp(32px, 3vw, 48px);
+  padding: clamp(28px, 2.8vw, 40px);
   color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   transform: translateY(0);
-  transition: transform 500ms cubic-bezier(0.22, 0.95, 0.24, 1);
+  transition: transform 480ms var(--ease-out);
 }
 
 .card:hover .cardContent,
 .card:focus-within .cardContent {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
 }
 
 .cardTitle {
-  margin: 0 0 16px;
-  font-size: clamp(20px, 1.8vw, 28px);
-  font-weight: 700;
+  margin: 0 0 12px;
+  font-size: clamp(18px, 1.6vw, 24px);
+  font-weight: 600;
   letter-spacing: -0.03em;
-  line-height: 1.14;
+  line-height: 1.16;
   color: #ffffff;
-  transition: margin 500ms ease;
-}
-
-.card:hover .cardTitle,
-.card:focus-within .cardTitle {
-  margin: 0 0 14px;
-}
-
-.cardTitleSingleLine {
-  white-space: nowrap;
 }
 
 .cardDesc {
-  margin: 0 0 22px;
-  font-size: clamp(13px, 1.05vw, 15px);
+  margin: 0 0 18px;
+  font-size: clamp(13px, 1vw, 14px);
   line-height: 1.55;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.82);
   max-width: 34ch;
 }
 
-/* Default: ghost pill (Wayve rest state) */
 .cardCta {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 11px 20px;
+  gap: 6px;
+  padding: 10px 18px;
   border-radius: 999px;
-  border: 1.5px solid rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.75);
   background: transparent;
   color: #ffffff;
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 500;
   letter-spacing: -0.01em;
   transition:
-    background-color 400ms cubic-bezier(0.16, 1, 0.3, 1),
-    color 400ms cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 400ms cubic-bezier(0.16, 1, 0.3, 1),
-    transform 300ms ease;
+    background-color 360ms var(--ease-out),
+    color 360ms var(--ease-out),
+    border-color 360ms var(--ease-out),
+    transform 280ms ease;
 }
 
-/* Hover: solid white pill with dark text (Wayve hover state) */
 .card:hover .cardCta,
 .card:focus-within .cardCta {
   background: #ffffff;
-  color: #0a0a0a;
+  color: var(--color-text);
   border-color: #ffffff;
 }
 
@@ -150,45 +136,27 @@
 }
 
 .cardCtaArrow {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1;
 }
 
 @media (max-width: 1023px) {
   .grid {
-    width: 100%;
-    max-width: none;
     grid-template-columns: 1fr;
     gap: 16px;
   }
 
   .card {
-    width: 85%;
     aspect-ratio: 20 / 31;
-    max-width: 442px;
+    max-width: 420px;
     margin-inline: auto;
-  }
-
-  .cardTitleSingleLine {
-    white-space: normal;
   }
 }
 
 @media (max-width: 480px) {
-  .section {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .grid {
-    width: 100%;
-  }
-
   .card {
-    width: 85%;
-    aspect-ratio: 20 / 31;
     max-width: none;
-    border-radius: 20px;
+    border-radius: 16px;
   }
 }
 
@@ -196,8 +164,6 @@
   .cardBg,
   .cardOverlay,
   .cardContent,
-  .cardTitle,
-  .cardDesc,
   .cardCta {
     transition: none;
   }

@@ -1,12 +1,17 @@
+import { useRef } from 'react'
+import { useScrollReveal } from '../../hooks/useScrollReveal'
 import styles from './productSafetyCardsSection.module.scss'
 import { PRODUCT_SAFETY_CARDS } from './productData'
 
 const ProductSafetyCardsSection = () => {
+  const sectionRef = useRef<HTMLElement>(null)
+  useScrollReveal(sectionRef, { variant: 'stagger', stagger: 0.14, y: 32 })
+
   return (
-    <section className={styles.section} aria-label="Safety feature cards">
+    <section ref={sectionRef} className={styles.section} aria-label="Safety feature cards">
       <div className={styles.grid}>
         {PRODUCT_SAFETY_CARDS.map((card) => (
-          <article key={card.id} className={styles.card}>
+          <article key={card.id} className={styles.card} data-reveal-item>
             <img className={styles.cardBg} src={card.image} alt={card.imageAlt} loading="lazy" />
             <div className={styles.cardOverlay} aria-hidden="true" />
 

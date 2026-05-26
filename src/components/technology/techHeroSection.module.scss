@@ -1,6 +1,6 @@
 .section {
   position: relative;
-  min-height: clamp(520px, 78vh, 760px);
+  min-height: var(--page-hero-min-height);
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -31,7 +31,7 @@
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: clamp(120px, 14vh, 160px) clamp(20px, 5vw, 72px) clamp(56px, 8vh, 88px);
+  padding: 0 clamp(20px, 5vw, 72px) var(--page-hero-content-pad-bottom);
 }
 
 .badge {

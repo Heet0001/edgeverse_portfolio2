@@ -52,17 +52,29 @@
 
 .kicker {
 
-  font-size: clamp(13px, 1.1vw, 15px);
+  display: inline-flex;
+
+  align-items: center;
+
+  margin-bottom: 24px;
+
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  border: 1px solid rgba(14, 165, 164, 0.45);
+
+  background: rgba(14, 165, 164, 0.12);
+
+  color: #0d9488;
+
+  font-size: var(--page-hero-badge-font-size);
 
   font-weight: 700;
 
-  letter-spacing: 0.18em;
-
-  color: #0ea5a4;
+  letter-spacing: var(--page-hero-badge-letter-spacing);
 
   text-transform: uppercase;
-
-  margin-bottom: 24px;
 
 }
 
@@ -70,17 +82,19 @@
 
 .heading {
 
-  font-size: clamp(44px, 6.2vw, 76px);
+  margin: 0;
 
-  font-weight: 900;
+  max-width: var(--page-hero-title-max-width);
 
-  line-height: 1.02;
+  font-size: var(--page-hero-title-font-size);
 
-  letter-spacing: -0.035em;
+  font-weight: var(--page-hero-title-font-weight);
+
+  line-height: var(--page-hero-title-line-height);
+
+  letter-spacing: var(--page-hero-title-letter-spacing);
 
   color: #101828;
-
-  margin: 0;
 
 }
 

@@ -97,7 +97,6 @@ const Investors = () => {
         <div className={styles.heroInner}>
           <div className={styles.heroContent}>
             <div className={styles.kicker}>Investors</div>
-            <span className={styles.heroRule} aria-hidden="true" />
             <h1 className={styles.h1}>
               Backed by <span className={styles.accent}>visionaries</span>.
             </h1>

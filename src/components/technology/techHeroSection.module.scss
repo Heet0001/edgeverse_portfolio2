@@ -36,34 +36,35 @@
 
 .badge {
   display: inline-flex;
-  margin-bottom: 20px;
+  align-items: center;
+  margin-bottom: 24px;
   padding: 8px 14px;
   border-radius: 999px;
   border: 1px solid rgba(14, 165, 164, 0.45);
   background: rgba(14, 165, 164, 0.12);
   color: #5eead4;
-  font-size: 11px;
+  font-size: var(--page-hero-badge-font-size);
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: var(--page-hero-badge-letter-spacing);
   text-transform: uppercase;
 }
 
 .heading {
   margin: 0;
-  max-width: 14ch;
-  font-size: clamp(34px, 4.8vw, 64px);
-  font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  max-width: var(--page-hero-title-max-width);
+  font-size: var(--page-hero-title-font-size);
+  font-weight: var(--page-hero-title-font-weight);
+  line-height: var(--page-hero-title-line-height);
+  letter-spacing: var(--page-hero-title-letter-spacing);
   color: #ffffff;
 }
 
 .subtitle {
-  margin: 22px 0 0;
-  max-width: 48ch;
-  font-size: clamp(15px, 1.3vw, 18px);
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.72);
+  margin: 24px 0 0;
+  max-width: 46ch;
+  font-size: var(--page-hero-subtitle-font-size);
+  line-height: var(--page-hero-subtitle-line-height);
+  color: var(--page-hero-subtitle-color);
 }
 
 @media (max-width: 768px) {

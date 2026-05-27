@@ -75,19 +75,21 @@
 }
 
 .title {
-  font-size: clamp(32px, 4.6vw, 52px);
-  font-weight: 900;
-  line-height: 1.08;
-  letter-spacing: -0.03em;
+  margin: 0 0 24px;
+  max-width: var(--page-hero-title-max-width);
+  font-size: var(--page-hero-title-font-size);
+  font-weight: var(--page-hero-title-font-weight);
+  line-height: var(--page-hero-title-line-height);
+  letter-spacing: var(--page-hero-title-letter-spacing);
   color: #ffffff;
-  margin: 0 0 18px;
 }
 
 .excerpt {
-  font-size: 18px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.66);
   margin: 0 0 28px;
+  max-width: 46ch;
+  font-size: var(--page-hero-subtitle-font-size);
+  line-height: var(--page-hero-subtitle-line-height);
+  color: var(--page-hero-subtitle-color);
 }
 
 .metaRow {

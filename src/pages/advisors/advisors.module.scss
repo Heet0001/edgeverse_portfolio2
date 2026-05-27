@@ -32,21 +32,28 @@
 }
 
 .kicker {
-  font-size: 11px;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(14, 165, 164, 0.45);
+  background: rgba(14, 165, 164, 0.12);
+  color: #5eead4;
+  font-size: var(--page-hero-badge-font-size);
   font-weight: 700;
-  letter-spacing: 0.2em;
-  color: rgba(255, 255, 255, 0.72);
+  letter-spacing: var(--page-hero-badge-letter-spacing);
   text-transform: uppercase;
-  margin-bottom: 16px;
 }
 
 .h1 {
-  font-size: clamp(36px, 5vw, 64px);
-  font-weight: 900;
-  line-height: 1.06;
-  letter-spacing: -0.03em;
-  color: #ffffff;
   margin: 0;
+  max-width: var(--page-hero-title-max-width);
+  font-size: var(--page-hero-title-font-size);
+  font-weight: var(--page-hero-title-font-weight);
+  line-height: var(--page-hero-title-line-height);
+  letter-spacing: var(--page-hero-title-letter-spacing);
+  color: #ffffff;
 }
 
 .accent {
@@ -54,11 +61,11 @@
 }
 
 .heroBlurb {
-  margin: 14px 0 0;
-  font-size: 18px;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.65);
-  max-width: 60ch;
+  margin: 24px 0 0;
+  max-width: 46ch;
+  font-size: var(--page-hero-subtitle-font-size);
+  line-height: var(--page-hero-subtitle-line-height);
+  color: var(--page-hero-subtitle-color);
 }
 
 .section {

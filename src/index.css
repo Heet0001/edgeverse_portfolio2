@@ -10,6 +10,18 @@
   --section-pad-y: clamp(56px, 8vw, 96px);
   --page-hero-min-height: 100vh;
   --page-hero-content-pad-bottom: clamp(40px, 7vh, 80px);
+
+  /* Page hero typography (matches product hero) */
+  --page-hero-badge-font-size: 11px;
+  --page-hero-badge-letter-spacing: 0.16em;
+  --page-hero-title-font-size: clamp(14px, 2.08vw, 29px);
+  --page-hero-title-font-weight: 700;
+  --page-hero-title-line-height: 1.08;
+  --page-hero-title-letter-spacing: -0.03em;
+  --page-hero-title-max-width: 18ch;
+  --page-hero-subtitle-font-size: clamp(15px, 1.35vw, 18px);
+  --page-hero-subtitle-line-height: 1.65;
+  --page-hero-subtitle-color: rgba(255, 255, 255, 0.72);
 }
 
 @supports (height: 100svh) {

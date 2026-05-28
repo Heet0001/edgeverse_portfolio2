@@ -5,7 +5,7 @@ import scenicRoadImg from '../../assets/images/scenic-road.png'
 import detectionImg from '../../assets/images/detection.png'
 import detection1Img from '../../assets/images/detection1.png'
 import detection2Img from '../../assets/images/detection2.png'
-import heroImg from '../../assets/images/hero.png'
+import heroImg from '../../assets/images/ChatGPT Image May 29, 2026, 03_04_00 AM.png'
 
 export const PRODUCT_SAFETY_CARDS = [
   {

@@ -2,7 +2,7 @@ import { useLayoutEffect, useRef } from 'react'
 import { gsap, registerGsapPlugins } from '../../utils/gsap'
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion'
 import styles from './home.module.scss'
-import heroImage from '../../assets/images/hero-intersection.png'
+import heroImage from '../../assets/images/ChatGPT Image May 29, 2026, 03_13_52 AM.png'
 import ScrollRevealIntro from '../../components/home/ScrollRevealIntro'
 import BuildWithCardsSection from '../../components/home/BuildWithCardsSection'
 import FeatureTabsSection from '../../components/home/FeatureTabsSection'
@@ -12,10 +12,12 @@ import LifeSavingCtaSection from '../../components/home/LifeSavingCtaSection'
 
 const Home = () => {
   const heroRef = useRef<HTMLElement>(null)
+  const ctaRef = useRef<HTMLAnchorElement>(null)
   const reduceMotion = usePrefersReducedMotion()
 
   useLayoutEffect(() => {
     const hero = heroRef.current
+    const cta = ctaRef.current
     if (!hero || reduceMotion) return
 
     registerGsapPlugins()
@@ -44,13 +46,20 @@ const Home = () => {
         delay: 0.45,
       })
 
-      gsap.from(hero.querySelector(`.${styles.heroCta}`), {
-        y: 16,
-        opacity: 0,
-        duration: 0.6,
-        ease: 'power2.out',
-        delay: 0.6,
-      })
+      if (cta) {
+        gsap.fromTo(
+          cta,
+          { y: 16, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: 'power2.out',
+            delay: 0.6,
+            clearProps: 'transform,opacity',
+          },
+        )
+      }
     }, hero)
 
     return () => ctx.revert()
@@ -72,7 +81,7 @@ const Home = () => {
             <span className={styles.heroTitleLineAccent}>One Intelligence Layer.</span>
           </h1>
           <span className={styles.heroRule} aria-hidden="true" />
-          <a className={styles.heroCta} href="/technology">
+          <a ref={ctaRef} className={styles.heroCta} href="/product">
             <span>Discover more</span>
             <span className={styles.heroCtaArrow} aria-hidden="true">
               →

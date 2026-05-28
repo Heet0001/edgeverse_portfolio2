@@ -1,5 +1,5 @@
 import styles from './aboutHeroSection.module.scss'
-import heroImg from '../../assets/images/imedge_hardware.png'
+import heroImg from '../../assets/images/ChatGPT Image May 29, 2026, 03_08_18 AM.png'
 
 const AboutHeroSection = () => {
   return (

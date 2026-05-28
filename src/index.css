@@ -77,6 +77,38 @@ code, pre, kbd, samp {
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
+/* Navbar viewport glass — global classes (not CSS-module hashed) */
+.nav-screen-blur-hero {
+  background: rgba(8, 12, 24, 0.52);
+  -webkit-backdrop-filter: blur(48px) saturate(1.15);
+}
+
+.nav-screen-blur-solid {
+  background: rgba(255, 255, 255, 0.22);
+  -webkit-backdrop-filter: blur(40px) saturate(1.4);
+}
+
+.nav-bar-glass-solid {
+  background-color: rgba(255, 255, 255, 0.22) !important;
+  -webkit-backdrop-filter: blur(40px) saturate(1.4);
+  border-bottom-color: rgba(15, 23, 42, 0.06) !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  .nav-screen-blur-hero {
+    backdrop-filter: blur(48px) saturate(1.15);
+  }
+
+  .nav-screen-blur-solid {
+    backdrop-filter: blur(40px) saturate(1.4);
+  }
+
+  .nav-bar-glass-solid {
+    backdrop-filter: blur(40px) saturate(1.4);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

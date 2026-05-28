@@ -53,3 +53,15 @@
   border-color: rgba(13, 13, 43, 0.18);
   color: rgba(13, 13, 43, 0.9);
 }
+
+/* Navbar mega menu over hero — matches frosted dark overlay */
+.row.navbarHero .link {
+  border-color: rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.row.navbarHero .link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #ffffff;
+}

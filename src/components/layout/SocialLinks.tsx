@@ -51,12 +51,16 @@ function SocialIcon({ id }: { id: string }) {
 type SocialLinksProps = {
   variant?: SocialLinksVariant
   className?: string
+  /** Light icons for navbar mega menu over dark hero imagery */
+  heroTheme?: boolean
 }
 
-const SocialLinks = ({ variant = "footer", className }: SocialLinksProps) => {
+const SocialLinks = ({ variant = "footer", className, heroTheme = false }: SocialLinksProps) => {
   return (
     <div
-      className={[styles.row, styles[variant], className].filter(Boolean).join(" ")}
+      className={[styles.row, styles[variant], heroTheme && styles.navbarHero, className]
+        .filter(Boolean)
+        .join(" ")}
       aria-label="Social links"
     >
       {SOCIAL_ITEMS.map((item) => (

@@ -3,14 +3,23 @@ import type { NavMegaMenuConfig } from "./navConfig"
 import { NAV_QUICK_LINKS } from "./navConfig"
 import SocialLinks from "../SocialLinks"
 
+export type NavMegaTheme = "hero" | "solid"
+
 type NavMegaMenuProps = {
   menu: NavMegaMenuConfig
   open: boolean
+  navMode: NavMegaTheme
   onContentMouseEnter?: () => void
   onContentMouseLeave?: () => void
 }
 
-const NavMegaMenu = ({ menu, open, onContentMouseEnter, onContentMouseLeave }: NavMegaMenuProps) => {
+const NavMegaMenu = ({
+  menu,
+  open,
+  navMode,
+  onContentMouseEnter,
+  onContentMouseLeave,
+}: NavMegaMenuProps) => {
   return (
     <div
       className={`${styles.megaPanel} ${open ? styles.megaPanelOpen : ""}`}
@@ -19,7 +28,7 @@ const NavMegaMenu = ({ menu, open, onContentMouseEnter, onContentMouseLeave }: N
       aria-hidden={!open}
     >
       <div
-        className={styles.megaInner}
+        className={`${styles.megaInner} ${navMode === "hero" ? styles.megaThemeHero : ""}`}
         onMouseEnter={onContentMouseEnter}
         onMouseLeave={onContentMouseLeave}
       >
@@ -59,7 +68,11 @@ const NavMegaMenu = ({ menu, open, onContentMouseEnter, onContentMouseLeave }: N
               </a>
             ))}
           </nav>
-          <SocialLinks variant="navbar" className={styles.megaSocial} />
+          <SocialLinks
+            variant="navbar"
+            heroTheme={navMode === "hero"}
+            className={styles.megaSocial}
+          />
         </aside>
       </div>
     </div>

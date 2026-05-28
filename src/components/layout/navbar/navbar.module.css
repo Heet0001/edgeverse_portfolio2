@@ -34,13 +34,9 @@
   box-shadow: none !important;
 }
 
-/* Scrolled / Solid: white glass bar — matches mega-menu screenBlur */
+/* Scrolled / Solid: glass styles from global .nav-bar-glass-solid in index.css */
 .barSolid {
-  background-color: rgba(255, 255, 255, 0.22) !important;
-  backdrop-filter: blur(40px) saturate(1.4);
-  -webkit-backdrop-filter: blur(40px) saturate(1.4);
-  border-bottom-color: rgba(15, 23, 42, 0.06) !important;
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  /* intentionally minimal — paired with nav-bar-glass-solid */
 }
 
 /* Mega menu open: single glass layer comes from screenBlur — keep bar transparent */
@@ -79,19 +75,7 @@
     visibility 0ms linear 0ms;
 }
 
-/* Hero: dark frosted overlay so mega menu text stays white over imagery */
-.screenBlurHero {
-  background: rgba(8, 12, 24, 0.52);
-  backdrop-filter: blur(48px) saturate(1.15);
-  -webkit-backdrop-filter: blur(48px) saturate(1.15);
-}
-
-/* Scrolled: light glass — pairs with dark mega menu text */
-.screenBlurSolid {
-  background: rgba(255, 255, 255, 0.22);
-  backdrop-filter: blur(40px) saturate(1.4);
-  -webkit-backdrop-filter: blur(40px) saturate(1.4);
-}
+/* Viewport glass: use global .nav-screen-blur-hero / .nav-screen-blur-solid in index.css */
 
 /* ───────────────────── INNER WRAPPER ───────────────────── */
 .inner {
@@ -429,55 +413,44 @@
   padding-top: 24px;
 }
 
-/* Hero mega menu: white text over dark hero / frosted overlay (Wayve-style) */
-.navbar[data-nav-mode="hero"] .megaColIntro,
-.navbar[data-nav-mode="hero"] .megaColLinks {
+/* Mega menu theme — applied on .megaInner via navMode prop (reliable in production builds) */
+.megaThemeHero .megaColIntro,
+.megaThemeHero .megaColLinks {
   border-color: rgba(255, 255, 255, 0.14);
 }
 
-.navbar[data-nav-mode="hero"] .megaHeading {
+.megaThemeHero .megaHeading {
   color: #ffffff;
 }
 
-.navbar[data-nav-mode="hero"] .megaTagline {
+.megaThemeHero .megaTagline {
   color: rgba(255, 255, 255, 0.72);
 }
 
-.navbar[data-nav-mode="hero"] .megaLinkTitle {
+.megaThemeHero .megaLinkTitle {
   color: rgba(255, 255, 255, 0.95);
 }
 
-.navbar[data-nav-mode="hero"] .megaLinkDesc {
+.megaThemeHero .megaLinkDesc {
   color: rgba(255, 255, 255, 0.62);
 }
 
-.navbar[data-nav-mode="hero"] .megaLinkBlock:hover,
-.navbar[data-nav-mode="hero"] .megaFeaturedText:hover {
+.megaThemeHero .megaLinkBlock:hover,
+.megaThemeHero .megaFeaturedText:hover {
   background: rgba(255, 255, 255, 0.08);
 }
 
-.navbar[data-nav-mode="hero"] .megaLinkBlock:hover .megaLinkTitle,
-.navbar[data-nav-mode="hero"] .megaFeaturedText:hover .megaLinkTitle {
+.megaThemeHero .megaLinkBlock:hover .megaLinkTitle,
+.megaThemeHero .megaFeaturedText:hover .megaLinkTitle {
   color: #ffffff;
 }
 
-.navbar[data-nav-mode="hero"] .megaQuickLink {
+.megaThemeHero .megaQuickLink {
   color: rgba(255, 255, 255, 0.55);
 }
 
-.navbar[data-nav-mode="hero"] .megaQuickLink:hover {
+.megaThemeHero .megaQuickLink:hover {
   color: rgba(255, 255, 255, 0.92);
-}
-
-.navbar[data-nav-mode="hero"] .megaSocial a {
-  border-color: rgba(255, 255, 255, 0.16);
-  color: rgba(255, 255, 255, 0.72);
-}
-
-.navbar[data-nav-mode="hero"] .megaSocial a:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.28);
-  color: #ffffff;
 }
 
 /* ───────────────────── ACTIONS / HAMBURGER ───────────────────── */
@@ -748,7 +721,7 @@
     padding-bottom: 20px;
   }
 
-  .navbar[data-nav-mode="hero"] .megaColIntro {
+  .megaThemeHero .megaColIntro {
     border-bottom-color: rgba(255, 255, 255, 0.14);
   }
 
@@ -766,7 +739,7 @@
     border-top: 1px solid rgba(15, 23, 42, 0.07);
   }
 
-  .navbar[data-nav-mode="hero"] .megaColAside {
+  .megaThemeHero .megaColAside {
     border-top-color: rgba(255, 255, 255, 0.14);
   }
 

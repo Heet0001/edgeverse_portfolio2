@@ -3,31 +3,15 @@ import logo from "../../../assets/images/EdgeVerselogo.png"
 import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from "react"
 import { createPortal } from "react-dom"
 import { useLocation } from "react-router-dom"
+import { usePageHeroNavState } from "../../../hooks/usePageHeroNavState"
 import { NAV_MEGA_MENUS, type NavMegaMenuKey } from "./navConfig"
 import NavMegaMenu from "./NavMegaMenu"
 
-const NAV_HEIGHT = 72
-
-/** True once the page hero has scrolled up past the navbar. */
-function isPastPageHero(): boolean {
-  const hero = document.getElementById("page-hero")
-  if (hero) {
-    return hero.getBoundingClientRect().bottom <= NAV_HEIGHT
-  }
-  return true
-}
-
-function isLightPageHero(): boolean {
-  const hero = document.getElementById("page-hero")
-  return hero?.dataset.heroTheme === "light"
-}
-
 const Navbar = () => {
   const location = useLocation()
+  const { pastHero, lightHero } = usePageHeroNavState()
 
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [pastHero, setPastHero] = useState(() => isPastPageHero())
-  const [lightHero, setLightHero] = useState(() => isLightPageHero())
   const [activeMega, setActiveMega] = useState<NavMegaMenuKey | null>(null)
   const mobileMenuId = useId()
   const closeTimerRef = useRef<ReturnType<typeof window.setTimeout> | null>(null)
@@ -37,51 +21,11 @@ const Navbar = () => {
   const isHeroTop = !pastHero && !mobileOpen
   const useHeroNavStyle = isHeroTop && !lightHero
   const useTransparentBar = isHeroTop && !megaOpen
-
-  useEffect(() => {
-    const hero = document.getElementById("page-hero")
-    let raf = 0
-
-    const sync = () => {
-      raf = 0
-      setPastHero(isPastPageHero())
-      setLightHero(isLightPageHero())
-    }
-
-    const onScroll = () => {
-      if (raf) return
-      raf = requestAnimationFrame(sync)
-    }
-
-    sync()
-
-    window.addEventListener("scroll", onScroll, { passive: true })
-    document.addEventListener("scroll", onScroll, { passive: true })
-    window.addEventListener("resize", onScroll)
-
-    let observer: IntersectionObserver | undefined
-    if (hero) {
-      observer = new IntersectionObserver(onScroll, {
-        root: null,
-        threshold: [0, 0.25, 0.5, 0.75, 1],
-      })
-      observer.observe(hero)
-    }
-
-    return () => {
-      window.removeEventListener("scroll", onScroll)
-      document.removeEventListener("scroll", onScroll)
-      window.removeEventListener("resize", onScroll)
-      observer?.disconnect()
-      if (raf) cancelAnimationFrame(raf)
-    }
-  }, [location.pathname])
+  const navMode = useHeroNavStyle ? "hero" : "solid"
 
   useLayoutEffect(() => {
     setActiveMega(null)
     setMobileOpen(false)
-    setPastHero(isPastPageHero())
-    setLightHero(isLightPageHero())
   }, [location.pathname])
 
   useEffect(() => {
@@ -123,7 +67,7 @@ const Navbar = () => {
   const screenBlur = createPortal(
     <div
       className={`${styles.screenBlur} ${megaOpen ? styles.screenBlurOpen : ""} ${
-        useHeroNavStyle ? styles.screenBlurHero : styles.screenBlurSolid
+        useHeroNavStyle ? "nav-screen-blur-hero" : "nav-screen-blur-solid"
       }`}
       aria-hidden={!megaOpen}
     />,
@@ -136,12 +80,16 @@ const Navbar = () => {
       <header
         ref={headerRef}
         className={styles.navbar}
-        data-nav-mode={useHeroNavStyle ? "hero" : "solid"}
+        data-nav-mode={navMode}
         onMouseLeave={scheduleCloseMega}
       >
         <div
           className={`${styles.bar} ${
-            megaOpen ? styles.barMegaOpen : useTransparentBar ? styles.barHero : styles.barSolid
+            megaOpen
+              ? styles.barMegaOpen
+              : useTransparentBar
+                ? styles.barHero
+                : `${styles.barSolid} nav-bar-glass-solid`
           }`}
         >
           <div className={styles.inner}>
@@ -207,6 +155,7 @@ const Navbar = () => {
             <NavMegaMenu
               menu={activeMenu}
               open={activeMega === activeMenu.key}
+              navMode={navMode}
               onContentMouseEnter={clearCloseTimer}
               onContentMouseLeave={scheduleCloseMega}
             />

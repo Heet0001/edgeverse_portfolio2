@@ -1,0 +1,144 @@
+.section {
+  background: #ffffff;
+  border-top: 1px solid var(--color-border);
+}
+
+.inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: var(--section-pad-y) var(--section-pad-x);
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(26px, 3vw, 38px);
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.text {
+  margin: 12px 0 0;
+  max-width: 48ch;
+  font-size: clamp(15px, 1.15vw, 16px);
+  line-height: 1.65;
+  color: var(--color-text-muted);
+}
+
+.btn {
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 11px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  background: var(--color-text);
+  transition: opacity 180ms var(--ease-out), transform 180ms var(--ease-out);
+}
+
+.btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.btnArrow {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.logoMarquee {
+  position: relative;
+  margin-top: clamp(32px, 4vw, 48px);
+  padding-top: clamp(24px, 3.5vw, 36px);
+  border-top: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.logoFadeLeft,
+.logoFadeRight {
+  position: absolute;
+  top: clamp(24px, 3.5vw, 36px);
+  bottom: 0;
+  width: clamp(40px, 6vw, 80px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.logoFadeLeft {
+  left: 0;
+  background: linear-gradient(90deg, #ffffff 20%, rgba(255, 255, 255, 0) 100%);
+}
+
+.logoFadeRight {
+  right: 0;
+  background: linear-gradient(270deg, #ffffff 20%, rgba(255, 255, 255, 0) 100%);
+}
+
+.logoTrack {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: clamp(40px, 5vw, 72px);
+  padding: clamp(8px, 1vh, 12px) 0;
+  animation: logoMarquee 32s linear infinite;
+  will-change: transform;
+}
+
+@keyframes logoMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.logoItem {
+  font-size: clamp(16px, 1.5vw, 20px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: rgba(15, 23, 42, 0.72);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.logoArm {
+  font-weight: 600;
+  text-transform: lowercase;
+  letter-spacing: -0.01em;
+}
+
+.logoAmd,
+.logoNvidia {
+  letter-spacing: 0.04em;
+}
+
+.logoValeo {
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logoTrack {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    gap: clamp(24px, 4vw, 40px);
+  }
+
+  .logoFadeLeft,
+  .logoFadeRight {
+    display: none;
+  }
+}

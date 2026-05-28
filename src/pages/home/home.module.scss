@@ -1,0 +1,127 @@
+.page {
+  background: #ffffff;
+  color: var(--color-text);
+}
+
+.introCardsSpacer {
+  margin-top: 0;
+  padding-top: var(--section-pad-y);
+}
+
+.hero {
+  position: relative;
+  min-height: var(--page-hero-min-height);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(2, 6, 23, 0.28) 0%, rgba(2, 6, 23, 0.06) 45%, rgba(2, 6, 23, 0.62) 100%),
+    linear-gradient(90deg, rgba(2, 6, 23, 0.38) 0%, transparent 55%);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--section-pad-x) clamp(56px, 9vh, 96px);
+}
+
+.heroTitle {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.06em;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+}
+
+.heroTitleLine,
+.heroTitleLineAccent {
+  display: block;
+  white-space: nowrap;
+  line-height: 1.04;
+  font-weight: 400;
+}
+
+.heroTitleLine {
+  font-size: clamp(22px, 3.2vw, 42px);
+}
+
+.heroTitleLineAccent {
+  font-size: clamp(23px, 3.6vw, 48px);
+}
+
+.heroRule {
+  display: block;
+  width: clamp(40px, 5vw, 56px);
+  height: 1px;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.heroCta {
+  position: relative;
+  z-index: 3;
+  margin-top: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #0f172a;
+  background: #ffffff;
+  border: none;
+  opacity: 1;
+  white-space: nowrap;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+  transition: opacity 180ms var(--ease-out), transform 180ms var(--ease-out);
+}
+
+.heroCta:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.heroCtaArrow {
+  font-size: 15px;
+  line-height: 1;
+}
+
+@media (max-width: 819px) {
+  .heroContent {
+    text-align: left;
+  }
+
+  .heroTitleLine {
+    font-size: clamp(16px, 4.2vw, 27px);
+  }
+
+  .heroTitleLineAccent {
+    font-size: clamp(17px, 4.6vw, 30px);
+  }
+}

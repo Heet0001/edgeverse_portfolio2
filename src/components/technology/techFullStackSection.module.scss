@@ -1,0 +1,140 @@
+.section {
+  background: #f5f7f9;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  overflow-x: clip;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 88px 64px 96px;
+}
+
+.head {
+  display: block;
+  margin-bottom: 48px;
+}
+
+.kicker {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #0b8d8c;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 10px 0 14px;
+  font-size: clamp(44px, 5vw, 58px);
+  font-weight: 700;
+  line-height: 1.03;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+}
+
+.subtitle {
+  font-size: 15px;
+  line-height: 1.45;
+  color: rgba(15, 23, 42, 0.65);
+  max-width: 760px;
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.card {
+  position: relative;
+  background: #f9fbfc;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 14px;
+  padding: 18px 20px 16px;
+  min-height: 170px;
+}
+
+.cardNum {
+  font-size: 45px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: rgba(14, 165, 164, 0.2);
+  margin-bottom: 12px;
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.cardText {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(15, 23, 42, 0.6);
+  margin: 0;
+}
+
+.card:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  right: -14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(14, 165, 164, 0.6);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+@media (max-width: 900px) {
+  .inner {
+    padding: 60px 24px;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .grid .card:last-child {
+    grid-column: span 2;
+  }
+
+  .card:not(:last-child)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid .card:last-child {
+    grid-column: span 1;
+  }
+
+  .cardNum {
+    font-size: 34px;
+  }
+
+  .cardTitle {
+    font-size: 18px;
+  }
+
+  .cardText {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,51 @@
+.section {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(56px, 7vw, 88px) clamp(20px, 5vw, 72px) clamp(40px, 5vw, 56px);
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+}
+
+.text {
+  margin: 24px 0 0;
+  max-width: 62ch;
+  font-size: clamp(15px, 1.15vw, 17px);
+  line-height: 1.7;
+  color: rgba(15, 23, 42, 0.62);
+}
+
+.layers {
+  display: flex;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+}
+
+.dotRed {
+  background: #ef4444;
+}
+
+.dotCyan {
+  background: #22d3ee;
+}
+
+.dotPurple {
+  background: #a855f7;
+}

@@ -1,0 +1,67 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition:
+    background 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease,
+    opacity 200ms ease;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+/* Footer — light icons on dark gradient */
+.row.footer .link {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.row.footer .link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.24);
+  color: #ffffff;
+}
+
+/* Navbar mega menu — dark icons on frosted glass */
+.row.navbar .link {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(13, 13, 43, 0.1);
+  color: rgba(13, 13, 43, 0.72);
+}
+
+.row.navbar .link:hover {
+  background: rgba(13, 13, 43, 0.06);
+  border-color: rgba(13, 13, 43, 0.18);
+  color: rgba(13, 13, 43, 0.9);
+}
+
+/* Navbar mega menu over hero — matches frosted dark overlay */
+.row.navbarHero .link {
+  border-color: rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.row.navbarHero .link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #ffffff;
+}

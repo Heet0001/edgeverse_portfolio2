@@ -1,0 +1,118 @@
+.section {
+  background: #f4f6f8;
+  border-top: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(72px, 8vw, 104px) clamp(20px, 5vw, 72px);
+}
+
+.header {
+  max-width: 52ch;
+  margin-bottom: clamp(32px, 4vw, 48px);
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+}
+
+.subtitle {
+  margin: 16px 0 0;
+  font-size: clamp(15px, 1.15vw, 17px);
+  line-height: 1.65;
+  color: rgba(15, 23, 42, 0.58);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.card {
+  background: #ffffff;
+  border: 1.5px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  padding: clamp(24px, 2.5vw, 32px);
+  min-height: 100%;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  transform: translateY(0) scale(1);
+  transition:
+    border-color 220ms ease,
+    box-shadow 260ms cubic-bezier(0.22, 0.95, 0.24, 1),
+    transform 260ms cubic-bezier(0.22, 0.95, 0.24, 1);
+}
+
+.card:hover,
+.card:focus-within {
+  border-color: #0ea5a4;
+  box-shadow: 0 12px 28px rgba(14, 165, 164, 0.16);
+  transform: translateY(-6px) scale(1.02);
+}
+
+.icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(14, 165, 164, 0.12);
+  border: 1px solid rgba(14, 165, 164, 0.18);
+  margin-bottom: 22px;
+}
+
+.cardTitle {
+  margin: 0 0 12px;
+  font-size: clamp(18px, 1.5vw, 22px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+.cardDesc {
+  margin: 0 0 24px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(15, 23, 42, 0.58);
+}
+
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0ea5a4;
+  transition: opacity 180ms ease;
+}
+
+.card:hover .cardLink,
+.card:focus-within .cardLink {
+  opacity: 1;
+}
+
+.cardLink:hover {
+  opacity: 0.82;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+
+  .card:hover,
+  .card:focus-within {
+    transform: none;
+  }
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

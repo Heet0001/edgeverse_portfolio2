@@ -1,0 +1,98 @@
+.section {
+  background: #f4f6f8;
+}
+
+.inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(72px, 8vw, 104px) clamp(20px, 5vw, 72px);
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+}
+
+.subtitle {
+  margin: 16px 0 0;
+  max-width: 62ch;
+  font-size: clamp(15px, 1.15vw, 17px);
+  line-height: 1.65;
+  color: rgba(15, 23, 42, 0.58);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(32px, 4vw, 48px);
+  margin-top: clamp(32px, 4vw, 48px);
+}
+
+.card {
+  transition: transform 260ms cubic-bezier(0.22, 0.95, 0.24, 1);
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.01);
+}
+
+.mediaLink {
+  display: block;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: box-shadow 260ms ease;
+}
+
+.card:hover .mediaLink {
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+}
+
+.image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.cardTitle {
+  margin: 20px 0 12px;
+  font-size: clamp(20px, 1.8vw, 24px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+.cardDesc {
+  margin: 0 0 16px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(15, 23, 42, 0.58);
+  max-width: 52ch;
+  white-space: pre-line;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0ea5a4;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card:hover {
+    transform: none;
+  }
+}

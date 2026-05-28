@@ -1,0 +1,151 @@
+.section {
+  border-top: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.light {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.dark {
+  background: #0b0f1a;
+  color: #ffffff;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  min-height: clamp(520px, 56vw, 680px);
+}
+
+.media {
+  position: relative;
+  min-height: 320px;
+  overflow: hidden;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+}
+
+.copy {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(40px, 6vw, 80px) clamp(24px, 5vw, 72px);
+}
+
+.number {
+  position: absolute;
+  top: clamp(24px, 4vw, 40px);
+  left: clamp(24px, 5vw, 72px);
+  font-size: clamp(72px, 10vw, 120px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  opacity: 0.08;
+}
+
+.light .number {
+  color: #0f172a;
+}
+
+.dark .number {
+  color: #ffffff;
+}
+
+.kicker {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 18px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #0ea5a4;
+}
+
+.title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  max-width: 14ch;
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.desc {
+  position: relative;
+  z-index: 1;
+  margin: 20px 0 0;
+  max-width: 48ch;
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.7;
+}
+
+.light .desc {
+  color: rgba(15, 23, 42, 0.62);
+}
+
+.dark .desc {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.stats {
+  position: relative;
+  z-index: 1;
+  margin-top: clamp(28px, 4vw, 40px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 32px;
+  max-width: 420px;
+}
+
+.statValue {
+  font-size: clamp(28px, 3vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #0ea5a4;
+}
+
+.statLabel {
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 1.4;
+  text-transform: capitalize;
+}
+
+.light .statLabel {
+  color: rgba(15, 23, 42, 0.48);
+}
+
+.dark .statLabel {
+  color: rgba(255, 255, 255, 0.48);
+}
+
+@media (max-width: 960px) {
+  .inner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .media {
+    min-height: 280px;
+  }
+
+  .copy {
+    padding-top: 56px;
+  }
+
+  .number {
+    top: 20px;
+    left: 24px;
+  }
+}

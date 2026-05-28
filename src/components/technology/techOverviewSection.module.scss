@@ -1,0 +1,101 @@
+.section {
+  background: #ffffff;
+  padding: 82px 0 70px;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 64px;
+}
+
+.header {
+  margin-bottom: 28px;
+}
+
+.kicker {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: #0ea5a4;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.heading {
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  margin: 0 0 12px;
+}
+
+.subtitle {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(15, 23, 42, 0.65);
+  margin: 0;
+}
+
+.table {
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+.row:last-child {
+  border-bottom: 0;
+}
+
+.cell {
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-right: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+.cell:last-child {
+  border-right: 0;
+}
+
+.specLabel {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #0ea5a4;
+  text-transform: uppercase;
+}
+
+.specValue {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f172a;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .inner {
+    padding: 0 24px;
+  }
+  
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .cell {
+    border-right: 0;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+  }
+
+  .cell:last-child {
+    border-bottom: 0;
+  }
+}

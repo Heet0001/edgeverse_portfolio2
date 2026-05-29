@@ -1,9 +1,10 @@
-import { useLayoutEffect, useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 import { gsap, registerGsapPlugins, ScrollTrigger } from '../../utils/gsap'
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import { TECH_ARCHITECTURE_IMAGES, TECH_STACK_LAYERS } from './technologyData'
 import styles from './techArchitectureStackSection.module.scss'
+import platformArchitectureVideo from '../../assets/videos/Comp a.webm'
 
 const LAYER_LABELS = [
   'Input',
@@ -18,9 +19,22 @@ const TechArchitectureStackSection = () => {
   const sectionRef = useRef<HTMLElement>(null)
   const diagramRef = useRef<HTMLDivElement>(null)
   const layersRef = useRef<HTMLDivElement>(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
   const reduceMotion = usePrefersReducedMotion()
 
   useScrollReveal(sectionRef, { variant: 'fadeUp', y: 20 })
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    if (reduceMotion) {
+      video.pause()
+      return
+    }
+
+    void video.play().catch(() => {})
+  }, [reduceMotion])
 
   useLayoutEffect(() => {
     const section = sectionRef.current
@@ -87,6 +101,19 @@ const TechArchitectureStackSection = () => {
   return (
     <section ref={sectionRef} className={styles.section} aria-label="Perceiva architecture stack">
       <div className={styles.inner}>
+        <div className={styles.videoWrap}>
+          <video
+            ref={videoRef}
+            className={styles.video}
+            src={platformArchitectureVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
+            aria-label="Platform architecture overview"
+          />
+        </div>
+
         <div className={styles.header}>
           <p className={styles.kicker}>Platform architecture</p>
           <h2 className={styles.title}>End-to-end perception intelligence</h2>

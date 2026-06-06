@@ -31,11 +31,6 @@ const Footer = () => {
       <div className={styles.main}>
         <div className={styles.block}>
           <h6 className={styles.blockTitle}>Contact</h6>
-          <address className={styles.address}>
-            G01, #520, 8th Cross BEML Layout,
-            <br />
-            Thubarahalli, Bengaluru, Karnataka 560066
-          </address>
           <p className={styles.contactLine}>
             <a className={styles.contactLink} href="/contact">
               Get Started
@@ -102,6 +97,17 @@ const Footer = () => {
               </a>
             </li>
           </ul>
+
+          <p className={styles.officeSummary}>
+            <span>
+              <strong>Registered Office:</strong> G01, #520, 8th Cross BEML Layout, Thubarahalli,
+              Bengaluru, Karnataka 560066
+            </span>
+            <span>
+              <strong>Corporate Office:</strong> 5th Floor, Mpark, 32/1, Sonnenahalli, Doddanekundi
+              Industrial Area, Mahadevapura Post, Bengaluru- 560048
+            </span>
+          </p>
         </div>
       </div>
     </footer>

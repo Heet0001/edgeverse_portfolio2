@@ -1,37 +1,40 @@
-import detection from "../../../assets/images/detection.png"
+import detection from "../../../assets/images/detection.png";
 // import collisionImg from "../../../assets/images/collision.png"
-import imedgeHardware from "../../../assets/images/imedge_hardware.png"
-import heroImg from "../../../assets/images/hero.png"
+import imedgeHardware from "../../../assets/images/imedge_hardware.png";
+import heroImg from "../../../assets/images/hero.png";
 
-export type NavMegaMenuKey = "technology" | "industries" /* | "safety" */ | "company"
+export type NavMegaMenuKey =
+  | "technology"
+  | "industries" /* | "safety" */
+  | "company";
 
 export type NavMegaLink = {
-  title: string
-  description: string
-  href: string
-}
+  title: string;
+  description: string;
+  href: string;
+};
 
 export type NavMegaMenuConfig = {
-  key: NavMegaMenuKey
-  label: string
-  heading: string
-  tagline: string
-  columns: NavMegaLink[][]
+  key: NavMegaMenuKey;
+  label: string;
+  heading: string;
+  tagline: string;
+  columns: NavMegaLink[][];
   featured: {
-    title: string
-    description: string
-    href: string
-    image: string
-    imageAlt: string
-  }
-}
+    title: string;
+    description: string;
+    href: string;
+    image: string;
+    imageAlt: string;
+  };
+};
 
 export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
   {
     key: "technology",
     label: "Product",
     heading: "Product",
-    tagline: "Edge-native AI for safer, smarter mobility",
+    tagline: "Edge-native AI  for smarter systems",
     columns: [
       [
         {
@@ -40,25 +43,26 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
             "Full-stack Advanced Rider Assistance System for OEMs and Tier-1s",
           href: "/product",
         },
-        {
-          title: "India Perception Model",
-          description:
-            "Trained for Indian road conditions, traffic, and rider behavior",
-          href: "/product",
-        },
+        // {
+        //   title: "India Perception Model",
+        //   description:
+        //     "Trained for Indian road conditions, traffic, and rider behavior",
+        //   href: "/product",
+        // },
       ],
       [
-        {
-          title: "Sensor fusion",
-          description:
-            "Patented fusion of camera and radar for real-time collision intelligence",
-          href: "/product",
-        },
-        {
-          title: "IMedge hardware",
-          description: "Vertically integrated edge compute for on-vehicle inference",
-          href: "/product",
-        },
+        // {
+        //   title: "Sensor fusion",
+        //   description:
+        //     "Patented fusion of camera and radar for real-time collision intelligence",
+        //   href: "/product",
+        // },
+        // {
+        //   title: "IMedge hardware",
+        //   description:
+        //     "Vertically integrated edge compute for on-vehicle inference",
+        //   href: "/product",
+        // },
       ],
     ],
     featured: {
@@ -73,7 +77,7 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
     key: "industries",
     label: "Technology",
     heading: "Technology",
-    tagline: "Full-stack edge AI built for real-world perception",
+    tagline: "We are your Co-Development Partner ",
     columns: [
       [
         {
@@ -83,7 +87,8 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
         },
         {
           title: "India Perception Model",
-          description: "Foundation models trained exclusively on Indian road data",
+          description:
+            "Foundation models trained exclusively on Indian road data",
           href: "/technology",
         },
       ],
@@ -186,11 +191,11 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
       imageAlt: "EdgeVerse team and technology",
     },
   },
-]
+];
 
 export const NAV_QUICK_LINKS = [
   { label: "Product", href: "/product" },
   { label: "Technology", href: "/technology" },
   // { label: "Safety", href: "/safety" },
   { label: "Contact", href: "/contact" },
-] as const
+] as const;

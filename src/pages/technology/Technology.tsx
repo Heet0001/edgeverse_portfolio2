@@ -6,11 +6,11 @@ import TechArchitectureStackSection from "../../components/technology/TechArchit
 import TechPlatformAdvantagesSection from "../../components/technology/TechPlatformAdvantagesSection";
 import TechStackIntroSection from "../../components/technology/TechStackIntroSection";
 import TechApproachSection from "../../components/technology/TechApproachSection";
-import TechAdvantagesSection from "../../components/technology/TechAdvantagesSection";
+// import TechAdvantagesSection from "../../components/technology/TechAdvantagesSection";
 import TechFleetLearningSection from "../../components/technology/TechFleetLearningSection";
 import TechFleetAdvantagesSection from "../../components/technology/TechFleetAdvantagesSection";
-import TechCapabilityCardsSection from "../../components/technology/TechCapabilityCardsSection";
-import TechStackRowsSection from "../../components/technology/TechStackRowsSection";
+// import TechCapabilityCardsSection from "../../components/technology/TechCapabilityCardsSection";
+// import TechStackRowsSection from "../../components/technology/TechStackRowsSection";
 
 const Technology = () => {
   const location = useLocation();
@@ -29,11 +29,11 @@ const Technology = () => {
       <TechPlatformAdvantagesSection />
       <TechStackIntroSection />
       <TechApproachSection />
-      <TechAdvantagesSection />
+      {/* <TechAdvantagesSection /> */}
       <TechFleetLearningSection />
       <TechFleetAdvantagesSection />
-      <TechCapabilityCardsSection />
-      <TechStackRowsSection />
+      {/* <TechCapabilityCardsSection /> */}
+      {/* <TechStackRowsSection /> */}
     </main>
   );
 };

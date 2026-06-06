@@ -1,5 +1,5 @@
-import { useEffect, useLayoutEffect, useRef } from 'react'
-import { gsap, registerGsapPlugins, ScrollTrigger } from '../../utils/gsap'
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { gsap, registerGsapPlugins } from '../../utils/gsap'
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import { TECH_ARCHITECTURE_IMAGES, TECH_STACK_LAYERS } from './technologyData'
@@ -18,8 +18,12 @@ const LAYER_LABELS = [
 const TechArchitectureStackSection = () => {
   const sectionRef = useRef<HTMLElement>(null)
   const diagramRef = useRef<HTMLDivElement>(null)
-  const layersRef = useRef<HTMLDivElement>(null)
+  const layersScrollRef = useRef<HTMLDivElement>(null)
+  const layerBlockRefs = useRef<(HTMLElement | null)[]>([])
   const videoRef = useRef<HTMLVideoElement>(null)
+  const [activeLayer, setActiveLayer] = useState(0)
+  const [canScrollUp, setCanScrollUp] = useState(false)
+  const [canScrollDown, setCanScrollDown] = useState(true)
   const reduceMotion = usePrefersReducedMotion()
 
   useScrollReveal(sectionRef, { variant: 'fadeUp', y: 20 })
@@ -36,15 +40,64 @@ const TechArchitectureStackSection = () => {
     void video.play().catch(() => {})
   }, [reduceMotion])
 
+  const updateActiveFromScroll = useCallback(() => {
+    const container = layersScrollRef.current
+    if (!container) return
+
+    const { scrollTop, scrollHeight, clientHeight } = container
+    setCanScrollUp(scrollTop > 8)
+    setCanScrollDown(scrollTop + clientHeight < scrollHeight - 8)
+
+    const marker = scrollTop + clientHeight * 0.38
+    let nextActive = 0
+
+    layerBlockRefs.current.forEach((block, index) => {
+      if (!block) return
+      if (block.offsetTop <= marker) {
+        nextActive = index
+      }
+    })
+
+    setActiveLayer(nextActive)
+  }, [])
+
+  const scrollToLayer = useCallback(
+    (index: number) => {
+      const container = layersScrollRef.current
+      const block = layerBlockRefs.current[index]
+      if (!container || !block) return
+
+      const targetTop = block.offsetTop - 12
+      container.scrollTo({
+        top: Math.max(0, targetTop),
+        behavior: reduceMotion ? 'auto' : 'smooth',
+      })
+      setActiveLayer(index)
+    },
+    [reduceMotion],
+  )
+
+  useEffect(() => {
+    const container = layersScrollRef.current
+    if (!container) return
+
+    updateActiveFromScroll()
+    container.addEventListener('scroll', updateActiveFromScroll, { passive: true })
+    window.addEventListener('resize', updateActiveFromScroll)
+
+    return () => {
+      container.removeEventListener('scroll', updateActiveFromScroll)
+      window.removeEventListener('resize', updateActiveFromScroll)
+    }
+  }, [updateActiveFromScroll])
+
   useLayoutEffect(() => {
     const section = sectionRef.current
     const diagram = diagramRef.current
-    const layers = layersRef.current
-    if (!section || !diagram || !layers || reduceMotion) return
+    if (!section || !diagram || reduceMotion) return
 
     registerGsapPlugins()
 
-    const blocks = layers.querySelectorAll(`.${styles.layerBlock}`)
     const stackBars = diagram.querySelectorAll(`.${styles.stackBar}`)
 
     const ctx = gsap.context(() => {
@@ -60,40 +113,7 @@ const TechArchitectureStackSection = () => {
           toggleActions: 'play none none none',
         },
       })
-
-      blocks.forEach((block, index) => {
-        gsap.from(block, {
-          opacity: 0,
-          x: -16,
-          duration: 0.55,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: block,
-            start: 'top 88%',
-            toggleActions: 'play none none none',
-          },
-        })
-
-        ScrollTrigger.create({
-          trigger: block,
-          start: 'top 55%',
-          end: 'bottom 45%',
-          onEnter: () => highlightStack(index),
-          onEnterBack: () => highlightStack(index),
-        })
-      })
     }, section)
-
-    function highlightStack(activeIndex: number) {
-      stackBars.forEach((bar, i) => {
-        gsap.to(bar, {
-          opacity: i === activeIndex ? 1 : 0.35,
-          scaleX: i === activeIndex ? 1 : 0.92,
-          duration: 0.35,
-          ease: 'power2.out',
-        })
-      })
-    }
 
     return () => ctx.revert()
   }, [reduceMotion])
@@ -124,40 +144,65 @@ const TechArchitectureStackSection = () => {
         </div>
 
         <div className={styles.layout}>
-          <div ref={diagramRef} className={styles.diagram} aria-hidden="true">
-            <div className={styles.diagramInner}>
-              <p className={styles.diagramLabel}>High-level structure</p>
-              <div className={styles.stack}>
-                {TECH_STACK_LAYERS.map((layer, index) => (
-                  <div key={layer.id} className={styles.stackRow}>
-                    <span className={styles.stackLabel}>{LAYER_LABELS[index]}</span>
-                    <span className={styles.stackBar} />
-                  </div>
-                ))}
+          <div className={styles.diagramCol}>
+            <div ref={diagramRef} className={styles.diagram} aria-hidden="true">
+              <div className={styles.diagramInner}>
+                <p className={styles.diagramLabel}>High-level structure</p>
+                <div className={styles.stack}>
+                  {TECH_STACK_LAYERS.map((layer, index) => (
+                    <button
+                      key={layer.id}
+                      type="button"
+                      className={`${styles.stackRow} ${activeLayer === index ? styles.stackRowActive : ''}`}
+                      onClick={() => scrollToLayer(index)}
+                      aria-current={activeLayer === index ? 'true' : undefined}
+                      aria-label={`View ${layer.title}`}
+                    >
+                      <span className={styles.stackLabel}>{LAYER_LABELS[index]}</span>
+                      <span className={styles.stackBar} />
+                    </button>
+                  ))}
+                </div>
+                <p className={styles.diagramNote}>
+                  Select a layer or scroll the panel to explore
+                </p>
               </div>
-              <p className={styles.diagramNote}>
-                Architecture diagram — detailed structure in progress
-              </p>
+              <img
+                className={styles.diagramImage}
+                src={TECH_ARCHITECTURE_IMAGES.diagram}
+                alt=""
+                loading="lazy"
+              />
             </div>
-            <img
-              className={styles.diagramImage}
-              src={TECH_ARCHITECTURE_IMAGES.diagram}
-              alt=""
-              loading="lazy"
-            />
           </div>
 
-          <div ref={layersRef} className={styles.layers}>
-            {TECH_STACK_LAYERS.map((layer, index) => (
-              <article key={layer.id} id={layer.id} className={styles.layerBlock}>
-                <div className={styles.layerMeta}>
-                  <span className={styles.layerIndex}>{String(index + 1).padStart(2, '0')}</span>
-                  <span className={styles.layerRule} aria-hidden="true" />
-                </div>
-                <h3 className={styles.layerTitle}>{layer.title}</h3>
-                <p className={styles.layerDesc}>{layer.description}</p>
-              </article>
-            ))}
+          <div
+            className={`${styles.layersPanel} ${canScrollUp ? styles.layersPanelCanScrollUp : ''} ${canScrollDown ? styles.layersPanelCanScrollDown : ''}`}
+          >
+            <div ref={layersScrollRef} className={styles.layersScroll}>
+              <div className={styles.layers}>
+                {TECH_STACK_LAYERS.map((layer, index) => (
+                  <article
+                    key={layer.id}
+                    id={layer.id}
+                    ref={(el) => {
+                      layerBlockRefs.current[index] = el
+                    }}
+                    className={`${styles.layerBlock} ${activeLayer === index ? styles.layerBlockActive : ''}`}
+                    onMouseEnter={() => setActiveLayer(index)}
+                    onFocus={() => setActiveLayer(index)}
+                  >
+                    <div className={styles.layerMeta}>
+                      <span className={styles.layerIndex}>{String(index + 1).padStart(2, '0')}</span>
+                      <span className={styles.layerRule} aria-hidden="true" />
+                    </div>
+                    <h3 className={styles.layerTitle}>{layer.title}</h3>
+                    <p className={styles.layerDesc}>{layer.description}</p>
+                    {layer.note ? <p className={styles.layerNote}>{layer.note}</p> : null}
+                  </article>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

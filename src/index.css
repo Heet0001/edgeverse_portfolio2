@@ -44,7 +44,7 @@ body {
   width: 100%;
   overflow-x: hidden;
   margin: 0;
-  font-family: inherit;
+  font-family: var(--font-sans);
   font-weight: 400;
   color: var(--color-text);
   background: #ffffff;
@@ -52,11 +52,17 @@ body {
 
 *, *::before, *::after {
   box-sizing: border-box;
-  font-family: inherit;
 }
 
 #root {
-  font-family: inherit;
+  font-family: var(--font-sans);
+}
+
+:where(
+  body,
+  body *:not(pre):not(code):not(kbd):not(samp)
+) {
+  font-family: var(--font-sans);
 }
 
 img, video, canvas, svg {
@@ -68,9 +74,8 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.03em;
 }
 
-p, a, li, span, label, small, strong, em, blockquote, figcaption,
 button, input, textarea, select, option, optgroup {
-  font-family: inherit;
+  font: inherit;
 }
 
 code, pre, kbd, samp {

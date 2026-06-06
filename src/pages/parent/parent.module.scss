@@ -1,9 +1,9 @@
 .parent {
   position: relative;
-  font-family: inherit;
+  font-family: var(--font-sans);
 }
 
 .content {
   padding-top: 0;
-  font-family: inherit;
+  font-family: var(--font-sans);
 }

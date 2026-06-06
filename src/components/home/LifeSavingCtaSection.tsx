@@ -1,21 +1,26 @@
-import { useRef } from 'react'
-import { useScrollReveal } from '../../hooks/useScrollReveal'
-import styles from './lifeSavingCtaSection.module.scss'
+import { useRef } from "react";
+import { useScrollReveal } from "../../hooks/useScrollReveal";
+import styles from "./lifeSavingCtaSection.module.scss";
 
 const LifeSavingCtaSection = () => {
-  const sectionRef = useRef<HTMLElement>(null)
-  useScrollReveal(sectionRef, { variant: 'fadeUp', y: 20, start: 'top 90%' })
+  const sectionRef = useRef<HTMLElement>(null);
+  useScrollReveal(sectionRef, { variant: "fadeUp", y: 20, start: "top 90%" });
 
   return (
-    <section ref={sectionRef} className={styles.section} aria-label="Schedule a call">
+    <section
+      ref={sectionRef}
+      className={styles.section}
+      aria-label="Schedule a call"
+    >
       <div className={styles.inner}>
         <div className={styles.left}>
           <h2 className={styles.title}>
-            Let&apos;s make roads <span className={styles.accent}>safer together.</span>
+            Let&apos;s make your{" "}
+            <span className={styles.accent}> edge device intelligent.</span>
           </h2>
           <p className={styles.text}>
-            Whether you&apos;re an OEM, Tier-1 supplier, or mobility partner — EdgeVerse
-            perception intelligence integrates into any vehicle, anywhere in the world.
+            Whether you&apos;re an OEM, Tier-1 supplier — EdgeVerse perception
+            intelligence integrates into any edge device.
           </p>
         </div>
 
@@ -29,7 +34,7 @@ const LifeSavingCtaSection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default LifeSavingCtaSection
+export default LifeSavingCtaSection;

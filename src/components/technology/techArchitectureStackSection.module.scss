@@ -53,30 +53,47 @@
 }
 
 .layout {
+  --stack-panel-height: clamp(400px, 52vh, 520px);
   display: grid;
-  grid-template-columns: minmax(240px, 0.85fr) minmax(0, 1.15fr);
-  gap: clamp(32px, 5vw, 64px);
-  align-items: start;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(24px, 4vw, 48px);
+  align-items: stretch;
+  height: var(--stack-panel-height);
+}
+
+.diagramCol {
+  display: flex;
+  min-height: 0;
+  height: 100%;
 }
 
 .diagram {
-  position: sticky;
-  top: calc(var(--nav-height, 72px) + 24px);
+  position: relative;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--color-border);
-  background: #fafafa;
-  min-height: 420px;
+  background: linear-gradient(160deg, #f8fafc 0%, #eef2f7 100%);
+  isolation: isolate;
 }
 
 .diagramInner {
   position: relative;
   z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: clamp(24px, 3vw, 32px);
+  min-height: 0;
 }
 
 .diagramLabel {
-  margin: 0 0 20px;
+  margin: 0 0 16px;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -85,23 +102,56 @@
 }
 
 .stack {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  justify-content: space-evenly;
+  gap: 2px;
+  min-height: 0;
 }
 
 .stackRow {
   display: grid;
-  grid-template-columns: 64px 1fr;
+  grid-template-columns: 72px 1fr;
   align-items: center;
   gap: 12px;
+  width: 100%;
+  padding: 8px;
+  margin: 0 -8px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  text-align: inherit;
+  transition:
+    background 220ms var(--ease-out),
+    transform 220ms var(--ease-out);
+}
+
+.stackRow:hover {
+  background: rgba(13, 148, 136, 0.06);
+}
+
+.stackRow:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.stackRowActive {
+  background: rgba(13, 148, 136, 0.08);
 }
 
 .stackLabel {
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--color-text-muted);
   text-align: right;
+  transition: color 220ms var(--ease-out);
+}
+
+.stackRowActive .stackLabel,
+.stackRow:hover .stackLabel {
+  color: var(--color-accent);
 }
 
 .stackBar {
@@ -110,15 +160,25 @@
   border-radius: 999px;
   background: linear-gradient(90deg, var(--color-accent), rgba(13, 148, 136, 0.35));
   opacity: 0.35;
+  transform: scaleX(0.92);
   transform-origin: left center;
+  transition:
+    opacity 280ms var(--ease-out),
+    transform 280ms var(--ease-out),
+    box-shadow 280ms var(--ease-out);
+}
+
+.stackRowActive .stackBar {
+  opacity: 1;
+  transform: scaleX(1);
+  box-shadow: 0 0 0 1px rgba(13, 148, 136, 0.15);
 }
 
 .diagramNote {
-  margin: 24px 0 0;
+  margin: 16px 0 0;
   font-size: 12px;
   line-height: 1.5;
   color: rgba(15, 23, 42, 0.45);
-  font-style: italic;
 }
 
 .diagramImage {
@@ -127,31 +187,113 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.12;
+  opacity: 0.1;
   pointer-events: none;
+}
+
+.layersPanel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+  background: #fafbfc;
+  overflow: hidden;
+}
+
+.layersPanel::before,
+.layersPanel::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 28px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 220ms var(--ease-out);
+}
+
+.layersPanel::before {
+  top: 0;
+  background: linear-gradient(180deg, #fafbfc 30%, rgba(250, 251, 252, 0));
+}
+
+.layersPanel::after {
+  bottom: 0;
+  background: linear-gradient(0deg, #fafbfc 30%, rgba(250, 251, 252, 0));
+}
+
+.layersPanelCanScrollUp::before {
+  opacity: 1;
+}
+
+.layersPanelCanScrollDown::after {
+  opacity: 1;
+}
+
+.layersScroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+  padding: 14px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(13, 148, 136, 0.4) transparent;
+}
+
+.layersScroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.layersScroll::-webkit-scrollbar-thumb {
+  background: rgba(13, 148, 136, 0.4);
+  border-radius: 999px;
+}
+
+.layersScroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(13, 148, 136, 0.6);
 }
 
 .layers {
   display: flex;
   flex-direction: column;
-  gap: clamp(28px, 3.5vw, 40px);
+  gap: 12px;
 }
 
 .layerBlock {
-  padding-bottom: clamp(28px, 3.5vw, 36px);
-  border-bottom: 1px solid var(--color-border);
+  padding: clamp(18px, 2vw, 24px);
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  background: #ffffff;
+  transition:
+    background 280ms var(--ease-out),
+    border-color 280ms var(--ease-out),
+    box-shadow 280ms var(--ease-out),
+    transform 280ms var(--ease-out);
 }
 
-.layerBlock:last-child {
-  padding-bottom: 0;
-  border-bottom: none;
+.layerBlock:hover {
+  border-color: rgba(13, 148, 136, 0.22);
+  background: rgba(13, 148, 136, 0.03);
+  transform: translateX(3px);
+}
+
+.layerBlockActive {
+  border-color: rgba(13, 148, 136, 0.35);
+  background: rgba(13, 148, 136, 0.05);
+  box-shadow: 0 6px 24px rgba(13, 148, 136, 0.1);
 }
 
 .layerMeta {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .layerIndex {
@@ -166,11 +308,17 @@
   height: 1px;
   background: var(--color-border);
   max-width: 48px;
+  transition: background 280ms var(--ease-out), max-width 280ms var(--ease-out);
+}
+
+.layerBlockActive .layerRule {
+  background: rgba(13, 148, 136, 0.35);
+  max-width: 72px;
 }
 
 .layerTitle {
-  margin: 0 0 10px;
-  font-size: clamp(18px, 1.6vw, 22px);
+  margin: 0 0 8px;
+  font-size: clamp(17px, 1.5vw, 20px);
   font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--color-text);
@@ -178,27 +326,65 @@
 
 .layerDesc {
   margin: 0;
-  max-width: 62ch;
-  font-size: clamp(14px, 1.05vw, 15px);
-  line-height: 1.7;
+  font-size: clamp(13px, 1vw, 14px);
+  line-height: 1.65;
   color: var(--color-text-muted);
+}
+
+.layerNote {
+  margin: 10px 0 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border-left: 3px solid var(--color-accent);
+  background: rgba(13, 148, 136, 0.06);
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--color-text);
 }
 
 @media (max-width: 960px) {
   .layout {
     grid-template-columns: 1fr;
+    height: auto;
+    --stack-panel-height: clamp(360px, 48vh, 460px);
+  }
+
+  .diagramCol {
+    height: auto;
+    min-height: 280px;
   }
 
   .diagram {
-    position: relative;
-    top: auto;
     min-height: 280px;
+  }
+
+  .layersPanel {
+    height: var(--stack-panel-height);
+  }
+
+  .stack {
+    justify-content: flex-start;
+    gap: 6px;
+  }
+
+  .layerBlock:hover {
+    transform: none;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .stackBar {
-    opacity: 1 !important;
-    transform: none !important;
+    transition: none;
+  }
+
+  .layerBlock,
+  .stackRow,
+  .layersScroll {
+    transition: none;
+    scroll-behavior: auto;
+  }
+
+  .layerBlock:hover {
+    transform: none;
   }
 }

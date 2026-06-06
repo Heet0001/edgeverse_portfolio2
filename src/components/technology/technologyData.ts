@@ -187,6 +187,7 @@ export type TechStackLayer = {
   id: string
   title: string
   description: string
+  note?: string
 }
 
 export const TECH_STACK_LAYERS: TechStackLayer[] = [
@@ -195,6 +196,7 @@ export const TECH_STACK_LAYERS: TechStackLayer[] = [
     title: 'Sensing & Input',
     description:
       'The sensing layer is hardware agnostic and designed to support diverse sensor combinations based on application requirements. The platform integrates seamlessly with computer vision cameras, radar point clouds, IMU sensors, GPS modules, and hybrid sensor configurations. This flexibility allows customers to build multiple sensor hardware prototype quickly, customize perception performance, cost, and deployment complexity for their specific operational needs.',
+    note: 'We also provide solutions with an integrated camera & ISP tuning.',
   },
   {
     id: 'perception',
@@ -212,7 +214,7 @@ export const TECH_STACK_LAYERS: TechStackLayer[] = [
     id: 'deployment',
     title: 'Universal Deployment',
     description:
-      'Perceiva™ is designed for universal deployment across edge devices and real-world environments. From two-wheelers and commercial fleets to robotics and autonomous mobile platforms, the platform enables a single intelligence stack to adapt seamlessly across industries and mobility formats. Edge-optimized perception models combined with flexible sensor compatibility allow rapid deployment without dependence on cloud infrastructure.',
+      'Perceiva™ suite of products are designed for universal deployment across edge devices and real-world environments. From two-wheelers, commercial fleets to smart industrial and autonomous mobile platforms, the platform enables a single intelligence stack to adapt seamlessly across industries and mobility formats. Edge-optimized perception models combined with flexible sensor compatibility allow rapid deployment without dependence on cloud infrastructure.',
   },
   {
     id: 'learning',
@@ -224,7 +226,7 @@ export const TECH_STACK_LAYERS: TechStackLayer[] = [
     id: 'compliance',
     title: 'Customer IP Vault & Compliance',
     description:
-      'Perceiva™ is built with enterprise-grade data ownership and compliance principles at its core. Customer deployment data, edge intelligence models, and operational insights remain securely retained within a protected vault architecture aligned with DPDPA 2023 compliance requirements. This ensures organizations maintain full control over proprietary operational intelligence and sensitive edge data. A cloud-agnostic architecture that respects OEM autonomy; you deploy on your cloud of choice and retain 100% ownership of your proprietary datasets and custom-tuned model intelligence.',
+      'Perceiva™ suite of products is built with enterprise-grade data ownership and compliance principles at its core. Customer deployment data, edge intelligence models, and operational insights remain securely retained within a protected vault architecture aligned with DPDPA 2023 compliance requirements. This ensures organizations maintain full control over proprietary operational intelligence and sensitive edge data. A cloud-agnostic architecture that respects OEM autonomy; you deploy on your cloud of choice and retain 100% ownership of your proprietary datasets and custom-tuned model intelligence.',
   },
 ]
 

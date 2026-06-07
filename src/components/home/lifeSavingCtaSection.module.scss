@@ -6,10 +6,10 @@
 .inner {
   max-width: 1440px;
   margin: 0 auto;
-  padding: var(--section-pad-y) var(--section-pad-x);
+  padding: clamp(16px, 2.5vw, 28px) var(--section-pad-x);
   display: grid;
   grid-template-columns: 1fr;
-  gap: 28px;
+  gap: 20px;
   align-items: center;
 }
 

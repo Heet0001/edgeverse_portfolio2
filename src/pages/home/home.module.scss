@@ -1,11 +1,12 @@
 .page {
+  --section-pad-y: clamp(20px, 3vw, 36px);
   background: #ffffff;
   color: var(--color-text);
 }
 
 .introCardsSpacer {
   margin-top: 0;
-  padding-top: var(--section-pad-y);
+  padding-top: clamp(12px, 2vw, 20px);
 }
 
 .hero {

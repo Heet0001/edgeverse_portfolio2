@@ -97,11 +97,9 @@ const ScrollRevealIntro = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
-          start: "top top",
-          end: "+=120%",
-          scrub: 0.6,
-          pin: true,
-          anticipatePin: 1,
+          start: "top 88%",
+          end: "bottom 35%",
+          scrub: 0.5,
         },
       });
 
@@ -128,16 +126,14 @@ const ScrollRevealIntro = () => {
       className={styles.scrollSection}
       aria-label="EdgeVerse mission"
     >
-      <div className={styles.sticky}>
-        <div className={styles.introInner}>
-          <p className={styles.introText}>
-            {INTRO_WORDS.map((word, index) => (
-              <span key={`${word}-${index}`} className={styles.word}>
-                {word}
-              </span>
-            ))}
-          </p>
-        </div>
+      <div className={styles.introInner}>
+        <p className={styles.introText}>
+          {INTRO_WORDS.map((word, index) => (
+            <span key={`${word}-${index}`} className={styles.word}>
+              {word}
+            </span>
+          ))}
+        </p>
       </div>
     </section>
   );

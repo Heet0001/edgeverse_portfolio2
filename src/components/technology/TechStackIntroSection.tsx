@@ -1,19 +1,27 @@
-import { useRef } from 'react'
-import { useScrollReveal } from '../../hooks/useScrollReveal'
-import styles from './techStackIntroSection.module.scss'
-import { TECH_STACK_FEATURES, TECH_STACK_SIDE_IMAGE } from './technologyData'
+import { useRef } from "react";
+import { useScrollReveal } from "../../hooks/useScrollReveal";
+import styles from "./techStackIntroSection.module.scss";
+import { TECH_STACK_FEATURES, TECH_STACK_SIDE_IMAGE } from "./technologyData";
 
 const TechStackIntroSection = () => {
-  const headerRef = useRef<HTMLDivElement>(null)
-  const copyRef = useRef<HTMLDivElement>(null)
-  const mediaRef = useRef<HTMLDivElement>(null)
+  const headerRef = useRef<HTMLDivElement>(null);
+  const copyRef = useRef<HTMLDivElement>(null);
+  const mediaRef = useRef<HTMLDivElement>(null);
 
-  useScrollReveal(headerRef, { variant: 'fadeUp', y: 24 })
-  useScrollReveal(copyRef, { variant: 'stagger', stagger: 0.12, y: 22, childSelector: `.${styles.block}` })
-  useScrollReveal(mediaRef, { variant: 'fadeUp', y: 28, delay: 0.12 })
+  useScrollReveal(headerRef, { variant: "fadeUp", y: 24 });
+  useScrollReveal(copyRef, {
+    variant: "stagger",
+    stagger: 0.12,
+    y: 22,
+    childSelector: `.${styles.block}`,
+  });
+  useScrollReveal(mediaRef, { variant: "fadeUp", y: 28, delay: 0.12 });
 
   return (
-    <section className={styles.section} aria-label="Full-stack edge AI architecture">
+    <section
+      className={styles.section}
+      aria-label="Full-stack edge AI architecture"
+    >
       <div className={styles.inner}>
         <div ref={headerRef} className={styles.header}>
           <h2 className={styles.title}>
@@ -22,9 +30,10 @@ const TechStackIntroSection = () => {
             for real-world perception
           </h2>
           <p className={styles.lead}>
-            EdgeVerse specializes in building AI perception models for two-wheelers. Our technology
-            equips vehicles with an intelligent &apos;perception brain&apos; that can see, understand,
-            and react to India&apos;s chaotic roads.
+            EdgeVerse specializes in building AI perception models for
+            two-wheelers. Our technology equips vehicles with an intelligent
+            &apos;perception brain&apos; that can see, understand, and react to
+            India&apos;s chaotic roads.
           </p>
         </div>
 
@@ -49,7 +58,7 @@ const TechStackIntroSection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default TechStackIntroSection
+export default TechStackIntroSection;

@@ -156,7 +156,7 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
     key: "company",
     label: "Company",
     heading: "Company",
-    tagline: "Pioneering life-saving intelligence for every commute",
+    tagline: "Reducing entry-barrier for edge intelligence",
     columns: [
       [
         {
@@ -172,8 +172,8 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
       ],
       [
         {
-          title: "Investors",
-          description: "Partners shaping the future of mobility",
+          title: "Partners and Investors",
+          description: "Technology and OEM partners building at the edge",
           href: "/investors",
         },
         {

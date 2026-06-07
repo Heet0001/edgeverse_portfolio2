@@ -1,6 +1,8 @@
 .section {
+  position: relative;
+  z-index: 0;
   background: #ffffff;
-  padding: 0 var(--section-pad-x) var(--section-pad-y);
+  padding: 0 var(--section-pad-x) clamp(16px, 2.5vw, 28px);
   margin-top: 0;
 }
 

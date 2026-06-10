@@ -1,9 +1,9 @@
 import { useRef } from "react";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 import styles from "./buildWithCardsSection.module.scss";
-import buildImg from "../../assets/images/card-build-with-edgeverse.png";
-import investorsImg from "../../assets/images/card-investors.png";
-import safetyImg from "../../assets/images/image.png";
+import buildImg from "../../assets/images/buildp.png";
+import investorsImg from "../../assets/images/sh.png";
+import safetyImg from "../../assets/images/al.png";
 
 const CARDS = [
   {
@@ -14,7 +14,7 @@ const CARDS = [
     cta: "Product",
     href: "/product",
     image: buildImg,
-    imageAlt: "Motorcycle HUD with real-time Perceiva perception data",
+    imageAlt: "Perceiva full-stack platform diagram",
   },
   {
     id: "active-learning",
@@ -24,17 +24,17 @@ const CARDS = [
     cta: "Technology",
     href: "/technology",
     image: safetyImg,
-    imageAlt: "Edge AI perception adapting to complex road conditions",
+    imageAlt: "Active learning loop diagram",
   },
   {
-    id: "imedge hardware",
+    id: "imedge-hardware",
     title: "Imedge Hardware",
     description:
-      "	Explore how Edgeverse can help you build camera hardware and ISP tuning for your application ",
+      "Explore how EdgeVerse can help you build camera hardware and ISP tuning for your application.",
     cta: "Company",
     href: "/about",
     image: investorsImg,
-    imageAlt: "EdgeVerse perception hardware mounted on a motorcycle",
+    imageAlt: "Sensor hardware integration diagram",
   },
 ] as const;
 
@@ -56,14 +56,6 @@ const BuildWithCardsSection = () => {
             data-reveal-item
             tabIndex={0}
           >
-            <img
-              className={styles.cardBg}
-              src={card.image}
-              alt={card.imageAlt}
-              loading="lazy"
-            />
-            <div className={styles.cardOverlay} aria-hidden="true" />
-
             <div className={styles.cardContent}>
               <h2 className={styles.cardTitle}>{card.title}</h2>
               <p className={styles.cardDesc}>{card.description}</p>
@@ -73,6 +65,15 @@ const BuildWithCardsSection = () => {
                   →
                 </span>
               </a>
+            </div>
+
+            <div className={styles.cardMedia}>
+              <img
+                className={styles.cardImage}
+                src={card.image}
+                alt={card.imageAlt}
+                loading="lazy"
+              />
             </div>
           </article>
         ))}

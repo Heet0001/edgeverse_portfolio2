@@ -27,7 +27,7 @@ const TechFleetLearningSection = () => {
         <div ref={mediaRef} className={styles.media}>
           <img
             src={TECH_FLEET_IMAGE}
-            alt="Indian highway at night with fleet learning data network overlay"
+            alt="EdgeVerse active learning loop and fleet architecture diagram"
             className={styles.image}
             loading="lazy"
           />

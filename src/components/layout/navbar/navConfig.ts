@@ -93,7 +93,8 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
     ],
     featured: {
       title: "Co-Development Partner",
-      description: "Partner with EdgeVerse from sensor integration through deployment.",
+      description:
+        "Partner with EdgeVerse from sensor integration through deployment.",
       href: "/technology",
       image: heroImg,
       imageAlt: "EdgeVerse technology and co-development",

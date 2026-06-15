@@ -1,33 +1,16 @@
 import { useRef } from "react";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
+import artparkLogo from "../../assets/images/artpark.png";
 import styles from "./homeInvestorsSection.module.scss";
 
-const PARTNER_LOGOS = [
-  { name: "ArtPark", variant: "arm" },
-  { name: "ArtPark", variant: "arm" },
-  // { name: "ArtPark", variant: "default" },
-  // { name: 'Qualcomm', variant: 'default' },
-  // { name: 'NVIDIA', variant: 'nvidia' },
-  // { name: 'Valeo', variant: 'valeo' },
-  // { name: 'Bosch', variant: 'default' },
-] as const;
+const INVESTOR_LOGOS = [{ name: "ARTPARK", logo: artparkLogo }] as const;
 
-type LogoVariant = (typeof PARTNER_LOGOS)[number]["variant"];
-
-const variantClass: Record<LogoVariant, string | undefined> = {
-  arm: styles.logoArm,
-};
-
-function LogoItem({ name, variant }: { name: string; variant: LogoVariant }) {
-  const extra = variantClass[variant];
-  return (
-    <span className={extra ? `${styles.logoItem} ${extra}` : styles.logoItem}>
-      {name}
-    </span>
-  );
-}
-
-const MARQUEE_LOGOS = [...PARTNER_LOGOS, ...PARTNER_LOGOS, ...PARTNER_LOGOS];
+const MARQUEE_LOGOS = [
+  ...INVESTOR_LOGOS,
+  ...INVESTOR_LOGOS,
+  ...INVESTOR_LOGOS,
+  ...INVESTOR_LOGOS,
+];
 
 const HomeInvestorsSection = () => {
   const copyRef = useRef<HTMLDivElement>(null);
@@ -54,15 +37,17 @@ const HomeInvestorsSection = () => {
           </div>
         </div>
 
-        <div className={styles.logoMarquee} aria-label="Partner logos">
+        <div className={styles.logoMarquee} aria-label="Investor logos">
           <div className={styles.logoFadeLeft} aria-hidden="true" />
           <div className={styles.logoFadeRight} aria-hidden="true" />
           <div className={styles.logoTrack}>
-            {MARQUEE_LOGOS.map((logo, index) => (
-              <LogoItem
-                key={`${logo.name}-${index}`}
-                name={logo.name}
-                variant={logo.variant}
+            {MARQUEE_LOGOS.map((item, index) => (
+              <img
+                key={`${item.name}-${index}`}
+                src={item.logo}
+                alt={item.name}
+                className={styles.logoImage}
+                loading="lazy"
               />
             ))}
           </div>

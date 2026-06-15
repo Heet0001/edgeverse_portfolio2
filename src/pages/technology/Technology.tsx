@@ -27,8 +27,8 @@ const Technology = () => {
       <TechPartnerIntroSection />
       <TechArchitectureStackSection />
       <TechPlatformAdvantagesSection />
-      <TechStackIntroSection />
-      <TechApproachSection />
+      {/* <TechStackIntroSection /> */}
+      {/* <TechApproachSection /> */}
       {/* <TechAdvantagesSection /> */}
       <TechFleetLearningSection />
       <TechFleetAdvantagesSection />

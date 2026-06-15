@@ -1,6 +1,5 @@
 import detection from "../../../assets/images/detection.png";
 // import collisionImg from "../../../assets/images/collision.png"
-import imedgeHardware from "../../../assets/images/imedge_hardware.png";
 import heroImg from "../../../assets/images/hero.png";
 
 export type NavMegaMenuKey =
@@ -43,27 +42,14 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
             "Full-stack Advanced Rider Assistance System for OEMs and Tier-1s",
           href: "/product",
         },
-        // {
-        //   title: "India Perception Model",
-        //   description:
-        //     "Trained for Indian road conditions, traffic, and rider behavior",
-        //   href: "/product",
-        // },
+        {
+          title: "Imedge® Hardware",
+          description:
+            "Help you build the right camera hardware and ISP tuning",
+          href: "/product/imedge",
+        },
       ],
-      [
-        // {
-        //   title: "Sensor fusion",
-        //   description:
-        //     "Patented fusion of camera and radar for real-time collision intelligence",
-        //   href: "/product",
-        // },
-        // {
-        //   title: "IMedge hardware",
-        //   description:
-        //     "Vertically integrated edge compute for on-vehicle inference",
-        //   href: "/product",
-        // },
-      ],
+      [],
     ],
     featured: {
       title: "Perceiva™",
@@ -106,11 +92,11 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
       ],
     ],
     featured: {
-      title: "Imedge® Hardware",
-      description: "Compact edge compute purpose-built for two-wheelers.",
-      href: "/technology#imedge",
-      image: imedgeHardware,
-      imageAlt: "EdgeVerse Imedge hardware stack",
+      title: "Co-Development Partner",
+      description: "Partner with EdgeVerse from sensor integration through deployment.",
+      href: "/technology",
+      image: heroImg,
+      imageAlt: "EdgeVerse technology and co-development",
     },
   },
   // {
@@ -156,7 +142,7 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
     key: "company",
     label: "Company",
     heading: "Company",
-    tagline: "Reducing entry-barrier for edge intelligence",
+    tagline: "",
     columns: [
       [
         {

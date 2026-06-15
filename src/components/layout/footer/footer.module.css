@@ -1,7 +1,7 @@
 /* Wayve-style footer: dark blue → purple gradient, light text */
 .footer {
   position: relative;
-  margin-top: 48px;
+  /* margin-top: 48px; */
   overflow: hidden;
   font-family: var(--font-sans);
   color: rgba(255, 255, 255, 0.88);
@@ -123,12 +123,11 @@
 
 .logo {
   display: block;
-  width: 143px;
-  height: auto;
-  max-height: 49px;
+  width: auto;
+  height: 40px;
+  max-width: min(220px, 70vw);
   object-fit: contain;
   object-position: left center;
-  filter: brightness(0) invert(1);
   margin-bottom: 16px;
 }
 

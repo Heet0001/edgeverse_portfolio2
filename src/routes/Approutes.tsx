@@ -7,6 +7,7 @@ import {
   Parent,
   Technology,
   Product,
+  Imedge,
   Industries,
   Safety,
   Contact,
@@ -28,6 +29,7 @@ const Approutes = () => {
           <Route path="/careers" element={<Career />} />
           <Route path="/careers/:slug/apply" element={<CareerApply />} />
           <Route path="/product" element={<Product />} />
+          <Route path="/product/imedge" element={<Imedge />} />
           <Route path="/technology" element={<Technology />} />
           <Route path="/industries" element={<Industries />} />
           <Route path="/safety" element={<Safety />} />

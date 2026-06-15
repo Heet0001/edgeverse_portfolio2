@@ -53,17 +53,17 @@ const Blog = () => {
       <section id="page-hero" className={styles.hero} aria-label="Blog hero">
         <div className={styles.heroBg} aria-hidden="true" />
         <div className={styles.heroInner}>
-          <div className={styles.kicker}>EDGEVERSE BLOG</div>
-          <h1 className={styles.heroTitle}>
-            Stories, insight &amp; engineering
-            <br />
-            from the edge of mobility.
-          </h1>
-          <p className={styles.heroSubtitle}>
-            Deep dives into perception, sensor fusion, road safety in India, and
-            the engineering that powers Perceiva&trade; — written by the
-            EdgeVerse team.
-          </p>
+          <div className={styles.heroContent}>
+            <div className={styles.kicker}>EdgeVerse Blog</div>
+            <h1 className={styles.heroTitle}>
+              Stories, insight &amp; engineering from the edge of mobility.
+            </h1>
+            <p className={styles.heroSubtitle}>
+              Deep dives into perception, sensor fusion, road safety in India, and
+              the engineering that powers Perceiva&trade; — written by the
+              EdgeVerse team.
+            </p>
+          </div>
         </div>
       </section>
 

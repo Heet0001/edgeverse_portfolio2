@@ -1,25 +1,25 @@
 .section {
   background: #ffffff;
-  padding: 100px 0;
+  padding: var(--section-pad-y) 0;
 }
 
 .inner {
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 64px;
+  padding: 0 var(--section-pad-x);
 }
 
 .header {
-  margin-bottom: 64px;
+  margin-bottom: clamp(40px, 5vw, 64px);
   text-align: center;
 }
 
 .title {
-  font-size: clamp(28px, 3.5vw, 42px);
-  font-weight: 900;
+  font-size: clamp(26px, 3.2vw, 40px);
+  font-weight: 600;
   line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: #0f172a;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
   margin: 0;
 }
 
@@ -116,18 +116,18 @@
 }
 
 .colTitle {
-  font-size: clamp(13px, 1.2vw, 16px);
-  font-weight: 800;
-  letter-spacing: 0.32em;
-  color: #0d9488;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--color-accent);
   text-transform: uppercase;
   margin: 0 0 16px;
 }
 
 .colText {
-  font-size: 15px;
-  line-height: 1.75;
-  color: rgba(15, 23, 42, 0.62);
+  font-size: clamp(14px, 1.05vw, 15px);
+  line-height: 1.7;
+  color: var(--color-text-muted);
   margin: 0;
   font-weight: 400;
 }

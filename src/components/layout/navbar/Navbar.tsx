@@ -1,68 +1,81 @@
-import styles from "./navbar.module.css"
-import logo from "../../../assets/images/EdgeVerselogo.png"
-import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from "react"
-import { createPortal } from "react-dom"
-import { useLocation } from "react-router-dom"
-import { usePageHeroNavState } from "../../../hooks/usePageHeroNavState"
-import { NAV_MEGA_MENUS, type NavMegaMenuKey } from "./navConfig"
-import NavMegaMenu from "./NavMegaMenu"
+import styles from "./navbar.module.css";
+import logo from "../../../assets/images/edgeverse_logo_high.png";
+import {
+  useCallback,
+  useEffect,
+  useId,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
+import { createPortal } from "react-dom";
+import { useLocation } from "react-router-dom";
+import { usePageHeroNavState } from "../../../hooks/usePageHeroNavState";
+import { NAV_MEGA_MENUS, type NavMegaMenuKey } from "./navConfig";
+import NavMegaMenu from "./NavMegaMenu";
 
 const Navbar = () => {
-  const location = useLocation()
-  const { pastHero, lightHero } = usePageHeroNavState()
+  const location = useLocation();
+  const { pastHero, lightHero } = usePageHeroNavState();
 
-  const [mobileOpen, setMobileOpen] = useState(false)
-  const [activeMega, setActiveMega] = useState<NavMegaMenuKey | null>(null)
-  const mobileMenuId = useId()
-  const closeTimerRef = useRef<ReturnType<typeof window.setTimeout> | null>(null)
-  const headerRef = useRef<HTMLElement>(null)
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeMega, setActiveMega] = useState<NavMegaMenuKey | null>(null);
+  const mobileMenuId = useId();
+  const closeTimerRef = useRef<ReturnType<typeof window.setTimeout> | null>(
+    null,
+  );
+  const headerRef = useRef<HTMLElement>(null);
 
-  const megaOpen = activeMega !== null
-  const isHeroTop = !pastHero && !mobileOpen
-  const useHeroNavStyle = isHeroTop && !lightHero
-  const useTransparentBar = isHeroTop && !megaOpen
-  const navMode = useHeroNavStyle ? "hero" : "solid"
+  const megaOpen = activeMega !== null;
+  const isHeroTop = !pastHero && !mobileOpen;
+  const useHeroNavStyle = isHeroTop && !lightHero;
+  const useTransparentBar = isHeroTop && !megaOpen;
+  const navMode = useHeroNavStyle ? "hero" : "solid";
 
   useLayoutEffect(() => {
-    setActiveMega(null)
-    setMobileOpen(false)
-  }, [location.pathname])
+    setActiveMega(null);
+    setMobileOpen(false);
+  }, [location.pathname]);
 
   useEffect(() => {
-    if (!mobileOpen) return
-    const prev = document.body.style.overflow
-    document.body.style.overflow = "hidden"
+    if (!mobileOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     return () => {
-      document.body.style.overflow = prev
-    }
-  }, [mobileOpen])
+      document.body.style.overflow = prev;
+    };
+  }, [mobileOpen]);
 
   const clearCloseTimer = useCallback(() => {
     if (closeTimerRef.current) {
-      window.clearTimeout(closeTimerRef.current)
-      closeTimerRef.current = null
+      window.clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
     }
-  }, [])
+  }, []);
 
   const openMega = useCallback(
     (key: NavMegaMenuKey) => {
-      clearCloseTimer()
-      setActiveMega(key)
+      clearCloseTimer();
+      setActiveMega(key);
     },
     [clearCloseTimer],
-  )
+  );
 
   const scheduleCloseMega = useCallback(() => {
-    clearCloseTimer()
-    closeTimerRef.current = window.setTimeout(() => setActiveMega(null), 50)
-  }, [clearCloseTimer])
+    clearCloseTimer();
+    closeTimerRef.current = window.setTimeout(() => setActiveMega(null), 50);
+  }, [clearCloseTimer]);
 
-  const activeMenu = NAV_MEGA_MENUS.find((m) => m.key === activeMega)
+  const activeMenu = NAV_MEGA_MENUS.find((m) => m.key === activeMega);
 
   const linkClass = (active?: boolean) =>
-    [styles.link, useHeroNavStyle ? styles.linkHero : styles.linkSolid, active && styles.linkActive]
+    [
+      styles.link,
+      useHeroNavStyle ? styles.linkHero : styles.linkSolid,
+      active && styles.linkActive,
+    ]
       .filter(Boolean)
-      .join(" ")
+      .join(" ");
 
   const screenBlur = createPortal(
     <div
@@ -72,7 +85,7 @@ const Navbar = () => {
       aria-hidden={!megaOpen}
     />,
     document.body,
-  )
+  );
 
   return (
     <>
@@ -203,7 +216,11 @@ const Navbar = () => {
                   ))}
                 </div>
               ))}
-              <a href="/contact" className={styles.mobileLink} onClick={() => setMobileOpen(false)}>
+              <a
+                href="/contact"
+                className={styles.mobileLink}
+                onClick={() => setMobileOpen(false)}
+              >
                 Contact
               </a>
             </nav>
@@ -211,7 +228,7 @@ const Navbar = () => {
         </div>
       </header>
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

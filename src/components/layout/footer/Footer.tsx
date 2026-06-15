@@ -1,13 +1,13 @@
-import styles from "./footer.module.css"
-import logo from "../../../assets/images/EdgeVerselogo.png"
-import SocialLinks from "../SocialLinks"
+import styles from "./footer.module.css";
+import logo from "../../../assets/images/edgeverse_logo_high.png";
+import SocialLinks from "../SocialLinks";
 
 const LinkCol = ({
   title,
   links,
 }: {
-  title: string
-  links: Array<{ label: string; href: string }>
+  title: string;
+  links: Array<{ label: string; href: string }>;
 }) => {
   return (
     <div className={styles.block}>
@@ -22,8 +22,8 @@ const LinkCol = ({
         ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
 const Footer = () => {
   return (
@@ -42,7 +42,7 @@ const Footer = () => {
           title="TECHNOLOGY"
           links={[
             { label: "Perceiva™", href: "/technology" },
-            { label: "IMedge® Hardware", href: "/technology" },
+            { label: "IMedge® Hardware", href: "/product/imedge" },
             { label: "India Perception Model", href: "/technology" },
             { label: "Safety Features", href: "/safety" },
           ]}
@@ -71,9 +71,10 @@ const Footer = () => {
 
       <div className={styles.subfooter}>
         <div className={styles.companyInfo}>
-          <img className={styles.logo} src={logo} width={143} height={49} alt="EdgeVerse" />
+          <img className={styles.logo} src={logo} alt="EdgeVerse" />
           <p className={styles.legalCopy}>
-            © {new Date().getFullYear()} — All rights reserved. EdgeVerse India Private Limited.
+            © {new Date().getFullYear()} — All rights reserved. EdgeVerse India
+            Private Limited.
           </p>
         </div>
 
@@ -100,18 +101,19 @@ const Footer = () => {
 
           <p className={styles.officeSummary}>
             <span>
-              <strong>Registered Office:</strong> G01, #520, 8th Cross BEML Layout, Thubarahalli,
-              Bengaluru, Karnataka 560066
+              <strong>Registered Office:</strong> G01, #520, 8th Cross BEML
+              Layout, Thubarahalli, Bengaluru, Karnataka 560066
             </span>
             <span>
-              <strong>Corporate Office:</strong> 5th Floor, Mpark, 32/1, Sonnenahalli, Doddanekundi
-              Industrial Area, Mahadevapura Post, Bengaluru- 560048
+              <strong>Corporate Office:</strong> 5th Floor, Mpark, 32/1,
+              Sonnenahalli, Doddanekundi Industrial Area, Mahadevapura Post,
+              Bengaluru- 560048
             </span>
           </p>
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

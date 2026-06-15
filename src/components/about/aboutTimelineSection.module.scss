@@ -1,7 +1,7 @@
 .section {
   position: relative;
   background: #f6f8fa;
-  padding: 100px 0;
+  padding: var(--section-pad-y) 0;
   overflow: hidden;
 }
 
@@ -32,9 +32,9 @@
 .inner {
   position: relative;
   z-index: 1;
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 64px;
+  padding: 0 var(--section-pad-x);
 }
 
 .header {
@@ -73,11 +73,11 @@
 }
 
 .title {
-  font-size: clamp(36px, 4.2vw, 54px);
-  font-weight: 800;
+  font-size: clamp(26px, 3.2vw, 40px);
+  font-weight: 600;
   line-height: 1.12;
   letter-spacing: -0.03em;
-  color: #0f172a;
+  color: var(--color-text);
   margin: 0 0 14px;
 }
 

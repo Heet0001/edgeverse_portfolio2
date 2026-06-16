@@ -39,9 +39,7 @@ const AdvisorsInvestors = () => {
         <div className={styles.heroInner}>
           <div className={styles.heroContent}>
             <div className={styles.kicker}>ADVISORS & INVESTORS</div>
-            <h1 className={styles.h1}>
-              Guided by <span className={styles.accent}>experience</span>.
-            </h1>
+            <h1 className={styles.h1}>Guided by experience.</h1>
             <p className={styles.heroBlurb}>
               Industry leaders and visionary investors who guide our strategic direction
               and accelerate our mission to make roads safer.

@@ -52,10 +52,10 @@
 .heading {
   margin: 0;
   font-family: var(--font-sans);
-  font-size: clamp(23px, 3.6vw, 48px);
-  font-weight: 400;
-  line-height: 1.04;
-  letter-spacing: -0.04em;
+  font-size: var(--page-hero-title-font-size);
+  font-weight: var(--page-hero-title-font-weight);
+  line-height: var(--page-hero-title-line-height);
+  letter-spacing: var(--page-hero-title-letter-spacing);
   color: #ffffff;
 }
 
@@ -65,10 +65,4 @@
   font-size: var(--page-hero-subtitle-font-size);
   line-height: var(--page-hero-subtitle-line-height);
   color: var(--page-hero-subtitle-color);
-}
-
-@media (max-width: 819px) {
-  .heading {
-    font-size: clamp(17px, 4.6vw, 30px);
-  }
 }

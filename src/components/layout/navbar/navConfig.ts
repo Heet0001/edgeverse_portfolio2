@@ -67,27 +67,30 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
     columns: [
       [
         {
-          title: "Edge AI approach",
-          description: "On-device perception with zero cloud dependency",
+          title: "Edge AI Approach",
+          description:
+            "Quantised & distilled models for low-TOPS SoCs. Sub-30ms latency on embedded hardware — no cloud dependency.",
           href: "/technology",
         },
         {
-          title: "India Perception Model",
+          title: "Proprietary Dataset",
           description:
-            "Foundation models trained exclusively on Indian road data",
+            "Own perception data. Not replicable from open sources.",
           href: "/technology",
         },
       ],
       [
         {
-          title: "Fleet learning loop",
-          description: "Continuous model improvement from deployed devices",
+          title: "Co-Designed Camera & ISP Pipeline",
+          description:
+            "Sensor, ISP & model co-optimised as a system. HDR, low-light & colour science tuned for perception — not commodity hardware.",
           href: "/technology",
         },
         {
-          title: "Neural simulator",
-          description: "Photorealistic scenario generation at scale",
-          href: "/technology#simulation",
+          title: "On-Premise Active Learning",
+          description:
+            "Deployable at your compute — data never leaves your infrastructure. Models continuously improve on your own edge data. Sovereign AI loop.",
+          href: "/technology",
         },
       ],
     ],

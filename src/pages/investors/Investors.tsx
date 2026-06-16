@@ -12,13 +12,9 @@ const TECHNOLOGY_PARTNERS: Partner[] = [
   { name: "Cavil Wireless", logo: cavilLogo },
 ];
 
-const OEM_PARTNERS: Partner[] = [
-  { name: "Ather Energy", logo: atherLogo },
-];
+const OEM_PARTNERS: Partner[] = [{ name: "Ather Energy", logo: atherLogo }];
 
-const INVESTOR_PARTNERS: Partner[] = [
-  { name: "ARTPARK", logo: artparkLogo },
-];
+const INVESTOR_PARTNERS: Partner[] = [{ name: "ARTPARK", logo: artparkLogo }];
 
 const Investors = () => {
   return (
@@ -27,10 +23,7 @@ const Investors = () => {
         <div className={styles.heroInner}>
           <div className={styles.heroContent}>
             <div className={styles.kicker}>Partners and Investors</div>
-            <h1 className={styles.h1}>
-              Building together at the{" "}
-              <span className={styles.accent}>edge</span>.
-            </h1>
+            <h1 className={styles.h1}>Building together at the edge.</h1>
             <p className={styles.heroBlurb}>
               We&apos;re building edge optimized perception &amp; intelligence
               layer for resource constrained systems. The layer for India&apos;s
@@ -41,7 +34,10 @@ const Investors = () => {
         </div>
       </section>
 
-      <section className={styles.partnersSection} aria-label="Technology partners">
+      <section
+        className={styles.partnersSection}
+        aria-label="Technology partners"
+      >
         <div className={styles.inner}>
           <div className={styles.partnerHeader}>
             <h2 className={styles.partnerTitle}>Technology Partners</h2>
@@ -68,7 +64,10 @@ const Investors = () => {
         </div>
       </section>
 
-      <section className={styles.partnersSection} aria-label="OEM and Tier-I partners">
+      <section
+        className={styles.partnersSection}
+        aria-label="OEM and Tier-I partners"
+      >
         <div className={styles.inner}>
           <div className={styles.partnerHeader}>
             <h2 className={styles.partnerTitle}>OEM &amp; Tier-I Partners</h2>
@@ -95,7 +94,7 @@ const Investors = () => {
         </div>
       </section>
 
-      <section className={styles.partnersSection} aria-label="Investors">
+      {/* <section className={styles.partnersSection} aria-label="Investors">
         <div className={styles.inner}>
           <div className={styles.partnerHeader}>
             <h2 className={styles.partnerTitle}>Investors</h2>
@@ -120,7 +119,7 @@ const Investors = () => {
             ))}
           </ul>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 };

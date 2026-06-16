@@ -14,11 +14,11 @@
   /* Page hero typography (matches product hero) */
   --page-hero-badge-font-size: 11px;
   --page-hero-badge-letter-spacing: 0.16em;
-  --page-hero-title-font-size: clamp(14px, 2.08vw, 29px);
-  --page-hero-title-font-weight: 700;
-  --page-hero-title-line-height: 1.08;
-  --page-hero-title-letter-spacing: -0.03em;
-  --page-hero-title-max-width: 18ch;
+  --page-hero-title-font-size: clamp(23px, 3.6vw, 48px);
+  --page-hero-title-font-weight: 400;
+  --page-hero-title-line-height: 1.04;
+  --page-hero-title-letter-spacing: -0.04em;
+  --page-hero-title-max-width: none;
   --page-hero-subtitle-font-size: clamp(15px, 1.35vw, 18px);
   --page-hero-subtitle-line-height: 1.65;
   --page-hero-subtitle-color: rgba(255, 255, 255, 0.72);
@@ -27,6 +27,12 @@
 @supports (height: 100svh) {
   :root {
     --page-hero-min-height: 100svh;
+  }
+}
+
+@media (max-width: 819px) {
+  :root {
+    --page-hero-title-font-size: clamp(17px, 4.6vw, 30px);
   }
 }
 

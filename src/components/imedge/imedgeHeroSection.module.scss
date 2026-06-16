@@ -51,10 +51,11 @@
 .heading {
   margin: 0;
   max-width: 16ch;
-  font-size: clamp(23px, 3.6vw, 48px);
-  font-weight: 600;
-  line-height: 1.08;
-  letter-spacing: -0.04em;
+  font-family: var(--font-sans);
+  font-size: var(--page-hero-title-font-size);
+  font-weight: var(--page-hero-title-font-weight);
+  line-height: var(--page-hero-title-line-height);
+  letter-spacing: var(--page-hero-title-letter-spacing);
   color: #ffffff;
 }
 
@@ -95,6 +96,5 @@
 @media (max-width: 819px) {
   .heading {
     max-width: none;
-    font-size: clamp(17px, 4.6vw, 30px);
   }
 }

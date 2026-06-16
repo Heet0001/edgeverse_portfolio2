@@ -46,7 +46,7 @@
   max-width: 1440px;
   min-height: var(--page-hero-min-height);
   margin: 0 auto;
-  padding: var(--nav-height) clamp(24px, 5vw, 72px) var(--page-hero-content-pad-bottom);
+  padding: var(--nav-height) var(--section-pad-x) var(--page-hero-content-pad-bottom);
   display: flex;
   align-items: flex-end;
 }
@@ -101,7 +101,7 @@
 .inner {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 clamp(24px, 5vw, 72px);
+  padding: 0 var(--section-pad-x);
 }
 
 .sectionHeader {

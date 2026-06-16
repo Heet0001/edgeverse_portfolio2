@@ -68,9 +68,10 @@
 .heroTitleLine,
 .heroTitleLineAccent {
   display: block;
-  line-height: 1.04;
-  font-weight: 400;
-  font-size: clamp(23px, 3.6vw, 48px);
+  line-height: var(--page-hero-title-line-height);
+  font-weight: var(--page-hero-title-font-weight);
+  font-size: var(--page-hero-title-font-size);
+  letter-spacing: var(--page-hero-title-letter-spacing);
 }
 
 .heroSubtitle {
@@ -92,7 +93,6 @@
 @media (max-width: 819px) {
   .heroTitleLine,
   .heroTitleLineAccent {
-    font-size: clamp(17px, 4.6vw, 30px);
     white-space: normal;
   }
 }

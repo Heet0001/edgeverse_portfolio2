@@ -48,35 +48,37 @@ const BuildWithCardsSection = () => {
       className={styles.section}
       aria-label="Explore EdgeVerse"
     >
-      <div className={styles.grid}>
-        {CARDS.map((card) => (
-          <article
-            key={card.id}
-            className={styles.card}
-            data-reveal-item
-            tabIndex={0}
-          >
-            <div className={styles.cardContent}>
-              <h2 className={styles.cardTitle}>{card.title}</h2>
-              <p className={styles.cardDesc}>{card.description}</p>
-              <a className={styles.cardCta} href={card.href}>
-                {card.cta}
-                <span className={styles.cardCtaArrow} aria-hidden="true">
-                  →
-                </span>
-              </a>
-            </div>
+      <div className={styles.inner}>
+        <div className={styles.grid}>
+          {CARDS.map((card) => (
+            <article
+              key={card.id}
+              className={styles.card}
+              data-reveal-item
+              tabIndex={0}
+            >
+              <div className={styles.cardContent}>
+                <h2 className={styles.cardTitle}>{card.title}</h2>
+                <p className={styles.cardDesc}>{card.description}</p>
+                <a className={styles.cardCta} href={card.href}>
+                  {card.cta}
+                  <span className={styles.cardCtaArrow} aria-hidden="true">
+                    →
+                  </span>
+                </a>
+              </div>
 
-            <div className={styles.cardMedia}>
-              <img
-                className={styles.cardImage}
-                src={card.image}
-                alt={card.imageAlt}
-                loading="lazy"
-              />
-            </div>
-          </article>
-        ))}
+              <div className={styles.cardMedia}>
+                <img
+                  className={styles.cardImage}
+                  src={card.image}
+                  alt={card.imageAlt}
+                  loading="lazy"
+                />
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -40,7 +40,7 @@ const Home = () => {
 
       gsap.from(
         hero.querySelectorAll(
-          `.${styles.heroTitleLine}, .${styles.heroTitleLineAccent}`,
+          `.${styles.heroTitleLine}`,
         ),
         {
           y: 36,
@@ -109,7 +109,7 @@ const Home = () => {
             <span className={styles.heroTitleLine}>
               Any Edge Device. Any Environment.
             </span>
-            <span className={styles.heroTitleLineAccent}>
+            <span className={styles.heroTitleLine}>
               One Intelligence Layer.
             </span>
           </h1>

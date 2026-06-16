@@ -30,7 +30,7 @@
 
   margin: 0 auto;
 
-  padding: var(--nav-height) clamp(24px, 5vw, 72px) var(--page-hero-content-pad-bottom);
+  padding: var(--nav-height) var(--section-pad-x) var(--page-hero-content-pad-bottom);
 
   display: flex;
 
@@ -198,7 +198,7 @@
 
   .inner {
 
-    padding-inline: 24px;
+    padding-inline: var(--section-pad-x);
 
   }
 

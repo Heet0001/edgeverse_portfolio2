@@ -5,7 +5,7 @@
 .inner {
   max-width: 1440px;
   margin: 0 auto;
-  padding: clamp(20px, 3vw, 32px) clamp(20px, 5vw, 72px);
+  padding: clamp(20px, 3vw, 32px) var(--section-pad-x);
 }
 
 .title {

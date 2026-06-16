@@ -13,7 +13,7 @@ const AboutHeroSection = () => {
         <div className={styles.badge}>About EdgeVerse</div>
         <h1 className={styles.heroTitle}>
           <span className={styles.heroTitleLine}>Building the future</span>
-          <span className={styles.heroTitleLineAccent}>of perception.</span>
+          <span className={styles.heroTitleLine}>of perception.</span>
         </h1>
         <p className={styles.heroSubtitle}>
           Pioneering edge-native perception intelligence for mobility, industrial automation,

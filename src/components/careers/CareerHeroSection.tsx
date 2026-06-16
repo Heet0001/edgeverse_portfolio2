@@ -15,9 +15,7 @@ const CareerHeroSection = () => {
           <div className={styles.kicker}>Careers</div>
           <h1 className={styles.heading}>
             <span className={styles.headingLine}>Build technology</span>
-            <span className={styles.headingLine}>
-              that saves lives<span className={styles.accent}>.</span>
-            </span>
+            <span className={styles.headingLine}>that saves lives.</span>
           </h1>
         </div>
       </div>

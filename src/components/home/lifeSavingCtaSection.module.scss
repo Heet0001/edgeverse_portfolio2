@@ -1,6 +1,7 @@
 .section {
   background: #ffffff;
   border-top: 1px solid var(--color-border);
+  margin-top: clamp(32px, 5vw, 64px);
 }
 
 .inner {

@@ -1,7 +1,7 @@
 .section {
   position: relative;
   background: #ffffff;
-  padding: clamp(80px, 10vw, 120px) 0 clamp(96px, 12vw, 140px);
+  padding: var(--section-pad-y) 0;
   overflow: hidden;
 }
 
@@ -40,7 +40,7 @@
   z-index: 2;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 clamp(24px, 5vw, 72px);
+  padding: 0 var(--section-pad-x);
 }
 
 .block + .block {
@@ -49,11 +49,11 @@
 
 .blockTitle {
   margin: 0 0 18px;
-  font-size: clamp(24px, 2.8vw, 32px);
-  font-weight: 700;
-  line-height: 1.15;
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 600;
+  line-height: 1.12;
   letter-spacing: -0.03em;
-  color: #101828;
+  color: var(--color-text);
 }
 
 .blockText {
@@ -149,7 +149,7 @@
 
 @media (max-width: 768px) {
   .inner {
-    padding-inline: 24px;
+    padding-inline: var(--section-pad-x);
   }
 
   .grid {

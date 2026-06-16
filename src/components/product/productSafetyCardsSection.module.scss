@@ -1,6 +1,6 @@
 .section {
   background: #ffffff;
-  padding: 0 clamp(20px, 5vw, 72px) clamp(72px, 8vw, 104px);
+  padding: 0 var(--section-pad-x) clamp(72px, 8vw, 104px);
 }
 
 .grid {
@@ -8,8 +8,9 @@
   max-width: 1440px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(12px, 1.4vw, 20px);
+  align-items: stretch;
 }
 
 .card {
@@ -54,7 +55,7 @@
 .cardTitle {
   margin: 0 0 14px;
   font-size: clamp(20px, 1.8vw, 28px);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1.14;
 }

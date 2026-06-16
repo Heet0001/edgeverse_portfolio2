@@ -54,12 +54,12 @@
 
 .heroTitle {
   margin: 0;
-  font-size: clamp(23px, 3.6vw, 48px);
-  font-weight: 400;
-  line-height: 1.08;
-  letter-spacing: -0.04em;
+  font-size: var(--page-hero-title-font-size);
+  font-weight: var(--page-hero-title-font-weight);
+  line-height: var(--page-hero-title-line-height);
+  letter-spacing: var(--page-hero-title-letter-spacing);
   color: #ffffff;
-  max-width: 20ch;
+  max-width: none;
 }
 
 .heroSubtitle {
@@ -308,12 +308,5 @@
   .grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 44px 32px;
-  }
-}
-
-@media (max-width: 819px) {
-  .heroTitle {
-    font-size: clamp(17px, 4.6vw, 30px);
-    max-width: none;
   }
 }

@@ -14,7 +14,7 @@ const TECHNOLOGY_PARTNERS: Partner[] = [
 
 const OEM_PARTNERS: Partner[] = [{ name: "Ather Energy", logo: atherLogo }];
 
-const INVESTOR_PARTNERS: Partner[] = [{ name: "ARTPARK", logo: artparkLogo }];
+const _INVESTOR_PARTNERS: Partner[] = [{ name: "ARTPARK", logo: artparkLogo }];
 
 const Investors = () => {
   return (

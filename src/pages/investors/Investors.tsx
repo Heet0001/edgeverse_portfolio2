@@ -14,7 +14,8 @@ const TECHNOLOGY_PARTNERS: Partner[] = [
 
 const OEM_PARTNERS: Partner[] = [{ name: "Ather Energy", logo: atherLogo }];
 
-const _INVESTOR_PARTNERS: Partner[] = [{ name: "ARTPARK", logo: artparkLogo }];
+// @ts-expect-error - Used in commented-out Investors section below
+const INVESTOR_PARTNERS: Partner[] = [{ name: "ARTPARK", logo: artparkLogo }];
 
 const Investors = () => {
   return (

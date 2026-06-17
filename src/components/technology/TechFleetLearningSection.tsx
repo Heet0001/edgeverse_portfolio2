@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import styles from './techFleetLearningSection.module.scss'
 import activeLearningVideo from '../../assets/videos/Active Learning Technology Loop.mp4'
@@ -6,6 +6,7 @@ import activeLearningVideo from '../../assets/videos/Active Learning Technology 
 const TechFleetLearningSection = () => {
   const copyRef = useRef<HTMLDivElement>(null)
   const mediaRef = useRef<HTMLDivElement>(null)
+  const [videoLoaded, setVideoLoaded] = useState(false)
 
   useScrollReveal(copyRef, { variant: 'fadeUp', y: 24 })
   useScrollReveal(mediaRef, { variant: 'fadeUp', y: 32, delay: 0.12 })
@@ -25,13 +26,16 @@ const TechFleetLearningSection = () => {
         </div>
 
         <div ref={mediaRef} className={styles.media}>
+          {!videoLoaded && <div className={styles.videoPlaceholder} />}
           <video
             src={activeLearningVideo}
-            className={styles.image}
+            className={`${styles.image} ${videoLoaded ? styles.videoVisible : styles.videoHidden}`}
             autoPlay
             loop
             muted
             playsInline
+            onCanPlayThrough={() => setVideoLoaded(true)}
+            onLoadedData={() => setVideoLoaded(true)}
           />
         </div>
       </div>
@@ -40,3 +44,4 @@ const TechFleetLearningSection = () => {
 }
 
 export default TechFleetLearningSection
+

@@ -1,4 +1,4 @@
-import artparkLogo from "../../assets/images/artpark.png";
+// import artparkLogo from "../../assets/images/artpark.png";
 import atherLogo from "../../assets/images/ather.png";
 import cavilLogo from "../../assets/images/cavil.png";
 import styles from "./investors.module.scss";
@@ -14,8 +14,6 @@ const TECHNOLOGY_PARTNERS: Partner[] = [
 
 const OEM_PARTNERS: Partner[] = [{ name: "Ather Energy", logo: atherLogo }];
 
-// @ts-expect-error - Used in commented-out Investors section below
-const INVESTOR_PARTNERS: Partner[] = [{ name: "ARTPARK", logo: artparkLogo }];
 
 const Investors = () => {
   return (

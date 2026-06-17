@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import styles from './techFleetLearningSection.module.scss'
-import { TECH_FLEET_IMAGE } from './technologyData'
+import activeLearningVideo from '../../assets/videos/Active Learning Technology Loop.mp4'
 
 const TechFleetLearningSection = () => {
   const copyRef = useRef<HTMLDivElement>(null)
@@ -25,11 +25,13 @@ const TechFleetLearningSection = () => {
         </div>
 
         <div ref={mediaRef} className={styles.media}>
-          <img
-            src={TECH_FLEET_IMAGE}
-            alt="EdgeVerse active learning loop and fleet architecture diagram"
+          <video
+            src={activeLearningVideo}
             className={styles.image}
-            loading="lazy"
+            autoPlay
+            loop
+            muted
+            playsInline
           />
         </div>
       </div>

@@ -14,7 +14,6 @@ import LifeSavingCtaSection from "../../components/home/LifeSavingCtaSection";
 const Home = () => {
   const heroRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const ctaRef = useRef<HTMLAnchorElement>(null);
   const reduceMotion = usePrefersReducedMotion();
 
   useEffect(() => {
@@ -26,7 +25,6 @@ const Home = () => {
 
   useLayoutEffect(() => {
     const hero = heroRef.current;
-    const cta = ctaRef.current;
     if (!hero || reduceMotion) return;
 
     registerGsapPlugins();
@@ -40,40 +38,17 @@ const Home = () => {
 
       gsap.from(
         hero.querySelectorAll(
-          `.${styles.heroTitleLine}`,
+          `.${styles.heroBadge}, .${styles.heroTitle}, .${styles.heroSubtitle}, .${styles.heroCta}`,
         ),
         {
-          y: 36,
+          y: 24,
           opacity: 0,
-          duration: 0.9,
-          stagger: 0.12,
+          duration: 0.75,
+          stagger: 0.1,
           ease: "power3.out",
-          delay: 0.15,
+          delay: 0.12,
         },
       );
-
-      gsap.from(hero.querySelector(`.${styles.heroRule}`), {
-        scaleX: 0,
-        transformOrigin: "left center",
-        duration: 0.7,
-        ease: "power2.out",
-        delay: 0.45,
-      });
-
-      if (cta) {
-        gsap.fromTo(
-          cta,
-          { y: 16, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.6,
-            ease: "power2.out",
-            delay: 0.6,
-            clearProps: "transform,opacity",
-          },
-        );
-      }
     }, hero);
 
     return () => ctx.revert();
@@ -105,16 +80,12 @@ const Home = () => {
         <div className={styles.heroOverlay} aria-hidden="true" />
 
         <div className={styles.heroContent}>
+          <div className={styles.heroBadge}>Edge Intelligence Platform</div>
           <h1 className={styles.heroTitle}>
-            <span className={styles.heroTitleLine}>
-              Any Edge Device. Any Environment.
-            </span>
-            <span className={styles.heroTitleLine}>
-              One Intelligence Layer.
-            </span>
+            Any Edge Device. Any Environment.
           </h1>
-          <span className={styles.heroRule} aria-hidden="true" />
-          <a ref={ctaRef} className={styles.heroCta} href="/product">
+          <p className={styles.heroSubtitle}>One Intelligence Layer.</p>
+          <a className={styles.heroCta} href="/product">
             <span>Discover more</span>
             <span className={styles.heroCtaArrow} aria-hidden="true">
               →

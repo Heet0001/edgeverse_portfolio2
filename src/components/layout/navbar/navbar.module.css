@@ -100,9 +100,9 @@
 
 .logo {
   display: block;
-  height: 35px;
+  height: 48px;
   width: auto;
-  max-width: min(242px, 46vw);
+  max-width: min(300px, 52vw);
   object-fit: contain;
   object-position: left center;
   transition: filter 360ms cubic-bezier(0.16, 1, 0.3, 1);

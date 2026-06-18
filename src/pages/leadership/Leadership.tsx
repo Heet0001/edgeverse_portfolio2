@@ -1,12 +1,14 @@
-import { useEffect, useMemo, useState } from "react";
-import { getPublicLeaders, type LeaderPublic } from "../../api/leaders";
+import { useMemo, useState } from "react";
+import { type LeaderPublic } from "../../api/leaders";
 import { API_ORIGIN } from "../../api/client";
 import CareerWaveMesh from "../../components/careers/CareerWaveMesh";
+import { FALLBACK_ADVISORS, FALLBACK_LEADERS } from "./leadershipData";
 import styles from "./leadership.module.scss";
 
 const resolveImg = (src: string) => {
   if (!src) return "";
   if (/^https?:\/\//i.test(src)) return src;
+  if (src.startsWith("/assets/") || src.startsWith("/src/")) return src;
   return `${API_ORIGIN}${src.startsWith("/") ? "" : "/"}${src}`;
 };
 
@@ -18,83 +20,120 @@ const getInitials = (name: string) =>
     .slice(0, 2)
     .toUpperCase();
 
-const FALLBACK_LEADERS: LeaderPublic[] = [
-  {
-    _id: "1",
-    name: "Vasanth Prabhu",
-    role: "Co-Founder & CEO",
-    image: "",
-    linkedIn: "",
-    bio: "Leads EdgeVerse with a focus on building India's first Advanced Rider Assistance System — combining product vision, engineering depth, and go-to-market strategy.",
-    order: 0,
-  },
-  {
-    _id: "2",
-    name: "Susanth Gunnam",
-    role: "Co-Founder & CTO",
-    image: "",
-    linkedIn: "",
-    bio: "Drives the technical architecture behind EdgeVerse perception intelligence — from embedded firmware and sensor fusion to on-device inference at scale.",
-    order: 1,
-  },
-  {
-    _id: "3",
-    name: "Pallavi Banthia",
-    role: "Co-Founder & COO",
-    image: "",
-    linkedIn: "",
-    bio: "Oversees operations, partnerships, and execution — ensuring EdgeVerse delivers production-ready technology for OEMs and fleet operators across India.",
-    order: 2,
-  },
-  {
-    _id: "4",
-    name: "Rahul Verma",
-    role: "VP, Engineering",
-    image: "",
-    linkedIn: "",
-    bio: "Leads embedded systems and platform engineering — shipping reliable perception software from prototype to production across diverse hardware targets.",
-    order: 3,
-  },
-  {
-    _id: "5",
-    name: "Ananya Iyer",
-    role: "Head of AI Research",
-    image: "",
-    linkedIn: "",
-    bio: "Advances EdgeVerse model training and evaluation — pushing the boundaries of on-device perception for unstructured roads and edge environments.",
-    order: 4,
-  },
-];
-
 const Leadership = () => {
-  const [leaders, setLeaders] = useState<LeaderPublic[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [selectedId, setSelectedId] = useState("");
+  const [selectedLeaderId, setSelectedLeaderId] = useState(
+    FALLBACK_LEADERS[0]._id,
+  );
+  const [selectedAdvisorId, setSelectedAdvisorId] = useState(
+    FALLBACK_ADVISORS[0]._id,
+  );
 
-  useEffect(() => {
-    getPublicLeaders()
-      .then(setLeaders)
-      .catch(() => {})
-      .finally(() => setLoading(false));
-  }, []);
+  const displayLeaders = useMemo(
+    () => [...FALLBACK_LEADERS].sort((a, b) => a.order - b.order),
+    [],
+  );
 
-  const displayLeaders = useMemo(() => {
-    const list = leaders.length > 0 ? leaders : loading ? [] : FALLBACK_LEADERS;
-    return [...list].sort((a, b) => a.order - b.order);
-  }, [leaders, loading]);
+  const displayAdvisors = useMemo(
+    () => [...FALLBACK_ADVISORS].sort((a, b) => a.order - b.order),
+    [],
+  );
 
-  useEffect(() => {
-    if (displayLeaders.length === 0) return;
-    setSelectedId((prev) =>
-      prev && displayLeaders.some((leader) => leader._id === prev)
-        ? prev
-        : displayLeaders[0]._id,
-    );
-  }, [displayLeaders]);
-
-  const selected =
-    displayLeaders.find((leader) => leader._id === selectedId) ??
+  const selectedLeader =
+    displayLeaders.find((leader) => leader._id === selectedLeaderId) ??
     displayLeaders[0];
+
+  const selectedAdvisor =
+    displayAdvisors.find((advisor) => advisor._id === selectedAdvisorId) ??
+    displayAdvisors[0];
+
+  const renderProfileDetails = (
+    member: LeaderPublic,
+    panelClassName: string,
+  ) => (
+    <article className={panelClassName} aria-live="polite">
+      <h3 className={styles.profileName}>{member.name}</h3>
+      {member.role ? (
+        <p className={styles.profileRole}>{member.role}</p>
+      ) : null}
+
+      {member.linkedIn ? (
+        <ul className={styles.profileLinks}>
+          <li>
+            <a
+              href={member.linkedIn}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+          </li>
+        </ul>
+      ) : null}
+
+      {member.bio ? (
+        <p className={styles.profileBio}>{member.bio}</p>
+      ) : null}
+    </article>
+  );
+
+  const renderTeamPanel = (
+    members: LeaderPublic[],
+    active: LeaderPublic,
+    onSelect: (id: string) => void,
+  ) => (
+    <div className={styles.teamLayout}>
+      {renderProfileDetails(active, styles.profilePanel)}
+
+      <div className={styles.memberGrid} role="list">
+        {members.map((member) => {
+          const isActive = member._id === active._id;
+
+          return (
+            <div key={member._id} className={styles.memberItem} role="listitem">
+              <button
+                type="button"
+                className={`${styles.memberCard} ${
+                  isActive ? styles.memberCardActive : styles.memberCardInactive
+                }`}
+                onClick={() => onSelect(member._id)}
+                aria-pressed={isActive}
+                aria-expanded={isActive}
+                aria-label={`View profile for ${member.name}`}
+              >
+                <div className={styles.memberPhotoWrap}>
+                  {member.image ? (
+                    <img
+                      src={resolveImg(member.image)}
+                      alt=""
+                      className={styles.memberPhoto}
+                    />
+                  ) : (
+                    <span className={styles.memberInitials}>
+                      {getInitials(member.name)}
+                    </span>
+                  )}
+                  {isActive ? (
+                    <span
+                      className={styles.memberPhotoGradient}
+                      aria-hidden="true"
+                    />
+                  ) : null}
+                </div>
+                <span className={styles.memberName}>{member.name}</span>
+                {member.role ? (
+                  <span className={styles.memberRole}>{member.role}</span>
+                ) : null}
+              </button>
+
+              {isActive
+                ? renderProfileDetails(member, styles.memberMobileProfile)
+                : null}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
 
   return (
     <main>
@@ -127,78 +166,29 @@ const Leadership = () => {
             <span className={styles.sectionRule} aria-hidden="true" />
           </header>
 
-          {loading ? (
-            <div className={styles.loading}>Loading…</div>
-          ) : selected ? (
-            <div className={styles.teamLayout}>
-              <article className={styles.profilePanel} aria-live="polite">
-                <h3 className={styles.profileName}>{selected.name}</h3>
-                <p className={styles.profileRole}>{selected.role}</p>
+          {renderTeamPanel(
+            displayLeaders,
+            selectedLeader,
+            setSelectedLeaderId,
+          )}
+        </div>
+      </section>
 
-                {selected.linkedIn ? (
-                  <ul className={styles.profileLinks}>
-                    <li>
-                      <a
-                        href={selected.linkedIn}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        LinkedIn
-                      </a>
-                    </li>
-                  </ul>
-                ) : null}
+      <section
+        className={`${styles.section} ${styles.advisorySection}`}
+        aria-label="Advisory board"
+      >
+        <div className={styles.inner}>
+          <header className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>Advisory Board</h2>
+            <span className={styles.sectionRule} aria-hidden="true" />
+          </header>
 
-                {selected.bio ? (
-                  <p className={styles.profileBio}>{selected.bio}</p>
-                ) : null}
-              </article>
-
-              <div className={styles.memberGrid} role="list">
-                {displayLeaders.map((leader) => {
-                  const isActive = leader._id === selected._id;
-
-                  return (
-                    <button
-                      key={leader._id}
-                      type="button"
-                      role="listitem"
-                      className={`${styles.memberCard} ${
-                        isActive
-                          ? styles.memberCardActive
-                          : styles.memberCardInactive
-                      }`}
-                      onClick={() => setSelectedId(leader._id)}
-                      aria-pressed={isActive}
-                      aria-label={`View profile for ${leader.name}`}
-                    >
-                      <div className={styles.memberPhotoWrap}>
-                        {leader.image ? (
-                          <img
-                            src={resolveImg(leader.image)}
-                            alt=""
-                            className={styles.memberPhoto}
-                          />
-                        ) : (
-                          <span className={styles.memberInitials}>
-                            {getInitials(leader.name)}
-                          </span>
-                        )}
-                        {isActive ? (
-                          <span
-                            className={styles.memberPhotoGradient}
-                            aria-hidden="true"
-                          />
-                        ) : null}
-                      </div>
-                      <span className={styles.memberName}>{leader.name}</span>
-                      <span className={styles.memberRole}>{leader.role}</span>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          ) : null}
+          {renderTeamPanel(
+            displayAdvisors,
+            selectedAdvisor,
+            setSelectedAdvisorId,
+          )}
         </div>
       </section>
     </main>

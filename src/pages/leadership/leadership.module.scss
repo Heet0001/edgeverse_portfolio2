@@ -46,7 +46,8 @@
   max-width: 1440px;
   min-height: var(--page-hero-min-height);
   margin: 0 auto;
-  padding: var(--nav-height) var(--section-pad-x) var(--page-hero-content-pad-bottom);
+  padding: var(--nav-height) var(--section-pad-x)
+    var(--page-hero-content-pad-bottom);
   display: flex;
   align-items: flex-end;
 }
@@ -96,6 +97,10 @@
 .section {
   background: #ffffff;
   padding: clamp(72px, 9vw, 108px) 0 clamp(88px, 10vw, 120px);
+}
+
+.advisorySection {
+  padding-top: 0;
 }
 
 .inner {
@@ -196,6 +201,16 @@
   gap: clamp(18px, 2.2vw, 28px);
 }
 
+.memberItem {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.memberMobileProfile {
+  display: none;
+}
+
 .memberCard {
   border: none;
   background: transparent;
@@ -241,7 +256,11 @@
 .memberPhotoGradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 52%, rgba(14, 165, 164, 0.42) 100%);
+  background: linear-gradient(
+    180deg,
+    transparent 52%,
+    rgba(14, 165, 164, 0.42) 100%
+  );
   pointer-events: none;
 }
 
@@ -300,11 +319,26 @@
 @media (max-width: 1024px) {
   .teamLayout {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 0;
   }
 
   .profilePanel {
-    position: static;
+    display: none;
+  }
+
+  .memberMobileProfile {
+    display: block;
+    padding: 4px 0 12px;
+  }
+
+  .memberMobileProfile .profileName,
+  .memberMobileProfile .profileRole {
+    display: none;
+  }
+
+  .memberMobileProfile .profileBio {
+    max-width: none;
+    margin-top: 4px;
   }
 
   .profileBio {
@@ -313,6 +347,7 @@
 
   .memberGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(20px, 4vw, 32px);
   }
 }
 
@@ -347,8 +382,13 @@
 
   .memberGrid {
     grid-template-columns: 1fr;
-    max-width: 360px;
-    margin: 0 auto;
+    max-width: none;
+    margin: 0;
+    gap: 28px;
+  }
+
+  .memberMobileProfile {
+    padding: 8px 0 4px;
   }
 
   .section {

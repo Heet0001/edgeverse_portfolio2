@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import styles from "./navbar.module.css"
 import type { NavMegaMenuConfig } from "./navConfig"
 import { NAV_QUICK_LINKS } from "./navConfig"
@@ -46,19 +47,19 @@ const NavMegaMenu = ({
         >
           {menu.linksLayout === "twoColumn" ? (
             menu.columns.flat().map((item) => (
-              <a key={item.href + item.title} href={item.href} className={styles.megaLinkBlock}>
+              <Link key={item.href + item.title} to={item.href} className={styles.megaLinkBlock}>
                 <span className={styles.megaLinkTitle}>{item.title}</span>
                 <span className={styles.megaLinkDesc}>{item.description}</span>
-              </a>
+              </Link>
             ))
           ) : (
             menu.columns.map((column, colIdx) => (
               <div key={colIdx} className={styles.megaSubCol}>
                 {column.map((item) => (
-                  <a key={item.href + item.title} href={item.href} className={styles.megaLinkBlock}>
+                  <Link key={item.href + item.title} to={item.href} className={styles.megaLinkBlock}>
                     <span className={styles.megaLinkTitle}>{item.title}</span>
                     <span className={styles.megaLinkDesc}>{item.description}</span>
-                  </a>
+                  </Link>
                 ))}
               </div>
             ))
@@ -69,22 +70,22 @@ const NavMegaMenu = ({
           className={`${styles.megaColFeatured} ${hasFeaturedText ? "" : styles.megaColFeaturedMediaOnly}`}
         >
           {hasFeaturedText && (
-            <a href={menu.featured.href} className={styles.megaFeaturedText}>
+            <Link to={menu.featured.href} className={styles.megaFeaturedText}>
               <span className={styles.megaLinkTitle}>{menu.featured.title}</span>
               <span className={styles.megaLinkDesc}>{menu.featured.description}</span>
-            </a>
+            </Link>
           )}
-          <a href={menu.featured.href} className={styles.megaFeaturedMedia}>
+          <Link to={menu.featured.href} className={styles.megaFeaturedMedia}>
             <img src={menu.featured.image} alt={menu.featured.imageAlt} loading="lazy" />
-          </a>
+          </Link>
         </div>
 
         <aside className={styles.megaColAside} aria-label="Quick links">
           <nav className={styles.megaQuickLinks}>
             {NAV_QUICK_LINKS.map((link) => (
-              <a key={link.href} href={link.href} className={styles.megaQuickLink}>
+              <Link key={link.href} to={link.href} className={styles.megaQuickLink}>
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
           <SocialLinks

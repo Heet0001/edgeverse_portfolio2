@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import ProductHeroSection from "../../components/product/ProductHeroSection";
 import ProductLineSection from "../../components/product/ProductLineSection";
 // import ProductIntroSection from "../../components/product/ProductIntroSection";
@@ -8,29 +6,14 @@ import ProductLineSection from "../../components/product/ProductLineSection";
 // import ProductFeatureShowcase from "../../components/product/ProductFeatureShowcase";
 // import ProductDeploymentSection from "../../components/product/ProductDeploymentSection";
 import ProductCtaSection from "../../components/product/ProductCtaSection";
+import { useHashScroll } from "../../hooks/useHashScroll";
 import {
   PRODUCT_LINES,
   // PRODUCT_SHOWCASES,
 } from "../../components/product/productData";
 
 const Product = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    if (!location.hash) return;
-
-    const id = location.hash.slice(1);
-    const target = document.getElementById(id);
-    if (!target) return;
-
-    const navHeight = parseInt(
-      getComputedStyle(document.documentElement).getPropertyValue("--nav-height") || "72",
-      10,
-    );
-
-    const top = target.getBoundingClientRect().top + window.scrollY - navHeight - 16;
-    window.scrollTo({ top, behavior: "smooth" });
-  }, [location]);
+  useHashScroll();
 
   return (
     <main>

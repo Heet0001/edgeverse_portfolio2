@@ -39,17 +39,30 @@ const NavMegaMenu = ({
           <p className={styles.megaTagline}>{menu.tagline}</p>
         </div>
 
-        <div className={styles.megaColLinks}>
-          {menu.columns.map((column, colIdx) => (
-            <div key={colIdx} className={styles.megaSubCol}>
-              {column.map((item) => (
-                <a key={item.href + item.title} href={item.href} className={styles.megaLinkBlock}>
-                  <span className={styles.megaLinkTitle}>{item.title}</span>
-                  <span className={styles.megaLinkDesc}>{item.description}</span>
-                </a>
-              ))}
-            </div>
-          ))}
+        <div
+          className={`${styles.megaColLinks} ${
+            menu.linksLayout === "twoColumn" ? styles.megaColLinksTwoColumn : ""
+          }`}
+        >
+          {menu.linksLayout === "twoColumn" ? (
+            menu.columns.flat().map((item) => (
+              <a key={item.href + item.title} href={item.href} className={styles.megaLinkBlock}>
+                <span className={styles.megaLinkTitle}>{item.title}</span>
+                <span className={styles.megaLinkDesc}>{item.description}</span>
+              </a>
+            ))
+          ) : (
+            menu.columns.map((column, colIdx) => (
+              <div key={colIdx} className={styles.megaSubCol}>
+                {column.map((item) => (
+                  <a key={item.href + item.title} href={item.href} className={styles.megaLinkBlock}>
+                    <span className={styles.megaLinkTitle}>{item.title}</span>
+                    <span className={styles.megaLinkDesc}>{item.description}</span>
+                  </a>
+                ))}
+              </div>
+            ))
+          )}
         </div>
 
         <div

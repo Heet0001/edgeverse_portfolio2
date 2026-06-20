@@ -8,7 +8,7 @@ import safetyImg from "../../assets/images/al.png";
 const CARDS = [
   {
     id: "perceiva",
-    title: "Build with Perceiva",
+    title: "Build with Perceiva™",
     description:
       "Learn about Perceiva™ — our full-stack ARAS platform for OEMs and Tier-1 partners building safer mobility at scale.",
     cta: "Product",

@@ -5,7 +5,7 @@ export const IMEDGE_HERO_IMAGE = imedgeHardwareImg;
 export const IMEDGE_INTRO = {
   tagline: "Sensor, Calibration & Edge optimization co-design ",
   description:
-    "Partner with EdgeVerse to design, validate, and tune edge vision hardware for your platform — from sensor selection and optics through ISP configuration optimized for real-world Indian conditions.",
+    "Partner with EdgeVerse to design, validate, and tune edge vision hardware for your platform — from sensor selection and optics through ISP configuration optimized for real-world conditions.",
 } as const;
 
 export const IMEDGE_CAPABILITIES = [

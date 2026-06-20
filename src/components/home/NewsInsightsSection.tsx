@@ -70,10 +70,10 @@ type NewsItem = {
 const RECOGNITION_ITEM: NewsItem = {
   id: "news-1",
   title:
-    "EdgeVerse raises pre-seed $2.5M to bring AI to any vehicle across the globe.",
+    "Nasscom Mobility Challenge 2025 Winner",
   imageSrc: newsFeature1,
   imageAlt: "Motorcycle with perception HUD overlay",
-  href: "/blog",
+  href: "/",
   variant: "featured",
 };
 
@@ -152,9 +152,9 @@ const NewsInsightsSection = () => {
           </div>
           <div className={styles.featuredBody}>
             <p className={styles.featuredTitle}>{RECOGNITION_ITEM.title}</p>
-            <span className={styles.readMore}>
+            {/* <span className={styles.readMore}>
               Read more <span aria-hidden="true">→</span>
-            </span>
+            </span> */}
           </div>
         </Link>
       </div>

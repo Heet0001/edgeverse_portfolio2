@@ -55,9 +55,9 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
           href: "/product#iauto",
         },
         {
-          title: "Imedge® Hardware",
+          title: "Imedge® Hardware Platform",
           description:
-            "Help you build the right camera hardware and ISP tuning",
+            "Help you build the right camera hardware and ISP for your application",
           href: "/product/imedge",
         },
       ],

@@ -18,6 +18,7 @@ export type NavMegaMenuConfig = {
   label: string;
   heading: string;
   tagline: string;
+  linksLayout?: "default" | "twoColumn";
   columns: NavMegaLink[][];
   featured: {
     title: string;
@@ -34,13 +35,24 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
     label: "Product",
     heading: "Product",
     tagline: "Edge-native AI  for smarter systems",
+    linksLayout: "twoColumn",
     columns: [
       [
         {
-          title: "Perceiva™",
+          title: "Perceiva™ ARAS",
           description:
             "Full-stack Advanced Rider Assistance System for OEMs and Tier-1s",
-          href: "/product",
+          href: "/product#aras",
+        },
+        {
+          title: "Perceiva™ DMS",
+          description: "Driver Monitoring with AI",
+          href: "/product#dms",
+        },
+        {
+          title: "Perceiva™ iAuto",
+          description: "Factory automation with AI",
+          href: "/product#iauto",
         },
         {
           title: "Imedge® Hardware",
@@ -49,11 +61,10 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
           href: "/product/imedge",
         },
       ],
-      [],
     ],
     featured: {
-      title: "Perceiva™",
-      description: "Predict. Alert. Protect — intelligence at the edge.",
+      title: "",
+      description: "",
       href: "/product",
       image: detection,
       imageAlt: "AI perception overlay on road scene",
@@ -95,9 +106,8 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
       ],
     ],
     featured: {
-      title: "Co-Development Partner",
-      description:
-        "Partner with EdgeVerse from sensor integration through deployment.",
+      title: "",
+      description: "",
       href: "/technology",
       image: heroImg,
       imageAlt: "EdgeVerse technology and co-development",
@@ -174,8 +184,8 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
       ],
     ],
     featured: {
-      title: "Blog & insights",
-      description: "Research, product updates, and industry perspectives.",
+      title: "",
+      description: "",
       href: "/blog",
       image: heroImg,
       imageAlt: "EdgeVerse team and technology",

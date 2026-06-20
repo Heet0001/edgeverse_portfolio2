@@ -18,8 +18,18 @@ const Product = () => {
 
   useEffect(() => {
     if (!location.hash) return;
-    const target = document.querySelector(location.hash);
-    target?.scrollIntoView({ behavior: "smooth" });
+
+    const id = location.hash.slice(1);
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    const navHeight = parseInt(
+      getComputedStyle(document.documentElement).getPropertyValue("--nav-height") || "72",
+      10,
+    );
+
+    const top = target.getBoundingClientRect().top + window.scrollY - navHeight - 16;
+    window.scrollTo({ top, behavior: "smooth" });
   }, [location]);
 
   return (

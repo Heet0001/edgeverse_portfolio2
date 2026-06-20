@@ -7,10 +7,9 @@ const INVESTOR_LOGOS = [{ name: "ARTPARK", logo: artparkLogo }] as const;
 
 const MARQUEE_LOGOS = [
   ...INVESTOR_LOGOS,
-  ...INVESTOR_LOGOS,
-  ...INVESTOR_LOGOS,
-  ...INVESTOR_LOGOS,
 ];
+
+const SHOULD_MARQUEE = MARQUEE_LOGOS.length > 4;
 
 const HomeInvestorsSection = () => {
   const copyRef = useRef<HTMLDivElement>(null);
@@ -37,10 +36,19 @@ const HomeInvestorsSection = () => {
           </div>
         </div>
 
-        <div className={styles.logoMarquee} aria-label="Investor logos">
-          <div className={styles.logoFadeLeft} aria-hidden="true" />
-          <div className={styles.logoFadeRight} aria-hidden="true" />
-          <div className={styles.logoTrack}>
+        <div
+          className={`${styles.logoMarquee} ${SHOULD_MARQUEE ? "" : styles.logoMarqueeStatic}`}
+          aria-label="Investor logos"
+        >
+          {SHOULD_MARQUEE && (
+            <>
+              <div className={styles.logoFadeLeft} aria-hidden="true" />
+              <div className={styles.logoFadeRight} aria-hidden="true" />
+            </>
+          )}
+          <div
+            className={`${styles.logoTrack} ${SHOULD_MARQUEE ? "" : styles.logoTrackStatic}`}
+          >
             {MARQUEE_LOGOS.map((item, index) => (
               <img
                 key={`${item.name}-${index}`}

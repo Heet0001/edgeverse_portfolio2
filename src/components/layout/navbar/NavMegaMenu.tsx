@@ -20,6 +20,8 @@ const NavMegaMenu = ({
   onContentMouseEnter,
   onContentMouseLeave,
 }: NavMegaMenuProps) => {
+  const hasFeaturedText = Boolean(menu.featured.title || menu.featured.description);
+
   return (
     <div
       className={`${styles.megaPanel} ${open ? styles.megaPanelOpen : ""}`}
@@ -37,24 +39,41 @@ const NavMegaMenu = ({
           <p className={styles.megaTagline}>{menu.tagline}</p>
         </div>
 
-        <div className={styles.megaColLinks}>
-          {menu.columns.map((column, colIdx) => (
-            <div key={colIdx} className={styles.megaSubCol}>
-              {column.map((item) => (
-                <a key={item.href + item.title} href={item.href} className={styles.megaLinkBlock}>
-                  <span className={styles.megaLinkTitle}>{item.title}</span>
-                  <span className={styles.megaLinkDesc}>{item.description}</span>
-                </a>
-              ))}
-            </div>
-          ))}
+        <div
+          className={`${styles.megaColLinks} ${
+            menu.linksLayout === "twoColumn" ? styles.megaColLinksTwoColumn : ""
+          }`}
+        >
+          {menu.linksLayout === "twoColumn" ? (
+            menu.columns.flat().map((item) => (
+              <a key={item.href + item.title} href={item.href} className={styles.megaLinkBlock}>
+                <span className={styles.megaLinkTitle}>{item.title}</span>
+                <span className={styles.megaLinkDesc}>{item.description}</span>
+              </a>
+            ))
+          ) : (
+            menu.columns.map((column, colIdx) => (
+              <div key={colIdx} className={styles.megaSubCol}>
+                {column.map((item) => (
+                  <a key={item.href + item.title} href={item.href} className={styles.megaLinkBlock}>
+                    <span className={styles.megaLinkTitle}>{item.title}</span>
+                    <span className={styles.megaLinkDesc}>{item.description}</span>
+                  </a>
+                ))}
+              </div>
+            ))
+          )}
         </div>
 
-        <div className={styles.megaColFeatured}>
-          <a href={menu.featured.href} className={styles.megaFeaturedText}>
-            <span className={styles.megaLinkTitle}>{menu.featured.title}</span>
-            <span className={styles.megaLinkDesc}>{menu.featured.description}</span>
-          </a>
+        <div
+          className={`${styles.megaColFeatured} ${hasFeaturedText ? "" : styles.megaColFeaturedMediaOnly}`}
+        >
+          {hasFeaturedText && (
+            <a href={menu.featured.href} className={styles.megaFeaturedText}>
+              <span className={styles.megaLinkTitle}>{menu.featured.title}</span>
+              <span className={styles.megaLinkDesc}>{menu.featured.description}</span>
+            </a>
+          )}
           <a href={menu.featured.href} className={styles.megaFeaturedMedia}>
             <img src={menu.featured.image} alt={menu.featured.imageAlt} loading="lazy" />
           </a>

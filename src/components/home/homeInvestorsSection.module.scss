@@ -86,12 +86,24 @@
   background: linear-gradient(270deg, #ffffff 20%, rgba(255, 255, 255, 0) 100%);
 }
 
+.logoMarqueeStatic {
+  overflow: visible;
+}
+
 .logoTrack {
   display: flex;
   align-items: center;
   width: max-content;
   gap: clamp(40px, 5vw, 72px);
   padding: clamp(8px, 1vh, 12px) 0;
+}
+
+.logoTrackStatic {
+  width: 100%;
+  justify-content: center;
+}
+
+.logoTrack:not(.logoTrackStatic) {
   animation: logoMarquee 32s linear infinite;
   will-change: transform;
 }
@@ -108,15 +120,15 @@
 
 .logoImage {
   display: block;
-  height: clamp(28px, 3vw, 36px);
+  height: clamp(36px, 4vw, 48px);
   width: auto;
-  max-width: 160px;
+  max-width: 200px;
   object-fit: contain;
   flex-shrink: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .logoTrack {
+  .logoTrack:not(.logoTrackStatic) {
     animation: none;
     flex-wrap: wrap;
     width: 100%;

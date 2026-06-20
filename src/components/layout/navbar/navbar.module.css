@@ -362,6 +362,10 @@
   gap: 16px;
 }
 
+.megaColFeaturedMediaOnly {
+  gap: 0;
+}
+
 .megaFeaturedMedia {
   display: block;
   border-radius: 12px;

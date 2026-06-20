@@ -52,8 +52,8 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
       [],
     ],
     featured: {
-      title: "Perceiva™",
-      description: "Predict. Alert. Protect — intelligence at the edge.",
+      title: "",
+      description: "",
       href: "/product",
       image: detection,
       imageAlt: "AI perception overlay on road scene",
@@ -95,9 +95,8 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
       ],
     ],
     featured: {
-      title: "Co-Development Partner",
-      description:
-        "Partner with EdgeVerse from sensor integration through deployment.",
+      title: "",
+      description: "",
       href: "/technology",
       image: heroImg,
       imageAlt: "EdgeVerse technology and co-development",

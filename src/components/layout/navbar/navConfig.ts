@@ -80,7 +80,7 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
         {
           title: "Edge AI Approach",
           description:
-            "Quantised & distilled models for low-TOPS SoCs. Sub-30ms latency on embedded hardware — no cloud dependency.",
+            "Quantised & Distilled models for low-TOPS SoCs.",
           href: "/technology",
         },
         {
@@ -94,13 +94,13 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
         {
           title: "Co-Designed Camera & ISP Pipeline",
           description:
-            "Sensor, ISP & model co-optimised as a system. HDR, low-light & colour science tuned for perception — not commodity hardware.",
+            "Sensor, ISP & model co-optimised as a system.",
           href: "/technology",
         },
         {
           title: "On-Premise Active Learning",
           description:
-            "Deployable at your compute — data never leaves your infrastructure. Models continuously improve on your own edge data. Sovereign AI loop.",
+            "Deployable at your compute — Sovereign AI learning loop.",
           href: "/technology",
         },
       ],
@@ -156,12 +156,12 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
     key: "company",
     label: "Company",
     heading: "Company",
-    tagline: "",
+    tagline: "Reducing entry-barrier for edge intelligence deployment",
     columns: [
       [
         {
           title: "About",
-          description: "Our mission, vision, and story",
+          description: "Our story and who we are",
           href: "/about",
         },
         {

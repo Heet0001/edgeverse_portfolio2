@@ -1,27 +1,27 @@
-import { useRef, useState } from 'react'
-import { useScrollReveal } from '../../hooks/useScrollReveal'
-import styles from './techFleetLearningSection.module.scss'
-import activeLearningVideo from '../../assets/videos/Active Learning Technology Loop.mp4'
+import { useRef, useState } from "react";
+import { useScrollReveal } from "../../hooks/useScrollReveal";
+import styles from "./techFleetLearningSection.module.scss";
+import activeLearningVideo from "../../assets/videos/Active Learning Technology Loop.mp4";
 
 const TechFleetLearningSection = () => {
-  const copyRef = useRef<HTMLDivElement>(null)
-  const mediaRef = useRef<HTMLDivElement>(null)
-  const [videoLoaded, setVideoLoaded] = useState(false)
+  const copyRef = useRef<HTMLDivElement>(null);
+  const mediaRef = useRef<HTMLDivElement>(null);
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
-  useScrollReveal(copyRef, { variant: 'fadeUp', y: 24 })
-  useScrollReveal(mediaRef, { variant: 'fadeUp', y: 32, delay: 0.12 })
+  useScrollReveal(copyRef, { variant: "fadeUp", y: 24 });
+  useScrollReveal(mediaRef, { variant: "fadeUp", y: 32, delay: 0.12 });
 
   return (
-    <section className={styles.section} aria-label="Fleet learning loop">
+    <section className={styles.section} aria-label="Active learning loop">
       <div className={styles.inner}>
         <div ref={copyRef}>
-          <p className={styles.kicker}>Fleet Learning Loop</p>
+          <p className={styles.kicker}>Active Learning Loop</p>
           <h2 className={styles.title}>The data flywheel for Indian roads.</h2>
           <p className={styles.text}>
-            Every device deployed contributes to a continuously improving perception model — trained,
-            evaluated, and deployed
+            Every device deployed contributes to a continuously improving
+            perception model — trained, evaluated, and deployed
             <br />
-            through our fleet learning loop.
+            through our active learning loop.
           </p>
         </div>
 
@@ -40,8 +40,7 @@ const TechFleetLearningSection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default TechFleetLearningSection
-
+export default TechFleetLearningSection;

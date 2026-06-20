@@ -20,6 +20,40 @@ const getInitials = (name: string) =>
     .slice(0, 2)
     .toUpperCase();
 
+const LinkedInIcon = () => (
+  <svg viewBox="0 0 24 24" aria-hidden="true" className={styles.linkedInIcon}>
+    <path
+      fill="currentColor"
+      d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8.5H4.5V23H.5zM8.5 8.5H12.3V10.5H12.35C12.88 9.5 14.2 8.4 16.1 8.4 20.2 8.4 21 11.1 21 14.7V23H17V15.2c0-1.9 0-4.3-2.6-4.3-2.6 0-3 2-3 4.2V23H8.5z"
+    />
+  </svg>
+);
+
+const LinkedInLink = ({ name, href }: { name: string; href: string }) => {
+  if (!href) {
+    return (
+      <span
+        className={`${styles.linkedInBadge} ${styles.linkedInBadgeDisabled}`}
+        aria-label={`${name} LinkedIn`}
+      >
+        <LinkedInIcon />
+      </span>
+    );
+  }
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={styles.linkedInBadge}
+      aria-label={`${name} on LinkedIn`}
+    >
+      <LinkedInIcon />
+    </a>
+  );
+};
+
 const Leadership = () => {
   const [selectedLeaderId, setSelectedLeaderId] = useState(
     FALLBACK_LEADERS[0]._id,
@@ -56,23 +90,13 @@ const Leadership = () => {
         <p className={styles.profileRole}>{member.role}</p>
       ) : null}
 
-      {member.linkedIn ? (
-        <ul className={styles.profileLinks}>
-          <li>
-            <a
-              href={member.linkedIn}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </a>
-          </li>
-        </ul>
-      ) : null}
-
       {member.bio ? (
         <p className={styles.profileBio}>{member.bio}</p>
       ) : null}
+
+      <div className={styles.profileLinkedIn}>
+        <LinkedInLink name={member.name} href={member.linkedIn} />
+      </div>
     </article>
   );
 

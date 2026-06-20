@@ -43,8 +43,8 @@ const Footer = () => {
           links={[
             { label: "Perceiva™", href: "/technology" },
             { label: "IMedge® Hardware", href: "/product/imedge" },
-            { label: "India Perception Model", href: "/technology" },
-            { label: "Safety Features", href: "/safety" },
+
+            // { label: "Safety Features", href: "/safety" },
           ]}
         />
 

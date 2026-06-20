@@ -1,22 +1,22 @@
-import styles from './aboutTeamSection.module.scss'
+import styles from "./aboutTeamSection.module.scss";
 
 const team = [
   {
-    initials: 'VP',
-    name: 'Vasanth Prabhu',
-    role: 'Co-Founder & CEO',
+    initials: "VP",
+    name: "Vasanth Prabhu",
+    role: "Co-Founder & CEO",
   },
   {
-    initials: 'SG',
-    name: 'Susanth Gunnam',
-    role: 'Co-Founder & CTO',
+    initials: "SG",
+    name: "Susanth Gunnam",
+    role: "Co-Founder & CTO",
   },
   {
-    initials: 'PB',
-    name: 'Pallavi Banthia',
-    role: 'Co-Founder & COO',
+    initials: "PB",
+    name: "Pallavi Banthia",
+    role: "Co-Founder & COO",
   },
-]
+];
 
 const AboutTeamSection = () => {
   return (
@@ -26,8 +26,9 @@ const AboutTeamSection = () => {
           <div className={styles.kicker}>OUR TEAM</div>
           <h2 className={styles.title}>Meet the team.</h2>
           <p className={styles.subtitle}>
-            Engineers, researchers, and builders creating India's first ARAS — spanning AI, embedded systems,
-            hardware design, and product development.
+            Engineers, researchers, and builders creating India's own vertically
+            integrated perception intelligence stack — spanning AI, embedded
+            systems, hardware design, and product development.
           </p>
         </div>
 
@@ -44,7 +45,7 @@ const AboutTeamSection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default AboutTeamSection
+export default AboutTeamSection;

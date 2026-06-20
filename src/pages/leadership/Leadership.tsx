@@ -86,13 +86,9 @@ const Leadership = () => {
   ) => (
     <article className={panelClassName} aria-live="polite">
       <h3 className={styles.profileName}>{member.name}</h3>
-      {member.role ? (
-        <p className={styles.profileRole}>{member.role}</p>
-      ) : null}
+      {member.role ? <p className={styles.profileRole}>{member.role}</p> : null}
 
-      {member.bio ? (
-        <p className={styles.profileBio}>{member.bio}</p>
-      ) : null}
+      {member.bio ? <p className={styles.profileBio}>{member.bio}</p> : null}
 
       <div className={styles.profileLinkedIn}>
         <LinkedInLink name={member.name} href={member.linkedIn} />
@@ -175,7 +171,8 @@ const Leadership = () => {
             <p className={styles.kicker}>Leadership</p>
             <h1 className={styles.h1}>Meet the team.</h1>
             <p className={styles.heroBlurb}>
-              Engineers, researchers, and builders creating India's first ARAS —
+              Engineers, researchers, and builders creating India's own
+              vertically integrated perception intelligence stack ARAS —
               spanning AI, embedded systems, hardware design, and product
               development.
             </p>
@@ -190,11 +187,7 @@ const Leadership = () => {
             <span className={styles.sectionRule} aria-hidden="true" />
           </header>
 
-          {renderTeamPanel(
-            displayLeaders,
-            selectedLeader,
-            setSelectedLeaderId,
-          )}
+          {renderTeamPanel(displayLeaders, selectedLeader, setSelectedLeaderId)}
         </div>
       </section>
 

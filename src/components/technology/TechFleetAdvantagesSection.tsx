@@ -1,20 +1,25 @@
-import { useRef } from 'react'
-import { useScrollReveal } from '../../hooks/useScrollReveal'
-import styles from './techFleetAdvantagesSection.module.scss'
-import { TECH_FLEET_ADVANTAGES } from './technologyData'
+import { useRef } from "react";
+import { useScrollReveal } from "../../hooks/useScrollReveal";
+import styles from "./techFleetAdvantagesSection.module.scss";
+import { TECH_FLEET_ADVANTAGES } from "./technologyData";
 
 const TechFleetAdvantagesSection = () => {
-  const titleRef = useRef<HTMLHeadingElement>(null)
-  const gridRef = useRef<HTMLDivElement>(null)
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
 
-  useScrollReveal(titleRef, { variant: 'fadeUp', y: 20 })
-  useScrollReveal(gridRef, { variant: 'stagger', stagger: 0.08, y: 22, childSelector: `.${styles.card}` })
+  useScrollReveal(titleRef, { variant: "fadeUp", y: 20 });
+  useScrollReveal(gridRef, {
+    variant: "stagger",
+    stagger: 0.08,
+    y: 22,
+    childSelector: `.${styles.card}`,
+  });
 
   return (
     <section className={styles.section} aria-label="Fleet learning advantages">
       <div className={styles.inner}>
         <h2 ref={titleRef} className={styles.title}>
-          Advantages of EdgeVerse&apos;s Fleet Learning Loop
+          Advantages of EdgeVerse&apos;s Active Learning Loop
         </h2>
         <div ref={gridRef} className={styles.grid}>
           {TECH_FLEET_ADVANTAGES.map((item) => (
@@ -26,7 +31,7 @@ const TechFleetAdvantagesSection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default TechFleetAdvantagesSection
+export default TechFleetAdvantagesSection;

@@ -97,7 +97,8 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 12px 14px;
+  align-items: center;
+  gap: 20px 28px;
 }
 
 .partnerItem {
@@ -113,16 +114,16 @@
 }
 
 .partnerItemLogo {
-  padding: 12px 18px;
-  border-radius: 12px;
+  padding: 18px 28px;
+  border-radius: 14px;
   background: #ffffff;
 }
 
 .partnerLogo {
   display: block;
-  height: 28px;
+  height: 48px;
   width: auto;
-  max-width: 148px;
+  max-width: 220px;
   object-fit: contain;
 }
 

@@ -16,6 +16,11 @@
   color: var(--color-text);
 }
 
+.fullWidthGrid {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .newsGrid {
   display: flex;
   flex-direction: column;
@@ -35,7 +40,7 @@
   color: inherit;
   border-radius: 16px;
   overflow: hidden;
-  min-height: clamp(260px, 30vw, 360px);
+  min-height: 480px;
   isolation: isolate;
   transition: transform 200ms var(--ease-out);
 }
@@ -194,5 +199,9 @@
 @media (max-width: 779px) {
   .title {
     text-align: center;
+  }
+
+  .fullWidthGrid {
+    width: min(92%, 100%);
   }
 }

@@ -5,11 +5,11 @@
 .inner {
   max-width: 1440px;
   margin: 0 auto;
-  padding: clamp(20px, 3vw, 32px) var(--section-pad-x);
+  padding: clamp(20px, 3vw, 32px) var(--section-pad-x) 0;
 }
 
 .title {
-  margin: 0 0 clamp(20px, 2.8vw, 32px);
+  margin: 0;
   font-size: clamp(26px, 3vw, 38px);
   letter-spacing: -0.03em;
   font-weight: 600;
@@ -19,6 +19,7 @@
 .fullWidthGrid {
   width: 85%;
   margin: 0 auto;
+  padding-bottom: clamp(20px, 3vw, 32px);
 }
 
 .newsGrid {

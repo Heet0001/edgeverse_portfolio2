@@ -8,12 +8,10 @@ type Partner = {
   logo?: string;
 };
 
-const TECHNOLOGY_PARTNERS: Partner[] = [
+const TRUSTED_PARTNERS: Partner[] = [
   { name: "Cavil Wireless", logo: cavilLogo },
+  { name: "Ather Energy", logo: atherLogo },
 ];
-
-const OEM_PARTNERS: Partner[] = [{ name: "Ather Energy", logo: atherLogo }];
-
 
 const Investors = () => {
   return (
@@ -35,44 +33,16 @@ const Investors = () => {
 
       <section
         className={styles.partnersSection}
-        aria-label="Technology partners"
+        aria-label="Trusted by the companies shaping the future"
       >
         <div className={styles.inner}>
           <div className={styles.partnerHeader}>
-            <h2 className={styles.partnerTitle}>Technology Partners</h2>
+            <h2 className={styles.partnerTitle}>
+              Trusted by the companies shaping the future
+            </h2>
           </div>
           <ul className={styles.partnerList}>
-            {TECHNOLOGY_PARTNERS.map((partner) => (
-              <li
-                key={partner.name}
-                className={`${styles.partnerItem} ${partner.logo ? styles.partnerItemLogo : ""}`}
-              >
-                {partner.logo ? (
-                  <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    className={styles.partnerLogo}
-                    loading="lazy"
-                  />
-                ) : (
-                  partner.name
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section
-        className={styles.partnersSection}
-        aria-label="OEM and Tier-I partners"
-      >
-        <div className={styles.inner}>
-          <div className={styles.partnerHeader}>
-            <h2 className={styles.partnerTitle}>OEM &amp; Tier-I Partners</h2>
-          </div>
-          <ul className={styles.partnerList}>
-            {OEM_PARTNERS.map((partner) => (
+            {TRUSTED_PARTNERS.map((partner) => (
               <li
                 key={partner.name}
                 className={`${styles.partnerItem} ${partner.logo ? styles.partnerItemLogo : ""}`}

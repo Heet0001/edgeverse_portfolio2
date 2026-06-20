@@ -24,9 +24,8 @@ const ImedgeCapabilitiesSection = () => {
             Real-time AI vision hardware for the edge
           </h2>
           <p className={styles.lead}>
-            Imedge™ brings high-performance computer vision directly to the
-            source of data — enabling instant insights, uncompromising privacy,
-            and split-second decision-making without cloud latency.
+          The fastest and most reliable way to realise your Edge AI Vision application  lies in building a system where camera design and calibration. AI model tuning for Edge Processor and Intelligence layer are vertically integrated. Imedge™ platform accomplishes this goal by integrating high-performance computer vision directly to the source of data — enabling instant insights, uncompromising privacy, and split-second decision-making without cloud latency.
+
           </p>
         </header>
 

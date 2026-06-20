@@ -41,7 +41,7 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
         {
           title: "Perceiva™ ARAS",
           description:
-            "Full-stack Advanced Rider Assistance System for OEMs and Tier-1s",
+            "Making Two Wheelers safer with AI",
           href: "/product#aras",
         },
         {

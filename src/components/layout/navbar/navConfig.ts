@@ -161,6 +161,11 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
           description: "Our story and who we are",
           href: "/about",
         },
+        {
+          title: "Careers",
+          description: "Join us and build what matters",
+          href: "/careers",
+        },
         // {
         //   title: "Leadership",
         //   description: "Meet the team building EdgeVerse",
@@ -172,11 +177,6 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
           title: "Partners and Investors",
           description: "Technology and OEM partners building at the edge",
           href: "/investors",
-        },
-        {
-          title: "Careers",
-          description: "Join us and build what matters",
-          href: "/careers",
         },
       ],
     ],

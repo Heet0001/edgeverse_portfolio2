@@ -10,14 +10,11 @@ const AboutHeroSection = () => {
       </div>
 
       <div className={styles.heroContent}>
-        <div className={styles.badge}>About EdgeVerse</div>
-        <h1 className={styles.heroTitle}>
-          <span className={styles.heroTitleLine}>Building the future</span>
-          <span className={styles.heroTitleLine}>of perception.</span>
-        </h1>
+        <div className={styles.badge}>Company</div>
+        <h1 className={styles.heroTitle}>About Us</h1>
         <p className={styles.heroSubtitle}>
-          Pioneering edge-native perception intelligence for mobility, industrial automation,
-          and resource-constrained systems.
+          Pioneering edge-native perception intelligence for mobility, industrial
+          automation, and resource-constrained systems.
         </p>
         <span className={styles.heroRule} aria-hidden="true" />
       </div>

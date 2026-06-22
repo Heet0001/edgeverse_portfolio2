@@ -16,7 +16,12 @@ const TechPlatformAdvantagesSection = () => {
   })
 
   return (
-    <section ref={sectionRef} className={styles.section} aria-label="Platform advantages">
+    <section
+      ref={sectionRef}
+      id="why-perceiva"
+      className={styles.section}
+      aria-label="Why Perceiva"
+    >
       <div className={styles.inner}>
         <h2 className={styles.title}>Why Perceiva™</h2>
         <p className={styles.subtitle}>

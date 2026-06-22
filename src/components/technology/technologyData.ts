@@ -60,6 +60,29 @@ export const TECH_APPROACH_ADVANTAGES = [
   },
 ] as const;
 
+export const TECH_PROPRIETARY_DATASET = [
+  {
+    title: "India-first perception data",
+    description:
+      "Curated for unstructured Indian road conditions — edge cases, lighting, and traffic patterns not represented in open-source datasets.",
+  },
+  {
+    title: "Not replicable from open sources",
+    description:
+      "Own perception data captured from real-world deployments, giving Perceiva™ models a durable advantage on Indian roads.",
+  },
+  {
+    title: "Continuously evolving",
+    description:
+      "Every deployment feeds the active learning loop — refining models with proprietary edge-case data while keeping customer IP protected.",
+  },
+  {
+    title: "Sovereign data ownership",
+    description:
+      "Customer deployment data and tuned model intelligence remain within your infrastructure, aligned with DPDPA 2023 compliance requirements.",
+  },
+] as const;
+
 export const TECH_FLEET_ADVANTAGES = [
   {
     title: "Powerful data-to-value engine",

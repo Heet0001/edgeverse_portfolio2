@@ -56,12 +56,11 @@
 
 .heroTitle {
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.06em;
   font-family: var(--font-sans);
-  font-weight: 400;
-  letter-spacing: -0.04em;
+  font-size: var(--page-hero-title-font-size);
+  font-weight: var(--page-hero-title-font-weight);
+  line-height: var(--page-hero-title-line-height);
+  letter-spacing: var(--page-hero-title-letter-spacing);
   color: #ffffff;
 }
 

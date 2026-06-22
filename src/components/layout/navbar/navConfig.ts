@@ -1,4 +1,4 @@
-import detection from "../../../assets/images/detection.png";
+import detection from "../../../assets/images/forwardcollision.png";
 // import collisionImg from "../../../assets/images/collision.png"
 import heroImg from "../../../assets/images/hero.png";
 
@@ -34,14 +34,13 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
     key: "technology",
     label: "Product",
     heading: "Product",
-    tagline: "Edge-native AI  for smarter systems",
+    tagline: "Edge-native AI for smarter system through sensor fusion",
     linksLayout: "twoColumn",
     columns: [
       [
         {
           title: "Perceiva™ ARAS",
-          description:
-            "Making Two Wheelers safer with AI",
+          description: "Making Two Wheelers safer with AI",
           href: "/product#aras",
         },
         {
@@ -51,7 +50,7 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
         },
         {
           title: "Perceiva™ iAuto",
-          description: "Factory automation with AI",
+          description: "Upcoming",
           href: "/product#iauto",
         },
         {
@@ -75,33 +74,31 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
     label: "Technology",
     heading: "Technology",
     tagline: "We are your Co-Development Partner ",
+    linksLayout: "twoColumn",
     columns: [
       [
         {
-          title: "Edge AI Approach",
+          title: "Why Perceiva",
           description:
-            "Quantised & Distilled models for low-TOPS SoCs.",
-          href: "/technology",
+            "Built for OEM co-development — flexible, sovereign, and optimized for the edge.",
+          href: "/technology#why-perceiva",
+        },
+        {
+          title: "Perceiva Approach",
+          description:
+            "End-to-end perception intelligence from sensor inputs to protected customer IP.",
+          href: "/technology#perceiva-approach",
+        },
+        {
+          title: "Active Learning Loop",
+          description:
+            "Deployable at your compute — Sovereign AI learning loop.",
+          href: "/technology#active-learning-loop",
         },
         {
           title: "Proprietary Dataset",
-          description:
-            "Own perception data. Not replicable from open sources.",
-          href: "/technology",
-        },
-      ],
-      [
-        {
-          title: "Co-Designed Camera & ISP Pipeline",
-          description:
-            "Sensor, ISP & model co-optimised as a system.",
-          href: "/technology",
-        },
-        {
-          title: "On-Premise Active Learning",
-          description:
-            "Deployable at your compute — Sovereign AI learning loop.",
-          href: "/technology",
+          description: "Own perception data. Not replicable from open sources.",
+          href: "/technology#proprietary-dataset",
         },
       ],
     ],
@@ -160,15 +157,15 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
     columns: [
       [
         {
-          title: "About",
+          title: "About Us",
           description: "Our story and who we are",
           href: "/about",
         },
-        {
-          title: "Leadership",
-          description: "Meet the team building EdgeVerse",
-          href: "/leadership",
-        },
+        // {
+        //   title: "Leadership",
+        //   description: "Meet the team building EdgeVerse",
+        //   href: "/about#leadership",
+        // },
       ],
       [
         {
@@ -187,7 +184,7 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
       title: "",
       description: "",
       href: "/blog",
-      image: heroImg,
+      image: "",
       imageAlt: "EdgeVerse team and technology",
     },
   },

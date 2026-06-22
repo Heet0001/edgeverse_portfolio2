@@ -72,7 +72,7 @@ const RECOGNITION_ITEM: NewsItem = {
   title:
     "Nasscom Mobility Challenge 2025 Winner",
   imageSrc: newsFeature1,
-  imageAlt: "Motorcycle with perception HUD overlay",
+  imageAlt: "EdgeVerse team receiving the Nasscom Mobility Innovation Challenge 2025 award",
   href: "/",
   variant: "featured",
 };
@@ -125,38 +125,35 @@ const NewsInsightsSection = () => {
     <section
       ref={sectionRef}
       className={styles.section}
-      aria-label="In the news"
+      aria-label="Recognition"
     >
       <div className={styles.inner}>
         <h2 ref={titleRef} className={styles.title}>
           Recognition
         </h2>
-      </div>
 
-      <div ref={gridRef} className={styles.fullWidthGrid}>
-        <Link
-          className={styles.featuredCard}
-          to={RECOGNITION_ITEM.href}
-          data-reveal-item
-        >
-          <div className={styles.featuredMedia}>
-            {RECOGNITION_ITEM.imageSrc && (
-              <img
-                className={styles.featuredImg}
-                src={RECOGNITION_ITEM.imageSrc}
-                alt={RECOGNITION_ITEM.imageAlt}
-                loading="lazy"
-              />
-            )}
-            <div className={styles.featuredOverlay} aria-hidden="true" />
-          </div>
-          <div className={styles.featuredBody}>
-            <p className={styles.featuredTitle}>{RECOGNITION_ITEM.title}</p>
-            {/* <span className={styles.readMore}>
-              Read more <span aria-hidden="true">→</span>
-            </span> */}
-          </div>
-        </Link>
+        <div ref={gridRef} className={styles.cardWrap}>
+          <Link
+            className={styles.featuredCard}
+            to={RECOGNITION_ITEM.href}
+            data-reveal-item
+          >
+            <div className={styles.featuredMedia}>
+              {RECOGNITION_ITEM.imageSrc && (
+                <img
+                  className={styles.featuredImg}
+                  src={RECOGNITION_ITEM.imageSrc}
+                  alt={RECOGNITION_ITEM.imageAlt}
+                  loading="lazy"
+                />
+              )}
+              <div className={styles.featuredOverlay} aria-hidden="true" />
+              <div className={styles.featuredBody}>
+                <p className={styles.featuredTitle}>{RECOGNITION_ITEM.title}</p>
+              </div>
+            </div>
+          </Link>
+        </div>
       </div>
     </section>
   );

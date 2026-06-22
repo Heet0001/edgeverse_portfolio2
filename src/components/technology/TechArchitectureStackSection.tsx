@@ -119,7 +119,12 @@ const TechArchitectureStackSection = () => {
   }, [reduceMotion])
 
   return (
-    <section ref={sectionRef} className={styles.section} aria-label="Perceiva architecture stack">
+    <section
+      ref={sectionRef}
+      id="perceiva-approach"
+      className={styles.section}
+      aria-label="Perceiva approach"
+    >
       <div className={styles.inner}>
         <div className={styles.videoWrap}>
           <video
@@ -135,7 +140,7 @@ const TechArchitectureStackSection = () => {
         </div>
 
         <div className={styles.header}>
-          <p className={styles.kicker}>Platform architecture</p>
+          <p className={styles.kicker}>Perceiva Approach</p>
           <h2 className={styles.title}>End-to-end perception intelligence</h2>
           <p className={styles.lead}>
             From diverse sensor inputs to protected customer IP — Perceiva™ is structured as a

@@ -2,7 +2,7 @@ import buildCardImg from "../../assets/images/card-build-with-edgeverse.png";
 import roadSafetyImg from "../../assets/images/card-road-safety.png";
 import imedgeHardwareImg from "../../assets/images/imedge_hardware.png";
 import scenicRoadImg from "../../assets/images/scenic-road.png";
-import detectionImg from "../../assets/images/detection.png";
+import detectionImg from "../../assets/images/forwardcollision.png";
 import detection1Img from "../../assets/images/detection1.png";
 import detection2Img from "../../assets/images/detection2.png";
 import heroImg from "../../assets/images/ChatGPT Image May 29, 2026, 03_04_00 AM.png";

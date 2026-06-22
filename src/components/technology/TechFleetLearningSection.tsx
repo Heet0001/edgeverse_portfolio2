@@ -12,7 +12,11 @@ const TechFleetLearningSection = () => {
   useScrollReveal(mediaRef, { variant: "fadeUp", y: 32, delay: 0.12 });
 
   return (
-    <section className={styles.section} aria-label="Active learning loop">
+    <section
+      id="active-learning-loop"
+      className={styles.section}
+      aria-label="Active learning loop"
+    >
       <div className={styles.inner}>
         <div ref={copyRef}>
           <p className={styles.kicker}>Active Learning Loop</p>

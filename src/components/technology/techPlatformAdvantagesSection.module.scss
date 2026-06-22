@@ -1,6 +1,7 @@
 .section {
   background: #fafafa;
   border-top: 1px solid var(--color-border);
+  scroll-margin-top: calc(var(--nav-height) + 24px);
 }
 
 .inner {

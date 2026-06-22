@@ -1,4 +1,4 @@
-import imedgeHardwareImg from "../../assets/images/imedge_hardware.png";
+import imedgeHardwareImg from "../../assets/images/Imedgehardware2.svg";
 
 export const IMEDGE_HERO_IMAGE = imedgeHardwareImg;
 
@@ -33,16 +33,25 @@ export const IMEDGE_CAPABILITIES = [
 
 export const IMEDGE_SPECS = [
   {
-    left: { label: "PROCESSOR", value: "Qualcomm SM6115/2290, Ambarella CV25 SoC" },
+    left: {
+      label: "PROCESSOR",
+      value: "Qualcomm SM6115/2290, Ambarella CV25 SoC",
+    },
     // right: { label: "CPU", value: "Arm® 64-bit quad core" },
-    right: { label: "CAMERA  INTERFACE", value: "FPD-Link III 3Gbps SerDes UVC AHD" },
+    right: {
+      label: "CAMERA  INTERFACE",
+      value: "FPD-Link III 3Gbps SerDes UVC AHD",
+    },
   },
   {
     left: { label: "CAMERA", value: "Onsemi AR0147AT,OnSemi AR0246" },
     right: { label: "SERIALIZER", value: "FPD-Link III 3Gbps SerDes" },
   },
   {
-    left: { label: "AI PROCESSING", value: "Dedicated CNN accelerator, up to 30 FPS inference" },
+    left: {
+      label: "AI PROCESSING",
+      value: "Dedicated CNN accelerator, up to 30 FPS inference",
+    },
     right: { label: "ENCODING", value: "2KP30+ · H.264/H.265" },
   },
   {
@@ -50,7 +59,13 @@ export const IMEDGE_SPECS = [
     right: { label: "STORAGE", value: "Micro-SD (SDHC/SDXC)" },
   },
   {
-    left: { label: "CONNECTIVITY", value: "WiFi 802.11a/b/g/n/ac · BT5.2 · Micro-USB 2.0" },
-    right: { label: "INTERFACES", value: "HDMI ·6-Axis IMU · CAN Standard/Extended" },
+    left: {
+      label: "CONNECTIVITY",
+      value: "WiFi 802.11a/b/g/n/ac · BT5.2 · Micro-USB 2.0",
+    },
+    right: {
+      label: "INTERFACES",
+      value: "HDMI ·6-Axis IMU · CAN Standard/Extended",
+    },
   },
 ] as const;

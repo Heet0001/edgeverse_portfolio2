@@ -59,7 +59,7 @@
 }
 
 .subtitle {
-  margin: 24px 0 0;
+  margin: var(--page-hero-subtitle-margin-top) 0 0;
   max-width: 46ch;
   font-size: var(--page-hero-subtitle-font-size);
   line-height: var(--page-hero-subtitle-line-height);

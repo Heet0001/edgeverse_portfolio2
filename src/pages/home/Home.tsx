@@ -81,10 +81,10 @@ const Home = () => {
 
         <div className={styles.heroContent}>
           <div className={styles.heroBadge}>Edge Intelligence Platform</div>
-          <h1 className={styles.heroTitle}>One Intelligence Layer.</h1>
-          <p className={styles.heroSubtitle}>
+          <h1 className={styles.heroTitle}>
             Any Edge Device. Any Environment.
-          </p>
+          </h1>
+          <p className={styles.heroSubtitle}>One Intelligence Layer.</p>
           <a className={styles.heroCta} href="/product">
             <span>Discover more</span>
             <span className={styles.heroCtaArrow} aria-hidden="true">

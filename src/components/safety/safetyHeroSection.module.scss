@@ -58,7 +58,7 @@
 }
 
 .heading {
-  margin: 0 auto 24px;
+  margin: 0 auto var(--page-hero-subtitle-margin-top);
   max-width: var(--page-hero-title-max-width);
   font-size: var(--page-hero-title-font-size);
   font-weight: var(--page-hero-title-font-weight);

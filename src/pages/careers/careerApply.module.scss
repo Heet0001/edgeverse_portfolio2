@@ -78,7 +78,7 @@
 }
 
 .heroTitle {
-  margin: 0 0 24px;
+  margin: 0 0 var(--page-hero-subtitle-margin-top);
   max-width: var(--page-hero-title-max-width);
   font-size: var(--page-hero-title-font-size);
   font-weight: var(--page-hero-title-font-weight);
@@ -105,9 +105,9 @@
 }
 
 .heroDesc {
-  font-size: 15px;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.66);
+  font-size: var(--page-hero-subtitle-font-size);
+  line-height: var(--page-hero-subtitle-line-height);
+  color: var(--page-hero-subtitle-color);
   max-width: 60ch;
   margin: 0;
 }

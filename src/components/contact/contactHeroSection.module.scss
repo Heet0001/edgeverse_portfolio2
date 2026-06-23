@@ -15,7 +15,7 @@
 }
 
 .heading {
-  margin: 0 0 24px;
+  margin: 0 0 var(--page-hero-subtitle-margin-top);
   max-width: var(--page-hero-title-max-width);
   font-size: var(--page-hero-title-font-size);
   font-weight: var(--page-hero-title-font-weight);
@@ -35,9 +35,5 @@
 @media (max-width: 768px) {
   .inner {
     padding: 0 24px var(--page-hero-content-pad-bottom);
-  }
-
-  .subtitle {
-    font-size: 17px;
   }
 }

@@ -19,8 +19,9 @@
   --page-hero-title-line-height: 1.04;
   --page-hero-title-letter-spacing: -0.04em;
   --page-hero-title-max-width: none;
-  --page-hero-subtitle-font-size: clamp(15px, 1.35vw, 18px);
-  --page-hero-subtitle-line-height: 1.65;
+  --page-hero-subtitle-font-size: clamp(20px, 2.4vw, 32px);
+  --page-hero-subtitle-line-height: 1.45;
+  --page-hero-subtitle-margin-top: clamp(10px, 1.2vw, 14px);
   --page-hero-subtitle-color: rgba(255, 255, 255, 0.72);
 }
 

@@ -1,5 +1,5 @@
 import styles from "./navbar.module.css";
-import logo from "../../../assets/images/edgeverse_logo_high.png";
+import logo from "../../../assets/images/edgeverse_newlogo.png";
 import {
   useCallback,
   useEffect,
@@ -35,7 +35,7 @@ const Navbar = () => {
   useLayoutEffect(() => {
     setActiveMega(null);
     setMobileOpen(false);
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 
   useEffect(() => {
     if (!mobileOpen) return;
@@ -171,6 +171,7 @@ const Navbar = () => {
               navMode={navMode}
               onContentMouseEnter={clearCloseTimer}
               onContentMouseLeave={scheduleCloseMega}
+              onNavigate={() => setActiveMega(null)}
             />
           </div>
         )}

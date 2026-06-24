@@ -4,6 +4,7 @@ import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import { TECH_ARCHITECTURE_IMAGES, TECH_STACK_LAYERS } from './technologyData'
 import styles from './techArchitectureStackSection.module.scss'
+import headerStyles from './techSectionHeader.module.scss'
 import platformArchitectureVideo from '../../assets/videos/Comp a.webm'
 
 const LAYER_LABELS = [
@@ -126,6 +127,15 @@ const TechArchitectureStackSection = () => {
       aria-label="Perceiva approach"
     >
       <div className={styles.inner}>
+        <header className={headerStyles.light}>
+          <h2 className={headerStyles.title}>Perceiva Approach</h2>
+          <p className={headerStyles.subtitle}>
+            From diverse sensor inputs to protected customer IP — Perceiva™ is
+            structured as a modular stack designed for co-development with OEM
+            partners.
+          </p>
+        </header>
+
         <div className={styles.videoWrap}>
           <video
             ref={videoRef}
@@ -137,15 +147,6 @@ const TechArchitectureStackSection = () => {
             playsInline
             aria-label="Platform architecture overview"
           />
-        </div>
-
-        <div className={styles.header}>
-          <p className={styles.kicker}>Perceiva Approach</p>
-          <h2 className={styles.title}>End-to-end perception intelligence</h2>
-          <p className={styles.lead}>
-            From diverse sensor inputs to protected customer IP — Perceiva™ is structured as a
-            modular stack designed for co-development with OEM partners.
-          </p>
         </div>
 
         <div className={styles.layout}>

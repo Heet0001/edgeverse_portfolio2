@@ -213,7 +213,7 @@ const CareerApply = () => {
               if there's a fit.
             </p>
             <div className={styles.successActions}>
-              <Link to="/careers" className={styles.btnPrimary}>
+              <Link to="/about#careers" className={styles.btnPrimary}>
                 View other openings
               </Link>
               <Link to="/" className={styles.btnGhost}>
@@ -232,7 +232,7 @@ const CareerApply = () => {
         <div className={styles.heroBg} aria-hidden="true" />
         <div className={styles.heroInner}>
           <div className={styles.crumbs}>
-            <Link to="/careers" className={styles.crumb}>
+            <Link to="/about#careers" className={styles.crumb}>
               Careers
             </Link>
             <span aria-hidden="true">/</span>
@@ -434,7 +434,7 @@ const CareerApply = () => {
           </fieldset>
 
           <div className={styles.actions}>
-            <Link to="/careers" className={styles.btnGhost}>
+            <Link to="/about#careers" className={styles.btnGhost}>
               Cancel
             </Link>
             <button

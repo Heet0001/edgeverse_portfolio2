@@ -1,0 +1,33 @@
+.title {
+  margin: 0;
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.subtitle {
+  margin: 12px 0 clamp(32px, 4vw, 44px);
+  max-width: 48ch;
+  font-size: clamp(15px, 1.1vw, 16px);
+  line-height: 1.65;
+}
+
+.light {
+  .title {
+    color: var(--color-text);
+  }
+
+  .subtitle {
+    color: var(--color-text-muted);
+  }
+}
+
+.dark {
+  .title {
+    color: #ffffff;
+  }
+
+  .subtitle {
+    color: rgba(255, 255, 255, 0.62);
+  }
+}

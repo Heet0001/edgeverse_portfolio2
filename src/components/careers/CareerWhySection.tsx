@@ -8,7 +8,7 @@ const CareerWhySection = () => {
 
       <div className={styles.inner}>
         <div className={styles.block}>
-          <h2 className={styles.blockTitle}>What it&apos;s like to work here</h2>
+          <h3 className={styles.blockTitle}>What it&apos;s like to work here</h3>
           <p className={styles.blockText}>
             We&apos;re a small R&amp;D first team, which means your work ships fast and the impact
             is immediate. There&apos;s no layer between you and the problem.
@@ -20,7 +20,7 @@ const CareerWhySection = () => {
         </div>
 
         <div className={styles.block}>
-          <h2 className={styles.blockTitle}>Who we&apos;re looking for</h2>
+          <h3 className={styles.blockTitle}>Who we&apos;re looking for</h3>
           <p className={styles.blockText}>
             Sharp, self-driven people who don&apos;t need to be told what to do twice. Whether
             you&apos;re an AI engineer, embedded systems developer, or AI researcher — if you&apos;re

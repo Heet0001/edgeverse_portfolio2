@@ -3,7 +3,7 @@ import { gsap, registerGsapPlugins } from "../../utils/gsap";
 import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
 import styles from "./techHeroSection.module.scss";
 import { TECH_HERO_IMAGE } from "./technologyData";
-import techHeroVideo from "../../assets/edgeverse.webm";
+import techHeroVideo from "../../assets/edgeverse_t.mp4";
 
 const TechHeroSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -82,15 +82,11 @@ const TechHeroSection = () => {
 
       <div className={styles.inner}>
         <div className={styles.badge}>Technology</div>
-        <h1 className={styles.heading}>
-          Pioneering edge AI for
-          <br />
-          perception.
-        </h1>
+        <h1 className={styles.heading}>We are your Co-Development Partner</h1>
         <p className={styles.subtitle}>
-          A vertically integrated hardware + software + AI platform
-          <br />
-          purpose-built for most challenging conditions.
+          Partner with EdgeVerse to co-develop perception intelligence
+          {/* <br /> */}
+          from sensor integration through deployment and continuous learning.
         </p>
       </div>
     </section>

@@ -1,5 +1,5 @@
 :root {
-  --nav-height: 72px;
+  --nav-height: 88px;
 }
 
 /* ───────────────────── NAVBAR CONTAINER ───────────────────── */
@@ -100,9 +100,9 @@
 
 .logo {
   display: block;
-  height: 48px;
+  height: 80px;
   width: auto;
-  max-width: min(300px, 52vw);
+  max-width: min(420px, 65vw);
   object-fit: contain;
   object-position: left center;
   transition: filter 360ms cubic-bezier(0.16, 1, 0.3, 1);

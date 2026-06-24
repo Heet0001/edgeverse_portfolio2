@@ -91,11 +91,6 @@ const AboutTimelineSection = () => {
 
       <div className={styles.inner}>
         <div className={styles.header}>
-          <div className={styles.kickerRow}>
-            <span className={styles.kicker}>Our Journey</span>
-            <span className={styles.kickerDot} />
-            <span className={styles.kickerLine} />
-          </div>
           <h2 className={styles.title}>
             From idea to product<span className={styles.titleDot}>.</span>
           </h2>

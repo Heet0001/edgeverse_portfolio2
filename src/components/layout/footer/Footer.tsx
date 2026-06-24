@@ -1,5 +1,5 @@
 import styles from "./footer.module.css";
-import logo from "../../../assets/images/edgeverse_logo_high.png";
+import logo from "../../../assets/images/edgeverse_newlogo.png";
 import SocialLinks from "../SocialLinks";
 
 const LinkCol = ({
@@ -51,18 +51,19 @@ const Footer = () => {
         <LinkCol
           title="CAREERS"
           links={[
-            { label: "Open Roles", href: "/careers" },
-            { label: "Life at EdgeVerse", href: "/careers" },
-            { label: "Apply Now", href: "/careers" },
+            { label: "Open Roles", href: "/about#careers" },
+            { label: "Life at EdgeVerse", href: "/about#careers" },
+            { label: "Apply Now", href: "/about#careers" },
           ]}
         />
 
         <LinkCol
           title="COMPANY"
           links={[
-            { label: "About Us", href: "/about" },
+            { label: "About Us", href: "/about#about" },
             { label: "Leadership", href: "/about#leadership" },
-            { label: "Investors", href: "/investors" },
+            { label: "Partners", href: "/about#partners" },
+            { label: "Careers", href: "/about#careers" },
             { label: "News", href: "/blog" },
             { label: "Contact", href: "/contact" },
           ]}

@@ -165,7 +165,7 @@ const LeadershipTeamSection = ({ embedded = false }: { embedded?: boolean }) => 
       >
         <div className={styles.inner}>
           <header className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Our Leadership Team</h2>
+            <h3 className={styles.sectionTitle}>Our Leadership Team</h3>
             <span className={styles.sectionRule} aria-hidden="true" />
           </header>
 
@@ -179,7 +179,7 @@ const LeadershipTeamSection = ({ embedded = false }: { embedded?: boolean }) => 
       >
         <div className={styles.inner}>
           <header className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Advisory Board</h2>
+            <h3 className={styles.sectionTitle}>Advisory Board</h3>
             <span className={styles.sectionRule} aria-hidden="true" />
           </header>
 

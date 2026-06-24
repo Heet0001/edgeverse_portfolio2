@@ -1,5 +1,5 @@
 import TechHeroSection from "../../components/technology/TechHeroSection";
-import TechPartnerIntroSection from "../../components/technology/TechPartnerIntroSection";
+// import TechPartnerIntroSection from "../../components/technology/TechPartnerIntroSection";
 import TechPlatformAdvantagesSection from "../../components/technology/TechPlatformAdvantagesSection";
 import TechArchitectureStackSection from "../../components/technology/TechArchitectureStackSection";
 import TechFleetLearningSection from "../../components/technology/TechFleetLearningSection";
@@ -12,7 +12,7 @@ const Technology = () => {
   return (
     <main>
       <TechHeroSection />
-      <TechPartnerIntroSection />
+      {/* <TechPartnerIntroSection /> */}
       <TechPlatformAdvantagesSection />
       <TechArchitectureStackSection />
       <TechFleetLearningSection />

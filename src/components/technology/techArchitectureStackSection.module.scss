@@ -23,36 +23,6 @@
   height: auto;
 }
 
-.header {
-  max-width: 62ch;
-  margin-bottom: clamp(40px, 5vw, 56px);
-}
-
-.kicker {
-  margin: 0 0 12px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-}
-
-.title {
-  margin: 0;
-  font-size: clamp(26px, 3.2vw, 40px);
-  font-weight: 600;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  color: var(--color-text);
-}
-
-.lead {
-  margin: 16px 0 0;
-  font-size: clamp(15px, 1.1vw, 16px);
-  line-height: 1.65;
-  color: var(--color-text-muted);
-}
-
 .layout {
   --stack-panel-height: clamp(400px, 52vh, 520px);
   display: grid;

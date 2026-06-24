@@ -154,36 +154,35 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
     label: "Company",
     heading: "Company",
     tagline: "Reducing entry-barrier for edge intelligence deployment",
+    linksLayout: "twoColumn",
     columns: [
       [
         {
           title: "About Us",
           description: "Our story and who we are",
-          href: "/about",
+          href: "/about#about",
+        },
+        {
+          title: "Leadership",
+          description: "Meet the team building EdgeVerse",
+          href: "/about#leadership",
+        },
+        {
+          title: "Partners and Investors",
+          description: "Technology and OEM partners building at the edge",
+          href: "/about#partners",
         },
         {
           title: "Careers",
           description: "Join us and build what matters",
-          href: "/careers",
-        },
-        // {
-        //   title: "Leadership",
-        //   description: "Meet the team building EdgeVerse",
-        //   href: "/about#leadership",
-        // },
-      ],
-      [
-        {
-          title: "Partners and Investors",
-          description: "Technology and OEM partners building at the edge",
-          href: "/investors",
+          href: "/about#careers",
         },
       ],
     ],
     featured: {
       title: "",
       description: "",
-      href: "/blog",
+      href: "/about",
       image: "",
       imageAlt: "EdgeVerse team and technology",
     },

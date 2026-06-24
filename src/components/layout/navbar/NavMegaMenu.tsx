@@ -12,6 +12,7 @@ type NavMegaMenuProps = {
   navMode: NavMegaTheme
   onContentMouseEnter?: () => void
   onContentMouseLeave?: () => void
+  onNavigate?: () => void
 }
 
 const NavMegaMenu = ({
@@ -20,6 +21,7 @@ const NavMegaMenu = ({
   navMode,
   onContentMouseEnter,
   onContentMouseLeave,
+  onNavigate,
 }: NavMegaMenuProps) => {
   const hasFeaturedText = Boolean(menu.featured.title || menu.featured.description);
 
@@ -47,7 +49,12 @@ const NavMegaMenu = ({
         >
           {menu.linksLayout === "twoColumn" ? (
             menu.columns.flat().map((item) => (
-              <Link key={item.href + item.title} to={item.href} className={styles.megaLinkBlock}>
+              <Link
+                key={item.href + item.title}
+                to={item.href}
+                className={styles.megaLinkBlock}
+                onClick={onNavigate}
+              >
                 <span className={styles.megaLinkTitle}>{item.title}</span>
                 <span className={styles.megaLinkDesc}>{item.description}</span>
               </Link>
@@ -56,7 +63,12 @@ const NavMegaMenu = ({
             menu.columns.map((column, colIdx) => (
               <div key={colIdx} className={styles.megaSubCol}>
                 {column.map((item) => (
-                  <Link key={item.href + item.title} to={item.href} className={styles.megaLinkBlock}>
+                  <Link
+                    key={item.href + item.title}
+                    to={item.href}
+                    className={styles.megaLinkBlock}
+                    onClick={onNavigate}
+                  >
                     <span className={styles.megaLinkTitle}>{item.title}</span>
                     <span className={styles.megaLinkDesc}>{item.description}</span>
                   </Link>
@@ -70,12 +82,20 @@ const NavMegaMenu = ({
           className={`${styles.megaColFeatured} ${hasFeaturedText ? "" : styles.megaColFeaturedMediaOnly}`}
         >
           {hasFeaturedText && (
-            <Link to={menu.featured.href} className={styles.megaFeaturedText}>
+            <Link
+              to={menu.featured.href}
+              className={styles.megaFeaturedText}
+              onClick={onNavigate}
+            >
               <span className={styles.megaLinkTitle}>{menu.featured.title}</span>
               <span className={styles.megaLinkDesc}>{menu.featured.description}</span>
             </Link>
           )}
-          <Link to={menu.featured.href} className={styles.megaFeaturedMedia}>
+          <Link
+            to={menu.featured.href}
+            className={styles.megaFeaturedMedia}
+            onClick={onNavigate}
+          >
             <img src={menu.featured.image} alt={menu.featured.imageAlt} loading="lazy" />
           </Link>
         </div>
@@ -83,7 +103,12 @@ const NavMegaMenu = ({
         <aside className={styles.megaColAside} aria-label="Quick links">
           <nav className={styles.megaQuickLinks}>
             {NAV_QUICK_LINKS.map((link) => (
-              <Link key={link.href} to={link.href} className={styles.megaQuickLink}>
+              <Link
+                key={link.href}
+                to={link.href}
+                className={styles.megaQuickLink}
+                onClick={onNavigate}
+              >
                 {link.label}
               </Link>
             ))}

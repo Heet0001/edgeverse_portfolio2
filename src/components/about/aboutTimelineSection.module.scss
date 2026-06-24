@@ -41,37 +41,6 @@
   margin-bottom: 48px;
 }
 
-.kickerRow {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 14px;
-}
-
-.kicker {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  color: #0ea5a4;
-  text-transform: uppercase;
-}
-
-.kickerDot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #0ea5a4;
-  flex-shrink: 0;
-}
-
-.kickerLine {
-  width: 32px;
-  height: 2px;
-  border-radius: 2px;
-  background: #0ea5a4;
-  flex-shrink: 0;
-}
-
 .title {
   font-size: clamp(26px, 3.2vw, 40px);
   font-weight: 600;

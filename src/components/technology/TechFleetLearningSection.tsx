@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 import styles from "./techFleetLearningSection.module.scss";
+import headerStyles from "./techSectionHeader.module.scss";
 import activeLearningVideo from "../../assets/videos/Active Learning Technology Loop.mp4";
 
 const TechFleetLearningSection = () => {
@@ -18,16 +19,15 @@ const TechFleetLearningSection = () => {
       aria-label="Active learning loop"
     >
       <div className={styles.inner}>
-        <div ref={copyRef}>
-          <p className={styles.kicker}>Active Learning Loop</p>
-          <h2 className={styles.title}>The data flywheel for Indian roads.</h2>
-          <p className={styles.text}>
+        <header ref={copyRef} className={headerStyles.dark}>
+          <h2 className={headerStyles.title}>Active Learning Loop</h2>
+          <p className={headerStyles.subtitle}>
             Every device deployed contributes to a continuously improving
-            perception model — trained, evaluated, and deployed
-            <br />
-            through our active learning loop.
+            perception model — trained, evaluated, and deployed through our
+            active learning loop platform but deployed at your premise, so you
+            own your data.
           </p>
-        </div>
+        </header>
 
         <div ref={mediaRef} className={styles.media}>
           {!videoLoaded && <div className={styles.videoPlaceholder} />}

@@ -21,8 +21,7 @@ const CareerOpeningsSection = () => {
     <section className={styles.section} aria-label="Current openings">
       <div className={styles.inner}>
         <div className={styles.header}>
-          <div className={styles.kicker}>OPEN POSITIONS</div>
-          <h2 className={styles.title}>Current openings</h2>
+          <h3 className={styles.title}>Current openings</h3>
         </div>
 
         {openings === null ? (

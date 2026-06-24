@@ -1,19 +1,20 @@
-import { useRef } from 'react'
-import { useScrollReveal } from '../../hooks/useScrollReveal'
-import styles from './techPlatformAdvantagesSection.module.scss'
-import { TECH_PLATFORM_ADVANTAGES } from './technologyData'
+import { useRef } from "react";
+import { useScrollReveal } from "../../hooks/useScrollReveal";
+import styles from "./techPlatformAdvantagesSection.module.scss";
+import headerStyles from "./techSectionHeader.module.scss";
+import { TECH_PLATFORM_ADVANTAGES } from "./technologyData";
 
 const TechPlatformAdvantagesSection = () => {
-  const sectionRef = useRef<HTMLElement>(null)
-  const gridRef = useRef<HTMLDivElement>(null)
+  const sectionRef = useRef<HTMLElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
 
-  useScrollReveal(sectionRef, { variant: 'fadeUp', y: 20 })
+  useScrollReveal(sectionRef, { variant: "fadeUp", y: 20 });
   useScrollReveal(gridRef, {
-    variant: 'stagger',
+    variant: "stagger",
     stagger: 0.08,
     y: 20,
-    childSelector: '[data-advantage]',
-  })
+    childSelector: "[data-advantage]",
+  });
 
   return (
     <section
@@ -23,10 +24,13 @@ const TechPlatformAdvantagesSection = () => {
       aria-label="Why Perceiva"
     >
       <div className={styles.inner}>
-        <h2 className={styles.title}>Why Perceiva™</h2>
-        <p className={styles.subtitle}>
-          Built for OEM co-development — flexible, sovereign, and optimized for the edge.
-        </p>
+        <header className={`${headerStyles.light}`}>
+          <h2 className={headerStyles.title}>Why Perceiva™</h2>
+          <p className={headerStyles.subtitle}>
+            Built grounds-up with &quot;adoption at scale&quot; in mind — flexible,
+            sovereign, and optimized for the edge.
+          </p>
+        </header>
         <div ref={gridRef} className={styles.grid}>
           {TECH_PLATFORM_ADVANTAGES.map((item) => (
             <article key={item.title} className={styles.card} data-advantage>
@@ -37,7 +41,7 @@ const TechPlatformAdvantagesSection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default TechPlatformAdvantagesSection
+export default TechPlatformAdvantagesSection;

@@ -62,14 +62,14 @@ export const TECH_APPROACH_ADVANTAGES = [
 
 export const TECH_PROPRIETARY_DATASET = [
   {
-    title: "India-first perception data",
+    title: "India's Two Wheeler Perception Data",
     description:
       "Curated for unstructured Indian road conditions — edge cases, lighting, and traffic patterns not represented in open-source datasets.",
   },
   {
     title: "Not replicable from open sources",
     description:
-      "Own perception data captured from real-world deployments, giving Perceiva™ models a durable advantage on Indian roads.",
+      "Own perception data captured from real-world deployments, giving Perceiva™️ ARAS models a durable advantage on Indian roads.",
   },
   {
     title: "Continuously evolving",

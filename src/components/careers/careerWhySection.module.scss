@@ -48,11 +48,11 @@
 }
 
 .blockTitle {
-  margin: 0 0 18px;
-  font-size: clamp(26px, 3vw, 38px);
+  margin: 0 0 14px;
+  font-size: clamp(18px, 1.8vw, 22px);
   font-weight: 600;
-  line-height: 1.12;
-  letter-spacing: -0.03em;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
   color: var(--color-text);
 }
 

@@ -99,12 +99,13 @@
   padding: clamp(72px, 9vw, 108px) 0 clamp(88px, 10vw, 120px);
 }
 
-.advisorySection {
-  padding-top: 0;
+.sectionEmbedded {
+  padding: 0;
 }
 
-.sectionEmbedded {
-  padding-top: 0;
+.advisorySection {
+  padding-top: clamp(48px, 6vw, 64px);
+  padding-bottom: 0;
 }
 
 .inner {
@@ -118,11 +119,11 @@
 }
 
 .sectionTitle {
-  margin: 0 0 18px;
-  font-size: clamp(22px, 2.6vw, 30px);
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  color: #0ea5a4;
+  margin: 0 0 14px;
+  font-size: clamp(18px, 1.8vw, 22px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
 }
 
 .sectionRule {
@@ -154,10 +155,10 @@
 
 .profileName {
   margin: 0 0 10px;
-  font-size: clamp(28px, 3.2vw, 40px);
-  font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -0.03em;
+  font-size: clamp(20px, 2.1vw, 24px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
   color: #101828;
 }
 
@@ -286,9 +287,9 @@
 
 .memberName {
   display: block;
-  font-size: 15px;
-  font-weight: 800;
-  line-height: 1.3;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
   color: #101828;
   margin-bottom: 4px;
   transition: color 0.25s ease;

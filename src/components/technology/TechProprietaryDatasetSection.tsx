@@ -1,13 +1,14 @@
 import { useRef } from "react";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 import styles from "./techProprietaryDatasetSection.module.scss";
+import headerStyles from "./techSectionHeader.module.scss";
 import { TECH_PROPRIETARY_DATASET } from "./technologyData";
 
 const TechProprietaryDatasetSection = () => {
-  const titleRef = useRef<HTMLHeadingElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
 
-  useScrollReveal(titleRef, { variant: "fadeUp", y: 20 });
+  useScrollReveal(headerRef, { variant: "fadeUp", y: 20 });
   useScrollReveal(gridRef, {
     variant: "stagger",
     stagger: 0.08,
@@ -22,12 +23,12 @@ const TechProprietaryDatasetSection = () => {
       aria-label="Proprietary dataset"
     >
       <div className={styles.inner}>
-        <h2 ref={titleRef} className={styles.title}>
-          Proprietary Dataset
-        </h2>
-        <p className={styles.subtitle}>
-          Own perception data. Not replicable from open sources.
-        </p>
+        <header ref={headerRef} className={headerStyles.dark}>
+          <h2 className={headerStyles.title}>Proprietary Dataset</h2>
+          <p className={headerStyles.subtitle}>
+            Own perception data. Not replicable from open sources.
+          </p>
+        </header>
         <div ref={gridRef} className={styles.grid}>
           {TECH_PROPRIETARY_DATASET.map((item) => (
             <article key={item.title} className={styles.card}>

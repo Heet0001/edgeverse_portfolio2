@@ -170,7 +170,7 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
         {
           title: "Partners and Investors",
           description: "Technology and OEM partners building at the edge",
-          href: "/about#partners",
+          href: "/#partners",
         },
         {
           title: "Careers",

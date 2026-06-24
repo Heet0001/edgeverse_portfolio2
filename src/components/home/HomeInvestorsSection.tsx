@@ -27,7 +27,7 @@ const HomeInvestorsSection = () => {
               share our vision of making every road safer through edge-native
               perception intelligence.
             </p>
-            <a className={styles.btn} href="/about#partners">
+            <a className={styles.btn} href="#partners">
               Read more
               <span className={styles.btnArrow} aria-hidden="true">
                 →

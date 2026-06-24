@@ -62,7 +62,7 @@ const Footer = () => {
           links={[
             { label: "About Us", href: "/about#about" },
             { label: "Leadership", href: "/about#leadership" },
-            { label: "Partners", href: "/about#partners" },
+            { label: "Partners", href: "/#partners" },
             { label: "Careers", href: "/about#careers" },
             { label: "News", href: "/blog" },
             { label: "Contact", href: "/contact" },

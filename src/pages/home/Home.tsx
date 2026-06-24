@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useRef } from "react";
 import { gsap, registerGsapPlugins } from "../../utils/gsap";
 import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
+import { useHashScroll } from "../../hooks/useHashScroll";
 import styles from "./home.module.scss";
 import heroImage from "../../assets/images/ChatGPT Image May 29, 2026, 03_13_52 AM.png";
 import heroVideo from "../../assets/videos/edgeverse_video.mp4";
@@ -8,10 +9,12 @@ import ScrollRevealIntro from "../../components/home/ScrollRevealIntro";
 import BuildWithCardsSection from "../../components/home/BuildWithCardsSection";
 // import FeatureTabsSection from "../../components/home/FeatureTabsSection";
 import HomeInvestorsSection from "../../components/home/HomeInvestorsSection";
+import CompanyPartnersSection from "../../components/company/CompanyPartnersSection";
 import NewsInsightsSection from "../../components/home/NewsInsightsSection";
 import LifeSavingCtaSection from "../../components/home/LifeSavingCtaSection";
 
 const Home = () => {
+  useHashScroll();
   const heroRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const reduceMotion = usePrefersReducedMotion();
@@ -102,6 +105,7 @@ const Home = () => {
 
       {/* <FeatureTabsSection /> */}
       <HomeInvestorsSection />
+      <CompanyPartnersSection />
       <NewsInsightsSection />
       <LifeSavingCtaSection />
     </main>

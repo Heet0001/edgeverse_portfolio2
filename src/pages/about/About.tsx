@@ -3,7 +3,6 @@ import AboutTimelineSection from "../../components/about/AboutTimelineSection";
 import AboutLocationSection from "../../components/about/AboutLocationSection";
 import AboutCtaSection from "../../components/about/AboutCtaSection";
 import LeadershipTeamSection from "../../components/leadership/LeadershipTeamSection";
-import CompanyPartnersSection from "../../components/company/CompanyPartnersSection";
 import CareerWhySection from "../../components/careers/CareerWhySection";
 import CareerOpeningsSection from "../../components/careers/CareerOpeningsSection";
 import CareerCtaSection from "../../components/careers/CareerCtaSection";
@@ -59,8 +58,6 @@ const About = () => {
           <LeadershipTeamSection embedded />
         </div>
       </section>
-
-      <CompanyPartnersSection />
 
       <section id="careers" className={styles.pageSection} aria-label="Careers">
         <div className={styles.sectionInner}>

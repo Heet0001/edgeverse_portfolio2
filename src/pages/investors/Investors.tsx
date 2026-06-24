@@ -1,7 +1,7 @@
 import { Navigate } from "react-router-dom";
 
 const Investors = () => {
-  return <Navigate to="/about#partners" replace />;
+  return <Navigate to="/#partners" replace />;
 };
 
 export default Investors;

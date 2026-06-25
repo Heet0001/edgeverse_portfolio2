@@ -1,6 +1,7 @@
-import detection from "../../../assets/images/forwardcollision.png";
+import productImg from "../../../assets/images/product.png";
 // import collisionImg from "../../../assets/images/collision.png"
 import heroImg from "../../../assets/images/hero.png";
+import companyImg from "../../../assets/images/company.png";
 
 export type NavMegaMenuKey =
   | "technology"
@@ -65,8 +66,8 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
       title: "",
       description: "",
       href: "/product",
-      image: detection,
-      imageAlt: "AI perception overlay on road scene",
+      image: productImg,
+      imageAlt: "Perceiva ARAS platform",
     },
   },
   {
@@ -183,8 +184,8 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
       title: "",
       description: "",
       href: "/about",
-      image: "",
-      imageAlt: "EdgeVerse team and technology",
+      image: companyImg,
+      imageAlt: "EdgeVerse company",
     },
   },
 ];

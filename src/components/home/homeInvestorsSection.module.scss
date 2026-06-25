@@ -101,7 +101,7 @@
 
 .logoTrackStatic {
   width: 100%;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .logoTrack:not(.logoTrackStatic) {
@@ -133,7 +133,7 @@
     animation: none;
     flex-wrap: wrap;
     width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
     gap: clamp(24px, 4vw, 40px);
   }
 

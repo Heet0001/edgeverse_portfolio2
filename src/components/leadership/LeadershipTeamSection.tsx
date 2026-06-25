@@ -166,7 +166,6 @@ const LeadershipTeamSection = ({ embedded = false }: { embedded?: boolean }) => 
         <div className={styles.inner}>
           <header className={styles.sectionHeader}>
             <h3 className={styles.sectionTitle}>Our Leadership Team</h3>
-            <span className={styles.sectionRule} aria-hidden="true" />
           </header>
 
           {renderTeamPanel(displayLeaders, selectedLeader, setSelectedLeaderId)}
@@ -180,7 +179,6 @@ const LeadershipTeamSection = ({ embedded = false }: { embedded?: boolean }) => 
         <div className={styles.inner}>
           <header className={styles.sectionHeader}>
             <h3 className={styles.sectionTitle}>Advisory Board</h3>
-            <span className={styles.sectionRule} aria-hidden="true" />
           </header>
 
           {renderTeamPanel(

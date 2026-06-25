@@ -5,9 +5,7 @@ import styles from "./homeInvestorsSection.module.scss";
 
 const INVESTOR_LOGOS = [{ name: "ARTPARK", logo: artparkLogo }] as const;
 
-const MARQUEE_LOGOS = [
-  ...INVESTOR_LOGOS,
-];
+const MARQUEE_LOGOS = [...INVESTOR_LOGOS];
 
 const SHOULD_MARQUEE = MARQUEE_LOGOS.length > 4;
 
@@ -22,12 +20,12 @@ const HomeInvestorsSection = () => {
         <div className={styles.top}>
           <div ref={copyRef} className={styles.copy}>
             <h2 className={styles.title}>Investors</h2>
-            <a className={styles.btn} href="#partners">
+            {/* <a className={styles.btn} href="#partners">
               Read more
               <span className={styles.btnArrow} aria-hidden="true">
                 →
               </span>
-            </a>
+            </a> */}
           </div>
         </div>
 

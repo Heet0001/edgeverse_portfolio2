@@ -13,9 +13,9 @@ const AboutLocationSection = () => {
           <div className={styles.addressCard}>
             <h3 className={styles.companyName}>EdgeVerse India Private Limited</h3>
             <address className={styles.address}>
-              G01, #520, 8th Cross, BEML Layout<br />
-              Thubarahalli, Bengaluru 560066<br />
-              Karnataka, India
+              5th Floor, Mpark, 32/1, Sonnenahalli<br />
+              Doddanekundi Industrial Area, Mahadevapura Post<br />
+              Bengaluru- 560048, Karnataka, India
             </address>
             <div className={styles.contactInfo}>
               <a href="tel:+919845257858" className={styles.phone}>
@@ -27,7 +27,7 @@ const AboutLocationSection = () => {
           <div className={styles.mapWrapper}>
             <iframe
               title="EdgeVerse Office Location"
-              src="https://www.google.com/maps?q=EdgeVerse+India+Private+Limited,Thubarahalli,Bengaluru&z=15&output=embed"
+              src="https://www.google.com/maps?q=EdgeVerse+India+Private+Limited,+5th+Floor,+Mpark,+Sonnenahalli,+Mahadevapura,+Bengaluru+560048&z=15&output=embed"
               className={styles.map}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

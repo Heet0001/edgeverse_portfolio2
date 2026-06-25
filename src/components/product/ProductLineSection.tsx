@@ -70,7 +70,20 @@ const ProductLineSection = ({ line, index }: ProductLineSectionProps) => {
               const cardInner = (
                 <>
                   <div className={styles.demoMedia}>
-                    <img src={demo.image} alt={demo.imageAlt} loading="lazy" />
+                    {demo.video ? (
+                      <video
+                        className={styles.demoVideo}
+                        src={demo.video}
+                        poster={demo.image}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        aria-label={demo.imageAlt}
+                      />
+                    ) : (
+                      <img src={demo.image} alt={demo.imageAlt} loading="lazy" />
+                    )}
                     <span
                       className={`${styles.demoStatus} ${
                         isAvailable ? styles.demoStatusAvailable : styles.demoStatusSoon
@@ -83,7 +96,7 @@ const ProductLineSection = ({ line, index }: ProductLineSectionProps) => {
                 </>
               )
 
-              if (isAvailable && demo.href) {
+              if (isAvailable && demo.href && !demo.video) {
                 return (
                   <Link
                     key={demo.id}
@@ -97,7 +110,11 @@ const ProductLineSection = ({ line, index }: ProductLineSectionProps) => {
               }
 
               return (
-                <article key={demo.id} className={`${styles.demoCard} ${styles.demoCardMuted}`} data-demo-item>
+                <article
+                  key={demo.id}
+                  className={`${styles.demoCard} ${isAvailable ? '' : styles.demoCardMuted}`}
+                  data-demo-item
+                >
                   {cardInner}
                 </article>
               )

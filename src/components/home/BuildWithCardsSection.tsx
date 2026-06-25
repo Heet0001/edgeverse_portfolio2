@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 import styles from "./buildWithCardsSection.module.scss";
 import buildImg from "../../assets/images/buildp.png";
-import investorsImg from "../../assets/images/sh.png";
+import investorsImg from "../../assets/images/sensorhardware.png";
 import safetyImg from "../../assets/images/al.png";
 
 const CARDS = [

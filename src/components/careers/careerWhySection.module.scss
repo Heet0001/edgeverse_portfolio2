@@ -1,7 +1,7 @@
 .section {
   position: relative;
   background: #ffffff;
-  padding: var(--section-pad-y) 0;
+  padding: 0 0 clamp(40px, 5vw, 56px);
   overflow: hidden;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .blockTitle {
-  margin: 0 0 14px;
+  margin: 0 0 clamp(12px, 1.5vw, 16px);
   font-size: clamp(18px, 1.8vw, 22px);
   font-weight: 600;
   line-height: 1.25;
@@ -158,7 +158,7 @@
   }
 
   .section {
-    padding: 60px 0 72px;
+    padding-bottom: clamp(32px, 4vw, 48px);
   }
 
   .waveWrap {

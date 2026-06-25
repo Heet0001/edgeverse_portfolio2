@@ -40,7 +40,7 @@ export const IMEDGE_SPECS = [
     // right: { label: "CPU", value: "Arm® 64-bit quad core" },
     right: {
       label: "CAMERA  INTERFACE",
-      value: "FPD-Link III 3Gbps SerDes UVC AHD",
+      value: "FPD-Link III 3Gbps SerDes,UVC,AHD",
     },
   },
   {

@@ -5,7 +5,8 @@ import scenicRoadImg from "../../assets/images/scenic-road.png";
 import detectionImg from "../../assets/images/forwardcollision.png";
 import detection1Img from "../../assets/images/detection1.png";
 import detection2Img from "../../assets/images/detection2.png";
-import heroImg from "../../assets/images/ChatGPT Image May 29, 2026, 03_04_00 AM.png";
+import heroImg from "../../assets/images/product.png";
+import arasDemoVideo from "../../assets/videos/aras.mov";
 
 export const PRODUCT_SAFETY_CARDS = [
   {
@@ -135,6 +136,7 @@ export type ProductDemo = {
   status: DemoStatus;
   image: string;
   imageAlt: string;
+  video?: string;
   href?: string;
 };
 
@@ -163,7 +165,7 @@ export const PRODUCT_LINES: ProductLine[] = [
         image: detectionImg,
         imageAlt:
           "On-road ARAS perception demo with real-time detection overlays",
-        href: "/videos",
+        video: arasDemoVideo,
       },
       {
         id: "helmet-detection",

@@ -12,7 +12,6 @@ import HomeInvestorsSection from "../../components/home/HomeInvestorsSection";
 import CompanyPartnersSection from "../../components/company/CompanyPartnersSection";
 import NewsInsightsSection from "../../components/home/NewsInsightsSection";
 import LifeSavingCtaSection from "../../components/home/LifeSavingCtaSection";
-import HomeLocationSection from "../../components/home/HomeLocationSection";
 
 const Home = () => {
   useHashScroll();
@@ -44,7 +43,7 @@ const Home = () => {
 
       gsap.from(
         hero.querySelectorAll(
-          `.${styles.heroTitleLine}`,
+          `.${styles.heroBadge}, .${styles.heroTitle}, .${styles.heroSubtitle}`,
         ),
         {
           y: 36,
@@ -55,14 +54,6 @@ const Home = () => {
           delay: 0.15,
         },
       );
-
-      gsap.from(hero.querySelector(`.${styles.heroRule}`), {
-        scaleX: 0,
-        transformOrigin: "left center",
-        duration: 0.7,
-        ease: "power2.out",
-        delay: 0.45,
-      });
 
       if (cta) {
         gsap.fromTo(
@@ -109,15 +100,12 @@ const Home = () => {
         <div className={styles.heroOverlay} aria-hidden="true" />
 
         <div className={styles.heroContent}>
+          <div className={styles.heroBadge}>Perceiva™ ARAS Platform</div>
           <h1 className={styles.heroTitle}>
-            <span className={styles.heroTitleLine}>
-              Any Edge Device. Any Environment.
-            </span>
-            <span className={styles.heroTitleLine}>
-              One Intelligence Layer.
-            </span>
+            Any Edge Device. Any Environment.
           </h1>
-          <span className={styles.heroRule} aria-hidden="true" />
+          <p className={styles.heroSubtitle}>One Intelligence Layer.</p>
+
           <a ref={ctaRef} className={styles.heroCta} href="/product">
             <span>Discover more</span>
             <span className={styles.heroCtaArrow} aria-hidden="true">
@@ -138,7 +126,6 @@ const Home = () => {
       <HomeInvestorsSection />
       <NewsInsightsSection />
       <LifeSavingCtaSection />
-      <HomeLocationSection />
     </main>
   );
 };

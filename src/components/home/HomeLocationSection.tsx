@@ -15,9 +15,9 @@ interface PinPos {
 const OFFICE = {
   pin: { x: 55, y: 49 } as PinPos,
   addressLines: [
-    "G01, #520, 8th Cross BEML Layout,",
-    "Thubarahalli, Bengaluru,",
-    "Karnataka 560066, India",
+    "5th Floor, Mpark, 32/1, Sonnenahalli,",
+    "Doddanekundi Industrial Area, Mahadevapura Post,",
+    "Bengaluru- 560048, India",
   ],
   directionsUrl:
     "https://www.google.com/maps/dir//5th+Floor,+Mpark,+EdgeVerse+India+Private+Limited,+32%2F1,+near+Wix+Co-Living,+Hoodi,+Doddanakundi+Industrial+Area+2,+Sonnenahalli,+Mahadevapura,+Bengaluru,+Karnataka+560048/@12.9841659,77.7100634,17z/data=!4m17!1m7!3m6!1s0x3bae3f72d255aa4b:0x484b2833cd02bbc5!2sEdgeVerse+India+Private+Limited!8m2!3d12.9841659!4d77.7100634!16s%2Fg%2F11l5wjlbd_!4m8!1m0!1m5!1m1!1s0x3bae3f72d255aa4b:0x484b2833cd02bbc5!2m2!1d77.7100601!2d12.9841654!3e0",
@@ -449,7 +449,7 @@ const HomeLocationSection = () => {
                 <LandmarkGlyph icon="building" size={18} />
               </span>
               <div className={styles.officeBody}>
-                <div className={styles.officeLabel}>Registered Office</div>
+                <div className={styles.officeLabel}>Corporate Office</div>
                 <address className={styles.officeAddress}>
                   {OFFICE.addressLines.map((line) => (
                     <span key={line}>{line}</span>

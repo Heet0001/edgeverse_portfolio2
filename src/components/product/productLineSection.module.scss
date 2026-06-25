@@ -76,7 +76,9 @@
 }
 
 .demoCard {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   text-decoration: none;
   color: inherit;
   border-radius: 14px;
@@ -108,14 +110,18 @@
   background: #f1f5f9;
 }
 
-.demoMedia img {
+.demoMedia img,
+.demoMedia video {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.demoCardMuted .demoMedia img {
+.demoCardMuted .demoMedia img,
+.demoCardMuted .demoMedia video {
   filter: grayscale(0.35);
 }
 

@@ -81,6 +81,14 @@
   color: var(--page-hero-subtitle-color);
 }
 
+.heroRule {
+  display: block;
+  width: clamp(40px, 5vw, 56px);
+  height: 1px;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
 .heroCta {
   margin-top: 32px;
   display: inline-flex;

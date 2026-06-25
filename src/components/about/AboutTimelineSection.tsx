@@ -87,17 +87,14 @@ const MilestoneIcon = ({ type }: { type: (typeof milestones)[number]['icon'] }) 
 const AboutTimelineSection = () => {
   return (
     <section className={styles.section} aria-label="From idea to product">
-      <div className={styles.bgLines} aria-hidden="true" />
-
       <div className={styles.inner}>
         <div className={styles.header}>
-          <h2 className={styles.title}>
+          <h3 className={styles.title}>
             From idea to product<span className={styles.titleDot}>.</span>
-          </h2>
+          </h3>
           <p className={styles.subtitle}>
             A journey of innovation, relentless execution, and real-world impact.
           </p>
-          <span className={styles.headerRule} aria-hidden="true" />
         </div>
 
         <div className={styles.track}>

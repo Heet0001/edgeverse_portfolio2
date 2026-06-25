@@ -100,11 +100,11 @@
 }
 
 .sectionEmbedded {
-  padding: 0;
+  padding: 0 0 clamp(40px, 5vw, 56px);
 }
 
 .advisorySection {
-  padding-top: clamp(48px, 6vw, 64px);
+  padding-top: clamp(40px, 5vw, 56px);
   padding-bottom: 0;
 }
 
@@ -115,15 +115,15 @@
 }
 
 .sectionHeader {
-  margin-bottom: clamp(40px, 5vw, 56px);
+  margin-bottom: clamp(20px, 2.5vw, 28px);
 }
 
 .sectionTitle {
-  margin: 0 0 14px;
+  margin: 0 0 8px;
   font-size: clamp(18px, 1.8vw, 22px);
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--color-text);
+  color: rgba(15, 23, 42, 0.72);
 }
 
 .sectionRule {
@@ -143,7 +143,7 @@
 .teamLayout {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.35fr);
-  gap: clamp(32px, 5vw, 72px);
+  gap: clamp(24px, 3vw, 40px);
   align-items: start;
 }
 
@@ -154,12 +154,12 @@
 }
 
 .profileName {
-  margin: 0 0 10px;
-  font-size: clamp(20px, 2.1vw, 24px);
+  margin: 0 0 8px;
+  font-size: clamp(26px, 2.8vw, 32px);
   font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  color: #101828;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #0f172a;
 }
 
 .profileRole {
@@ -287,10 +287,10 @@
 
 .memberName {
   display: block;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 700;
   line-height: 1.35;
-  color: #101828;
+  color: #0f172a;
   margin-bottom: 4px;
   transition: color 0.25s ease;
 }

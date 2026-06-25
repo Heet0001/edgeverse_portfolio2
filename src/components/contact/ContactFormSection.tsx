@@ -183,9 +183,9 @@ const ContactFormSection = () => {
             <div className={styles.infoContent}>
               <h3 className={styles.infoTitle}>Office</h3>
               <address className={styles.infoAddress}>
-                G01, #520, 8th Cross, BEML Layout<br />
-                Thubarahalli, Bengaluru 560066<br />
-                Karnataka, India
+                5th Floor, Mpark, 32/1, Sonnenahalli<br />
+                Doddanekundi Industrial Area, Mahadevapura Post<br />
+                Bengaluru- 560048, Karnataka, India
               </address>
             </div>
           </div>
@@ -193,7 +193,7 @@ const ContactFormSection = () => {
           <div className={styles.mapWrapper}>
             <a
               className={styles.mapLink}
-              href="https://maps.google.com/?q=G01,+520,+8th+Cross,+BEML+Layout,+Thubarahalli,+Bengaluru"
+              href="https://www.google.com/maps/place/EdgeVerse+India+Private+Limited/@12.9841705,77.7077724,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae3f72d255aa4b:0x484b2833cd02bbc5!8m2!3d12.9841659!4d77.7100634!16s%2Fg%2F11l5wjlbd_"
               target="_blank"
               rel="noreferrer"
             >
@@ -201,7 +201,7 @@ const ContactFormSection = () => {
             </a>
             <iframe
               title="EdgeVerse Office Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0!2d77.72!3d12.96!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU3JzM2LjAiTiA3N8KwNDMnMTIuMCJF!5e0!3m2!1sen!2sin!4v1"
+              src="https://www.google.com/maps?q=EdgeVerse+India+Private+Limited,+5th+Floor,+Mpark,+Sonnenahalli,+Mahadevapura,+Bengaluru+560048&z=15&output=embed"
               className={styles.map}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

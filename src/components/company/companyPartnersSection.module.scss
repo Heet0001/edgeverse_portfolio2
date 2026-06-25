@@ -7,12 +7,12 @@
 .inner {
   max-width: 1440px;
   margin: 0 auto;
-  padding: var(--section-pad-y) var(--section-pad-x);
+  padding: clamp(64px, 7vw, 112px) var(--section-pad-x) var(--section-pad-y);
 }
 
 .partnerList {
   list-style: none;
-  margin: 0;
+  margin: clamp(32px, 4vw, 44px) 0 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap;

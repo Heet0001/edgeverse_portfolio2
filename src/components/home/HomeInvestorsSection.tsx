@@ -22,11 +22,6 @@ const HomeInvestorsSection = () => {
         <div className={styles.top}>
           <div ref={copyRef} className={styles.copy}>
             <h2 className={styles.title}>Investors</h2>
-            <p className={styles.text}>
-              EdgeVerse is backed by industry leaders and strategic partners who
-              share our vision of making every road safer through edge-native
-              perception intelligence.
-            </p>
             <a className={styles.btn} href="#partners">
               Read more
               <span className={styles.btnArrow} aria-hidden="true">

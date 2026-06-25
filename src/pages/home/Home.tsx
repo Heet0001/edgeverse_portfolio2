@@ -12,11 +12,13 @@ import HomeInvestorsSection from "../../components/home/HomeInvestorsSection";
 import CompanyPartnersSection from "../../components/company/CompanyPartnersSection";
 import NewsInsightsSection from "../../components/home/NewsInsightsSection";
 import LifeSavingCtaSection from "../../components/home/LifeSavingCtaSection";
+import HomeLocationSection from "../../components/home/HomeLocationSection";
 
 const Home = () => {
   useHashScroll();
   const heroRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const ctaRef = useRef<HTMLAnchorElement>(null);
   const reduceMotion = usePrefersReducedMotion();
 
   useEffect(() => {
@@ -28,6 +30,7 @@ const Home = () => {
 
   useLayoutEffect(() => {
     const hero = heroRef.current;
+    const cta = ctaRef.current;
     if (!hero || reduceMotion) return;
 
     registerGsapPlugins();
@@ -41,17 +44,40 @@ const Home = () => {
 
       gsap.from(
         hero.querySelectorAll(
-          `.${styles.heroBadge}, .${styles.heroTitle}, .${styles.heroSubtitle}, .${styles.heroCta}`,
+          `.${styles.heroTitleLine}`,
         ),
         {
-          y: 24,
+          y: 36,
           opacity: 0,
-          duration: 0.75,
-          stagger: 0.1,
+          duration: 0.9,
+          stagger: 0.12,
           ease: "power3.out",
-          delay: 0.12,
+          delay: 0.15,
         },
       );
+
+      gsap.from(hero.querySelector(`.${styles.heroRule}`), {
+        scaleX: 0,
+        transformOrigin: "left center",
+        duration: 0.7,
+        ease: "power2.out",
+        delay: 0.45,
+      });
+
+      if (cta) {
+        gsap.fromTo(
+          cta,
+          { y: 16, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "power2.out",
+            delay: 0.6,
+            clearProps: "transform,opacity",
+          },
+        );
+      }
     }, hero);
 
     return () => ctx.revert();
@@ -83,12 +109,16 @@ const Home = () => {
         <div className={styles.heroOverlay} aria-hidden="true" />
 
         <div className={styles.heroContent}>
-          <div className={styles.heroBadge}>Edge Intelligence Platform</div>
           <h1 className={styles.heroTitle}>
-            Any Edge Device. Any Environment.
+            <span className={styles.heroTitleLine}>
+              Any Edge Device. Any Environment.
+            </span>
+            <span className={styles.heroTitleLine}>
+              One Intelligence Layer.
+            </span>
           </h1>
-          <p className={styles.heroSubtitle}>One Intelligence Layer.</p>
-          <a className={styles.heroCta} href="/product">
+          <span className={styles.heroRule} aria-hidden="true" />
+          <a ref={ctaRef} className={styles.heroCta} href="/product">
             <span>Discover more</span>
             <span className={styles.heroCtaArrow} aria-hidden="true">
               →
@@ -104,10 +134,11 @@ const Home = () => {
       </div>
 
       {/* <FeatureTabsSection /> */}
-      <HomeInvestorsSection />
       <CompanyPartnersSection />
+      <HomeInvestorsSection />
       <NewsInsightsSection />
       <LifeSavingCtaSection />
+      <HomeLocationSection />
     </main>
   );
 };

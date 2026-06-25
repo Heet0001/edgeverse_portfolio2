@@ -11,10 +11,9 @@ const CompanyPartnersSection = () => {
     >
       <div className={styles.inner}>
         <header className={headerStyles.light}>
-          <h2 className={headerStyles.title}>Partners and Investors</h2>
-          <p className={headerStyles.subtitle}>
-            Technology and OEM partners building at the edge with EdgeVerse.
-          </p>
+          <h2 className={headerStyles.title}>
+            Trusted by the companies shaping the future
+          </h2>
         </header>
 
         <ul className={styles.partnerList}>

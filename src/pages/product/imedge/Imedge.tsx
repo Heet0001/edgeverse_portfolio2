@@ -1,17 +1,7 @@
-import ImedgeCapabilitiesSection from "../../../components/imedge/ImedgeCapabilitiesSection";
-import ImedgeCtaSection from "../../../components/imedge/ImedgeCtaSection";
-import ImedgeHeroSection from "../../../components/imedge/ImedgeHeroSection";
-import ImedgeSpecsSection from "../../../components/imedge/ImedgeSpecsSection";
+import { Navigate } from "react-router-dom";
 
 const Imedge = () => {
-  return (
-    <main>
-      <ImedgeHeroSection />
-      <ImedgeCapabilitiesSection />
-      <ImedgeSpecsSection />
-      <ImedgeCtaSection />
-    </main>
-  );
+  return <Navigate to="/product#imedge" replace />;
 };
 
 export default Imedge;

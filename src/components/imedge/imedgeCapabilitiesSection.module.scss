@@ -91,6 +91,23 @@
   border-radius: 12px;
 }
 
+.sectionEmbedded {
+  background: transparent;
+  border-bottom: none;
+}
+
+.sectionEmbedded .inner {
+  padding: 0;
+}
+
+.sectionEmbedded .header {
+  margin-bottom: clamp(20px, 2.5vw, 28px);
+}
+
+.sectionEmbedded .capabilities {
+  margin-top: 0;
+}
+
 @media (max-width: 960px) {
   .split {
     flex-direction: column;

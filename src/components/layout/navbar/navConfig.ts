@@ -58,7 +58,7 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
           title: "Imedge® Hardware Platform",
           description:
             "Help you build the right camera hardware and ISP for your application",
-          href: "/product/imedge",
+          href: "/product#imedge",
         },
       ],
     ],

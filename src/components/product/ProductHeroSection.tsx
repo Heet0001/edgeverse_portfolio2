@@ -55,14 +55,12 @@ const ProductHeroSection = () => {
       <div className={styles.overlay} aria-hidden="true" />
 
       <div className={styles.inner}>
-        <div className={styles.badge}>Perceiva™ ARAS Platform</div>
-        <h1 className={styles.heading}>
-          Advanced AI technology for safer, smarter riding.
-        </h1>
+        <div className={styles.badge}>Product</div>
+        <h1 className={styles.heading}>Edge-native AI for smarter system</h1>
         <p className={styles.subtitle}>
           {/* Enabling OEMs and cluster makers to unlock all levels of two-wheeler rider assistance at
           scale. */}
-          Edge-native AI for smarter system through sensor fusion
+          Through Sensor Fusion
         </p>
         <a className={styles.cta} href="/contact">
           <span>Schedule a demo</span>

@@ -5,7 +5,7 @@ import styles from "./ScrollRevealIntro.module.scss";
 
 const INTRO_WORDS = [
   "EdgeVerse",
-  "is",
+
   "builds",
   "vertically",
   "integrated",

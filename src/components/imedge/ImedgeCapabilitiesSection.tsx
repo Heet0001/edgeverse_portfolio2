@@ -4,7 +4,7 @@ import { IMEDGE_CAPABILITIES } from "./imedgeData";
 import imedgeHardwareImg from "../../assets/images/Imedgehardware1.svg";
 import styles from "./imedgeCapabilitiesSection.module.scss";
 
-const ImedgeCapabilitiesSection = () => {
+const ImedgeCapabilitiesSection = ({ embedded = false }: { embedded?: boolean }) => {
   const copyRef = useRef<HTMLDivElement>(null);
   const mediaRef = useRef<HTMLDivElement>(null);
 
@@ -18,28 +18,30 @@ const ImedgeCapabilitiesSection = () => {
 
   return (
     <section
-      className={styles.section}
+      className={`${styles.section} ${embedded ? styles.sectionEmbedded : ""}`}
       aria-label="Imedge hardware capabilities"
     >
       <div className={styles.inner}>
         <div className={styles.split}>
           <div className={styles.content}>
-            <header className={styles.header}>
-              <span className={styles.kicker}>Hardware platform</span>
-              <h2 className={styles.title}>
-                Real-time AI vision hardware for the edge
-              </h2>
-              <p className={styles.lead}>
-                The fastest and most reliable way to realise your Edge AI Vision
-                application lies in building a system where camera design and
-                calibration. AI model tuning for Edge Processor and Intelligence
-                layer are vertically integrated. Imedge™ platform accomplishes
-                this goal by integrating high-performance computer vision
-                directly to the source of data — enabling instant insights,
-                uncompromising privacy, and split-second decision-making without
-                cloud latency.
-              </p>
-            </header>
+            {!embedded && (
+              <header className={styles.header}>
+                <span className={styles.kicker}>Hardware platform</span>
+                <h2 className={styles.title}>
+                  Real-time AI vision hardware for the edge
+                </h2>
+                <p className={styles.lead}>
+                  The fastest and most reliable way to realise your Edge AI Vision
+                  application lies in building a system where camera design and
+                  calibration. AI model tuning for Edge Processor and Intelligence
+                  layer are vertically integrated. Imedge™ platform accomplishes
+                  this goal by integrating high-performance computer vision
+                  directly to the source of data — enabling instant insights,
+                  uncompromising privacy, and split-second decision-making without
+                  cloud latency.
+                </p>
+              </header>
+            )}
 
             <div ref={copyRef} className={styles.capabilities}>
               {IMEDGE_CAPABILITIES.map((item) => (

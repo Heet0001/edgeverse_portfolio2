@@ -79,6 +79,27 @@
   color: var(--color-text);
 }
 
+.sectionEmbedded {
+  background: transparent;
+  border-bottom: none;
+}
+
+.sectionEmbedded .inner {
+  padding: clamp(40px, 5vw, 56px) 0 0;
+}
+
+.sectionEmbedded .header {
+  margin-bottom: clamp(20px, 2.5vw, 28px);
+}
+
+.sectionEmbedded .title {
+  margin: 0;
+  font-size: clamp(18px, 1.8vw, 22px);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
 @media (max-width: 960px) {
   .row {
     grid-template-columns: 1fr;

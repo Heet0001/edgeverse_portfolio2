@@ -7,6 +7,6 @@ export type CompanyPartner = {
 };
 
 export const COMPANY_TRUSTED_PARTNERS: CompanyPartner[] = [
-  { name: "Cavil Wireless", logo: cavilLogo },
   { name: "Ather Energy", logo: atherLogo },
+  { name: "Cavil Wireless", logo: cavilLogo },
 ];

@@ -6,7 +6,7 @@ import detectionImg from "../../assets/images/forwardcollision.png";
 import detection1Img from "../../assets/images/detection1.png";
 import detection2Img from "../../assets/images/detection2.png";
 import heroImg from "../../assets/images/product.png";
-import arasDemoVideo from "../../assets/videos/aras.mov";
+import dmsDemoVideo from "../../assets/videos/aras.mov";
 
 export const PRODUCT_SAFETY_CARDS = [
   {
@@ -165,7 +165,7 @@ export const PRODUCT_LINES: ProductLine[] = [
         image: detectionImg,
         imageAlt:
           "On-road ARAS perception demo with real-time detection overlays",
-        video: arasDemoVideo,
+        href: "/videos",
       },
       {
         id: "helmet-detection",
@@ -189,7 +189,7 @@ export const PRODUCT_LINES: ProductLine[] = [
         status: "available",
         image: detection1Img,
         imageAlt: "Driver monitoring demo with captured video",
-        href: "/videos",
+        video: dmsDemoVideo,
       },
       {
         id: "occupant-dms",

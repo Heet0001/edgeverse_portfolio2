@@ -6,6 +6,7 @@ import ProductLineSection from "../../components/product/ProductLineSection";
 // import ProductFeatureShowcase from "../../components/product/ProductFeatureShowcase";
 // import ProductDeploymentSection from "../../components/product/ProductDeploymentSection";
 import ProductCtaSection from "../../components/product/ProductCtaSection";
+import ImedgeProductSection from "../../components/product/ImedgeProductSection";
 import { useHashScroll } from "../../hooks/useHashScroll";
 import {
   PRODUCT_LINES,
@@ -22,6 +23,8 @@ const Product = () => {
       {PRODUCT_LINES.map((line, index) => (
         <ProductLineSection key={line.id} line={line} index={index} />
       ))}
+
+      <ImedgeProductSection index={PRODUCT_LINES.length} />
 
       {/* <ProductIntroSection /> */}
       {/* <ProductCapabilitiesSection /> */}

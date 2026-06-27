@@ -32,7 +32,7 @@ const CARDS = [
     description:
       "Explore how EdgeVerse can help you build camera hardware and ISP tuning for your application.",
     cta: "Product",
-    href: "/product/imedge",
+    href: "/product#imedge",
     image: investorsImg,
     imageAlt: "Sensor hardware integration diagram",
   },

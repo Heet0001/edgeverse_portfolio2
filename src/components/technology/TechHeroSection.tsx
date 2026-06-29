@@ -1,21 +1,12 @@
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { gsap, registerGsapPlugins } from "../../utils/gsap";
 import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
 import styles from "./techHeroSection.module.scss";
 import { TECH_HERO_IMAGE } from "./technologyData";
-import techHeroVideo from "../../assets/edgeverse_t.mp4";
 
 const TechHeroSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
   const reduceMotion = usePrefersReducedMotion();
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video || reduceMotion) return;
-
-    void video.play().catch(() => {});
-  }, [reduceMotion]);
 
   useLayoutEffect(() => {
     const section = sectionRef.current;
@@ -57,26 +48,12 @@ const TechHeroSection = () => {
       aria-label="Technology hero"
     >
       <div className={styles.mediaFrame}>
-        {reduceMotion ? (
-          <img
-            className={styles.bgImage}
-            src={TECH_HERO_IMAGE}
-            alt=""
-            aria-hidden="true"
-          />
-        ) : (
-          <video
-            ref={videoRef}
-            className={styles.bgImage}
-            src={techHeroVideo}
-            poster={TECH_HERO_IMAGE}
-            autoPlay
-            loop
-            muted
-            playsInline
-            aria-hidden="true"
-          />
-        )}
+        <img
+          className={styles.bgImage}
+          src={TECH_HERO_IMAGE}
+          alt=""
+          aria-hidden="true"
+        />
         <div className={styles.overlay} aria-hidden="true" />
       </div>
 
@@ -84,9 +61,8 @@ const TechHeroSection = () => {
         <div className={styles.badge}>Technology</div>
         <h1 className={styles.heading}>We are your Co-Development Partner</h1>
         <p className={styles.subtitle}>
-          Partner with EdgeVerse to co-develop perception intelligence
-          {/* <br /> */}
-          from sensor integration through deployment and continuous learning.
+          Partner with EdgeVerse to co-develop perception intelligence from sensor
+          integration through deployment and continuous learning.
         </p>
       </div>
     </section>

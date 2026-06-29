@@ -4,7 +4,7 @@ import roadSafetyImg from "../../assets/images/card-road-safety.png";
 import detection2Img from "../../assets/images/detection2.png";
 import scenicRoadImg from "../../assets/images/scenic-road.png";
 import detection1Img from "../../assets/images/detection1.png";
-import techHeroImg from "../../assets/images/ChatGPT Image May 29, 2026, 03_30_44 AM.png";
+import techHeroImg from "../../assets/images/Imedgehardware1.svg";
 import heroImg from "../../assets/images/hero.png";
 import fleetArchImg from "../../assets/images/fleetarch.png";
 import newsFeature1Img from "../../assets/images/news-feature-1.png";

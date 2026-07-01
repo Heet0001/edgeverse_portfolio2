@@ -100,7 +100,7 @@ const Home = () => {
         <div className={styles.heroOverlay} aria-hidden="true" />
 
         <div className={styles.heroContent}>
-          <div className={styles.heroBadge}>Home</div>
+          <div className={styles.heroBadge}>Perceiva Product Platform</div>
           <h1 className={styles.heroTitle}>
             Any Edge Device. Any Environment.
           </h1>

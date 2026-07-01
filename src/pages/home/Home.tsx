@@ -4,7 +4,7 @@ import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
 import { useHashScroll } from "../../hooks/useHashScroll";
 import styles from "./home.module.scss";
 import heroImage from "../../assets/images/ChatGPT Image May 29, 2026, 03_13_52 AM.png";
-import heroVideo from "../../assets/videos/hero.mp4";
+import heroVideo from "../../assets/videos/Longer version - Hero Section.mp4";
 import ScrollRevealIntro from "../../components/home/ScrollRevealIntro";
 import BuildWithCardsSection from "../../components/home/BuildWithCardsSection";
 // import FeatureTabsSection from "../../components/home/FeatureTabsSection";
@@ -100,7 +100,13 @@ const Home = () => {
         <div className={styles.heroOverlay} aria-hidden="true" />
 
         <div className={styles.heroContent}>
-          <div className={styles.heroBadge}>Perceiva Product Platform</div>
+          <div className={styles.heroBadge}>
+            <span className={styles.heroBadgeBrand}>
+              Perceiva
+              <sup className={styles.heroBadgeTm}>TM</sup>
+            </span>{" "}
+            Product Platform
+          </div>
           <h1 className={styles.heroTitle}>
             Any Edge Device. Any Environment.
           </h1>

@@ -1,6 +1,6 @@
 import productImg from "../../../assets/images/product.png";
 // import collisionImg from "../../../assets/images/collision.png"
-import heroImg from "../../../assets/images/hero.png";
+import imedgeHardwareImg from "../../../assets/images/Imedgehardware2.svg";
 import companyImg from "../../../assets/images/company.png";
 
 export type NavMegaMenuKey =
@@ -107,8 +107,8 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
       title: "",
       description: "",
       href: "/technology",
-      image: heroImg,
-      imageAlt: "EdgeVerse technology and co-development",
+      image: imedgeHardwareImg,
+      imageAlt: "Imedge hardware platform",
     },
   },
   // {

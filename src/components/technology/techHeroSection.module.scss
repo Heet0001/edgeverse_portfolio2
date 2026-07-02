@@ -16,15 +16,16 @@
   bottom: clamp(200px, 28vh, 300px);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  padding-right: clamp(32px, 7vw, 120px);
   background: #0b0f1a;
 }
 
 .bgImage {
-  width: 100%;
+  width: min(78%, 980px);
   height: 100%;
   object-fit: contain;
-  object-position: center center;
+  object-position: right center;
   display: block;
 }
 
@@ -94,6 +95,13 @@
 @media (max-width: 768px) {
   .mediaFrame {
     bottom: clamp(220px, 32vh, 280px);
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .bgImage {
+    width: 100%;
+    object-position: center center;
   }
 
   .subtitle br {

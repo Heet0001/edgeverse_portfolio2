@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 import styles from "./techFleetLearningSection.module.scss";
 import headerStyles from "./techSectionHeader.module.scss";
-import activeLearningVideo from "../../assets/videos/Active Learning Technology Loop.mp4";
+import activeLearningVideo from "../../assets/videos/learningloop.webm";
 
 const TechFleetLearningSection = () => {
   const copyRef = useRef<HTMLDivElement>(null);

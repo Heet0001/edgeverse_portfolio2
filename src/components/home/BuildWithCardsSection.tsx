@@ -10,7 +10,7 @@ const CARDS = [
     id: "perceiva",
     title: "Build with Perceiva™",
     description:
-      "Learn about Perceiva™ — our full-stack ARAS platform for OEMs and Tier-1 partners building safer mobility at scale.",
+      "Learn about PerceivaTM - Our vertically integrated Full Stack Perception Intelligence platform for mobility, industrial automation and resource constrained Edge Al applications",
     cta: "Product",
     href: "/product",
     image: buildImg,

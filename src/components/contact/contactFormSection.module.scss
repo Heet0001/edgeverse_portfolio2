@@ -1,15 +1,15 @@
 .section {
   background: #f8fafc;
-  padding: 80px 0 100px;
+  padding: var(--section-pad-y) 0;
 }
 
 .inner {
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 64px;
+  padding: 0 var(--section-pad-x);
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 48px;
+  gap: clamp(32px, 4vw, 48px);
   align-items: start;
 }
 
@@ -231,7 +231,7 @@
 @media (max-width: 900px) {
   .inner {
     grid-template-columns: 1fr;
-    padding: 0 24px;
+    padding: 0 var(--section-pad-x);
   }
 
   .row {
@@ -239,6 +239,6 @@
   }
 
   .section {
-    padding: 40px 0 60px;
+    padding: clamp(40px, 6vw, 56px) 0;
   }
 }

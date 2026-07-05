@@ -156,7 +156,7 @@ export const PRODUCT_LINES: ProductLine[] = [
     name: "Perceiva™ ARAS",
     tagline: "Making Two Wheelers safer with AI",
     description:
-      "Enabling Two-wheeler automakers to enable Level 0 & Level 1 ARAS at Scale",
+      "Enabling Two-Wheeler automakers to enable Level 0 & Level 1 ARAS at scale through sensor fusion.CAMERA. RADAR. IMU. GPS",
     status: "available",
     demos: [
       {

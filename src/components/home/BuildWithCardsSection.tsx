@@ -1,16 +1,35 @@
-import { useRef } from "react";
+import { useRef, type ReactNode } from "react";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 import styles from "./buildWithCardsSection.module.scss";
 import buildImg from "../../assets/images/buildp.png";
 import investorsImg from "../../assets/images/sensorhardware.png";
 import safetyImg from "../../assets/images/al.png";
 
-const CARDS = [
+type Card = {
+  id: string;
+  title: ReactNode;
+  description: ReactNode;
+  cta: string;
+  href: string;
+  image: string;
+  imageAlt: string;
+};
+
+const CARDS: Card[] = [
   {
     id: "perceiva",
-    title: "Build with Perceiva™",
-    description:
-      "Learn about PerceivaTM - Our vertically integrated Full Stack Perception Intelligence platform for mobility, industrial automation and resource constrained Edge Al applications",
+    title: (
+      <>
+        Build with Perceiva<sup className={styles.tm}>TM</sup>
+      </>
+    ),
+    description: (
+      <>
+        Learn about Perceiva<sup className={styles.tm}>TM</sup> — Our vertically
+        integrated Full Stack Perception Intelligence platform for mobility,
+        industrial automation and resource constrained Edge AI applications
+      </>
+    ),
     cta: "Product",
     href: "/product",
     image: buildImg,
@@ -36,7 +55,7 @@ const CARDS = [
     image: investorsImg,
     imageAlt: "Sensor hardware integration diagram",
   },
-] as const;
+];
 
 const BuildWithCardsSection = () => {
   const sectionRef = useRef<HTMLElement>(null);

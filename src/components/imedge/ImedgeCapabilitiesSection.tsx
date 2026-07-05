@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 import { IMEDGE_CAPABILITIES } from "./imedgeData";
-import imedgeHardwareImg from "../../assets/images/Imedgehardware1.svg";
+import imedgeHardwareImg from "../../assets/images/Imedgehardware1-cropped.svg";
 import styles from "./imedgeCapabilitiesSection.module.scss";
 
 const ImedgeCapabilitiesSection = ({ embedded = false }: { embedded?: boolean }) => {

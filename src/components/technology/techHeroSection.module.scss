@@ -16,16 +16,17 @@
   bottom: clamp(200px, 28vh, 300px);
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  padding-right: clamp(32px, 7vw, 120px);
+  justify-content: center;
+  padding-left: clamp(48px, 8vw, 140px);
+  padding-right: clamp(24px, 4vw, 64px);
   background: #0b0f1a;
 }
 
 .bgImage {
-  width: min(78%, 980px);
+  width: min(85%, 1020px);
   height: 100%;
   object-fit: contain;
-  object-position: right center;
+  object-position: center center;
   display: block;
 }
 

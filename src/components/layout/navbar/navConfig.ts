@@ -1,6 +1,6 @@
 import productImg from "../../../assets/images/product.png";
 // import collisionImg from "../../../assets/images/collision.png"
-import imedgeHardwareImg from "../../../assets/images/Imedgehardware2.svg";
+import imedgeHardwareImg from "../../../assets/images/Imedgehardware2-cropped.svg";
 import companyImg from "../../../assets/images/company.png";
 
 export type NavMegaMenuKey =
@@ -27,6 +27,7 @@ export type NavMegaMenuConfig = {
     href: string;
     image: string;
     imageAlt: string;
+    imageFit?: "cover" | "contain";
   };
 };
 
@@ -109,6 +110,7 @@ export const NAV_MEGA_MENUS: NavMegaMenuConfig[] = [
       href: "/technology",
       image: imedgeHardwareImg,
       imageAlt: "Imedge hardware platform",
+      imageFit: "contain",
     },
   },
   // {

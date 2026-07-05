@@ -1,4 +1,4 @@
-import imedgeHardwareImg from "../../assets/images/Imedgehardware2.svg";
+import imedgeHardwareImg from "../../assets/images/Imedgehardware2-cropped.svg";
 
 export const IMEDGE_HERO_IMAGE = imedgeHardwareImg;
 

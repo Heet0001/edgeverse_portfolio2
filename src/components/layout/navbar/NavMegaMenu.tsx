@@ -93,7 +93,9 @@ const NavMegaMenu = ({
           )}
           <Link
             to={menu.featured.href}
-            className={styles.megaFeaturedMedia}
+            className={`${styles.megaFeaturedMedia} ${
+              menu.featured.imageFit === "contain" ? styles.megaFeaturedMediaContain : ""
+            }`}
             onClick={onNavigate}
           >
             <img src={menu.featured.image} alt={menu.featured.imageAlt} loading="lazy" />

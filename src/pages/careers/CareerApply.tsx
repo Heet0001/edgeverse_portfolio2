@@ -5,6 +5,8 @@ import { getPublicOpeningBySlug } from '../../api/openings'
 import { uploadResume, submitApplication } from '../../api/applications'
 import { extractError } from '../../api/client'
 import type { Opening } from '../../types/models'
+import { buildCareerApplySeo } from '../../seo/pageSeo'
+import { useSeo } from '../../seo/useSeo'
 
 type FormState = {
   fullName: string
@@ -80,6 +82,9 @@ const CareerApply = () => {
       alive = false
     }
   }, [slug])
+
+  const seo = useMemo(() => buildCareerApplySeo(opening, slug), [opening, slug])
+  useSeo(seo)
 
   const handleChange = (k: keyof FormState, v: string) => {
     setForm((prev) => ({ ...prev, [k]: v }))

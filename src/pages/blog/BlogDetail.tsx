@@ -3,6 +3,8 @@ import { Link, useParams } from 'react-router-dom'
 import styles from './blogDetail.module.scss'
 import { getPublicBlogBySlug, getPublicBlogs } from '../../api/blogs'
 import type { Blog as BlogPost } from '../../types/models'
+import { buildBlogDetailSeo } from '../../seo/pageSeo'
+import { useSeo } from '../../seo/useSeo'
 import { renderMarkdown } from './markdown'
 
 const formatDate = (iso: string | null | undefined) => {
@@ -37,6 +39,9 @@ const BlogDetail = () => {
       alive = false
     }
   }, [slug])
+
+  const seo = useMemo(() => buildBlogDetailSeo(post, slug), [post, slug])
+  useSeo(seo)
 
   const html = useMemo(() => renderMarkdown(post?.content || ''), [post?.content])
 

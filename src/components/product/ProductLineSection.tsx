@@ -1,14 +1,40 @@
-import { useLayoutEffect, useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { gsap, registerGsapPlugins } from '../../utils/gsap'
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
-import type { ProductLine } from './productData'
+import type { ProductDemo, ProductLine } from './productData'
 import styles from './productLineSection.module.scss'
 
 type ProductLineSectionProps = {
   line: ProductLine
   index: number
+}
+
+const DemoVideo = ({ demo }: { demo: ProductDemo }) => {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const reduceMotion = usePrefersReducedMotion()
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video || reduceMotion) return
+    void video.play().catch(() => {})
+  }, [demo.video, reduceMotion])
+
+  return (
+    <video
+      ref={videoRef}
+      className={styles.demoVideo}
+      src={demo.video}
+      poster={demo.image}
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="auto"
+      aria-label={demo.imageAlt}
+    />
+  )
 }
 
 const ProductLineSection = ({ line, index }: ProductLineSectionProps) => {
@@ -71,16 +97,7 @@ const ProductLineSection = ({ line, index }: ProductLineSectionProps) => {
                 <>
                   <div className={styles.demoMedia}>
                     {demo.video ? (
-                      <video
-                        className={styles.demoVideo}
-                        src={demo.video}
-                        poster={demo.image}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        aria-label={demo.imageAlt}
-                      />
+                      <DemoVideo demo={demo} />
                     ) : (
                       <img src={demo.image} alt={demo.imageAlt} loading="lazy" />
                     )}

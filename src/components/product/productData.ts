@@ -6,8 +6,10 @@ import detectionImg from "../../assets/images/forwardcollision.png";
 import detection1Img from "../../assets/images/detection1.png";
 import detection2Img from "../../assets/images/detection2.png";
 import heroImg from "../../assets/images/product.png";
-import arasDemoVideo from "../../assets/videos/Aras_demo.mp4";
-import dmsDemoVideo from "../../assets/videos/Dms_demo.mp4";
+import frontCollisionVideo from "../../assets/videos/Front_collision.mp4";
+import rearCollisionVideo from "../../assets/videos/Rear_collision .mp4";
+import drowsinessVideo from "../../assets/videos/Drowsiness.mp4";
+import driverDistractionVideo from "../../assets/videos/Driver_distraction.mp4";
 
 export const PRODUCT_SAFETY_CARDS = [
   {
@@ -160,20 +162,20 @@ export const PRODUCT_LINES: ProductLine[] = [
     status: "available",
     demos: [
       {
-        id: "on-road-aras",
-        title: "All the on-road ARAS demos",
+        id: "rear-collision",
+        title: "Rear collision demo",
         status: "available",
         image: detectionImg,
-        imageAlt:
-          "On-road ARAS perception demo with real-time detection overlays",
-        video: arasDemoVideo,
+        imageAlt: "Rear collision warning demo with real-time detection overlays",
+        video: rearCollisionVideo,
       },
       {
-        id: "helmet-detection",
-        title: "Helmet detection demo capture",
-        status: "coming-soon",
-        image: roadSafetyImg,
-        imageAlt: "Helmet detection demo — coming soon",
+        id: "front-collision",
+        title: "Forward collision demo",
+        status: "available",
+        image: buildCardImg,
+        imageAlt: "Forward collision warning demo with real-time detection overlays",
+        video: frontCollisionVideo,
       },
     ],
   },
@@ -185,19 +187,20 @@ export const PRODUCT_LINES: ProductLine[] = [
     status: "available",
     demos: [
       {
-        id: "driver-dms",
-        title: "Demo with captured video for Driver",
+        id: "drowsiness-dms",
+        title: "Drowsiness detection demo",
         status: "available",
         image: detection1Img,
-        imageAlt: "Driver monitoring demo with captured video",
-        video: dmsDemoVideo,
+        imageAlt: "Drowsiness detection demo with captured video",
+        video: drowsinessVideo,
       },
       {
-        id: "occupant-dms",
-        title: "Demo with captured video for Occupant",
-        status: "coming-soon",
+        id: "driver-distraction-dms",
+        title: "Driver distraction demo",
+        status: "available",
         image: detection2Img,
-        imageAlt: "Occupant monitoring demo — coming soon",
+        imageAlt: "Driver distraction monitoring demo with captured video",
+        video: driverDistractionVideo,
       },
     ],
   },

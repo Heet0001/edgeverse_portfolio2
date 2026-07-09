@@ -190,7 +190,7 @@ export const PRODUCT_LINES: ProductLine[] = [
     demos: [
       {
         id: "drowsiness-dms",
-        title: "Drowsiness detection demo",
+        title: "Drowsiness and Fatigue Warnings",
         status: "available",
         image: detection1Img,
         imageAlt: "Drowsiness detection demo with captured video",
@@ -198,7 +198,7 @@ export const PRODUCT_LINES: ProductLine[] = [
       },
       {
         id: "driver-distraction-dms",
-        title: "Driver distraction demo",
+        title: "Distraction & Unsafe Driving Behavior",
         status: "available",
         image: detection2Img,
         imageAlt: "Driver distraction monitoring demo with captured video",

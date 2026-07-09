@@ -158,23 +158,25 @@ export const PRODUCT_LINES: ProductLine[] = [
     name: "Perceiva™ ARAS",
     tagline: "Making Two Wheelers safer with AI",
     description:
-      "Enabling Two-Wheeler automakers to enable Level 0 & Level 1 ARAS at scale through sensor fusion.CAMERA. RADAR. IMU. GPS",
+      "Enabling Two-Wheeler automakers to enable Level 0 & Level 1 ARAS at scale through sensor fusion - CAMERA. RADAR. IMU. GPS",
     status: "available",
     demos: [
       {
         id: "rear-collision",
-        title: "Rear collision demo",
+        title: "Rear ARAS",
         status: "available",
         image: detectionImg,
-        imageAlt: "Rear collision warning demo with real-time detection overlays",
+        imageAlt:
+          "Rear collision warning demo with real-time detection overlays",
         video: rearCollisionVideo,
       },
       {
         id: "front-collision",
-        title: "Forward collision demo",
+        title: "Forward ARAS",
         status: "available",
         image: buildCardImg,
-        imageAlt: "Forward collision warning demo with real-time detection overlays",
+        imageAlt:
+          "Forward collision warning demo with real-time detection overlays",
         video: frontCollisionVideo,
       },
     ],

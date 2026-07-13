@@ -4,8 +4,8 @@ import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
 import { useHashScroll } from "../../hooks/useHashScroll";
 import styles from "./home.module.scss";
 import heroImage from "../../assets/images/ChatGPT Image May 29, 2026, 03_13_52 AM.png";
-import heroVideo from "../../assets/videos/Hero Section Video.mp4";
-import ScrollRevealIntro from "../../components/home/ScrollRevealIntro";
+import heroVideo from "../../assets/videos/Final Hero Section Video.mp4";
+// import ScrollRevealIntro from "../../components/home/ScrollRevealIntro";
 import BuildWithCardsSection from "../../components/home/BuildWithCardsSection";
 // import FeatureTabsSection from "../../components/home/FeatureTabsSection";
 import HomeInvestorsSection from "../../components/home/HomeInvestorsSection";
@@ -123,7 +123,7 @@ const Home = () => {
         </div>
       </section>
 
-      <ScrollRevealIntro />
+      {/* <ScrollRevealIntro /> */}
 
       <div className={styles.introCardsSpacer}>
         <BuildWithCardsSection />

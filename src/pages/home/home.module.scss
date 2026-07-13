@@ -5,7 +5,7 @@
 }
 
 .introCardsSpacer {
-  margin-top: 0;
+  margin-top: 40px;
   padding-top: clamp(12px, 2vw, 20px);
 }
 
@@ -13,7 +13,7 @@
   position: relative;
   min-height: var(--page-hero-min-height);
   display: flex;
-  align-items: center;
+  align-items: stretch;
   overflow: hidden;
   background: #0b0f1a;
 }
@@ -34,46 +34,67 @@
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(180deg, rgba(8, 12, 24, 0.35) 0%, rgba(8, 12, 24, 0.15) 35%, rgba(8, 12, 24, 0.82) 100%),
-    linear-gradient(90deg, rgba(8, 12, 24, 0.72) 0%, rgba(8, 12, 24, 0.2) 55%, transparent 100%);
+    linear-gradient(
+      180deg,
+      rgba(8, 12, 24, 0.35) 0%,
+      rgba(8, 12, 24, 0.15) 35%,
+      rgba(8, 12, 24, 0.82) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(8, 12, 24, 0.72) 0%,
+      rgba(8, 12, 24, 0.2) 55%,
+      transparent 100%
+    );
 }
 
 .heroContent {
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: 1440px;
+  min-height: var(--page-hero-min-height);
   margin: 0 auto;
-  padding: calc(var(--nav-height) + clamp(24px, 4vh, 48px)) var(--section-pad-x)
+  padding: calc(var(--nav-height) + clamp(16px, 2vh, 28px)) var(--section-pad-x)
     clamp(40px, 7vh, 80px);
   text-align: left;
 }
 
 .heroVideoCopy {
+  flex: 1;
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
-  align-items: center;
+  align-items: start;
+  align-content: start;
   gap: clamp(32px, 5vw, 72px);
   width: 100%;
+  padding-top: clamp(112px, 28vh, 300px);
+  --hero-headline-size: clamp(2.1rem, 5vw, 4.5rem);
+  --hero-headline-line-height: 1.08;
 }
 
 .heroVideoCopyLeft {
-  margin: 0;
+  margin: 0 0 0 -24px;
   font-family: var(--font-sans);
-  font-size: clamp(2.1rem, 5vw, 4.5rem);
+  font-size: var(--hero-headline-size);
   font-weight: 600;
-  line-height: 1.08;
+  line-height: var(--hero-headline-line-height);
   letter-spacing: -0.03em;
   color: #ffffff;
   max-width: 22ch;
 }
 
 .heroVideoCopyRight {
-  margin: 0 0 0 auto;
-  max-width: 32ch;
-  font-size: clamp(13px, 1vw, 15px);
+  margin: calc(
+      2 * var(--hero-headline-line-height) * var(--hero-headline-size)
+    ) -24px
+    0 auto;
+  max-width: 34ch;
+  font-size: clamp(15px, 1.35vw, 18px);
   line-height: 1.55;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.92);
   font-weight: 400;
 }
 
@@ -135,7 +156,10 @@
 }
 
 .heroCta {
-  margin-top: clamp(32px, 4vw, 48px);
+  margin-top: auto;
+  margin-left: -24px;
+  align-self: flex-start;
+  width: max-content;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -147,7 +171,9 @@
   color: #ffffff;
   background: #0ea5a4;
   box-shadow: 0 12px 28px rgba(14, 165, 164, 0.28);
-  transition: filter 180ms ease, transform 180ms ease;
+  transition:
+    filter 180ms ease,
+    transform 180ms ease;
 }
 
 .heroCta:hover {
@@ -162,22 +188,32 @@
 
 @media (max-width: 768px) {
   .heroContent {
-    padding: calc(var(--nav-height) + 20px) var(--section-pad-x) clamp(32px, 6vh, 56px);
+    min-height: var(--page-hero-min-height);
+    padding: calc(var(--nav-height) + 20px) var(--section-pad-x)
+      clamp(32px, 6vh, 56px);
   }
 
   .heroVideoCopy {
     grid-template-columns: 1fr;
     align-items: start;
+    align-content: start;
     gap: 20px;
+    padding-top: clamp(56px, 16vh, 140px);
   }
 
   .heroVideoCopyLeft {
+    margin-left: 0;
     max-width: none;
     font-size: clamp(1.75rem, 8vw, 2.5rem);
   }
 
   .heroVideoCopyRight {
-    margin-left: 0;
+    margin: 16px 0 0;
     max-width: none;
+    font-size: clamp(14px, 3.5vw, 16px);
+  }
+
+  .heroCta {
+    margin-left: 0;
   }
 }

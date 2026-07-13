@@ -43,7 +43,7 @@ const Home = () => {
 
       gsap.from(
         hero.querySelectorAll(
-          `.${styles.heroBadge}, .${styles.heroTitle}, .${styles.heroSubtitle}`,
+          `.${styles.heroVideoCopyLeft}, .${styles.heroVideoCopyRight}`,
         ),
         {
           y: 36,
@@ -100,17 +100,19 @@ const Home = () => {
         <div className={styles.heroOverlay} aria-hidden="true" />
 
         <div className={styles.heroContent}>
-          <div className={styles.heroBadge}>
-            <span className={styles.heroBadgeBrand}>
-              Perceiva
-              <sup className={styles.heroBadgeTm}>TM</sup>
-            </span>{" "}
-            Product Platform
+          <div className={styles.heroVideoCopy}>
+            <h1 className={styles.heroVideoCopyLeft}>
+              Two-Wheeler ARAS.
+              <br />
+              Driver Monitoring System.
+              <br />
+              Industrial Automation.
+            </h1>
+            <p className={styles.heroVideoCopyRight}>
+              We build vertically integrated Perception Intelligence Stack using
+              camera and radar, optimized for edge silicon.
+            </p>
           </div>
-          <h1 className={styles.heroTitle}>
-            Any Edge Device. Any Environment.
-          </h1>
-          <p className={styles.heroSubtitle}>One Intelligence Layer.</p>
 
           <a ref={ctaRef} className={styles.heroCta} href="/product">
             <span>Discover more</span>

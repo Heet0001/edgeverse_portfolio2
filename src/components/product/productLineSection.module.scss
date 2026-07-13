@@ -149,12 +149,39 @@
 
 .demoTitle {
   margin: 0;
-  padding: 16px 18px 18px;
+  padding: 14px 16px 10px;
   font-size: clamp(14px, 1.1vw, 15px);
   font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 1.4;
   color: var(--color-text);
+}
+
+.demoFeatureIcons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 16px 16px;
+}
+
+.demoFeatureIcon {
+  flex: 1 1 36px;
+  max-width: 40px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border: 1.5px solid #0f172a;
+  border-radius: 4px;
+  background: #ffffff;
+}
+
+.demoFeatureIcon img {
+  width: 100%;
+  max-width: 24px;
+  height: auto;
+  display: block;
 }
 
 .upcomingNote {

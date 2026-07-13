@@ -110,6 +110,15 @@ const ProductLineSection = ({ line, index }: ProductLineSectionProps) => {
                     </span>
                   </div>
                   <h3 className={styles.demoTitle}>{demo.title}</h3>
+                  {demo.featureIcons && demo.featureIcons.length > 0 && (
+                    <div className={styles.demoFeatureIcons} aria-label={`${demo.title} features`}>
+                      {demo.featureIcons.map((icon) => (
+                        <div key={icon.label} className={styles.demoFeatureIcon} title={icon.label}>
+                          <img src={icon.src} alt="" aria-hidden="true" />
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </>
               )
 

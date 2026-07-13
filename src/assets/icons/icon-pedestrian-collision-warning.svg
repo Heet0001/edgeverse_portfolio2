@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Pedestrian collision warning">
+  <title>Pedestrian collision warning</title>
+  <!-- motorcycle (top-down, facing up) -->
+  <line x1="32" y1="34" x2="32" y2="39" stroke-width="4.5"/>
+  <line x1="24" y1="43" x2="40" y2="43"/>
+  <rect x="28.5" y="41" width="7" height="16" rx="3.5"/>
+  <line x1="32" y1="59" x2="32" y2="63" stroke-width="4.5"/>
+  <!-- forward detection arcs -->
+  <path d="M25.64 25.64 A9 9 0 0 1 38.36 25.64"/>
+  <path d="M21.4 21.4 A15 15 0 0 1 42.6 21.4"/>
+  <!-- pedestrian crossing ahead -->
+  <circle cx="32.6" cy="5" r="2.8" stroke-width="2.5"/>
+  <path d="M32.4 8.2 L31.4 11.6" stroke-width="2.5"/>
+  <path d="M31.4 11.6 L27.8 16" stroke-width="2.5"/>
+  <path d="M31.4 11.6 L34.8 15.6" stroke-width="2.5"/>
+  <path d="M32.2 9 L28.6 11.2" stroke-width="2.5"/>
+  <path d="M32.2 9 L35.9 10.6" stroke-width="2.5"/>
+</svg>

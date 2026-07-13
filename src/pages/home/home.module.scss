@@ -13,7 +13,7 @@
   position: relative;
   min-height: var(--page-hero-min-height);
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   overflow: hidden;
   background: #0b0f1a;
 }
@@ -44,8 +44,37 @@
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 var(--section-pad-x) var(--page-hero-content-pad-bottom);
+  padding: calc(var(--nav-height) + clamp(24px, 4vh, 48px)) var(--section-pad-x)
+    clamp(40px, 7vh, 80px);
   text-align: left;
+}
+
+.heroVideoCopy {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 72px);
+  width: 100%;
+}
+
+.heroVideoCopyLeft {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: clamp(2.1rem, 5vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  max-width: 22ch;
+}
+
+.heroVideoCopyRight {
+  margin: 0 0 0 auto;
+  max-width: 32ch;
+  font-size: clamp(13px, 1vw, 15px);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
 }
 
 .heroBadge {
@@ -106,7 +135,7 @@
 }
 
 .heroCta {
-  margin-top: 32px;
+  margin-top: clamp(32px, 4vw, 48px);
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -133,6 +162,22 @@
 
 @media (max-width: 768px) {
   .heroContent {
-    padding: 0 var(--section-pad-x) var(--page-hero-content-pad-bottom);
+    padding: calc(var(--nav-height) + 20px) var(--section-pad-x) clamp(32px, 6vh, 56px);
+  }
+
+  .heroVideoCopy {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 20px;
+  }
+
+  .heroVideoCopyLeft {
+    max-width: none;
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+  }
+
+  .heroVideoCopyRight {
+    margin-left: 0;
+    max-width: none;
   }
 }

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Road ready">
+  <title>Road ready</title>
+  <!-- road in perspective -->
+  <line x1="18" y1="59" x2="27" y2="11"/>
+  <line x1="44" y1="59" x2="39.5" y2="30"/>
+  <line x1="31" y1="58" x2="33" y2="16" stroke-width="2.5" stroke-dasharray="6 7"/>
+  <!-- verified badge -->
+  <circle cx="48" cy="16" r="10.5"/>
+  <path d="M43.2 16 L46.8 19.6 L53 12.8" stroke-width="2.8"/>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Blind spot warning">
+  <title>Blind spot warning</title>
+  <!-- motorcycle (top-down, facing up) -->
+  <line x1="32" y1="9" x2="32" y2="14" stroke-width="4.5"/>
+  <line x1="24" y1="18" x2="40" y2="18"/>
+  <rect x="28.5" y="16" width="7" height="16" rx="3.5"/>
+  <line x1="32" y1="34" x2="32" y2="39" stroke-width="4.5"/>
+  <!-- left rear-quarter waves -->
+  <path d="M23.11 36.22 A7 7 0 0 0 28.78 41.89" stroke-width="2.5"/>
+  <path d="M18.18 37.08 A12 12 0 0 0 27.92 46.82" stroke-width="2.5"/>
+  <!-- right rear-quarter waves -->
+  <path d="M40.89 36.22 A7 7 0 0 1 35.22 41.89" stroke-width="2.5"/>
+  <path d="M45.82 37.08 A12 12 0 0 1 36.08 46.82" stroke-width="2.5"/>
+  <!-- vehicle detected in blind spot -->
+  <circle cx="49" cy="52" r="2.8" fill="currentColor" stroke="none"/>
+  <circle cx="49" cy="52" r="7" stroke-width="2.5"/>
+</svg>

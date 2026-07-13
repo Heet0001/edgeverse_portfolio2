@@ -1,41 +1,51 @@
-import { Fragment } from 'react'
-import styles from './aboutTimelineSection.module.scss'
+import { Fragment } from "react";
+import styles from "./aboutTimelineSection.module.scss";
 
 const milestones = [
   {
-    year: '2023',
-    title: 'Founded',
-    desc: 'Edgeverse founded in Bengaluru with a mission to bring ARAS technology to India’s 220M+ two-wheeler riders.',
-    icon: 'rocket',
+    year: "2023",
+    title: "Founded",
+    desc: "Edgeverse founded in Bengaluru with a mission to bring ARAS technology to worldwide two-wheeler riders.",
+    icon: "rocket",
     progress: 25,
   },
   {
-    year: '2024',
-    title: 'Platform Development',
-    desc: 'Imedge hardware prototype completed. Perceiva software stack in development. First India Perception Model trained.',
-    icon: 'cube',
+    year: "2024",
+    title: "Platform Development",
+    desc: "Imedge hardware prototype completed. Perceiva software stack in development. First India Perception Model trained.",
+    icon: "cube",
     progress: 50,
   },
   {
-    year: '2025',
-    title: 'Road testing',
-    desc: 'First on-road testing and validation across Bengaluru’s complex road conditions. OEM conversations initiated.',
-    icon: 'road',
+    year: "2025",
+    title: "Road testing",
+    desc: "First on-road testing and validation across Bengaluru’s complex road conditions. OEM conversations initiated.",
+    icon: "road",
     progress: 75,
   },
   {
-    year: '2026',
-    title: 'Market Entry',
-    desc: 'Product deployment with OEM partners. Expansion into surveillance and industrial automation verticals.',
-    icon: 'chart',
+    year: "2026",
+    title: "Market Entry",
+    desc: "Product deployment with OEM partners. Expansion into surveillance and industrial automation verticals.",
+    icon: "chart",
     progress: 100,
   },
-] as const
+] as const;
 
-const MilestoneIcon = ({ type }: { type: (typeof milestones)[number]['icon'] }) => {
-  if (type === 'rocket') {
+const MilestoneIcon = ({
+  type,
+}: {
+  type: (typeof milestones)[number]["icon"];
+}) => {
+  if (type === "rocket") {
     return (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <svg
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        aria-hidden="true"
+      >
         <path
           d="M12 15l-3-6 3-2 3 2-3 6zM9 9l3-5 3 5M12 15v4M9 19h6"
           stroke="currentColor"
@@ -44,11 +54,17 @@ const MilestoneIcon = ({ type }: { type: (typeof milestones)[number]['icon'] }) 
           strokeLinejoin="round"
         />
       </svg>
-    )
+    );
   }
-  if (type === 'cube') {
+  if (type === "cube") {
     return (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <svg
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        aria-hidden="true"
+      >
         <path
           d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3zM12 12l8-4.5M12 12v9M12 12L4 7.5"
           stroke="currentColor"
@@ -57,11 +73,17 @@ const MilestoneIcon = ({ type }: { type: (typeof milestones)[number]['icon'] }) 
           strokeLinejoin="round"
         />
       </svg>
-    )
+    );
   }
-  if (type === 'road') {
+  if (type === "road") {
     return (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <svg
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        aria-hidden="true"
+      >
         <path
           d="M4 18h16M7 18l2-8 3 4 2-6 3 10"
           stroke="currentColor"
@@ -70,10 +92,16 @@ const MilestoneIcon = ({ type }: { type: (typeof milestones)[number]['icon'] }) 
           strokeLinejoin="round"
         />
       </svg>
-    )
+    );
   }
   return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+    >
       <path
         d="M4 18v-4M8 18V8M12 18v-6M16 18V6M20 18v-2"
         stroke="currentColor"
@@ -81,8 +109,8 @@ const MilestoneIcon = ({ type }: { type: (typeof milestones)[number]['icon'] }) 
         strokeLinecap="round"
       />
     </svg>
-  )
-}
+  );
+};
 
 const AboutTimelineSection = () => {
   return (
@@ -93,7 +121,8 @@ const AboutTimelineSection = () => {
             From idea to product<span className={styles.titleDot}>.</span>
           </h3>
           <p className={styles.subtitle}>
-            A journey of innovation, relentless execution, and real-world impact.
+            A journey of innovation, relentless execution, and real-world
+            impact.
           </p>
         </div>
 
@@ -141,7 +170,7 @@ const AboutTimelineSection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default AboutTimelineSection
+export default AboutTimelineSection;

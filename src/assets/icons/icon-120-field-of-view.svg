@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="120 degree field of view">
+  <title>120 degree field of view</title>
+  <!-- cone edges -->
+  <line x1="32" y1="54" x2="6" y2="39"/>
+  <line x1="32" y1="54" x2="58" y2="39"/>
+  <!-- range arcs -->
+  <path d="M19.88 47 A14 14 0 0 1 44.12 47" stroke-width="2.5"/>
+  <path d="M9.48 41 A26 26 0 0 1 54.52 41" stroke-width="2.5"/>
+  <!-- sensor -->
+  <circle cx="32" cy="54" r="3.2" fill="currentColor" stroke="none"/>
+  <!-- angle label -->
+  <text x="32" y="20" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="700" fill="currentColor" stroke="none">120&#176;</text>
+</svg>

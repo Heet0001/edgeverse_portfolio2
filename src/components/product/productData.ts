@@ -10,6 +10,31 @@ import frontCollisionVideo from "../../assets/videos/Front_collision.mp4";
 import rearCollisionVideo from "../../assets/videos/Rear_collision .mp4";
 import drowsinessVideo from "../../assets/videos/Drowsiness.mp4";
 import driverDistractionVideo from "../../assets/videos/Driver_distraction.mp4";
+import iconForwardCollision from "../../assets/icons/icon-forward-collision-warning.svg";
+import iconRearCollision from "../../assets/icons/icon-rear-collision-warning.svg";
+import iconBlindSpot from "../../assets/icons/icon-blind-spot-warning.svg";
+import iconLaneChange from "../../assets/icons/icon-lane-change-warning.svg";
+import iconPedestrianCollision from "../../assets/icons/icon-pedestrian-collision-warning.svg";
+import iconFieldOfView from "../../assets/icons/icon-120-field-of-view.svg";
+import iconLowLight from "../../assets/icons/icon-low-light-night.svg";
+import iconFog from "../../assets/icons/icon-fog-situation.svg";
+import iconRoadReady from "../../assets/icons/icon-road-ready.svg";
+
+export const REAR_ARAS_FEATURE_ICONS = [
+  { src: iconRearCollision, label: "Rear collision warning" },
+  { src: iconBlindSpot, label: "Blind spot warning" },
+  { src: iconLaneChange, label: "Lane change warning" },
+  { src: iconFieldOfView, label: "120 degree field of view" },
+  { src: iconRoadReady, label: "Road ready" },
+] as const;
+
+export const FORWARD_ARAS_FEATURE_ICONS = [
+  { src: iconForwardCollision, label: "Forward collision warning" },
+  { src: iconPedestrianCollision, label: "Pedestrian collision warning" },
+  { src: iconLowLight, label: "Low-light and night detection" },
+  { src: iconFieldOfView, label: "120 degree field of view" },
+  { src: iconFog, label: "Fog detection" },
+] as const;
 
 export const PRODUCT_SAFETY_CARDS = [
   {
@@ -141,6 +166,12 @@ export type ProductDemo = {
   imageAlt: string;
   video?: string;
   href?: string;
+  featureIcons?: ProductFeatureIcon[];
+};
+
+export type ProductFeatureIcon = {
+  src: string;
+  label: string;
 };
 
 export type ProductLine = {
@@ -169,6 +200,7 @@ export const PRODUCT_LINES: ProductLine[] = [
         imageAlt:
           "Rear collision warning demo with real-time detection overlays",
         video: rearCollisionVideo,
+        featureIcons: [...REAR_ARAS_FEATURE_ICONS],
       },
       {
         id: "front-collision",
@@ -178,6 +210,7 @@ export const PRODUCT_LINES: ProductLine[] = [
         imageAlt:
           "Forward collision warning demo with real-time detection overlays",
         video: frontCollisionVideo,
+        featureIcons: [...FORWARD_ARAS_FEATURE_ICONS],
       },
     ],
   },

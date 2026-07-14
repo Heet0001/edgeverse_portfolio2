@@ -110,7 +110,7 @@ const Home = () => {
             </h1>
             <p className={styles.heroVideoCopyRight}>
               We build vertically integrated Perception Intelligence Stack using
-              camera and radar, optimized for edge silicon.
+              camera and radar, optimized for resource constrained edge silicon.
             </p>
           </div>
 

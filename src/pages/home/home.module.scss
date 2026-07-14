@@ -85,7 +85,6 @@
   letter-spacing: -0.03em;
   color: #ffffff;
   white-space: nowrap;
-  width: max-content;
   justify-self: start;
 }
 
@@ -119,16 +118,14 @@
 
 @media (min-width: 1800px) {
   .heroContent {
-    max-width: none;
-    width: 100%;
-    padding-left: clamp(48px, 4vw, 72px);
-    padding-right: clamp(48px, 4vw, 72px);
+    max-width: min(100%, 2000px);
+    padding-left: clamp(40px, 3.5vw, 64px);
+    padding-right: clamp(40px, 3.5vw, 64px);
   }
 
   .heroVideoCopy {
-    grid-template-columns: max-content minmax(0, 1fr);
-    justify-content: space-between;
-    gap: clamp(120px, 10vw, 280px);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(180px, 14vw, 360px);
   }
 
   .heroVideoCopyLeft {
@@ -136,9 +133,8 @@
   }
 
   .heroVideoCopyRight {
-    margin-left: auto;
+    margin-left: 0;
     margin-right: 0;
-    justify-self: end;
   }
 
   .heroCta {
@@ -253,7 +249,6 @@
   .heroVideoCopyLeft {
     margin-left: 0;
     white-space: normal;
-    width: auto;
     font-size: clamp(1.75rem, 8vw, 2.5rem);
   }
 

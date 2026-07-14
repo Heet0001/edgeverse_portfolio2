@@ -84,7 +84,7 @@
   line-height: var(--hero-headline-line-height);
   letter-spacing: -0.03em;
   color: #ffffff;
-  max-width: none;
+  white-space: nowrap;
   width: max-content;
   justify-self: start;
 }
@@ -132,8 +132,6 @@
   }
 
   .heroVideoCopyLeft {
-    max-width: none;
-    width: max-content;
     margin-left: 0;
   }
 
@@ -145,6 +143,7 @@
 
   .heroCta {
     margin-left: 0;
+    margin-bottom: 48px;
   }
 }
 
@@ -253,7 +252,7 @@
 
   .heroVideoCopyLeft {
     margin-left: 0;
-    max-width: none;
+    white-space: normal;
     width: auto;
     font-size: clamp(1.75rem, 8vw, 2.5rem);
   }

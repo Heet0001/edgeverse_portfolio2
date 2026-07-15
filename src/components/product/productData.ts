@@ -21,19 +21,19 @@ import iconFog from "../../assets/icons/icon-fog-situation.svg";
 import iconRoadReady from "../../assets/icons/icon-road-ready.svg";
 
 export const REAR_ARAS_FEATURE_ICONS = [
-  { src: iconRearCollision, label: "Rear collision warning" },
-  { src: iconBlindSpot, label: "Blind spot warning" },
-  { src: iconLaneChange, label: "Lane change warning" },
-  { src: iconFieldOfView, label: "120 degree field of view" },
-  { src: iconRoadReady, label: "Road ready" },
+  { src: iconRearCollision, label: "Rear Collision Warning" },
+  { src: iconBlindSpot, label: "Blind Spot Warning" },
+  { src: iconLaneChange, label: "Lane Change Warning" },
+  { src: iconFieldOfView, label: "120 Field Of View" },
+  { src: iconRoadReady, label: "Road Ready" },
 ] as const;
 
 export const FORWARD_ARAS_FEATURE_ICONS = [
-  { src: iconForwardCollision, label: "Forward collision warning" },
-  { src: iconPedestrianCollision, label: "Pedestrian collision warning" },
-  { src: iconLowLight, label: "Low-light and night detection" },
-  { src: iconFieldOfView, label: "120 degree field of view" },
-  { src: iconFog, label: "Fog detection" },
+  { src: iconForwardCollision, label: "Forward Collision Warning" },
+  { src: iconPedestrianCollision, label: "Pedestrian Collision Warning" },
+  { src: iconLowLight, label: "Low Light Night" },
+  { src: iconFieldOfView, label: "120 Field Of View" },
+  { src: iconFog, label: "Fog Situation" },
 ] as const;
 
 export const PRODUCT_SAFETY_CARDS = [

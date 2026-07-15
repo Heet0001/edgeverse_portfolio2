@@ -1,4 +1,4 @@
-import styles from './aboutCtaSection.module.scss'
+import styles from "./aboutCtaSection.module.scss";
 
 const AboutCtaSection = () => {
   return (
@@ -6,11 +6,12 @@ const AboutCtaSection = () => {
       <div className={styles.inner}>
         <div className={styles.content}>
           <h2 className={styles.heading}>
-            Let's build the future <span className={styles.accent}>together.</span>
+            Let's build the future{" "}
+            <span className={styles.accent}>together.</span>
           </h2>
           <p className={styles.subtitle}>
-            We're always looking for partners, investors, and collaborators who share our vision of
-            making mobility safer through edge AI perception.
+            We're always looking for partners, investors, and collaborators who
+            share our vision of making pervasive edge AI perception.
           </p>
         </div>
         <div className={styles.action}>
@@ -20,7 +21,7 @@ const AboutCtaSection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default AboutCtaSection
+export default AboutCtaSection;

@@ -83,7 +83,7 @@
   text-decoration: none;
   color: inherit;
   border-radius: 14px;
-  overflow: hidden;
+  overflow: visible;
   border: 1px solid var(--color-border);
   background: #ffffff;
   transition: transform 220ms var(--ease-out), box-shadow 220ms var(--ease-out);
@@ -108,6 +108,7 @@
   position: relative;
   aspect-ratio: 16 / 10;
   overflow: hidden;
+  border-radius: 14px 14px 0 0;
   background: #f1f5f9;
 }
 
@@ -165,6 +166,7 @@
 }
 
 .demoFeatureIcon {
+  position: relative;
   flex: 1 1 36px;
   max-width: 40px;
   aspect-ratio: 1;
@@ -175,6 +177,57 @@
   border: 1.5px solid #0f172a;
   border-radius: 4px;
   background: #ffffff;
+  cursor: default;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.demoFeatureIcon:hover,
+.demoFeatureIcon:focus-visible {
+  background: #0f172a;
+  border-color: #0f172a;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.demoFeatureIcon:hover img,
+.demoFeatureIcon:focus-visible img {
+  filter: invert(1);
+}
+
+.demoFeatureIcon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%) translateY(4px);
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.3;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 5;
+  transition:
+    opacity 140ms ease,
+    transform 140ms ease,
+    visibility 140ms ease;
+}
+
+.demoFeatureIcon:hover::after,
+.demoFeatureIcon:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
 .demoFeatureIcon img {
@@ -182,6 +235,7 @@
   max-width: 24px;
   height: auto;
   display: block;
+  transition: filter 160ms ease;
 }
 
 .upcomingNote {
@@ -202,7 +256,19 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .demoCard {
+  .demoCard,
+  .demoFeatureIcon,
+  .demoFeatureIcon img,
+  .demoFeatureIcon::after {
     transition: none;
+  }
+
+  .demoCard:hover {
+    transform: none;
+  }
+
+  .demoFeatureIcon:hover,
+  .demoFeatureIcon:focus-visible {
+    transform: none;
   }
 }

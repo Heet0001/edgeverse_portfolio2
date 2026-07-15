@@ -41,7 +41,7 @@ const CARDS: Card[] = [
     description:
       "Explore how EdgeVerse perception models continuously improve from real-world edge data across diverse environments.",
     cta: "Technology",
-    href: "/technology",
+    href: "/technology#active-learning-loop",
     image: safetyImg,
     imageAlt: "Active learning loop diagram",
   },

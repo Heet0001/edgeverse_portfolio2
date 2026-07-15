@@ -113,7 +113,12 @@ const ProductLineSection = ({ line, index }: ProductLineSectionProps) => {
                   {demo.featureIcons && demo.featureIcons.length > 0 && (
                     <div className={styles.demoFeatureIcons} aria-label={`${demo.title} features`}>
                       {demo.featureIcons.map((icon) => (
-                        <div key={icon.label} className={styles.demoFeatureIcon} title={icon.label}>
+                        <div
+                          key={icon.label}
+                          className={styles.demoFeatureIcon}
+                          data-tooltip={icon.label}
+                          aria-label={icon.label}
+                        >
                           <img src={icon.src} alt="" aria-hidden="true" />
                         </div>
                       ))}

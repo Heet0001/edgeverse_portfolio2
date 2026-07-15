@@ -73,6 +73,159 @@
   object-position: center;
 }
 
+.compare {
+  margin-top: clamp(28px, 4vw, 48px);
+  width: 100%;
+  overflow-x: auto;
+}
+
+.compareTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.compareTable th,
+.compareTable td {
+  padding: clamp(14px, 1.8vw, 20px) clamp(16px, 2vw, 24px);
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.compareTable th {
+  font-size: clamp(15px, 1.3vw, 18px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+}
+
+.compareTable td {
+  font-size: clamp(13px, 1.05vw, 15px);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.compareTable td strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.compareTable tbody tr:last-child th,
+.compareTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.colCost {
+  width: 50%;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.colAdvantage {
+  width: 50%;
+}
+
+.compareTable thead .colCost {
+  background: rgba(239, 68, 68, 0.1);
+  color: #fca5a5;
+}
+
+.compareTable thead .colAdvantage {
+  background: rgba(14, 165, 164, 0.12);
+  color: #5eead4;
+}
+
+.cell {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.markNeg,
+.markPos {
+  flex: 0 0 auto;
+  margin-top: 1px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.markNeg {
+  color: #f87171;
+}
+
+.markPos {
+  color: #2dd4bf;
+}
+
+@media (max-width: 720px) {
+  .compareTable,
+  .compareTable thead,
+  .compareTable tbody,
+  .compareTable tr,
+  .compareTable th,
+  .compareTable td {
+    display: block;
+    width: 100%;
+  }
+
+  .compareTable {
+    border: none;
+    background: transparent;
+    overflow: visible;
+  }
+
+  .compareTable thead {
+    display: none;
+  }
+
+  .compareTable tbody tr {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .compareTable tbody td {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 14px 16px;
+  }
+
+  .colCost {
+    border-right: none;
+    background: rgba(239, 68, 68, 0.08);
+  }
+
+  .colAdvantage {
+    background: rgba(14, 165, 164, 0.1);
+  }
+
+  .colCost::before,
+  .colAdvantage::before {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .colCost::before {
+    content: "Hidden costs of standard AI retraining";
+    color: #fca5a5;
+  }
+
+  .colAdvantage::before {
+    content: "The EdgeVerse Advantage";
+    color: #5eead4;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .media,
   .media:hover {

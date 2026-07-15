@@ -10,8 +10,16 @@ type SocialItem = {
 
 const SOCIAL_ITEMS: SocialItem[] = [
   { id: "x", label: "X", href: "https://twitter.com" },
-  { id: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com" },
-  { id: "youtube", label: "YouTube", href: "https://www.youtube.com" },
+  {
+    id: "linkedin",
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/edgeverse-india-private-limited/",
+  },
+  {
+    id: "youtube",
+    label: "YouTube",
+    href: "https://www.youtube.com/@edgeAImobility",
+  },
 ]
 
 function SocialIcon({ id }: { id: string }) {

@@ -60,6 +60,7 @@
   padding: calc(var(--nav-height) + clamp(16px, 2vh, 28px)) var(--section-pad-x)
     clamp(40px, 7vh, 80px);
   text-align: left;
+  --hero-copy-inset: clamp(-40px, -2.5vw, -24px);
 }
 
 .heroVideoCopy {
@@ -77,7 +78,7 @@
 }
 
 .heroVideoCopyLeft {
-  margin: 0 0 0 clamp(-40px, -2.5vw, -24px);
+  margin: 0 0 0 var(--hero-copy-inset);
   font-family: var(--font-sans);
   font-size: var(--hero-headline-size);
   font-weight: 600;
@@ -99,20 +100,16 @@
 }
 
 @media (min-width: 1440px) {
+  .heroContent {
+    --hero-copy-inset: clamp(-56px, -3vw, -32px);
+  }
+
   .heroVideoCopy {
     padding-top: clamp(220px, 40vh, 560px);
   }
 
-  .heroVideoCopyLeft {
-    margin-left: clamp(-56px, -3vw, -32px);
-  }
-
   .heroVideoCopyRight {
     margin-right: clamp(-56px, -3vw, -32px);
-  }
-
-  .heroCta {
-    margin-left: clamp(-56px, -3vw, -32px);
   }
 }
 
@@ -121,15 +118,12 @@
     max-width: min(100%, 2000px);
     padding-left: clamp(40px, 3.5vw, 64px);
     padding-right: clamp(40px, 3.5vw, 64px);
+    --hero-copy-inset: 0px;
   }
 
   .heroVideoCopy {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: clamp(180px, 14vw, 360px);
-  }
-
-  .heroVideoCopyLeft {
-    margin-left: 0;
   }
 
   .heroVideoCopyRight {
@@ -138,7 +132,6 @@
   }
 
   .heroCta {
-    margin-left: 0;
     margin-bottom: 48px;
   }
 }
@@ -202,7 +195,7 @@
 
 .heroCta {
   margin-top: auto;
-  margin-left: -24px;
+  margin-left: var(--hero-copy-inset);
   align-self: flex-start;
   width: max-content;
   display: inline-flex;

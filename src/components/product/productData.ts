@@ -19,6 +19,14 @@ import iconFieldOfView from "../../assets/icons/icon-120-field-of-view.svg";
 import iconLowLight from "../../assets/icons/icon-low-light-night.svg";
 import iconFog from "../../assets/icons/icon-fog-situation.svg";
 import iconRoadReady from "../../assets/icons/icon-road-ready.svg";
+import iconDrowsiness1 from "../../assets/icons/Drowsiness1.png";
+import iconDrowsiness2 from "../../assets/icons/Drowsiness2.png";
+import iconDrowsiness3 from "../../assets/icons/Drowsiness3.png";
+import iconDrowsiness4 from "../../assets/icons/Drowsiness4.png";
+import iconDistraction1 from "../../assets/icons/Distraction1.png";
+import iconDistraction2 from "../../assets/icons/Distraction2.png";
+import iconDistraction3 from "../../assets/icons/Distraction3.png";
+import iconDistraction4 from "../../assets/icons/Distraction4.png";
 
 export const REAR_ARAS_FEATURE_ICONS = [
   { src: iconRearCollision, label: "Rear Collision Warning" },
@@ -34,6 +42,20 @@ export const FORWARD_ARAS_FEATURE_ICONS = [
   { src: iconLowLight, label: "Low Light Night" },
   { src: iconFieldOfView, label: "120 Field Of View" },
   { src: iconFog, label: "Fog Situation" },
+] as const;
+
+export const DROWSINESS_DMS_FEATURE_ICONS = [
+  { src: iconDrowsiness1, label: "Drowsiness Detection" },
+  { src: iconDrowsiness2, label: "Microsleep Warning" },
+  { src: iconDrowsiness3, label: "Yawning Detection" },
+  { src: iconDrowsiness4, label: "Fatigue Warning" },
+] as const;
+
+export const DISTRACTION_DMS_FEATURE_ICONS = [
+  { src: iconDistraction1, label: "Phone Use Warning" },
+  { src: iconDistraction2, label: "Looking Away Warning" },
+  { src: iconDistraction3, label: "Looking At Phone" },
+  { src: iconDistraction4, label: "Phone Call Warning" },
 ] as const;
 
 export const PRODUCT_SAFETY_CARDS = [
@@ -228,6 +250,7 @@ export const PRODUCT_LINES: ProductLine[] = [
         image: detection1Img,
         imageAlt: "Drowsiness detection demo with captured video",
         video: drowsinessVideo,
+        featureIcons: [...DROWSINESS_DMS_FEATURE_ICONS],
       },
       {
         id: "driver-distraction-dms",
@@ -236,6 +259,7 @@ export const PRODUCT_LINES: ProductLine[] = [
         image: detection2Img,
         imageAlt: "Driver distraction monitoring demo with captured video",
         video: driverDistractionVideo,
+        featureIcons: [...DISTRACTION_DMS_FEATURE_ICONS],
       },
     ],
   },

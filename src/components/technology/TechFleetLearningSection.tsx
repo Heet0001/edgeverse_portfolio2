@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 import styles from "./techFleetLearningSection.module.scss";
 import headerStyles from "./techSectionHeader.module.scss";
-import activeLearningVideo from "../../assets/videos/new edgverse.webm";
+import activeLearningVideo from "../../assets/videos/activelearning.webm";
 
 const HIDDEN_COSTS = [
   {

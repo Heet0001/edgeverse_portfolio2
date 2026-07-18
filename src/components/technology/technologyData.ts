@@ -62,9 +62,9 @@ export const TECH_APPROACH_ADVANTAGES = [
 
 export const TECH_PROPRIETARY_DATASET = [
   {
-    title: "India's Two Wheeler Perception Data",
+    title: "Proprietary Multi-Vertical Datasets",
     description:
-      "Curated for unstructured Indian road conditions — edge cases, lighting, and traffic patterns not represented in open-source datasets.",
+      "Beyond two-wheeler perception, Edgeverse utilizes custom-curated, real-world datasets across all core operational pillars—Two-Wheeler ARAS, Driver Monitoring Systems (DMS), and Industrial Automation—capturing complex edge cases that open-source alternatives miss",
   },
   {
     title: "Not replicable from open sources",

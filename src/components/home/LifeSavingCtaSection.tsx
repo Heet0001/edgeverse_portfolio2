@@ -19,8 +19,8 @@ const LifeSavingCtaSection = () => {
             <span className={styles.accent}> edge device intelligent.</span>
           </h2>
           <p className={styles.text}>
-            Whether you&apos;re an OEM, Tier-1 supplier — EdgeVerse perception
-            intelligence integrates into any edge device.
+            Whether you &apos;re an OEM, Tier-1 supplier — EdgeVerse perception
+            intelligence integrates into your existing on upcoming edge device
           </p>
         </div>
 

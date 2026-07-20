@@ -24,7 +24,7 @@ const DemoVideo = ({ demo }: { demo: ProductDemo }) => {
   return (
     <video
       ref={videoRef}
-      className={styles.demoVideo}
+      className={`${styles.demoVideo} ${demo.videoFit === 'contain' ? styles.demoVideoContain : ''}`}
       src={demo.video}
       poster={demo.image}
       autoPlay
@@ -95,7 +95,11 @@ const ProductLineSection = ({ line, index }: ProductLineSectionProps) => {
               const isAvailable = demo.status === 'available'
               const cardInner = (
                 <>
-                  <div className={styles.demoMedia}>
+                  <div
+                    className={`${styles.demoMedia} ${
+                      demo.videoFit === 'contain' ? styles.demoMediaContain : ''
+                    }`}
+                  >
                     {demo.video ? (
                       <DemoVideo demo={demo} />
                     ) : (

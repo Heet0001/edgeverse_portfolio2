@@ -122,6 +122,16 @@
   display: block;
 }
 
+.demoMediaContain {
+  background: #0b0f1a;
+}
+
+.demoMediaContain video,
+.demoVideoContain {
+  object-fit: contain;
+  object-position: center;
+}
+
 .demoCardMuted .demoMedia img,
 .demoCardMuted .demoMedia video {
   filter: grayscale(0.35);

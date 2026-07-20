@@ -196,6 +196,8 @@ export type ProductDemo = {
   imageAlt: string;
   video?: string;
   href?: string;
+  /** Use `contain` for wide UI/dashboard videos that should not be cropped. */
+  videoFit?: "cover" | "contain";
   featureIcons?: ProductFeatureIcon[];
 };
 
@@ -249,6 +251,7 @@ export const PRODUCT_LINES: ProductLine[] = [
         image: roadSafetyImg,
         imageAlt: "77Ghz RADAR BSD ARAS demo with real-time detection overlays",
         video: arasThirdVideo,
+        videoFit: "contain",
         featureIcons: [...SIDE_ARAS_FEATURE_ICONS],
       },
     ],

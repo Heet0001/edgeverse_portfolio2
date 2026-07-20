@@ -8,6 +8,7 @@ import detection2Img from "../../assets/images/detection2.png";
 import heroImg from "../../assets/images/product.png";
 import frontCollisionVideo from "../../assets/videos/Front_collision.mp4";
 import rearCollisionVideo from "../../assets/videos/Rear_collision .mp4";
+import arasThirdVideo from "../../assets/videos/aras3rd.mp4";
 import drowsinessVideo from "../../assets/videos/Drowsiness.mp4";
 import driverDistractionVideo from "../../assets/videos/Driver_distraction.mp4";
 import iconForwardCollision from "../../assets/icons/icon-forward-collision-warning.svg";
@@ -42,6 +43,13 @@ export const FORWARD_ARAS_FEATURE_ICONS = [
   { src: iconLowLight, label: "Low Light Night" },
   { src: iconFieldOfView, label: "120 Field Of View" },
   { src: iconFog, label: "Fog Situation" },
+] as const;
+
+export const SIDE_ARAS_FEATURE_ICONS = [
+  { src: iconBlindSpot, label: "Blind Spot Warning" },
+  { src: iconLaneChange, label: "Lane Change Warning" },
+  { src: iconFieldOfView, label: "120 Field Of View" },
+  { src: iconRoadReady, label: "Road Ready" },
 ] as const;
 
 export const DROWSINESS_DMS_FEATURE_ICONS = [
@@ -233,6 +241,15 @@ export const PRODUCT_LINES: ProductLine[] = [
           "Forward collision warning demo with real-time detection overlays",
         video: frontCollisionVideo,
         featureIcons: [...FORWARD_ARAS_FEATURE_ICONS],
+      },
+      {
+        id: "side-aras",
+        title: "Side ARAS",
+        status: "available",
+        image: roadSafetyImg,
+        imageAlt: "Side ARAS demo with real-time detection overlays",
+        video: arasThirdVideo,
+        featureIcons: [...SIDE_ARAS_FEATURE_ICONS],
       },
     ],
   },
